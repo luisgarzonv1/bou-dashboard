@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bou Entertainment — Dashboard Ejecutivo Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f0e0c;
+    --bg-soft: #1a1815;
+    --ink: #f5f0e6;
+    --ink-soft: #c8bfae;
+    --ink-mute: #807868;
+    --accent: #ff5a1f;
+    --accent-2: #e8c547;
+    --line: rgba(245, 240, 230, 0.08);
+    --line-strong: rgba(245, 240, 230, 0.2);
+    --green: #6fbf73;
+    --red: #ef5a5a;
+    --display: 'Fraunces', Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--display);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(255, 90, 31, 0.08), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(232, 197, 71, 0.06), transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+
+  /* HEADER */
+  header { padding: 40px 0 24px; border-bottom: 1px solid var(--line); position: relative; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+  .logo-block { display: flex; align-items: center; gap: 14px; }
+  .logo-mark {
+    width: 44px; height: 44px; background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-weight: 900; font-size: 22px;
+    color: var(--bg); border-radius: 4px; transform: rotate(-3deg);
+  }
+  .brand { font-family: var(--mono); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-mute); }
+  .brand-name { font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
+  .meta-info { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.05em; text-align: right; }
+  .meta-info strong { color: var(--accent-2); font-weight: 500; }
+  h1 {
+    font-family: var(--display); font-weight: 900;
+    font-size: clamp(48px, 8vw, 96px); line-height: 0.95;
+    letter-spacing: -0.04em; margin: 32px 0 16px;
+    font-variation-settings: "opsz" 144;
+  }
+  h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .subtitle { font-size: 18px; color: var(--ink-soft); max-width: 720px; margin-bottom: 24px; font-weight: 400; }
+  .quick-share { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .chip {
+    font-family: var(--mono); font-size: 11px; padding: 6px 12px;
+    border: 1px solid var(--line-strong); border-radius: 100px;
+    color: var(--ink-soft); letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .chip.accent { border-color: var(--accent); color: var(--accent); }
+  .chip.warn { border-color: var(--red); color: var(--red); }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0;
+    background: rgba(15, 14, 12, 0.92);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line);
+    z-index: 50; padding: 16px 0; margin: 32px 0 0;
+  }
+  nav .container { display: flex; gap: 24px; overflow-x: auto; scrollbar-width: none; }
+  nav .container::-webkit-scrollbar { display: none; }
+  nav a {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--ink-mute); text-decoration: none;
+    white-space: nowrap; padding: 6px 0; transition: color 0.2s;
+    border-bottom: 1px solid transparent;
+  }
+  nav a:hover { color: var(--ink); }
+  nav a.active { color: var(--accent); border-color: var(--accent); }
+
+  /* SECTIONS */
+  section { padding: 80px 0; border-bottom: 1px solid var(--line); position: relative; }
+  .section-label {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--mono); font-size: 11px; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 24px;
+  }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+  h2 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(36px, 5vw, 56px); line-height: 1.05;
+    letter-spacing: -0.03em; margin-bottom: 16px;
+  }
+  h2 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .lead { font-size: 18px; color: var(--ink-soft); max-width: 720px; margin-bottom: 40px; line-height: 1.55; }
+
+  /* KPI GRID */
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px; background: var(--line); border: 1px solid var(--line);
+    border-radius: 6px; overflow: hidden;
+  }
+  .kpi { background: var(--bg-soft); padding: 28px 24px; position: relative; transition: background 0.3s; }
+  .kpi:hover { background: #221f1a; }
+  .kpi-label { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px; }
+  .kpi-value { font-family: var(--display); font-weight: 700; font-size: 38px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .kpi-value em { color: var(--accent); font-style: normal; }
+  .kpi-delta { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); }
+  .kpi-delta.up { color: var(--green); }
+  .kpi-delta.down { color: var(--red); }
+
+  /* TWO-COLUMN */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+  @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--bg-soft); border: 1px solid var(--line);
+    border-radius: 6px; padding: 32px; position: relative;
+  }
+  .card-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--line);
+  }
+  .card-title { font-family: var(--display); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+  .card-tag { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.1em; }
+  .chart-wrap { position: relative; height: 280px; }
+  .chart-wrap.tall { height: 340px; }
+
+  /* FUNNEL */
+  .funnel { display: flex; flex-direction: column; gap: 4px; margin-top: 16px; }
+  .funnel-step {
+    display: grid; grid-template-columns: 32px 1fr auto; gap: 16px;
+    align-items: center; padding: 14px 20px;
+    background: rgba(245, 240, 230, 0.03); border-radius: 4px;
+    border-left: 3px solid var(--accent); position: relative; overflow: hidden;
+  }
+  .funnel-step::before {
+    content: ''; position: absolute; inset: 0; background: var(--accent);
+    opacity: 0.05; transform-origin: left; transition: transform 0.5s;
+  }
+  .funnel-step[data-fill="100"]::before { transform: scaleX(1); }
+  .funnel-step[data-fill="85"]::before { transform: scaleX(0.85); }
+  .funnel-step[data-fill="16"]::before { transform: scaleX(0.16); }
+  .funnel-step[data-fill="70"]::before { transform: scaleX(0.70); }
+  .funnel-step[data-fill="10"]::before { transform: scaleX(0.10); }
+  .funnel-step[data-fill="5"]::before { transform: scaleX(0.05); }
+  .funnel-step[data-fill="2"]::before { transform: scaleX(0.02); }
+  .funnel-num { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); }
+  .funnel-name { font-family: var(--display); font-size: 15px; font-weight: 500; }
+  .funnel-stat { font-family: var(--mono); font-size: 13px; color: var(--ink-soft); text-align: right; }
+  .funnel-stat strong { color: var(--ink); font-weight: 500; }
+  .funnel-stat .drop { color: var(--red); font-size: 11px; display: block; margin-top: 2px; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  th { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
+  td { font-family: var(--display); font-size: 15px; }
+  td.num { font-family: var(--mono); font-size: 13px; text-align: right; }
+  td.product-name { font-weight: 500; }
+  tr:hover td { background: rgba(245, 240, 230, 0.02); }
+  .badge { display: inline-block; padding: 2px 8px; font-family: var(--mono); font-size: 10px; border-radius: 100px; letter-spacing: 0.05em; }
+  .badge.good { background: rgba(111, 191, 115, 0.15); color: var(--green); }
+  .badge.bad { background: rgba(239, 90, 90, 0.15); color: var(--red); }
+  .badge.warn { background: rgba(232, 197, 71, 0.15); color: var(--accent-2); }
+
+  /* INSIGHTS */
+  .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 32px; }
+  .insight {
+    background: var(--bg-soft); border: 1px solid var(--line); border-radius: 6px;
+    padding: 28px; position: relative; transition: transform 0.3s, border-color 0.3s;
+  }
+  .insight:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+  .insight-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.15em; margin-bottom: 16px;
+  }
+  .insight-tag.critical { color: var(--red); }
+  .insight-tag.opportunity { color: var(--green); }
+  .insight-tag.watch { color: var(--accent-2); }
+  .insight-tag::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .insight-title { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px; line-height: 1.2; }
+  .insight-body { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 16px; }
+  .insight-body strong { color: var(--ink); font-weight: 500; }
+  .insight-action {
+    padding-top: 16px; border-top: 1px solid var(--line);
+    font-family: var(--mono); font-size: 11px; color: var(--ink-mute);
+    line-height: 1.6; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .insight-action::before { content: '→ '; color: var(--accent); }
+
+  /* ACTIONS */
+  .actions-list { display: grid; gap: 16px; margin-top: 32px; }
+  .action {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 24px;
+    align-items: center; padding: 24px 28px; background: var(--bg-soft);
+    border: 1px solid var(--line); border-radius: 6px; transition: all 0.2s;
+  }
+  .action:hover { border-color: var(--accent); }
+  .action-num { font-family: var(--display); font-size: 36px; font-weight: 900; color: var(--accent); line-height: 1; min-width: 48px; }
+  .action-content h4 { font-family: var(--display); font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+  .action-content p { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+  .action-owner {
+    font-family: var(--mono); font-size: 10px; color: var(--ink-mute);
+    text-transform: uppercase; letter-spacing: 0.15em; padding: 6px 12px;
+    background: rgba(245, 240, 230, 0.05); border-radius: 100px; text-align: center;
+  }
+  @media (max-width: 700px) { .action { grid-template-columns: 1fr; gap: 12px; } .action-num { font-size: 28px; } }
+
+  /* FOOTER */
+  footer { padding: 60px 0; text-align: center; font-family: var(--mono); font-size: 11px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.15em; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* HERO STAT */
+  .hero-stat {
+    margin: 48px 0 24px; padding: 40px;
+    background: linear-gradient(135deg, rgba(255, 90, 31, 0.06), rgba(232, 197, 71, 0.03));
+    border: 1px solid var(--line); border-radius: 8px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;
+  }
+  @media (max-width: 700px) { .hero-stat { grid-template-columns: 1fr; } }
+  .hero-stat-item .l { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 10px; }
+  .hero-stat-item .v { font-family: var(--display); font-size: 44px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+  .hero-stat-item .v em { color: var(--accent); font-style: normal; }
+  .hero-stat-item .s { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); margin-top: 8px; }
+
+  /* COMPARE BAR */
+  .compare-row { display: grid; grid-template-columns: 140px 1fr 80px; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-label { font-family: var(--display); font-size: 14px; font-weight: 500; }
+  .compare-bar-wrap { background: rgba(245, 240, 230, 0.04); height: 28px; border-radius: 3px; overflow: hidden; position: relative; }
+  .compare-bar {
+    height: 100%; background: var(--accent); transition: width 1s ease-out;
+    display: flex; align-items: center; padding-left: 10px;
+    font-family: var(--mono); font-size: 11px; color: var(--bg); font-weight: 700;
+  }
+  .compare-bar.alt { background: var(--accent-2); }
+  .compare-bar.dim { background: var(--ink-mute); }
+  .compare-value { font-family: var(--mono); font-size: 12px; text-align: right; color: var(--ink-soft); }
+
+  /* AD SET TABLE */
+  .adset-row {
+    display: grid; grid-template-columns: 1fr repeat(6, auto); gap: 12px;
+    align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--line);
+    font-family: var(--mono); font-size: 12px;
+  }
+  .adset-row.header { font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.1em; padding-bottom: 8px; }
+  .adset-name { font-family: var(--display); font-size: 14px; font-weight: 500; }
+
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .animate { animation: slideUp 0.6s ease-out both; }
+
+  /* ALERTA ROAS */
+  .alert-box {
+    background: rgba(239, 90, 90, 0.06); border: 1px solid rgba(239, 90, 90, 0.3);
+    border-radius: 6px; padding: 20px 24px; margin-top: 24px;
+    font-family: var(--mono); font-size: 12px; color: var(--red); line-height: 1.7;
+  }
+  .alert-box strong { color: var(--red); font-weight: 700; }
+  .alert-box span { color: var(--ink-mute); }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header>
+  <div class="container">
+    <div class="header-top">
+      <div class="logo-block">
+        <div class="logo-mark">B</div>
+        <div>
+          <div class="brand">Bou Entertainment</div>
+          <div class="brand-name">Reporte Ejecutivo</div>
+        </div>
+      </div>
+      <div class="meta-info">
+        Período comparado<br>
+        <strong>Jun 2026 (30d)</strong> vs <strong>Jul 1–19 2026 (19d)</strong><br>
+        Actualizado 21 jul 2026 · GA4 + Meta Ads
+      </div>
+    </div>
+    <h1>Tráfico ×6,<br>pero el ROAS <em>necesita</em> atención.</h1>
+    <p class="subtitle">Análisis cruzado de Google Analytics 4 y Meta Ads — campaña "la piel colombia nuevo". Julio activó $2,030 en pauta. El tráfico explotó. Las conversiones, no. Foco en hallazgos accionables para CEO y equipo de Ads.</p>
+    <div class="quick-share">
+      <span class="chip accent">Confidencial · uso interno</span>
+      <span class="chip">GA4 + Meta Ads</span>
+      <span class="chip">Colombia</span>
+      <span class="chip warn">ROAS 0.29x — requiere acción</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="container">
+    <a href="#resumen" class="active">01 / Resumen</a>
+    <a href="#trafico">02 / Tráfico</a>
+    <a href="#funnel">03 / Funnel</a>
+    <a href="#ads">04 / Meta Ads</a>
+    <a href="#anuncios">05 / Ad Sets</a>
+    <a href="#productos">06 / Productos</a>
+    <a href="#ventas">07 / Ventas COL</a>
+    <a href="#hallazgos">08 / Hallazgos</a>
+    <a href="#acciones">09 / Acciones</a>
+  </div>
+</nav>
+
+<!-- SECCIÓN 1: RESUMEN -->
+<section id="resumen">
+  <div class="container">
+    <div class="section-label">01 — Resumen ejecutivo</div>
+    <h2>Tráfico x6, <em>ingresos +26%</em>, ROAS 0.29x.</h2>
+    <p class="lead">Julio activó la primera campaña colombiana fuerte: $2,030 invertidos, 1.5M impresiones, 13,000 nuevos usuarios — pero solo 21 compras registradas en GA4 y un ROAS de <strong>0.29x en Meta</strong>. La conversión es el cuello de botella urgente. El canal orgánico/directo generó más ventas que el pagado.</p>
+
+    <div class="hero-stat">
+      <div class="hero-stat-item">
+        <div class="l">Ingresos GA4 — Jul 1–19 (19d)</div>
+        <div class="v">$<em>958</em></div>
+        <div class="s">21 compras · ticket promedio $45.64 · +26% vs junio completo</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="l">Meta Ads — Jul 1–19</div>
+        <div class="v">$<em>2,030</em></div>
+        <div class="s">invertidos · 8 compras atribuidas · ROAS <span style="color:var(--red)">0.29x</span></div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="l">Usuarios activos GA4</div>
+        <div class="v"><em>13</em>mil</div>
+        <div class="s">↑ +519% vs junio (2,100) — tráfico récord del período</div>
+      </div>
+    </div>
+
+    <div class="kpi-grid" style="margin-top: 24px;">
+      <div class="kpi">
+        <div class="kpi-label">ROAS Meta (campaña activa)</div>
+        <div class="kpi-value" style="color: var(--red);">0.29<span style="font-size: 24px;">x</span></div>
+        <div class="kpi-delta down">$2,030 invertidos → $583 atribuidos</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">CPA Meta</div>
+        <div class="kpi-value">$<em>253</em></div>
+        <div class="kpi-delta down">por compra atribuida en Meta</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Ticket promedio</div>
+        <div class="kpi-value">$45<span style="font-size: 24px;">.64</span></div>
+        <div class="kpi-delta up">↑ +32% vs junio ($34.68)</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Brecha Meta → GA4</div>
+        <div class="kpi-value"><em>13</em></div>
+        <div class="kpi-delta">compras no atribuidas a Meta (orgánico/WhatsApp)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: TRÁFICO -->
+<section id="trafico">
+  <div class="container">
+    <div class="section-label">02 — Adquisición de tráfico</div>
+    <h2>Meta disparó el tráfico <em>×6 en 19 días</em>.</h2>
+    <p class="lead">La campaña "la piel colombia nuevo" trajo <strong>13,000 usuarios únicos</strong> en 19 días versus los 2,100 que llegaron en todo junio. El alcance orgánico fue reemplazado por volumen pagado. El desafío: convertir ese tráfico en ventas.</p>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Usuarios activos — comparativo</div>
+          <div class="card-tag">Fuente: GA4 verificado</div>
+        </div>
+        <div class="chart-wrap tall"><canvas id="traficoChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Métricas clave de tráfico</div>
+          <div class="card-tag">Jun 2026 vs Jul 1–19 2026</div>
+        </div>
+        <div style="display: grid; gap: 8px; margin-top: 8px;">
+          <div class="compare-row">
+            <div class="compare-label">Usuarios activos</div>
+            <div class="compare-bar-wrap"><div class="compare-bar" style="width: 100%;">Jul: 13,000</div></div>
+            <div class="compare-value" style="color:var(--green)">↑×6.2</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Usuarios nuevos</div>
+            <div class="compare-bar-wrap"><div class="compare-bar" style="width: 100%;">Jul: 13,000</div></div>
+            <div class="compare-value" style="color:var(--green)">↑×6.5</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Jun usuarios</div>
+            <div class="compare-bar-wrap"><div class="compare-bar dim" style="width: 16%;">Jun: 2,100</div></div>
+            <div class="compare-value">base</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Jun nuevos</div>
+            <div class="compare-bar-wrap"><div class="compare-bar dim" style="width: 15%;">Jun: 2,000</div></div>
+            <div class="compare-value">base</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Tiempo prom. sesión</div>
+            <div class="compare-bar-wrap"><div class="compare-bar alt" style="width: 24%;">Jul: 11s</div></div>
+            <div class="compare-value" style="color:var(--red)">↓ vs 45s</div>
+          </div>
+        </div>
+        <p style="margin-top: 16px; font-size: 13px; color: var(--ink-mute); font-family: var(--mono); line-height: 1.6;">→ El tiempo de sesión cayó de 45s a 11s. El público pagado hace un tap rápido y se va — <strong style="color:var(--accent-2)">señal de desajuste entre el anuncio y la landing page</strong>.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 32px;">
+      <div class="card-header">
+        <div class="card-title">Inversión en ads vs usuarios captados — impacto de la campaña</div>
+        <div class="card-tag">Meta Ads verificado</div>
+      </div>
+      <div style="display: grid; gap: 8px; margin-top: 16px;">
+        <div class="compare-row">
+          <div class="compare-label">Inversión Meta</div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="width: 100%;">Jul: $2,030.11</div></div>
+          <div class="compare-value" style="color:var(--red)">vs $14.23 jun</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Impresiones</div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="width: 100%;">Jul: 1,536,146</div></div>
+          <div class="compare-value" style="color:var(--green)">×183</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Alcance</div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="width: 100%;">Jul: 602,820 personas</div></div>
+          <div class="compare-value" style="color:var(--green)">×155</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Clics totales</div>
+          <div class="compare-bar-wrap"><div class="compare-bar alt" style="width: 100%;">Jul: 56,588 clics</div></div>
+          <div class="compare-value">CTR 3.68%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: FUNNEL -->
+<section id="funnel">
+  <div class="container">
+    <div class="section-label">03 — Funnel de conversión</div>
+    <h2>56k clics, <em>21 compras</em>.</h2>
+    <p class="lead">El tráfico llegó masivo. Pero de los 56,588 clics en anuncios, solo <strong>21 personas compraron en GA4</strong> (0.037% conversión efectiva). El volumen en la parte alta del funnel explotó; la base sigue igual. El problema está en el medio — ver producto → carrito → cierre.</p>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Funnel junio 2026 (30d)</div>
+          <div class="card-tag">~2,100 usuarios → 22 compras</div>
+        </div>
+        <div class="funnel">
+          <div class="funnel-step" data-fill="100">
+            <div class="funnel-num">01</div>
+            <div class="funnel-name">Usuarios activos</div>
+            <div class="funnel-stat"><strong>2,100</strong></div>
+          </div>
+          <div class="funnel-step" data-fill="85">
+            <div class="funnel-num">02</div>
+            <div class="funnel-name">Usuarios nuevos</div>
+            <div class="funnel-stat"><strong>2,000</strong> · 95.2%</div>
+          </div>
+          <div class="funnel-step" data-fill="10">
+            <div class="funnel-num">03</div>
+            <div class="funnel-name">Compradores</div>
+            <div class="funnel-stat"><strong>22</strong> · 1.05%<span class="drop">conversión orgánica</span></div>
+          </div>
+          <div class="funnel-step" data-fill="10" style="border-left-color: var(--accent-2);">
+            <div class="funnel-num">04</div>
+            <div class="funnel-name">Ingresos web</div>
+            <div class="funnel-stat"><strong>$762.97</strong><span class="drop" style="color: var(--accent-2);">ticket: $34.68 prom.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Funnel julio 1–19 (19d) <span style="color: var(--red); font-size: 12px;">⚠ conversión caída</span></div>
+          <div class="card-tag">13,000 usuarios → 21 compras</div>
+        </div>
+        <div class="funnel">
+          <div class="funnel-step" data-fill="100" style="border-left-color: var(--green);">
+            <div class="funnel-num">01</div>
+            <div class="funnel-name">Usuarios activos</div>
+            <div class="funnel-stat"><strong>13,000</strong> <span style="color:var(--green)">↑×6.2</span></div>
+          </div>
+          <div class="funnel-step" data-fill="100">
+            <div class="funnel-num">02</div>
+            <div class="funnel-name">Usuarios nuevos</div>
+            <div class="funnel-stat"><strong>13,000</strong> · 100%</div>
+          </div>
+          <div class="funnel-step" data-fill="2" style="border-left-color: var(--red);">
+            <div class="funnel-num">03</div>
+            <div class="funnel-name">Compradores</div>
+            <div class="funnel-stat"><strong>21</strong> · 0.16%<span class="drop">↓ vs 1.05% junio ⚠</span></div>
+          </div>
+          <div class="funnel-step" data-fill="10" style="border-left-color: var(--green);">
+            <div class="funnel-num">04</div>
+            <div class="funnel-name">Ingresos web</div>
+            <div class="funnel-stat"><strong>$958.40</strong><span class="drop" style="color: var(--green);">ticket: $45.64 ↑+32%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 32px;">
+      <div class="card-header">
+        <div class="card-title">Atribución de compras — Meta vs GA4</div>
+        <div class="card-tag">La brecha revela el valor del canal orgánico</div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Fuente</th>
+            <th>Compras</th>
+            <th>Valor atribuido</th>
+            <th>% del total GA4</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="product-name">Meta Ads (atribuido)</td>
+            <td class="num">8</td>
+            <td class="num">$583.50</td>
+            <td class="num">61%</td>
+            <td><span class="badge bad">ROAS 0.29x</span></td>
+          </tr>
+          <tr>
+            <td class="product-name">Orgánico / Directo / WhatsApp</td>
+            <td class="num">13</td>
+            <td class="num">~$374.90</td>
+            <td class="num">39%</td>
+            <td><span class="badge good">Sin costo de pauta</span></td>
+          </tr>
+          <tr style="font-weight: 600;">
+            <td class="product-name">Total GA4 Jul 1–19</td>
+            <td class="num">21</td>
+            <td class="num">$958.40</td>
+            <td class="num">100%</td>
+            <td><span class="badge warn">Ticket $45.64</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 16px; font-size: 13px; color: var(--ink-mute); font-family: var(--mono); line-height: 1.6;">→ <strong style="color:var(--accent-2)">13 de 21 compras no vinieron de Meta</strong>. El canal orgánico y WhatsApp sigue siendo la fuente de conversión más eficiente. La pauta está construyendo conocimiento de marca, no cerrando ventas directas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 4: META ADS -->
+<section id="ads">
+  <div class="container">
+    <div class="section-label">04 — Meta Ads</div>
+    <h2>$2,030 invertidos, <em>ROAS 0.29x</em>.</h2>
+    <p class="lead">Una sola campaña activa en julio: <strong>"la piel colombia nuevo"</strong>. Alcanzó a 602,820 personas con 1.5M impresiones y generó 56,588 clics. El volumen de tráfico es excelente. El problema: la conversión en la landing es crítica — el costo por compra está en <strong>$253.76</strong>, muy por encima del ticket promedio de $45.</p>
+
+    <div class="kpi-grid" style="margin-top: 32px;">
+      <div class="kpi">
+        <div class="kpi-label">Inversión Jul 1–19</div>
+        <div class="kpi-value">$<em>2,030</em></div>
+        <div class="kpi-delta">$106.85 / día promedio</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Impresiones</div>
+        <div class="kpi-value">1.5<span style="font-size: 24px;">M</span></div>
+        <div class="kpi-delta up">CPM $1.32 — muy eficiente</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Frecuencia</div>
+        <div class="kpi-value">2.55<span style="font-size: 24px;">x</span></div>
+        <div class="kpi-delta">Persona promedio vio el ad 2.5 veces</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">ROAS atribuido</div>
+        <div class="kpi-value" style="color:var(--red);">0.29<span style="font-size: 24px;">x</span></div>
+        <div class="kpi-delta down">8 compras · $583.50 valor reportado</div>
+      </div>
+    </div>
+
+    <div class="alert-box">
+      <strong>⚠ ALERTA ROAS:</strong> Con ROAS 0.29x, Bou Entertainment pierde ~$0.71 por cada $1 invertido en Meta (según atribución de la plataforma). El CPA de $253.76 supera en 5.6× el ticket promedio de $45.64. <span>Sin embargo, GA4 registra 21 compras totales por $958.40 — el modelo de atribución de Meta posiblemente subestima el impacto real de la campaña.</span>
+    </div>
+
+    <div class="two-col" style="margin-top: 32px;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Performance — Inversión vs Valor</div>
+          <div class="card-tag">Jun vs Jul 1–19</div>
+        </div>
+        <div class="chart-wrap tall"><canvas id="adsChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Métricas de eficiencia</div>
+          <div class="card-tag">Julio 1–19 2026 · Meta Ads verificado</div>
+        </div>
+        <div style="display: grid; gap: 8px; margin-top: 8px;">
+          <div class="compare-row">
+            <div class="compare-label">CTR total</div>
+            <div class="compare-bar-wrap"><div class="compare-bar" style="width: 73.6%;">3.68%</div></div>
+            <div class="compare-value" style="color:var(--green)">Bueno</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">CPM</div>
+            <div class="compare-bar-wrap"><div class="compare-bar alt" style="width: 26%;">$1.32</div></div>
+            <div class="compare-value" style="color:var(--green)">Bajo</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">CPC</div>
+            <div class="compare-bar-wrap"><div class="compare-bar alt" style="width: 5%;">$0.036</div></div>
+            <div class="compare-value" style="color:var(--green)">Muy bajo</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Frecuencia</div>
+            <div class="compare-bar-wrap"><div class="compare-bar" style="width: 51%;">2.55×</div></div>
+            <div class="compare-value">Normal</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">CPA (costo/compra)</div>
+            <div class="compare-bar-wrap"><div class="compare-bar" style="width: 100%; background: var(--red);">$253.76</div></div>
+            <div class="compare-value" style="color:var(--red)">Crítico</div>
+          </div>
+        </div>
+        <p style="margin-top: 16px; font-size: 13px; color: var(--ink-mute); font-family: var(--mono); line-height: 1.6;">→ El ad es bueno (CTR 3.68%, CPC $0.036). El problema está <strong style="color:var(--accent-2)">después del clic</strong> — la landing no convierte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: AD SETS -->
+<section id="anuncios">
+  <div class="container">
+    <div class="section-label">05 — Detalle por ad set</div>
+    <h2>Campaña: <em>la piel colombia nuevo</em></h2>
+    <p class="lead">Dos ad sets en julio. El <strong>"publico abierto"</strong> fue pausado — tenía CPA de $769 (17× el ticket). El <strong>"publico segmentado - Copia"</strong> sigue activo con mejor performance relativo (ROAS 0.42x) pero aún negativo.</p>
+
+    <div class="card" style="margin-top: 32px;">
+      <div class="card-header">
+        <div class="card-title">Ad sets — julio 1–19 2026</div>
+        <div class="card-tag">Fuente: Meta Ads Manager verificado</div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Ad Set</th>
+            <th>Estado</th>
+            <th>Inversión</th>
+            <th>Impresiones</th>
+            <th>CTR</th>
+            <th>CPC</th>
+            <th>Compras</th>
+            <th>CPA</th>
+            <th>ROAS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="product-name">publico segmentado - Copia</td>
+            <td><span class="badge good">Activo</span></td>
+            <td class="num">$1,261.11</td>
+            <td class="num">892,902</td>
+            <td class="num">2.94%</td>
+            <td class="num">$0.048</td>
+            <td class="num">7</td>
+            <td class="num">$180.16</td>
+            <td class="num" style="color:var(--red)">0.42x</td>
+          </tr>
+          <tr>
+            <td class="product-name">publico abierto</td>
+            <td><span class="badge bad">Pausado</span></td>
+            <td class="num">$769.00</td>
+            <td class="num">643,244</td>
+            <td class="num">4.71%</td>
+            <td class="num">$0.025</td>
+            <td class="num">1</td>
+            <td class="num" style="color:var(--red)">$769.00</td>
+            <td class="num" style="color:var(--red)">0.07x</td>
+          </tr>
+          <tr style="font-weight:600;">
+            <td class="product-name">Total campaña</td>
+            <td>—</td>
+            <td class="num">$2,030.11</td>
+            <td class="num">1,536,146</td>
+            <td class="num">3.68%</td>
+            <td class="num">$0.036</td>
+            <td class="num">8</td>
+            <td class="num">$253.76</td>
+            <td class="num" style="color:var(--red)">0.29x</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two-col" style="margin-top: 32px;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Inversión por ad set</div>
+          <div class="card-tag">$2,030.11 total</div>
+        </div>
+        <div class="chart-wrap"><canvas id="adsetSpendChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">ROAS por ad set</div>
+          <div class="card-tag">Meta 1.0 = punto de equilibrio</div>
+        </div>
+        <div class="chart-wrap"><canvas id="adsetRoasChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 32px; border-color: rgba(232,197,71,0.3);">
+      <div class="card-header">
+        <div class="card-title">Nota: "publico segmentado - Copia"</div>
+        <div class="card-tag" style="color:var(--accent-2)">Patrón conocido — revisar</div>
+      </div>
+      <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.6;">El ad set activo lleva el sufijo <strong style="color:var(--accent-2)">"-Copia"</strong> — patrón identificado en reportes anteriores como posible duplicado de configuración. Verificar que no haya competencia presupuestaria con un ad set original pausado o eliminado. Aunque tiene el mejor ROAS de los dos (0.42x), sigue siendo negativo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 6: PRODUCTOS -->
+<section id="productos">
+  <div class="container">
+    <div class="section-label">06 — Productos</div>
+    <h2><em>Nicolás y los Fumadores</em> lidera julio.</h2>
+    <p class="lead">De las 21 compras en GA4 de julio, <strong>11 fueron LA PIEL NICOLÁS Y LOS FUMADORES</strong> (52% del volumen). La colección La Piel domina el top. Gorras y pins siguen complementando.</p>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Top productos — julio 1–19 2026</div>
+        <div class="card-tag">Fuente: GA4 · Transacciones por producto</div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Unidades</th>
+            <th>% del total</th>
+            <th>Línea</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="product-name">LA PIEL NICOLÁS Y LOS FUMADORES</td>
+            <td class="num">11</td>
+            <td class="num">52.4%</td>
+            <td><span class="badge good">La Piel</span></td>
+          </tr>
+          <tr>
+            <td class="product-name">LA PIEL ATERCIOPELADOS</td>
+            <td class="num">3</td>
+            <td class="num">14.3%</td>
+            <td><span class="badge good">La Piel</span></td>
+          </tr>
+          <tr>
+            <td class="product-name">Gorra Bugambilia</td>
+            <td class="num">3</td>
+            <td class="num">14.3%</td>
+            <td><span class="badge warn">Accesorios</span></td>
+          </tr>
+          <tr>
+            <td class="product-name">Pin NASA HISTOIRES</td>
+            <td class="num">3</td>
+            <td class="num">14.3%</td>
+            <td><span class="badge warn">Colección</span></td>
+          </tr>
+          <tr>
+            <td class="product-name">CD Lolabúm El Cielo</td>
+            <td class="num">1</td>
+            <td class="num">4.8%</td>
+            <td><span class="badge warn">Música</span></td>
+          </tr>
+          <tr>
+            <td class="product-name">Gorra Diente de León</td>
+            <td class="num">1</td>
+            <td class="num">4.8%</td>
+            <td><span class="badge warn">Accesorios</span></td>
+          </tr>
+          <tr>
+            <td class="product-name">LA PIEL DUPLAT</td>
+            <td class="num">1</td>
+            <td class="num">4.8%</td>
+            <td><span class="badge good">La Piel</span></td>
+          </tr>
+          <tr style="font-weight:600;">
+            <td class="product-name">Total</td>
+            <td class="num">23</td>
+            <td class="num">100%</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 16px; font-size: 13px; color: var(--ink-mute); font-family: var(--mono); line-height: 1.6;">→ La Piel representa el <strong style="color:var(--accent-2)">71.4% de las unidades vendidas</strong>. La campaña "la piel colombia nuevo" está dirigida exactamente al producto que más convierte. El ajuste a hacer es la conversión, no el catálogo.</p>
+    </div>
+
+    <div class="two-col" style="margin-top: 32px;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Distribución de ventas por producto</div>
+          <div class="card-tag">Jul 1–19 · unidades</div>
+        </div>
+        <div class="chart-wrap tall"><canvas id="productosChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Ingresos web — comparativo mensual</div>
+          <div class="card-tag">Jun (30d) vs Jul 1–19 (19d)</div>
+        </div>
+        <div class="chart-wrap tall"><canvas id="ingresosChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 7: VENTAS COLOMBIA -->
+<section id="ventas">
+  <div class="container">
+    <div class="section-label">07 — Ventas Colombia · Registro interno</div>
+    <h2>Ventas reales: <em>×3.3 en PVP</em> vs junio.</h2>
+    <p class="lead">Datos del registro de ventas BOU Entertainment Colombia (Excel). Moneda: <strong style="color:var(--accent-2)">COP</strong> — no convertida a USD. Julio cubre hasta el 20 jul 2026 (1 día extra vs GA4).</p>
+
+    <div class="kpi-grid" style="margin-top:2rem">
+      <div class="kpi">
+        <div class="kpi-label">PVP cobrado Jun</div>
+        <div class="kpi-value">$1,353,000</div>
+        <div class="kpi-sub">COP · 8 unidades</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">PVP cobrado Jul 1–20</div>
+        <div class="kpi-value" style="color:var(--green)">$4,046,545</div>
+        <div class="kpi-sub">COP · 29 unidades · <span style="color:var(--green)">+199%</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total + delivery Jul</div>
+        <div class="kpi-value">$4,557,130</div>
+        <div class="kpi-sub">COP · delivery $510,585</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Ticket promedio Jul</div>
+        <div class="kpi-value">$139,536</div>
+        <div class="kpi-sub">COP por transacción cobrada</div>
+      </div>
+    </div>
+
+    <div class="chart-grid" style="margin-top:2.5rem; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">PVP por artista — Julio 1–20</div>
+          <div class="card-tag">Fuente: Matriz Ventas · Estado = Cobrado</div>
+        </div>
+        <div style="position:relative;height:260px">
+          <canvas id="ventasArtistasChart"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">PVP por canal — Junio vs Julio</div>
+          <div class="card-tag">Fuente: Matriz Ventas · Tipo de Evento</div>
+        </div>
+        <div style="position:relative;height:260px">
+          <canvas id="ventasCanalChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1.5rem">
+      <div class="card-header">
+        <div class="card-title">Top productos por unidades — Julio 1–20</div>
+        <div class="card-tag">Fuente: Matriz Ventas Colombia · Solo registros cobrados</div>
+      </div>
+      <div style="position:relative;height:240px">
+        <canvas id="ventasProductosChart"></canvas>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem; padding:1rem 1.25rem; background:var(--bg-soft); border:1px solid var(--line-strong); border-radius:8px; border-left:3px solid var(--accent-2);">
+      <p style="font-family:var(--mono); font-size:0.75rem; color:var(--ink-mute); margin-bottom:0.5rem">NOTA DE DATOS</p>
+      <p style="font-size:0.875rem; color:var(--ink-soft)">El registro interno (Excel) captura <strong style="color:var(--ink)">todas las ventas</strong> (web + WhatsApp + eventos). GA4 solo captura transacciones desde la web. Por eso GA4 muestra 21 transacciones y este registro 28 cobradas — la diferencia son ventas por WhatsApp/canal directo que no pasan por la web. <strong style="color:var(--accent-2)">Próxima versión separar métricas Ecuador vs Colombia.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 8: HALLAZGOS -->
+<section id="hallazgos">
+  <div class="container">
+    <div class="section-label">08 — Hallazgos clave</div>
+    <h2>5 cosas que <em>requieren decisión</em> esta semana.</h2>
+    <p class="lead">El tráfico creció de forma histórica. Las ventas no siguieron el mismo ritmo. Hay fugas detectables y oportunidades concretas.</p>
+
+    <div class="insights-grid">
+      <div class="insight">
+        <div class="insight-tag critical">Crítico · ROAS</div>
+        <div class="insight-title">ROAS 0.29x es insostenible</div>
+        <div class="insight-body">Meta atribuye $583.50 de valor por $2,030 invertidos. Cada compra via Meta costó $253.76 — 5.6× el ticket promedio ($45.64). La campaña está quemando presupuesto sin retorno directo medible. <strong>Si el modelo de atribución de Meta subestima el impacto, necesitamos los UTM del checkout para cruzar con GA4.</strong></div>
+        <div class="insight-action">Reducir presupuesto diario o pausar hasta optimizar la landing de conversión</div>
+      </div>
+
+      <div class="insight">
+        <div class="insight-tag critical">Crítico · Conversión</div>
+        <div class="insight-title">0.16% de conversión — la landing no retiene</div>
+        <div class="insight-body">Con 13,000 usuarios solo 21 compraron. La tasa de conversión bajó de 1.05% (junio, orgánico) a 0.16% (julio, tráfico pagado). Además el tiempo en página cayó de 45s a 11s. <strong>El usuario hace tap en el ad y sale rápido</strong> — señal de desajuste entre la promesa del anuncio y la experiencia en la web.</div>
+        <div class="insight-action">Auditar la landing page de La Piel Colombia: velocidad mobile, precio en COP, confianza</div>
+      </div>
+
+      <div class="insight">
+        <div class="insight-tag opportunity">Oportunidad · Canal propio</div>
+        <div class="insight-title">13 de 21 ventas NO vinieron de Meta</div>
+        <div class="insight-body">El canal orgánico/directo/WhatsApp generó <strong>62% de las compras</strong> sin costo de pauta. Esto sugiere que hay una comunidad activa respondiendo a contenido orgánico o comunicaciones directas. <strong>Este canal tiene mejor ROAS real que la pauta pagada.</strong></div>
+        <div class="insight-action">Identificar de dónde vienen estas 13 compras (UTM, referrers) y amplificar ese canal</div>
+      </div>
+
+      <div class="insight">
+        <div class="insight-tag opportunity">Oportunidad · Ticket</div>
+        <div class="insight-title">Ticket promedio subió 32%</div>
+        <div class="insight-body">De $34.68 en junio a $45.64 en julio. El nuevo público colombiano que sí convierte está comprando más caro. <strong>Si se mejora la tasa de conversión manteniendo este ticket, el ROAS podría recuperarse rápidamente.</strong> La campaña está atrayendo el perfil correcto — el problema es el medio del funnel.</div>
+        <div class="insight-action">Mantener el público objetivo. Optimizar la experiencia de compra en mobile para Colombia</div>
+      </div>
+
+      <div class="insight">
+        <div class="insight-tag watch">Atención · Ad Set</div>
+        <div class="insight-title">"publico abierto" pausado a tiempo</div>
+        <div class="insight-body">El ad set "publico abierto" fue pausado después de $769 invertidos con solo 1 compra a $769 CPA. Fue la decisión correcta. El ad set activo "segmentado - Copia" tiene mejor performance (7 compras, $180 CPA) pero lleva el sufijo "-Copia" — verificar que no sea un duplicado no intencional.</div>
+        <div class="insight-action">Verificar configuración del ad set "segmentado - Copia" y confirmar que es la versión correcta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 8: ACCIONES -->
+<section id="acciones">
+  <div class="container">
+    <div class="section-label">09 — Acciones inmediatas</div>
+    <h2>Qué hacer <em>esta semana</em>.</h2>
+    <p class="lead">Priorizado por impacto en ROAS y conversión. Las primeras 2 acciones son urgentes antes del próximo ciclo de pauta.</p>
+
+    <div class="actions-list">
+      <div class="action">
+        <div class="action-num">01</div>
+        <div class="action-content">
+          <h4>Auditoría urgente de landing page mobile Colombia</h4>
+          <p>Tiempo de sesión de 11s y conversión 0.16% indican que la landing pierde al usuario en los primeros segundos. Revisar: velocidad de carga, precio en COP, prueba social, CTA visible en mobile. El ad es bueno (CTR 3.68%) — el problema es lo que pasa después del clic.</p>
+        </div>
+        <div class="action-owner">Ads + Dev<br>Esta semana</div>
+      </div>
+      <div class="action">
+        <div class="action-num">02</div>
+        <div class="action-content">
+          <h4>Reducir presupuesto diario a $50 hasta resolver conversión</h4>
+          <p>A ROAS 0.29x no se escala. Reducir de $106/día a ~$50/día mientras se optimiza la landing. Esto mantiene el aprendizaje de la campaña activo sin quemar más presupuesto en un funnel roto. Reescalar cuando la conversión llegue a mínimo 0.5%.</p>
+        </div>
+        <div class="action-owner">Alexis · Ads<br>Hoy</div>
+      </div>
+      <div class="action">
+        <div class="action-num">03</div>
+        <div class="action-content">
+          <h4>Identificar la fuente de las 13 ventas orgánicas</h4>
+          <p>GA4 muestra 21 compras totales, Meta solo atribuye 8. Las 13 restantes vinieron de otro canal. Revisar UTMs, referrers y conversaciones en WhatsApp del período julio 1-19. Ese canal orgánico tiene un ROAS real superior al pagado — necesitamos saber qué es para potenciarlo.</p>
+        </div>
+        <div class="action-owner">Luis · Ops<br>Esta semana</div>
+      </div>
+      <div class="action">
+        <div class="action-num">04</div>
+        <div class="action-content">
+          <h4>Crear campaña de retargeting a los 602,820 alcanzados</h4>
+          <p>La campaña ya expuso el producto a 600k personas con frecuencia 2.55×. Es un activo de audiencia. Crear un ad set de retargeting con un incentivo concreto (envío gratis, edición limitada, urgencia) puede mejorar el ROAS significativamente sin aumentar el alcance.</p>
+        </div>
+        <div class="action-owner">Ads<br>Próxima semana</div>
+      </div>
+      <div class="action">
+        <div class="action-num">05</div>
+        <div class="action-content">
+          <h4>Verificar ad set "publico segmentado - Copia"</h4>
+          <p>El único ad set activo lleva sufijo "-Copia". Confirmar que es la versión correcta, no un duplicado accidental. Revisar la configuración de audiencia, límite de presupuesto y optimización de entrega vs el ad set original si existe.</p>
+        </div>
+        <div class="action-owner">Ads<br>Esta semana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Bou Entertainment · Reporte Ejecutivo · Jul 1–19 2026<br>
+    Datos verificados: <a href="#">GA4 · a292150965p414923086</a> + <a href="#">Meta Ads · act=877286016115641</a><br>
+    ⚠ Datos obtenidos directamente de las plataformas · No usar datos externos para decisiones de negocio</p>
+  </div>
+</footer>
+
+<script>
+Chart.defaults.color = '#807868';
+Chart.defaults.borderColor = 'rgba(245,240,230,0.08)';
+Chart.defaults.font.family = "'JetBrains Mono', monospace";
+
+// Paleta verificada
+const C = {
+  accent:  '#ff5a1f',
+  accent2: '#e8c547',
+  green:   '#6fbf73',
+  red:     '#ef5a5a',
+  mute:    'rgba(245,240,230,0.15)',
+  soft:    'rgba(245,240,230,0.4)',
+};
+
+const tooltipPlugin = {
+  plugins: {
+    tooltip: {
+      backgroundColor: '#1a1815',
+      borderColor: 'rgba(245,240,230,0.2)',
+      borderWidth: 1,
+      titleColor: '#f5f0e6',
+      bodyColor: '#c8bfae',
+      padding: 12,
+      titleFont: { family: "'Fraunces', serif", size: 14, weight: '600' },
+      bodyFont: { family: "'JetBrains Mono', monospace", size: 11 },
+    },
+    legend: {
+      labels: {
+        color: '#c8bfae',
+        font: { family: "'JetBrains Mono', monospace", size: 10 },
+        boxWidth: 12, padding: 16,
+      }
+    }
+  }
+};
+
+// ── 1. TRÁFICO: barras comparativas usuarios ──
+new Chart(document.getElementById('traficoChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Usuarios activos', 'Usuarios nuevos'],
+    datasets: [
+      {
+        label: 'Jun 2026 (30d)',
+        data: [2100, 2000],
+        backgroundColor: C.mute,
+        borderColor: C.soft,
+        borderWidth: 1,
+        borderRadius: 4,
+      },
+      {
+        label: 'Jul 1–19 2026 (19d)',
+        data: [13000, 13000],
+        backgroundColor: C.accent,
+        borderRadius: 4,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        grid: { color: 'rgba(245,240,230,0.05)' },
+        ticks: { callback: v => v >= 1000 ? (v/1000).toFixed(0)+'k' : v }
+      },
+      x: { grid: { display: false } }
+    },
+    ...tooltipPlugin,
+  }
+});
+
+// ── 2. META ADS: gasto vs valor ──
+new Chart(document.getElementById('adsChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Jun 2026', 'Jul 1–19 2026'],
+    datasets: [
+      {
+        label: 'Inversión Meta ($)',
+        data: [14.23, 2030.11],
+        backgroundColor: C.red,
+        borderRadius: 4,
+      },
+      {
+        label: 'Valor atribuido Meta ($)',
+        data: [0, 583.50],
+        backgroundColor: C.accent2,
+        borderRadius: 4,
+      },
+      {
+        label: 'Ingresos totales GA4 ($)',
+        data: [762.97, 958.40],
+        backgroundColor: C.green,
+        borderRadius: 4,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        grid: { color: 'rgba(245,240,230,0.05)' },
+        ticks: { callback: v => '$'+v }
+      },
+      x: { grid: { display: false } }
+    },
+    ...tooltipPlugin,
+  }
+});
+
+// ── 3. AD SET SPEND ──
+new Chart(document.getElementById('adsetSpendChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['publico segmentado - Copia', 'publico abierto (pausado)'],
+    datasets: [{
+      data: [1261.11, 769.00],
+      backgroundColor: [C.accent, C.red],
+      borderWidth: 2,
+      borderColor: '#0f0e0c',
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '65%',
+    plugins: {
+      ...tooltipPlugin.plugins,
+      tooltip: {
+        ...tooltipPlugin.plugins.tooltip,
+        callbacks: { label: ctx => ' $' + ctx.parsed.toFixed(2) + ' — ' + ctx.label }
+      }
+    }
+  }
+});
+
+// ── 4. AD SET ROAS ──
+new Chart(document.getElementById('adsetRoasChart'), {
+  type: 'bar',
+  data: {
+    labels: ['publico segmentado\n- Copia', 'publico abierto\n(pausado)', 'Total campaña'],
+    datasets: [{
+      label: 'ROAS',
+      data: [0.42, 0.07, 0.29],
+      backgroundColor: [C.red, C.red, C.red],
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 1.5,
+        grid: { color: 'rgba(245,240,230,0.05)' },
+        ticks: { callback: v => v.toFixed(1)+'x' }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: {
+      ...tooltipPlugin.plugins,
+      annotation: {
+        annotations: {
+          breakeven: {
+            type: 'line',
+            y: 1.0,
+            borderColor: C.accent2,
+            borderWidth: 1,
+            borderDash: [4, 4],
+            label: { content: 'Break-even 1.0x', display: true, color: C.accent2, font: { size: 10 } }
+          }
+        }
+      }
+    }
+  }
+});
+
+// ── 5. PRODUCTOS ──
+new Chart(document.getElementById('productosChart'), {
+  type: 'bar',
+  data: {
+    labels: ['LA PIEL\nNicolás', 'Gorra\nBugambilia', 'LA PIEL\nAtercio', 'Pin\nNASA', 'Otros'],
+    datasets: [{
+      label: 'Unidades vendidas',
+      data: [11, 3, 3, 3, 3],
+      backgroundColor: [C.accent, C.accent2, C.accent2, C.accent2, C.mute],
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: { grid: { color: 'rgba(245,240,230,0.05)' }, beginAtZero: true },
+      x: { grid: { display: false } }
+    },
+    ...tooltipPlugin,
+  }
+});
+
+// ── 6. INGRESOS comparativo ──
+new Chart(document.getElementById('ingresosChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Jun 2026\n(30 días)', 'Jul 1–19 2026\n(19 días)'],
+    datasets: [
+      {
+        label: 'Ingresos GA4 ($)',
+        data: [762.97, 958.40],
+        backgroundColor: [C.mute, C.green],
+        borderRadius: 4,
+      },
+      {
+        label: 'Nº transacciones',
+        data: [22, 21],
+        backgroundColor: 'transparent',
+        borderColor: C.accent2,
+        borderWidth: 2,
+        type: 'line',
+        yAxisID: 'y2',
+        tension: 0.3,
+        pointRadius: 6,
+        pointBackgroundColor: C.accent2,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        grid: { color: 'rgba(245,240,230,0.05)' },
+        ticks: { callback: v => '$'+v }
+      },
+      y2: {
+        position: 'right',
+        grid: { display: false },
+        ticks: { callback: v => v+' comp.' },
+        beginAtZero: true,
+      },
+      x: { grid: { display: false } }
+    },
+    ...tooltipPlugin,
+  }
+});
+
+// ── 7a. VENTAS: artistas julio ──
+new Chart(document.getElementById('ventasArtistasChart'), {
+  type: 'bar',
+  data: {
+    labels: ['NYLF', 'NASA\nHISTOIRES', 'ATERCIOPE-\nLADOS', 'ACIDO\nPANTERA', 'DUPLAT'],
+    datasets: [{
+      label: 'PVP cobrado (COP)',
+      data: [2488000, 668545, 570000, 160000, 160000],
+      backgroundColor: [C.accent, C.accent2, C.accent2, C.mute, C.mute],
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        grid: { color: 'rgba(245,240,230,0.05)' },
+        ticks: { callback: v => '$' + (v >= 1000000 ? (v/1000000).toFixed(1)+'M' : (v/1000).toFixed(0)+'K') }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: {
+      ...tooltipPlugin.plugins,
+      tooltip: {
+        ...tooltipPlugin.plugins.tooltip,
+        callbacks: { label: ctx => ' $' + ctx.parsed.y.toLocaleString('es-CO') + ' COP' }
+      }
+    }
+  }
+});
+
+// ── 7b. VENTAS: canal jun vs jul ──
+new Chart(document.getElementById('ventasCanalChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Web', 'En línea\n(WhatsApp/directo)'],
+    datasets: [
+      {
+        label: 'Jun 2026',
+        data: [618000, 735000],
+        backgroundColor: C.mute,
+        borderRadius: 4,
+      },
+      {
+        label: 'Jul 1–20 2026',
+        data: [3346545, 700000],
+        backgroundColor: C.accent,
+        borderRadius: 4,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        grid: { color: 'rgba(245,240,230,0.05)' },
+        ticks: { callback: v => '$' + (v >= 1000000 ? (v/1000000).toFixed(1)+'M' : (v/1000).toFixed(0)+'K') }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: {
+      ...tooltipPlugin.plugins,
+      tooltip: {
+        ...tooltipPlugin.plugins.tooltip,
+        callbacks: { label: ctx => ' $' + ctx.parsed.y.toLocaleString('es-CO') + ' COP' }
+      }
+    }
+  }
+});
+
+// ── 7c. VENTAS: top productos julio ──
+new Chart(document.getElementById('ventasProductosChart'), {
+  type: 'bar',
+  data: {
+    labels: ['LP Nicolás M', 'LP Nicolás S', 'LP Aterciop M', 'LP Fum L', 'LP Aterciop S', 'Otros'],
+    datasets: [{
+      label: 'Unidades vendidas',
+      data: [6, 3, 2, 2, 1, 15],
+      backgroundColor: [C.accent, C.accent, C.accent2, C.accent2, C.accent2, C.mute],
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: { grid: { color: 'rgba(245,240,230,0.05)' }, beginAtZero: true },
+      y: { grid: { display: false } }
+    },
+    ...tooltipPlugin,
+  }
+});
+
+// Nav active state on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
