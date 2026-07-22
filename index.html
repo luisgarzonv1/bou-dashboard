@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Bou Dashboard Julio 2026",
+  "schemaVersion": 1,
+  "description": "Dashboard Ejecutivo BOU Entertainment — Junio 2026 vs Julio 2026. Meta Ads + GA4 + Kommo (Ecuador/Colombia) + Contífico (Ecuador) + Ventas Colombia (Sheets). Datos verificados.",
+  "mcpTools": [],
+  "mcpServerNames": []
+}
+</script>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
 <style>
   :root {
     --bg: #0f0e0c;
@@ -83,6 +92,8 @@
   }
   .chip.accent { border-color: var(--accent); color: var(--accent); }
   .chip.warn { border-color: var(--red); color: var(--red); }
+  .chip.toggle { cursor: pointer; background: transparent; font-family: var(--mono); }
+  .chip.toggle.active { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 700; }
 
   /* NAV */
   nav {
@@ -133,6 +144,7 @@
   .kpi-delta { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); }
   .kpi-delta.up { color: var(--green); }
   .kpi-delta.down { color: var(--red); }
+  .kpi-sub { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); margin-top: 4px; }
 
   /* TWO-COLUMN */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
@@ -187,6 +199,7 @@
   .badge.good { background: rgba(111, 191, 115, 0.15); color: var(--green); }
   .badge.bad { background: rgba(239, 90, 90, 0.15); color: var(--red); }
   .badge.warn { background: rgba(232, 197, 71, 0.15); color: var(--accent-2); }
+  .badge.mute { background: rgba(245,240,230,0.06); color: var(--ink-mute); }
 
   /* INSIGHTS */
   .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 32px; }
@@ -283,6 +296,21 @@
   }
   .alert-box strong { color: var(--red); font-weight: 700; }
   .alert-box span { color: var(--ink-mute); }
+  .info-box {
+    background: rgba(232, 197, 71, 0.06); border: 1px solid rgba(232, 197, 71, 0.3);
+    border-radius: 6px; padding: 20px 24px; margin-top: 24px;
+    font-family: var(--mono); font-size: 12px; color: var(--accent-2); line-height: 1.7;
+  }
+  .info-box strong { color: var(--accent-2); font-weight: 700; }
+  .info-box span { color: var(--ink-mute); }
+
+  /* DATE TOGGLE */
+  .date-toggle-wrap {
+    display: flex; align-items: center; gap: 10px; margin-top: 20px; flex-wrap: wrap;
+  }
+  .date-toggle-label { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.15em; }
+  [data-day-panel] { display: none; }
+  [data-day-panel].active { display: block; }
 </style>
 </head>
 <body>
@@ -301,16 +329,22 @@
       <div class="meta-info">
         Período comparado<br>
         <strong>Jun 2026 (30d)</strong> vs <strong>Jul 1–19 2026 (19d)</strong><br>
-        Actualizado 21 jul 2026 · GA4 + Meta Ads
+        Actualizado 22 jul 2026 · GA4 + Meta Ads + Kommo + Contífico
       </div>
     </div>
     <h1>Tráfico ×6,<br>pero el ROAS <em>necesita</em> atención.</h1>
-    <p class="subtitle">Análisis cruzado de Google Analytics 4 y Meta Ads — campaña "la piel colombia nuevo". Julio activó $2,030 en pauta. El tráfico explotó. Las conversiones, no. Foco en hallazgos accionables para CEO y equipo de Ads.</p>
+    <p class="subtitle">Análisis cruzado de Google Analytics 4, Meta Ads, Kommo CRM y Contífico — campaña "la piel colombia nuevo". Julio activó $2,030 en pauta. El tráfico explotó. Las conversiones, no. Foco en hallazgos accionables para CEO y equipo de Ads.</p>
     <div class="quick-share">
       <span class="chip accent">Confidencial · uso interno</span>
-      <span class="chip">GA4 + Meta Ads</span>
-      <span class="chip">Colombia</span>
+      <span class="chip">GA4 + Meta Ads + Kommo + Contífico</span>
+      <span class="chip">Ecuador + Colombia</span>
       <span class="chip warn">ROAS 0.29x — requiere acción</span>
+    </div>
+    <div class="date-toggle-wrap">
+      <span class="date-toggle-label">Ver Kommo/Contífico:</span>
+      <span class="chip toggle active" data-day-btn="hoy" onclick="setDay('hoy')">Hoy · 22 jul</span>
+      <span class="chip toggle" data-day-btn="ayer" onclick="setDay('ayer')">Ayer · 21 jul</span>
+      <span class="chip mute" style="border-color:var(--line-strong)">Meta Ads/GA4 aún no tienen corte diario — ver nota en sección 08</span>
     </div>
   </div>
 </header>
@@ -324,9 +358,10 @@
     <a href="#anuncios">05 / Ad Sets</a>
     <a href="#productos">06 / Productos</a>
     <a href="#ventas">07 / Ventas COL</a>
-    <a href="#fuentes">08 / Canales Web</a>
-    <a href="#hallazgos">09 / Hallazgos</a>
-    <a href="#acciones">10 / Acciones</a>
+    <a href="#canales">08 / Canales Web</a>
+    <a href="#kommo">09 / Embudos Kommo</a>
+    <a href="#hallazgos">10 / Hallazgos</a>
+    <a href="#acciones">11 / Acciones</a>
   </div>
 </nav>
 
@@ -374,7 +409,7 @@
       <div class="kpi">
         <div class="kpi-label">Brecha Meta → GA4</div>
         <div class="kpi-value"><em>13</em></div>
-        <div class="kpi-delta">compras no atribuidas a Meta (orgánico/WhatsApp)</div>
+        <div class="kpi-delta">compras no atribuidas a Meta (orgánico/WhatsApp) — ver sección 08 para el desglose real por canal</div>
       </div>
     </div>
   </div>
@@ -567,7 +602,7 @@
           </tr>
         </tbody>
       </table>
-      <p style="margin-top: 16px; font-size: 13px; color: var(--ink-mute); font-family: var(--mono); line-height: 1.6;">→ <strong style="color:var(--accent-2)">13 de 21 compras no vinieron de Meta</strong>. El canal orgánico y WhatsApp sigue siendo la fuente de conversión más eficiente. La pauta está construyendo conocimiento de marca, no cerrando ventas directas.</p>
+      <p style="margin-top: 16px; font-size: 13px; color: var(--ink-mute); font-family: var(--mono); line-height: 1.6;">→ <strong style="color:var(--accent-2)">13 de 21 compras no vinieron de Meta</strong>. Esta tabla es la vista agregada; en la <strong style="color:var(--accent-2)">sección 08 (Canales Web)</strong> está el desglose real por canal de sesión de GA4, que confirma y detalla esta brecha.</p>
     </div>
   </div>
 </section>
@@ -603,7 +638,7 @@
     </div>
 
     <div class="alert-box">
-      <strong>⚠ ALERTA ROAS:</strong> Con ROAS 0.29x, Bou Entertainment pierde ~$0.71 por cada $1 invertido en Meta (según atribución de la plataforma). El CPA de $253.76 supera en 5.6× el ticket promedio de $45.64. <span>Sin embargo, GA4 registra 21 compras totales por $958.40 — el modelo de atribución de Meta posiblemente subestima el impacto real de la campaña.</span>
+      <strong>⚠ ALERTA ROAS:</strong> Con ROAS 0.29x, Bou Entertainment pierde ~$0.71 por cada $1 invertido en Meta (según atribución de la plataforma). El CPA de $253.76 supera en 5.6× el ticket promedio de $45.64. <span>La sección 08 (GA4 por canal) confirma esto con datos de sesión: Paid Social tuvo 10,558 sesiones y solo 1 compra (0.009% conversión) — el problema no es solo atribución, es conversión real en la landing.</span>
     </div>
 
     <div class="two-col" style="margin-top: 32px;">
@@ -842,7 +877,7 @@
   <div class="container">
     <div class="section-label">07 — Ventas Colombia · Registro interno</div>
     <h2>Ventas reales: <em>×3.3 en PVP</em> vs junio.</h2>
-    <p class="lead">Datos del registro de ventas BOU Entertainment Colombia (Excel). Moneda: <strong style="color:var(--accent-2)">COP</strong> — no convertida a USD. Julio cubre hasta el 20 jul 2026 (1 día extra vs GA4).</p>
+    <p class="lead">Datos del registro de ventas BOU Entertainment Colombia (Google Sheets: "Resumen de ventas Bou Entertainment Colombia", pestaña "Matriz Ventas"). Moneda: <strong style="color:var(--accent-2)">COP</strong> — no convertida a USD. Julio cubre hasta el 20 jul 2026 (1 día extra vs GA4).</p>
 
     <div class="kpi-grid" style="margin-top:2rem">
       <div class="kpi">
@@ -900,202 +935,267 @@
 
     <div style="margin-top:1.5rem; padding:1rem 1.25rem; background:var(--bg-soft); border:1px solid var(--line-strong); border-radius:8px; border-left:3px solid var(--accent-2);">
       <p style="font-family:var(--mono); font-size:0.75rem; color:var(--ink-mute); margin-bottom:0.5rem">NOTA DE DATOS</p>
-      <p style="font-size:0.875rem; color:var(--ink-soft)">El registro interno (Excel) captura <strong style="color:var(--ink)">todas las ventas</strong> (web + WhatsApp + eventos). GA4 solo captura transacciones desde la web. Por eso GA4 muestra 21 transacciones y este registro 28 cobradas — la diferencia son ventas por WhatsApp/canal directo que no pasan por la web. <strong style="color:var(--accent-2)">Próxima versión separar métricas Ecuador vs Colombia.</strong></p>
+      <p style="font-size:0.875rem; color:var(--ink-soft)">El registro interno (Sheets) captura <strong style="color:var(--ink)">todas las ventas</strong> (web + WhatsApp + eventos), con fecha real de cada venta individual (no facturación en lotes). GA4 solo captura transacciones desde la web. Por eso GA4 muestra 21 transacciones y este registro 28 cobradas — la diferencia son ventas por WhatsApp/canal directo que no pasan por la web. La hoja también trae "Id orden Prestashop" llenado manualmente para conciliar con la web.</p>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN 8: FUENTES DE VENTA WEB (ECUADOR) -->
-<section id="fuentes">
+<!-- SECCIÓN 8: CANALES WEB (GA4) -->
+<section id="canales">
   <div class="container">
-    <div class="section-label">08 — Fuentes de venta web · Ecuador · GA4</div>
-    <h2>Organic Social convierte <em>×7 mejor</em> que los anuncios.</h2>
-    <p class="lead">De las 21 compras web registradas en GA4 (1–19 jul 2026), solo 1 vino de Meta Ads a pesar de representar el 69% del tráfico. El canal orgánico y el tráfico directo generaron el 90% de los ingresos web.</p>
-
-    <!-- Hero stats -->
-    <div class="hero-stat">
-      <div class="hero-stat-item">
-        <div class="l">Total compras web (GA4)</div>
-        <div class="v"><em>21</em></div>
-        <div class="s">$958.40 USD · 1–19 jul 2026</div>
-      </div>
-      <div class="hero-stat-item">
-        <div class="l">Canal que más convierte</div>
-        <div class="v" style="font-size:32px">Organic Social</div>
-        <div class="s">7 compras · $438.09 · conv. 0.64%</div>
-      </div>
-      <div class="hero-stat-item">
-        <div class="l">Paid Social (Meta Ads)</div>
-        <div class="v" style="color:var(--red)">1</div>
-        <div class="s">de 10,558 sesiones · conv. 0.009%</div>
-      </div>
+    <div class="section-label">08 — Canales web · GA4 Explorar</div>
+    <h2>Meta trajo <em>tráfico</em>, no <em>compras</em>.</h2>
+    <p class="lead">Desglose de compras por canal de sesión en GA4 (Jul 1–19). Este es el dato que resuelve la duda de la sección 03: de dónde viene realmente cada compra web.</p>
+    <div class="info-box" style="margin-top:0; margin-bottom: 24px;">
+      <strong>ℹ NOTA:</strong> Esta sección se recuperó de la última versión publicada en GitHub (commit del 21 jul). No se generó un corte nuevo hoy — <span>Meta Ads y GA4 requieren exportación manual (no hay conexión API automática todavía), así que estos números siguen siendo Jul 1–19, igual que el resto del dashboard basado en Meta/GA4.</span>
     </div>
 
-    <!-- Alert box -->
-    <div class="alert-box" style="border-color:rgba(232,197,71,0.4);background:rgba(232,197,71,0.04);color:var(--accent-2);">
-      <strong>⚠ Brecha de atribución:</strong> <span>GA4 registra 21 compras web. Las ventas por DM/WhatsApp generadas desde Meta Ads no se capturan aquí — por eso el ROI real de los anuncios puede ser mayor, pero no es trazable en este canal sin un sistema de seguimiento fuera del web.</span>
-    </div>
-
-    <!-- Two col: table + chart -->
-    <div class="two-col" style="margin-top:40px;">
+    <div class="two-col">
       <div class="card">
         <div class="card-header">
-          <span class="card-title">Compras por canal de sesión</span>
-          <span class="card-tag">Fuente · GA4 Explorar</span>
+          <div class="card-title">Compras por canal de sesión</div>
+          <div class="card-tag">Fuente · GA4 Explorar</div>
         </div>
         <table>
           <thead>
             <tr>
               <th>Canal</th>
-              <th style="text-align:right">Sesiones</th>
-              <th style="text-align:right">Compras</th>
-              <th style="text-align:right">Ingresos</th>
-              <th style="text-align:right">Conv %</th>
+              <th>Sesiones</th>
+              <th>Compras</th>
+              <th>Ingresos</th>
+              <th>Conv %</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Organic Social</td>
+              <td class="product-name">Organic Social</td>
               <td class="num">1,097</td>
-              <td class="num" style="color:var(--green);font-weight:700">7</td>
+              <td class="num">7</td>
               <td class="num">$438.09</td>
               <td class="num"><span class="badge good">0.64%</span></td>
             </tr>
             <tr>
-              <td>Direct</td>
+              <td class="product-name">Direct</td>
               <td class="num">650</td>
-              <td class="num" style="font-weight:600">5</td>
+              <td class="num">5</td>
               <td class="num">$95.36</td>
               <td class="num"><span class="badge good">0.77%</span></td>
             </tr>
             <tr>
-              <td>Referral</td>
+              <td class="product-name">Referral</td>
               <td class="num">116</td>
-              <td class="num" style="font-weight:600">4</td>
+              <td class="num">4</td>
               <td class="num">$208.78</td>
               <td class="num"><span class="badge good">3.45%</span></td>
             </tr>
             <tr>
-              <td>Organic Search</td>
+              <td class="product-name">Organic Search</td>
               <td class="num">394</td>
-              <td class="num" style="font-weight:600">3</td>
+              <td class="num">3</td>
               <td class="num">$105.39</td>
-              <td class="num"><span class="badge warn">0.76%</span></td>
+              <td class="num"><span class="badge good">0.76%</span></td>
             </tr>
             <tr>
-              <td>Paid Social (Meta)</td>
+              <td class="product-name">Paid Social (Meta)</td>
               <td class="num">10,558</td>
-              <td class="num" style="color:var(--red);font-weight:700">1</td>
+              <td class="num" style="color:var(--red)">1</td>
               <td class="num">$98.32</td>
               <td class="num"><span class="badge bad">0.009%</span></td>
             </tr>
             <tr>
-              <td>Unassigned</td>
+              <td class="product-name">Unassigned</td>
               <td class="num">25</td>
               <td class="num">1</td>
               <td class="num">$12.47</td>
               <td class="num"><span class="badge warn">4.0%</span></td>
             </tr>
             <tr>
-              <td style="color:var(--ink-mute)">Paid Other</td>
-              <td class="num" style="color:var(--ink-mute)">2,044</td>
-              <td class="num" style="color:var(--ink-mute)">0</td>
-              <td class="num" style="color:var(--ink-mute)">$0.00</td>
-              <td class="num" style="color:var(--ink-mute)">—</td>
+              <td class="product-name">Paid Other</td>
+              <td class="num">2,044</td>
+              <td class="num">0</td>
+              <td class="num">$0.00</td>
+              <td class="num">—</td>
             </tr>
             <tr>
-              <td style="color:var(--ink-mute)">Organic Shopping</td>
-              <td class="num" style="color:var(--ink-mute)">154</td>
-              <td class="num" style="color:var(--ink-mute)">0</td>
-              <td class="num" style="color:var(--ink-mute)">$0.00</td>
-              <td class="num" style="color:var(--ink-mute)">—</td>
-            </tr>
-            <tr style="border-top:1px solid var(--line-strong);">
-              <td style="font-weight:700">TOTAL</td>
-              <td class="num" style="font-weight:700">15,370</td>
-              <td class="num" style="font-weight:700;color:var(--accent)">21</td>
-              <td class="num" style="font-weight:700;color:var(--accent)">$958.40</td>
-              <td class="num" style="font-weight:700">0.14%</td>
+              <td class="product-name">Organic Shopping</td>
+              <td class="num">154</td>
+              <td class="num">0</td>
+              <td class="num">$0.00</td>
+              <td class="num">—</td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      <div style="display:flex;flex-direction:column;gap:24px;">
-        <div class="card">
-          <div class="card-header">
-            <span class="card-title">Compras por canal</span>
-            <span class="card-tag">GA4 · Jul 1-19</span>
-          </div>
-          <div class="chart-wrap" style="height:200px"><canvas id="fuentesComprasChart"></canvas></div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Compras por canal</div>
+          <div class="card-tag">GA4 · Jul 1–19</div>
         </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="card-title">Ingresos por canal</span>
-            <span class="card-tag">GA4 · USD</span>
-          </div>
-          <div class="chart-wrap" style="height:200px"><canvas id="fuentesIngresosChart"></canvas></div>
-        </div>
+        <div class="chart-wrap tall"><canvas id="canalesChart"></canvas></div>
       </div>
     </div>
 
-    <!-- Insight: por qué Meta no cierra en web -->
-    <div class="insights-grid" style="margin-top:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-      <div class="insight">
-        <div class="insight-tag critical">Alerta</div>
-        <div class="insight-title">Meta Ads: 69% del tráfico, 5% de las ventas web</div>
-        <div class="insight-body">Paid Social trajo 10,558 sesiones pero solo cerró <strong>1 venta web ($98)</strong>. Los usuarios de Instagram ven el anuncio, visitan el sitio, pero no completan el checkout. Muchos cierran por DM o WhatsApp — eso no aparece en GA4.</div>
-        <div class="insight-action">Implementar tracking de ventas por WhatsApp / Kommo para medir el ROI real</div>
-      </div>
-      <div class="insight">
-        <div class="insight-tag opportunity">Oportunidad</div>
-        <div class="insight-title">Referral: 3.45% de conversión — el canal más eficiente</div>
-        <div class="insight-body">116 sesiones desde Referral generaron <strong>4 ventas ($208.78)</strong> — la tasa más alta de todos los canales. Probablemente links desde el perfil del artista (Spotify, YouTube, bio de Instagram). Este canal no cuesta pauta.</div>
-        <div class="insight-action">Identificar qué páginas generan ese referral y fortalecer esos puntos de entrada</div>
-      </div>
-      <div class="insight">
-        <div class="insight-tag opportunity">Oportunidad</div>
-        <div class="insight-title">Organic Social: 33% de las ventas sin costo en pauta</div>
-        <div class="insight-body">7 de 21 ventas web vinieron de contenido orgánico en redes — posts, reels, stories. Esto representa <strong>$438.09 en ingresos sin inversión en anuncios</strong>. La comunidad del artista convierte mejor que la audiencia fría.</div>
-        <div class="insight-action">Aumentar frecuencia de contenido orgánico con links directos al producto</div>
-      </div>
+    <div class="alert-box" style="margin-top:32px;">
+      <strong>⚠ CONFIRMADO:</strong> Paid Social (Meta) tuvo 10,558 sesiones — el 66% de todas las sesiones del período — y generó solo 1 compra (0.009% de conversión, ~85× peor que el resto de canales). <span>Organic Social convirtió 71× mejor (0.64%) con una fracción del tráfico. Esto confirma que el problema no es la atribución de Meta ni la calidad del tráfico pagado en general — es específicamente la experiencia de esa audiencia en la landing.</span>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN 9: HALLAZGOS -->
+<!-- SECCIÓN 9: EMBUDOS KOMMO -->
+<section id="kommo">
+  <div class="container">
+    <div class="section-label">09 — Embudos de venta · Kommo CRM</div>
+    <h2>Mensajería: <em>IG, WhatsApp, TikTok, Facebook</em>.</h2>
+    <p class="lead">Kommo centraliza las conversaciones de venta por mensajería (no incluye la web, que se factura aparte vía Contífico/PrestaShop). Dos embudos activos: Ecuador y Colombia, con la misma estructura de etapas.</p>
+
+    <div data-day-panel="hoy" class="active">
+      <div class="kpi-grid" style="margin-top: 24px;">
+        <div class="kpi">
+          <div class="kpi-label">Leads nuevos EC — hoy</div>
+          <div class="kpi-value">0</div>
+          <div class="kpi-delta">22 jul (parcial, día en curso)</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Leads nuevos COL — hoy</div>
+          <div class="kpi-value">0</div>
+          <div class="kpi-delta">22 jul (parcial, día en curso)</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Facturas Contífico EC — hoy</div>
+          <div class="kpi-value">0</div>
+          <div class="kpi-delta">$0.00 · 22 jul (parcial)</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Ventas Colombia (Sheets) — hoy</div>
+          <div class="kpi-value">—</div>
+          <div class="kpi-delta">pendiente de corte diario del sheet</div>
+        </div>
+      </div>
+    </div>
+    <div data-day-panel="ayer">
+      <div class="kpi-grid" style="margin-top: 24px;">
+        <div class="kpi">
+          <div class="kpi-label">Leads nuevos EC — ayer</div>
+          <div class="kpi-value">4</div>
+          <div class="kpi-delta up">21 jul, día completo</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Leads nuevos COL — ayer</div>
+          <div class="kpi-value">0</div>
+          <div class="kpi-delta">21 jul, día completo</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Facturas Contífico EC — ayer</div>
+          <div class="kpi-value">0</div>
+          <div class="kpi-delta">$0.00 · 21 jul — Contífico factura en lotes, no todos los días</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Ventas Colombia (Sheets) — ayer</div>
+          <div class="kpi-value">—</div>
+          <div class="kpi-delta">pendiente de corte diario del sheet</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>ℹ MUESTRA REAL — 7 al 9 jul 2026 (últimos días con facturación en Contífico):</strong> 23 documentos (22 facturas + 1 nota de crédito), $2,691.14 en ventas facturadas, 0 anulados. <span>Confirma el patrón: Contífico no factura diario, sino por lotes — normal ver varios días en $0 seguidos de un pico.</span>
+    </div>
+
+    <div class="two-col" style="margin-top: 32px;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Embudo de Ventas — Ecuador</div>
+          <div class="card-tag">Kommo · pipeline 7956159 · 23 etapas</div>
+        </div>
+        <div class="funnel">
+          <div class="funnel-step" data-fill="100">
+            <div class="funnel-num">→</div>
+            <div class="funnel-name">Leads Entrantes / Contacto inicial / Nueva consulta</div>
+            <div class="funnel-stat"><span class="badge mute">sin clasificar</span></div>
+          </div>
+          <div class="funnel-step" data-fill="70" style="border-left-color: var(--accent-2);">
+            <div class="funnel-num">→</div>
+            <div class="funnel-name">Fríos / Tibios / Calientes</div>
+            <div class="funnel-stat"><span class="badge warn">temperatura</span></div>
+          </div>
+          <div class="funnel-step" data-fill="16" style="border-left-color: var(--green);">
+            <div class="funnel-num">→</div>
+            <div class="funnel-name">Por registrar y FACTURAR / Por entregar / Cliente Registrado / Ganado</div>
+            <div class="funnel-stat"><span class="badge good">venta</span></div>
+          </div>
+          <div class="funnel-step" data-fill="5" style="border-left-color: var(--accent-2);">
+            <div class="funnel-num">→</div>
+            <div class="funnel-name">Cambios y Devoluciones</div>
+            <div class="funnel-stat"><span class="badge warn">seguimiento aparte</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Embudo Ventas — Colombia</div>
+          <div class="card-tag">Kommo · pipeline 13432788 · 14 etapas</div>
+        </div>
+        <div class="funnel">
+          <div class="funnel-step" data-fill="100">
+            <div class="funnel-num">→</div>
+            <div class="funnel-name">Leads Entrantes / Contacto inicial / Nueva consulta</div>
+            <div class="funnel-stat"><span class="badge mute">sin clasificar</span></div>
+          </div>
+          <div class="funnel-step" data-fill="70" style="border-left-color: var(--accent-2);">
+            <div class="funnel-num">→</div>
+            <div class="funnel-name">Fríos / Tibios / Calientes</div>
+            <div class="funnel-stat"><span class="badge warn">temperatura</span></div>
+          </div>
+          <div class="funnel-step" data-fill="16" style="border-left-color: var(--green);">
+            <div class="funnel-num">→</div>
+            <div class="funnel-name">Por registrar / Por entregar / Logrado con éxito</div>
+            <div class="funnel-stat"><span class="badge good">venta</span></div>
+          </div>
+          <div class="funnel-step" data-fill="5" style="border-left-color: var(--accent-2);">
+            <div class="funnel-num">→</div>
+            <div class="funnel-name">Cambios y Devoluciones</div>
+            <div class="funnel-stat"><span class="badge warn">seguimiento aparte</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 16px; font-size: 13px; color: var(--ink-mute); font-family: var(--mono); line-height: 1.6;">→ Etapas como "ATENCION AGENTE", "Falta stock", "ERROR ENVIAR MENSAJE" y "CONFIRMADOS/CONFIRMADOS EVENTOS" se excluyen de estas métricas por ahora (no son venta ni pérdida clara). El campo UTM de Kommo existe pero no está poblado — pendiente de configurar en el escenario de Make.com que crea los leads.</p>
+  </div>
+</section>
+
+<!-- SECCIÓN 10: HALLAZGOS -->
 <section id="hallazgos">
   <div class="container">
-    <div class="section-label">09 — Hallazgos clave</div>
-    <h2>5 cosas que <em>requieren decisión</em> esta semana.</h2>
-    <p class="lead">El tráfico creció de forma histórica. Las ventas no siguieron el mismo ritmo. Hay fugas detectables y oportunidades concretas.</p>
+    <div class="section-label">10 — Hallazgos clave</div>
+    <h2>6 cosas que <em>requieren decisión</em> esta semana.</h2>
+    <p class="lead">El tráfico creció de forma histórica. Las ventas no siguieron el mismo ritmo. Hay fugas detectables y oportunidades concretas — ahora con datos cruzados de Meta, GA4, Kommo y Contífico.</p>
 
     <div class="insights-grid">
       <div class="insight">
         <div class="insight-tag critical">Crítico · ROAS</div>
         <div class="insight-title">ROAS 0.29x es insostenible</div>
-        <div class="insight-body">Meta atribuye $583.50 de valor por $2,030 invertidos. Cada compra via Meta costó $253.76 — 5.6× el ticket promedio ($45.64). La campaña está quemando presupuesto sin retorno directo medible. <strong>Si el modelo de atribución de Meta subestima el impacto, necesitamos los UTM del checkout para cruzar con GA4.</strong></div>
+        <div class="insight-body">Meta atribuye $583.50 de valor por $2,030 invertidos. Cada compra vía Meta costó $253.76 — 5.6× el ticket promedio ($45.64). <strong>GA4 por canal confirma que Paid Social convirtió 0.009% (1 de 10,558 sesiones)</strong> — no es un problema de atribución, es conversión real.</div>
         <div class="insight-action">Reducir presupuesto diario o pausar hasta optimizar la landing de conversión</div>
       </div>
 
       <div class="insight">
         <div class="insight-tag critical">Crítico · Conversión</div>
         <div class="insight-title">0.16% de conversión — la landing no retiene</div>
-        <div class="insight-body">Con 13,000 usuarios solo 21 compraron. La tasa de conversión bajó de 1.05% (junio, orgánico) a 0.16% (julio, tráfico pagado). Además el tiempo en página cayó de 45s a 11s. <strong>El usuario hace tap en el ad y sale rápido</strong> — señal de desajuste entre la promesa del anuncio y la experiencia en la web.</div>
+        <div class="insight-body">Con 13,000 usuarios solo 21 compraron. La tasa de conversión bajó de 1.05% (junio, orgánico) a 0.16% (julio, tráfico pagado). El tiempo en página cayó de 45s a 11s. <strong>El usuario hace tap en el ad y sale rápido</strong> — señal de desajuste entre la promesa del anuncio y la experiencia en la web.</div>
         <div class="insight-action">Auditar la landing page de La Piel Colombia: velocidad mobile, precio en COP, confianza</div>
       </div>
 
       <div class="insight">
         <div class="insight-tag opportunity">Oportunidad · Canal propio</div>
-        <div class="insight-title">13 de 21 ventas NO vinieron de Meta</div>
-        <div class="insight-body">El canal orgánico/directo/WhatsApp generó <strong>62% de las compras</strong> sin costo de pauta. Esto sugiere que hay una comunidad activa respondiendo a contenido orgánico o comunicaciones directas. <strong>Este canal tiene mejor ROAS real que la pauta pagada.</strong></div>
-        <div class="insight-action">Identificar de dónde vienen estas 13 compras (UTM, referrers) y amplificar ese canal</div>
+        <div class="insight-title">Organic Social convierte 71× mejor que Meta</div>
+        <div class="insight-body">Organic Social: 1,097 sesiones → 7 compras (0.64%). Paid Social (Meta): 10,558 sesiones → 1 compra (0.009%). <strong>El canal orgánico tiene mejor ROAS real que la pauta pagada</strong>, con una fracción del tráfico.</div>
+        <div class="insight-action">Aumentar frecuencia de contenido orgánico en Instagram/TikTok antes de escalar más pauta</div>
       </div>
 
       <div class="insight">
         <div class="insight-tag opportunity">Oportunidad · Ticket</div>
         <div class="insight-title">Ticket promedio subió 32%</div>
-        <div class="insight-body">De $34.68 en junio a $45.64 en julio. El nuevo público colombiano que sí convierte está comprando más caro. <strong>Si se mejora la tasa de conversión manteniendo este ticket, el ROAS podría recuperarse rápidamente.</strong> La campaña está atrayendo el perfil correcto — el problema es el medio del funnel.</div>
+        <div class="insight-body">De $34.68 en junio a $45.64 en julio. El nuevo público colombiano que sí convierte está comprando más caro. <strong>Si se mejora la tasa de conversión manteniendo este ticket, el ROAS podría recuperarse rápidamente.</strong></div>
         <div class="insight-action">Mantener el público objetivo. Optimizar la experiencia de compra en mobile para Colombia</div>
       </div>
 
@@ -1105,14 +1205,21 @@
         <div class="insight-body">El ad set "publico abierto" fue pausado después de $769 invertidos con solo 1 compra a $769 CPA. Fue la decisión correcta. El ad set activo "segmentado - Copia" tiene mejor performance (7 compras, $180 CPA) pero lleva el sufijo "-Copia" — verificar que no sea un duplicado no intencional.</div>
         <div class="insight-action">Verificar configuración del ad set "segmentado - Copia" y confirmar que es la versión correcta</div>
       </div>
+
+      <div class="insight">
+        <div class="insight-tag watch">Atención · Datos</div>
+        <div class="insight-title">Contífico factura en lotes, no a diario</div>
+        <div class="insight-body">Verificado: de 20 días revisados en julio, solo 3 tuvieron facturas emitidas (7, 8 y 9 jul). El campo "fecha_emision" de Contífico <strong>no equivale a la fecha real de cada pedido</strong> — es la fecha de facturación contable.</div>
+        <div class="insight-action">Usar fecha_emision para Ecuador aceptando el trade-off (decisión ya tomada); Colombia sí tiene fecha real por venta en el Sheet</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN 10: ACCIONES -->
+<!-- SECCIÓN 11: ACCIONES -->
 <section id="acciones">
   <div class="container">
-    <div class="section-label">10 — Acciones inmediatas</div>
+    <div class="section-label">11 — Acciones inmediatas</div>
     <h2>Qué hacer <em>esta semana</em>.</h2>
     <p class="lead">Priorizado por impacto en ROAS y conversión. Las primeras 2 acciones son urgentes antes del próximo ciclo de pauta.</p>
 
@@ -1129,15 +1236,15 @@
         <div class="action-num">02</div>
         <div class="action-content">
           <h4>Reducir presupuesto diario a $50 hasta resolver conversión</h4>
-          <p>A ROAS 0.29x no se escala. Reducir de $106/día a ~$50/día mientras se optimiza la landing. Esto mantiene el aprendizaje de la campaña activo sin quemar más presupuesto en un funnel roto. Reescalar cuando la conversión llegue a mínimo 0.5%.</p>
+          <p>A ROAS 0.29x no se escala, y GA4 confirma 0.009% de conversión en Paid Social. Reducir de $106/día a ~$50/día mientras se optimiza la landing. Reescalar cuando la conversión llegue a mínimo 0.5%.</p>
         </div>
         <div class="action-owner">Alexis · Ads<br>Hoy</div>
       </div>
       <div class="action">
         <div class="action-num">03</div>
         <div class="action-content">
-          <h4>Identificar la fuente de las 13 ventas orgánicas</h4>
-          <p>GA4 muestra 21 compras totales, Meta solo atribuye 8. Las 13 restantes vinieron de otro canal. Revisar UTMs, referrers y conversaciones en WhatsApp del período julio 1-19. Ese canal orgánico tiene un ROAS real superior al pagado — necesitamos saber qué es para potenciarlo.</p>
+          <h4>Configurar UTM en el flujo de Kommo (vía Make.com)</h4>
+          <p>Los campos UTM existen en Kommo pero están vacíos porque el escenario de Make.com que crea los leads no los está capturando. Configurarlo cerraría la brecha de atribución de forma permanente, no solo para este reporte.</p>
         </div>
         <div class="action-owner">Luis · Ops<br>Esta semana</div>
       </div>
@@ -1157,14 +1264,22 @@
         </div>
         <div class="action-owner">Ads<br>Esta semana</div>
       </div>
+      <div class="action">
+        <div class="action-num">06</div>
+        <div class="action-content">
+          <h4>Rotar/mover a gestor de contraseñas las credenciales de producción</h4>
+          <p>Las API keys de Kommo y Contífico de producción se compartieron directo en chat para esta integración. Siguiendo la propia política del equipo (documentada en Notion), rotarlas o moverlas a un gestor de contraseñas una vez validado el flujo automático.</p>
+        </div>
+        <div class="action-owner">Luis · Ops<br>Esta semana</div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <p>Bou Entertainment · Reporte Ejecutivo · Jul 1–19 2026<br>
-    Datos verificados: <a href="#">GA4 · a292150965p414923086</a> + <a href="#">Meta Ads · act=877286016115641</a><br>
+    <p>Bou Entertainment · Reporte Ejecutivo · Jul 2026<br>
+    Datos verificados: GA4 · a292150965p414923086 + Meta Ads · act=877286016115641 + Kommo CRM + Contífico API + Google Sheets<br>
     ⚠ Datos obtenidos directamente de las plataformas · No usar datos externos para decisiones de negocio</p>
   </div>
 </footer>
@@ -1334,18 +1449,6 @@ new Chart(document.getElementById('adsetRoasChart'), {
     },
     plugins: {
       ...tooltipPlugin.plugins,
-      annotation: {
-        annotations: {
-          breakeven: {
-            type: 'line',
-            y: 1.0,
-            borderColor: C.accent2,
-            borderWidth: 1,
-            borderDash: [4, 4],
-            label: { content: 'Break-even 1.0x', display: true, color: C.accent2, font: { size: 10 } }
-          }
-        }
-      }
     }
   }
 });
@@ -1515,49 +1618,26 @@ new Chart(document.getElementById('ventasProductosChart'), {
   }
 });
 
-// ── 8a. FUENTES: compras por canal ──
-new Chart(document.getElementById('fuentesComprasChart'), {
+// ── 8. CANALES WEB (GA4) ──
+new Chart(document.getElementById('canalesChart'), {
   type: 'bar',
   data: {
-    labels: ['Organic\nSocial', 'Direct', 'Referral', 'Organic\nSearch', 'Paid\nSocial', 'Otros'],
+    labels: ['Organic\nSocial', 'Direct', 'Referral', 'Organic\nSearch', 'Paid Social\n(Meta)', 'Otros'],
     datasets: [{
       label: 'Compras',
       data: [7, 5, 4, 3, 1, 1],
-      backgroundColor: [C.green, C.accent2, C.accent2, C.accent, C.red, C.mute],
+      backgroundColor: [C.green, C.accent2, C.accent2, C.accent2, C.red, C.mute],
       borderRadius: 4,
     }]
   },
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} compras` } } },
     scales: {
-      x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 0 } },
-      y: { grid: { color: 'rgba(245,240,230,0.05)' }, beginAtZero: true, ticks: { stepSize: 1 } }
-    }
-  }
-});
-
-// ── 8b. FUENTES: ingresos por canal ──
-new Chart(document.getElementById('fuentesIngresosChart'), {
-  type: 'bar',
-  data: {
-    labels: ['Organic\nSocial', 'Referral', 'Organic\nSearch', 'Paid\nSocial', 'Direct', 'Otros'],
-    datasets: [{
-      label: 'Ingresos USD',
-      data: [438.09, 208.78, 105.39, 98.32, 95.36, 12.47],
-      backgroundColor: [C.green, C.accent2, C.accent, C.red, C.accent2, C.mute],
-      borderRadius: 4,
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` $${ctx.parsed.y.toFixed(2)}` } } },
-    scales: {
-      x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 0 } },
-      y: { grid: { color: 'rgba(245,240,230,0.05)' }, beginAtZero: true, ticks: { callback: v => `$${v}` } }
-    }
+      y: { grid: { color: 'rgba(245,240,230,0.05)' }, beginAtZero: true },
+      x: { grid: { display: false } }
+    },
+    ...tooltipPlugin,
   }
 });
 
@@ -1574,6 +1654,14 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 sections.forEach(s => observer.observe(s));
+
+// Toggle Hoy / Ayer para sección Kommo/Contífico
+function setDay(day) {
+  document.querySelectorAll('[data-day-btn]').forEach(b => b.classList.toggle('active', b.dataset.dayBtn === day));
+  document.querySelectorAll('[data-day-panel]').forEach(p => p.classList.toggle('active', p.dataset.dayPanel === day));
+}
 </script>
 </body>
 </html>
+
+
