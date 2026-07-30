@@ -4,8 +4,8 @@
   "daily": [
     {
       "date": "2026-07-30",
-      "kommo_leads_ec": null,
-      "kommo_leads_col": null,
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
       "kommo_msj_entrantes_ec": null,
       "kommo_msj_salientes_ec": null,
       "kommo_lapso_medio_s": null,
@@ -16,14 +16,14 @@
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
       "contifico_fuente_caida": true,
-      "ga4_usuarios_ec": 1,
-      "ga4_usuarios_col": 15,
-      "meta_spend_usd": 30.25,
-      "meta_compras": 0,
+      "prestashop_pedidos_total": null,
+      "ga4_usuarios_ec": null,
+      "ga4_usuarios_col": null,
+      "meta_spend_usd": null,
+      "meta_compras": null,
       "meta_roas": null,
-      "prestashop_pedidos_ec": null,
-      "prestashop_pedidos_col": null,
-      "parcial": true
+      "parcial": true,
+      "nota_verificacion": "Fila creada manualmente para validar el pipeline tras corregir token Kommo, dominio y credenciales PrestaShop. Kommo leads y Contifico confirmados via API en vivo. Mensajeria Kommo (widget AJAX con Bearer) devolvio items vacios - no se pudo confirmar si es 0 real o problema de auth, se deja null. Filtro de fecha de PrestaShop no confirmado aun, se deja null en vez de asumir 0. GA4/Meta pendientes de revision por navegador."
     }
   ],
   "periodic": [
