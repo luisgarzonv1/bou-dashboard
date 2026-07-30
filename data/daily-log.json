@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "nota": "daily = granularidad real por día (Kommo API + endpoint interno, Contífico). periodic = fuentes sin API diaria (GA4, Meta Ads, Sheets COL vía navegador), cada entrada trae su propio rango de fechas real. No inventar granularidad diaria donde no existe.",
+  "daily": [
+    {
+      "date": "2026-07-30",
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 29,
+      "kommo_msj_salientes_ec": 10,
+      "kommo_lapso_medio_s": 2,
+      "kommo_lapso_promedio_s": 688,
+      "kommo_msj_salientes_be": 0,
+      "kommo_lapso_medio_be_s": 0,
+      "kommo_lapso_promedio_be_s": 0,
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": true,
+      "parcial": true
+    }
+  ],
+  "periodic": [
+    {
+      "tipo": "ga4_semanal",
+      "fecha_inicio": "2026-07-22",
+      "fecha_fin": "2026-07-28",
+      "usuarios_ec": 361,
+      "usuarios_col": 2700,
+      "nota": "Reversión del patrón de 28 días (antes EC dominaba 17k vs 1.1k). Posible anomalía de tracking EC, no confirmada."
+    },
+    {
+      "tipo": "meta_ads_30d",
+      "fecha_inicio": "2026-06-29",
+      "fecha_fin": "2026-07-28",
+      "campana": "la piel colombia nuevo",
+      "spend_usd": 2904.15,
+      "compras": 13,
+      "impresiones": 1945855,
+      "ecuador_activa": false,
+      "ecuador_spend_usd": 0
+    },
+    {
+      "tipo": "sheets_col_semanal",
+      "fecha_inicio": "2026-07-22",
+      "fecha_fin": "2026-07-29",
+      "pedidos": 1,
+      "estado": "pendiente de entrega"
+    }
+  ]
+}
