@@ -135,10 +135,12 @@
     <div class="section-title">Meta Ads <span class="accentline"></span></div>
     <div class="status" style="margin-bottom:14px">Gasto total en la plataforma. No se separa por pais &mdash; el spend por campana no siempre refleja el pais real del comprador.</div>
     <div class="grid" id="adsGrid"></div>
+    <div style="overflow-x:auto">
     <table class="hist" id="adsHistTable">
-      <thead><tr><th>Fecha</th><th>Gasto USD</th><th>Compras</th><th>ROAS</th></tr></thead>
+      <thead><tr><th>Fecha</th><th>Gasto USD</th><th>Compras</th><th>ROAS</th><th>CPA</th><th>Alcance</th><th>Impresiones</th><th>Clics</th><th>CTR</th></tr></thead>
       <tbody id="adsHistBody"></tbody>
     </table>
+    </div>
   </div>
 
   <footer>
@@ -243,7 +245,7 @@ function renderCountry(){
   if (isEc){
     const caidas = rows.filter(r=>r.contifico_fuente_caida).length;
     if (caidas >= 3){
-      html += '<div class="warn">&#9888; BOU no ha facturado en Contifico en '+caidas+' de los '+rows.length+' dias del rango seleccionado &mdash; causa confirmada: falta de firma electronica vigente. No es una falla tecnica ni "cero ventas", es un bloqueo operativo para emitir facturas.</div>';
+      html += '<div class="warn">&#9888; Contifico sin responder en '+caidas+' de los '+rows.length+' dias del rango seleccionado &mdash; posible fuente caida, no se interpreta como "cero ventas".</div>';
     }
   }
 
@@ -315,7 +317,12 @@ function renderAds(){
     const s = r.meta_spend_usd!==null && r.meta_spend_usd!==undefined ? '$'+Math.round(r.meta_spend_usd).toLocaleString('es-EC') : '&mdash;';
     const c = r.meta_compras!==null && r.meta_compras!==undefined ? r.meta_compras : '&mdash;';
     const ro = r.meta_roas!==null && r.meta_roas!==undefined ? r.meta_roas.toFixed(2)+'x' : '&mdash;';
-    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td></tr>';
+    const cpa = (r.meta_spend_usd!==null && r.meta_spend_usd!==undefined && r.meta_compras) ? '$'+(r.meta_spend_usd/r.meta_compras).toFixed(2) : '&mdash;';
+    const al = r.meta_alcance!==null && r.meta_alcance!==undefined ? Math.round(r.meta_alcance).toLocaleString('es-EC') : '&mdash;';
+    const im = r.meta_impresiones!==null && r.meta_impresiones!==undefined ? Math.round(r.meta_impresiones).toLocaleString('es-EC') : '&mdash;';
+    const cl = r.meta_clics!==null && r.meta_clics!==undefined ? Math.round(r.meta_clics).toLocaleString('es-EC') : '&mdash;';
+    const ctr = r.meta_ctr!==null && r.meta_ctr!==undefined ? r.meta_ctr.toFixed(2)+'%' : '&mdash;';
+    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td><td>'+cpa+'</td><td>'+al+'</td><td>'+im+'</td><td>'+cl+'</td><td>'+ctr+'</td></tr>';
   }).join('');
 }
 
