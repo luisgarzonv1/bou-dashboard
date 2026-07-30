@@ -362,6 +362,7 @@
     <a href="#hallazgos">10 / Hallazgos</a>
     <a href="#acciones">11 / Acciones</a>
     <a href="#historico">12 / Histórico Semanal</a>
+    <a href="#comparativo">13 / Comparativo por Rango</a>
   </div>
 </nav>
 
@@ -1335,6 +1336,75 @@
   </div>
 </section>
 
+<!-- SECCIÓN 13: COMPARATIVO POR RANGO -->
+<section id="comparativo">
+  <div class="container">
+    <div class="section-label">13 — Comparativo por rango · Datos diarios</div>
+    <h2>Elige <em>dos rangos</em> y compara.</h2>
+    <p class="lead">Lee <code>data/daily-log.json</code> (histórico diario real, acumulado por la tarea automática de las 11am). Solo Kommo y Contífico tienen granularidad diaria verdadera — GA4, Meta Ads y Ventas Colombia (Sheets) se muestran abajo como el último corte disponible, con su propio rango de fechas real, porque no tienen API diaria.</p>
+
+    <div class="card" id="rangeControls" style="margin-top:24px;">
+      <div class="card-header">
+        <div class="card-title">Selecciona el rango a analizar</div>
+        <div class="card-tag" id="rangeDataStatus">Cargando data/daily-log.json…</div>
+      </div>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-end; margin-top:8px;">
+        <div>
+          <div class="date-toggle-label" style="margin-bottom:6px;">Desde</div>
+          <input type="date" id="rangeFrom" style="background:var(--bg); border:1px solid var(--line-strong); color:var(--ink); padding:8px 12px; border-radius:4px; font-family:var(--mono);">
+        </div>
+        <div>
+          <div class="date-toggle-label" style="margin-bottom:6px;">Hasta</div>
+          <input type="date" id="rangeTo" style="background:var(--bg); border:1px solid var(--line-strong); color:var(--ink); padding:8px 12px; border-radius:4px; font-family:var(--mono);">
+        </div>
+        <span class="chip toggle" onclick="setQuickRange(0)">Hoy</span>
+        <span class="chip toggle" onclick="setQuickRange(6)">Últimos 7 días</span>
+        <span class="chip toggle" onclick="setQuickRange(29)">Últimos 30 días</span>
+        <span class="chip accent" style="cursor:pointer;" onclick="renderComparison()">Comparar</span>
+      </div>
+      <p style="margin-top:12px; font-size:12px; color:var(--ink-mute); font-family:var(--mono);">El rango se compara automáticamente contra el período inmediatamente anterior de igual duración (ej.: si eliges 22–28 jul, se compara contra 15–21 jul).</p>
+    </div>
+
+    <div class="kpi-grid" id="comparisonGrid" style="margin-top:24px;"></div>
+
+    <div class="card" style="margin-top:24px;">
+      <div class="card-header">
+        <div class="card-title">Detalle diario del rango seleccionado</div>
+        <div class="card-tag">Kommo + Contífico</div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table id="dailyDetailTable" style="min-width:700px;">
+          <thead>
+            <tr>
+              <th>Fecha</th><th>Leads EC</th><th>Leads COL</th><th>Msj entrantes EC</th><th>Msj salientes EC</th><th>Lapso medio</th><th>Lapso promedio</th><th>Contífico docs</th>
+            </tr>
+          </thead>
+          <tbody id="dailyDetailBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:24px;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">GA4 — último corte</div>
+          <div class="card-tag" id="ga4PeriodicTag">—</div>
+        </div>
+        <div id="ga4PeriodicBody" style="font-family:var(--mono); font-size:13px; color:var(--ink-soft); line-height:1.8;"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Meta Ads — último corte</div>
+          <div class="card-tag" id="metaPeriodicTag">—</div>
+        </div>
+        <div id="metaPeriodicBody" style="font-family:var(--mono); font-size:13px; color:var(--ink-soft); line-height:1.8;"></div>
+      </div>
+    </div>
+
+    <div class="info-box" id="rangeErrorBox" style="display:none; margin-top:24px;"></div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <p>Bou Entertainment · Reporte Ejecutivo · Jul 2026<br>
@@ -1719,6 +1789,156 @@ function setDay(day) {
   document.querySelectorAll('[data-day-btn]').forEach(b => b.classList.toggle('active', b.dataset.dayBtn === day));
   document.querySelectorAll('[data-day-panel]').forEach(p => p.classList.toggle('active', p.dataset.dayPanel === day));
 }
+
+// ── SECCIÓN 13: Comparativo por rango — lee data/daily-log.json ──
+let DAILY_LOG = null;
+
+function fmtDur(seconds) {
+  if (seconds === null || seconds === undefined) return '—';
+  if (seconds < 60) return seconds + 's';
+  if (seconds < 3600) return Math.round(seconds/60) + 'min';
+  return (seconds/3600).toFixed(1) + 'h';
+}
+
+function isoDate(d) { return d.toISOString().slice(0,10); }
+
+function setQuickRange(daysBack) {
+  const to = new Date();
+  const from = new Date();
+  from.setDate(from.getDate() - daysBack);
+  document.getElementById('rangeFrom').value = isoDate(from);
+  document.getElementById('rangeTo').value = isoDate(to);
+  renderComparison();
+}
+
+function sumRange(daily, fromStr, toStr) {
+  const rows = daily.filter(r => r.date >= fromStr && r.date <= toStr);
+  const sum = {
+    leads_ec: 0, leads_col: 0, msj_entrantes_ec: 0, msj_salientes_ec: 0,
+    contifico_documentos: 0, contifico_total_usd: 0,
+    lapso_medio_list: [], lapso_promedio_list: []
+  };
+  for (const r of rows) {
+    sum.leads_ec += r.kommo_leads_ec || 0;
+    sum.leads_col += r.kommo_leads_col || 0;
+    sum.msj_entrantes_ec += r.kommo_msj_entrantes_ec || 0;
+    sum.msj_salientes_ec += r.kommo_msj_salientes_ec || 0;
+    sum.contifico_documentos += r.contifico_documentos || 0;
+    sum.contifico_total_usd += r.contifico_total_usd || 0;
+    if (typeof r.kommo_lapso_medio_s === 'number') sum.lapso_medio_list.push(r.kommo_lapso_medio_s);
+    if (typeof r.kommo_lapso_promedio_s === 'number') sum.lapso_promedio_list.push(r.kommo_lapso_promedio_s);
+  }
+  const avg = arr => arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : null;
+  sum.lapso_medio_avg = avg(sum.lapso_medio_list);
+  sum.lapso_promedio_avg = avg(sum.lapso_promedio_list);
+  sum.dias_con_datos = rows.length;
+  sum.rows = rows;
+  return sum;
+}
+
+function pctDelta(curr, prev) {
+  if (prev === 0 || prev === null || prev === undefined) return curr > 0 ? {label: 'nuevo', cls: 'up'} : {label: '—', cls: ''};
+  const pct = ((curr - prev) / prev) * 100;
+  const cls = pct > 0 ? 'up' : (pct < 0 ? 'down' : '');
+  const arrow = pct > 0 ? '↑' : (pct < 0 ? '↓' : '→');
+  return { label: `${arrow} ${Math.abs(pct).toFixed(0)}%`, cls };
+}
+
+function renderKpiCard(label, currVal, prevVal, deltaInfo, sub) {
+  return `<div class="kpi">
+    <div class="kpi-label">${label}</div>
+    <div class="kpi-value">${currVal}</div>
+    <div class="kpi-delta ${deltaInfo.cls}">${deltaInfo.label} vs período anterior (${prevVal})</div>
+    ${sub ? `<div class="kpi-sub">${sub}</div>` : ''}
+  </div>`;
+}
+
+function renderComparison() {
+  const errBox = document.getElementById('rangeErrorBox');
+  errBox.style.display = 'none';
+  if (!DAILY_LOG) return;
+  const fromStr = document.getElementById('rangeFrom').value;
+  const toStr = document.getElementById('rangeTo').value;
+  if (!fromStr || !toStr || fromStr > toStr) {
+    errBox.style.display = 'block';
+    errBox.innerHTML = '<strong>⚠ Rango inválido:</strong> selecciona una fecha de inicio anterior o igual a la fecha final.';
+    return;
+  }
+  const daily = DAILY_LOG.daily || [];
+  const curr = sumRange(daily, fromStr, toStr);
+
+  // período anterior de igual duración
+  const fromD = new Date(fromStr + 'T00:00:00');
+  const toD = new Date(toStr + 'T00:00:00');
+  const durDays = Math.round((toD - fromD) / 86400000) + 1;
+  const prevTo = new Date(fromD); prevTo.setDate(prevTo.getDate() - 1);
+  const prevFrom = new Date(prevTo); prevFrom.setDate(prevFrom.getDate() - (durDays - 1));
+  const prev = sumRange(daily, isoDate(prevFrom), isoDate(prevTo));
+
+  if (curr.dias_con_datos === 0) {
+    errBox.style.display = 'block';
+    errBox.innerHTML = `<strong>ℹ Sin datos:</strong> todavía no hay filas en data/daily-log.json para ${fromStr} a ${toStr}. El histórico diario empezó a acumularse el 30 jul 2026 — los rangos anteriores a esa fecha no tienen granularidad diaria (ver sección 12, Histórico Semanal, para datos previos agregados por semana).`;
+  }
+
+  const grid = document.getElementById('comparisonGrid');
+  grid.innerHTML =
+    renderKpiCard('Leads EC', curr.leads_ec, prev.leads_ec, pctDelta(curr.leads_ec, prev.leads_ec), `${curr.dias_con_datos} día(s) con datos`) +
+    renderKpiCard('Leads COL', curr.leads_col, prev.leads_col, pctDelta(curr.leads_col, prev.leads_col)) +
+    renderKpiCard('Msj entrantes EC', curr.msj_entrantes_ec, prev.msj_entrantes_ec, pctDelta(curr.msj_entrantes_ec, prev.msj_entrantes_ec)) +
+    renderKpiCard('Msj salientes EC', curr.msj_salientes_ec, prev.msj_salientes_ec, pctDelta(curr.msj_salientes_ec, prev.msj_salientes_ec)) +
+    renderKpiCard('Lapso medio réplica', fmtDur(curr.lapso_medio_avg), fmtDur(prev.lapso_medio_avg), pctDelta(curr.lapso_medio_avg||0, prev.lapso_medio_avg||0), 'promedio del rango — menor es mejor') +
+    renderKpiCard('Contífico documentos', curr.contifico_documentos, prev.contifico_documentos, pctDelta(curr.contifico_documentos, prev.contifico_documentos), curr.contifico_documentos===0 ? 'posible fuente caída, verificar' : '');
+
+  const tbody = document.getElementById('dailyDetailBody');
+  tbody.innerHTML = curr.rows.length ? curr.rows.map(r => `<tr>
+    <td class="product-name">${r.date}${r.parcial ? ' <span class="badge warn">día en curso</span>' : ''}</td>
+    <td class="num">${r.kommo_leads_ec}</td>
+    <td class="num">${r.kommo_leads_col}</td>
+    <td class="num">${r.kommo_msj_entrantes_ec}</td>
+    <td class="num">${r.kommo_msj_salientes_ec}</td>
+    <td class="num">${fmtDur(r.kommo_lapso_medio_s)}</td>
+    <td class="num">${fmtDur(r.kommo_lapso_promedio_s)}</td>
+    <td class="num">${r.contifico_documentos}${r.contifico_fuente_caida ? ' ⚠' : ''}</td>
+  </tr>`).join('') : '<tr><td colspan="8" style="color:var(--ink-mute)">Sin filas en este rango.</td></tr>';
+}
+
+function renderPeriodic() {
+  if (!DAILY_LOG) return;
+  const periodic = DAILY_LOG.periodic || [];
+  const ga4 = periodic.filter(p => p.tipo === 'ga4_semanal').slice(-1)[0];
+  const meta = periodic.filter(p => p.tipo === 'meta_ads_30d').slice(-1)[0];
+  if (ga4) {
+    document.getElementById('ga4PeriodicTag').textContent = `${ga4.fecha_inicio} → ${ga4.fecha_fin}`;
+    document.getElementById('ga4PeriodicBody').innerHTML = `
+      Usuarios Ecuador: <strong style="color:var(--ink)">${ga4.usuarios_ec}</strong><br>
+      Usuarios Colombia: <strong style="color:var(--ink)">${ga4.usuarios_col}</strong><br>
+      ${ga4.nota ? `<span style="color:var(--accent-2)">⚠ ${ga4.nota}</span>` : ''}`;
+  }
+  if (meta) {
+    document.getElementById('metaPeriodicTag').textContent = `${meta.fecha_inicio} → ${meta.fecha_fin}`;
+    document.getElementById('metaPeriodicBody').innerHTML = `
+      Campaña: <strong style="color:var(--ink)">${meta.campana}</strong><br>
+      Gasto: <strong style="color:var(--ink)">$${meta.spend_usd}</strong> · Compras: ${meta.compras}<br>
+      Ecuador activa: ${meta.ecuador_activa ? 'sí' : 'no ($' + meta.ecuador_spend_usd + ')'}`;
+  }
+}
+
+(async function initComparativo() {
+  const statusEl = document.getElementById('rangeDataStatus');
+  try {
+    const res = await fetch('./data/daily-log.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    DAILY_LOG = await res.json();
+    const days = (DAILY_LOG.daily || []).length;
+    statusEl.textContent = `${days} día(s) en el histórico`;
+    renderPeriodic();
+    setQuickRange(6);
+  } catch (e) {
+    statusEl.textContent = 'No se pudo cargar (solo disponible en GitHub Pages, no en vista local)';
+    document.getElementById('rangeErrorBox').style.display = 'block';
+    document.getElementById('rangeErrorBox').innerHTML = '<strong>ℹ Nota:</strong> el comparativo por rango lee data/daily-log.json vía fetch, que solo funciona cuando el dashboard se abre desde https://luisgarzonv1.github.io/bou-dashboard/ — en la vista de Cowork (sandbox local) esta sección no carga datos por restricciones de red.';
+  }
+})();
 </script>
 </body>
 </html>
