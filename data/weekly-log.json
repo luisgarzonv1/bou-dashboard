@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "descripcion": "Histórico semanal ejecutivo BOU Entertainment (Ecuador + Colombia + Meta Ads). Una entrada por semana, generada cada martes a partir de data/daily-log.json, Kommo API y Windsor.ai.",
+    "fuente": "data/daily-log.json (agregado por semana) + Kommo API v4 (funnel, conteo por leads creados en la semana) + Windsor.ai (Meta Ads + GA4)",
+    "ultima_actualizacion": "2026-07-30"
+  },
+  "weeks": [
+    {
+      "week_id": "2026-W30",
+      "week_start": "2026-07-20",
+      "week_end": "2026-07-26",
+      "week_start_prev": "2026-07-13",
+      "week_end_prev": "2026-07-19",
+      "generated_at": "2026-07-30",
+      "generated_note": "Primera entrada histórica, generada de forma retroactiva (no automatizada aún vía tarea programada). A partir de la próxima semana se genera cada martes.",
+      "ecuador": {
+        "trafico": {
+          "ga4_usuarios": 257,
+          "ga4_usuarios_nuevos": 158,
+          "ga4_sesiones": 276,
+          "ga4_ingresos_usd": 0,
+          "ga4_compras": 0,
+          "prev_ga4_usuarios": 235,
+          "prev_ga4_usuarios_nuevos": 135,
+          "prev_ga4_sesiones": 248,
+          "prev_ga4_ingresos_usd": 0,
+          "prev_ga4_compras": 0
+        },
+        "ventas": {
+          "prestashop_pedidos": 0,
+          "prestashop_total_usd": 0,
+          "prev_prestashop_pedidos": 1,
+          "prev_prestashop_total_usd": 30.99
+        },
+        "contifico": {
+          "documentos": 0,
+          "total_usd": 0,
+          "nota": "Sin firma electrónica desde el 10/jul — 0 documentos es un problema operativo conocido, no una caída técnica de la fuente de datos."
+        },
+        "funnel_kommo": {
+          "leads_nuevos_daily_log": 35,
+          "leads_nuevos_kommo_api": 45,
+          "discrepancia_nota": "El conteo directo vía Kommo API (filter[created_at] en la semana) da 45 leads nuevos; la suma diaria en daily-log.json da 35. Diferencia de 10 leads sin explicar aún — posible desfase de huso horario en el corte diario automatizado (11am) o leads creados y reclasificados de pipeline el mismo día. Pendiente de investigar antes de usar esta cifra como KPI oficial.",
+          "etapas_actuales_leads_creados_en_semana": {
+            "Contacto inicial": 5,
+            "Nueva consulta": 1,
+            "leads Tibios (interacción)": 16,
+            "leads perdidos": 1,
+            "Reacciones y Comentarios": 13,
+            "R.Comentarios Revisados": 4,
+            "Servicios Adicionales": 2,
+            "Por entregar": 3
+          },
+          "nota_metodologica": "Cuenta leads CREADOS en la semana, segmentados por su etapa ACTUAL (no snapshot histórico completo del pipeline, que tiene años de leads ganados/perdidos acumulados y no es representativo de la semana)."
+        }
+      },
+      "colombia": {
+        "trafico": {
+          "ga4_usuarios": 3273,
+          "ga4_usuarios_nuevos": 3038,
+          "ga4_sesiones": 3770,
+          "ga4_ingresos_usd": 450.09,
+          "ga4_compras": 9,
+          "prev_ga4_usuarios": 5708,
+          "prev_ga4_usuarios_nuevos": 5426,
+          "prev_ga4_sesiones": 6470,
+          "prev_ga4_ingresos_usd": 688.44,
+          "prev_ga4_compras": 12
+        },
+        "ventas": {
+          "prestashop_pedidos": 8,
+          "prestashop_total_cop": 1587000,
+          "prev_prestashop_pedidos": 19,
+          "prev_prestashop_total_cop": 4133490,
+          "nota_fuente": "PrestaShop webservice (co.bouentertainment.com) es la fuente usada aquí, ya validada en sesiones previas. El Sheet 'Resumen de ventas Bou Entertainment Colombia' (Matriz Ventas) existe como registro manual paralelo pero NO se cruzó línea por línea en esta entrada por su tamaño (298KB, +1 año de historial) — pendiente si se requiere conciliación exacta."
+        },
+        "funnel_kommo": {
+          "leads_nuevos_daily_log": 0,
+          "leads_nuevos_kommo_api": 0,
+          "nota": "Confirmado por dos vías (suma diaria y conteo directo API): 0 leads nuevos en el pipeline 'Embudo Ventas Col' esta semana. Verificado que no es error de filtro — el pipeline sí tiene actividad reciente (12 leads en los últimos 30 días), simplemente ninguno cayó en esta semana puntual."
+        }
+      },
+      "ads": {
+        "meta_spend_usd": 791.73,
+        "meta_compras": 5,
+        "meta_ingresos_usd": 295.96,
+        "meta_roas": 0.3739,
+        "meta_cpa_usd": 158.35,
+        "meta_impresiones": 413562,
+        "meta_alcance": 262011,
+        "meta_clics": 10059,
+        "meta_link_clics": 7489,
+        "meta_ctr": 2.43,
+        "prev_meta_spend_usd": 887.43,
+        "prev_meta_compras": 6,
+        "prev_meta_ingresos_usd": 460.70,
+        "prev_meta_roas": 0.5192,
+        "prev_meta_impresiones": 635616,
+        "prev_meta_alcance": 449982,
+        "prev_meta_clics": 21628,
+        "nota": "meta_alcance es suma por campaña (no deduplicado, puede sobreestimar). Fuente: Windsor.ai, cuenta 877286016115641, todas las campañas activas agregadas por fecha."
+      },
+      "notas_verificacion": [
+        "GA4 Ecuador registra $0 en ingresos y 0 compras dos semanas seguidas, igual que PrestaShop EC (0 pedidos esta semana, 1 pedido la semana previa) — hallazgo crítico, no solo un hueco de datos.",
+        "Discrepancia sin resolver: leads Kommo Ecuador 35 (daily-log) vs 45 (API directa) para la misma semana.",
+        "Ingresos GA4 están en USD según configuración de la propiedad GA4 — no comparables directo con prestashop_total_col_cop (COP)."
+      ]
+    }
+  ]
+}
