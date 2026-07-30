@@ -40,7 +40,7 @@
         "funnel_kommo": {
           "leads_nuevos_daily_log": 35,
           "leads_nuevos_kommo_api": 45,
-          "discrepancia_nota": "El conteo directo vía Kommo API (filter[created_at] en la semana) da 45 leads nuevos; la suma diaria en daily-log.json da 35. Diferencia de 10 leads sin explicar aún — posible desfase de huso horario en el corte diario automatizado (11am) o leads creados y reclasificados de pipeline el mismo día. Pendiente de investigar antes de usar esta cifra como KPI oficial.",
+          "discrepancia_nota": "RESUELTO (30/jul/2026): se decidió usar el conteo directo vía Kommo API (filter[created_at], 45 leads) como fuente OFICIAL en vez de la suma diaria de daily-log.json (35) — la tarea programada diaria ya fue actualizada para calcular kommo_leads_ec/col con este mismo método hacia adelante, por lo que este tipo de discrepancia no debería repetirse en semanas futuras.",
           "etapas_actuales_leads_creados_en_semana": {
             "Contacto inicial": 5,
             "Nueva consulta": 1,
@@ -51,7 +51,8 @@
             "Servicios Adicionales": 2,
             "Por entregar": 3
           },
-          "nota_metodologica": "Cuenta leads CREADOS en la semana, segmentados por su etapa ACTUAL (no snapshot histórico completo del pipeline, que tiene años de leads ganados/perdidos acumulados y no es representativo de la semana)."
+          "nota_metodologica": "Cuenta leads CREADOS en la semana, segmentados por su etapa ACTUAL (no snapshot histórico completo del pipeline, que tiene años de leads ganados/perdidos acumulados y no es representativo de la semana).",
+          "leads_nuevos_oficial": 45
         }
       },
       "colombia": {
@@ -72,7 +73,7 @@
           "prestashop_total_cop": 1587000,
           "prev_prestashop_pedidos": 19,
           "prev_prestashop_total_cop": 4133490,
-          "nota_fuente": "PrestaShop webservice (co.bouentertainment.com) es la fuente usada aquí, ya validada en sesiones previas. El Sheet 'Resumen de ventas Bou Entertainment Colombia' (Matriz Ventas) existe como registro manual paralelo pero NO se cruzó línea por línea en esta entrada por su tamaño (298KB, +1 año de historial) — pendiente si se requiere conciliación exacta."
+          "nota_fuente": "PrestaShop webservice (co.bouentertainment.com) es la fuente usada aquí. Se comparó contra la tabla de seguimiento de entregas del Sheet 'Resumen de ventas Bou Entertainment Colombia' para las semanas 13-19 y 20-26 jul: 20 líneas de producto vs 19 pedidos PrestaShop (semana 13-19), y 9 líneas vs 8 pedidos (semana 20-26) — conteos muy cercanos, no se encontró una brecha grande de pedidos WhatsApp/IG no capturados en esas 2 semanas puntuales. OJO: esa tabla del Sheet mezcla formatos de fecha (D/M y M/D inconsistente) y no tiene columna de monto para esas filas — no se pudo conciliar en dólares/COP, solo conteo de líneas. Pendiente revisar con el equipo de Colombia si hay otra pestaña con los montos y si el conteo es por pedido o por producto."
         },
         "funnel_kommo": {
           "leads_nuevos_daily_log": 0,
@@ -93,7 +94,7 @@
         "meta_ctr": 2.43,
         "prev_meta_spend_usd": 887.43,
         "prev_meta_compras": 6,
-        "prev_meta_ingresos_usd": 460.70,
+        "prev_meta_ingresos_usd": 460.7,
         "prev_meta_roas": 0.5192,
         "prev_meta_impresiones": 635616,
         "prev_meta_alcance": 449982,
@@ -103,7 +104,9 @@
       "notas_verificacion": [
         "GA4 Ecuador registra $0 en ingresos y 0 compras dos semanas seguidas, igual que PrestaShop EC (0 pedidos esta semana, 1 pedido la semana previa) — hallazgo crítico, no solo un hueco de datos.",
         "Discrepancia sin resolver: leads Kommo Ecuador 35 (daily-log) vs 45 (API directa) para la misma semana.",
-        "Ingresos GA4 están en USD según configuración de la propiedad GA4 — no comparables directo con prestashop_total_col_cop (COP)."
+        "Ingresos GA4 están en USD según configuración de la propiedad GA4 — no comparables directo con prestashop_total_col_cop (COP).",
+        "Mensajería Kommo: se encontró el endpoint correcto GET /api/v4/talks (funciona, devuelve chat_id, origin, is_read, status, entity_id/lead vinculado) — el widget AJAX interno que se probó antes SÍ estaba mal (endpoint equivocado, no problema de permisos). Falta implementar la agregación diaria/semanal (conteo por país vía cruce con pipeline_id del lead, tiempos de respuesta) en la tarea programada.",
+        "Verificación del rango real sin ventas en Ecuador (3-30 jul): NO es un apagón total — hubo 12 pedidos PrestaShop EC ($828.18) en 6 días distintos de ese período (3, 9, 10, 16, 27 y 28 jul), incluyendo un repunte notable el 28/jul (5 pedidos, el mejor día del período). La semana 20-26 jul sí tuvo 0 pedidos, pero encuadrarlo como una caída continua desde el 3/jul no es exacto — hay que seguir monitoreando, no asumir que sigue en cero."
       ]
     }
   ]
