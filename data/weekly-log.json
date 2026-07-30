@@ -30,7 +30,8 @@
           "prestashop_pedidos": 0,
           "prestashop_total_usd": 0,
           "prev_prestashop_pedidos": 1,
-          "prev_prestashop_total_usd": 30.99
+          "prev_prestashop_total_usd": 30.99,
+          "nota_metodologica_critica": "CORRECCION IMPORTANTE (30/jul/2026, verificado por Luis): el conteo de 'pedidos PrestaShop EC' en versiones anteriores de este reporte y en daily-log.json cuenta TODOS los pedidos sin importar su estado. Se audito el rango 3-30 jul (12 pedidos reportados) contra el estado real en PrestaShop: 9 de 12 estan CANCELADOS ($637.39), 1 en Pago Pendiente, 1 Reembolsado ($30.99) -- SOLO 1 pedido es una venta real y valida (id 1150, 3/jul, $139.80, estado Enviado). El 'repunte' del 28/jul reportado antes (5 pedidos) eran TODOS pedidos cancelados por transferencia bancaria no confirmada -- no fue una recuperacion real. Colombia SI esta bien: se verifico que los 8 pedidos de la semana 20-26 jul son estado 'Transaccion completada' (pagado), coincide exacto con prestashop_total_col_cop ($1,587,000). La metodologia de conteo debe filtrar por estados validos (pagado/enviado/entregado) excluyendo Cancelado/Pago Pendiente/Reembolsado/Error en pago -- ya corregido en la tarea programada diaria hacia adelante. Los datos historicos de daily-log.json (1 jun-30 jul) NO fueron reauditados retroactivamente y pueden sobreestimar ventas EC de forma similar."
         },
         "contifico": {
           "documentos": 0,
@@ -106,7 +107,8 @@
         "Discrepancia sin resolver: leads Kommo Ecuador 35 (daily-log) vs 45 (API directa) para la misma semana.",
         "Ingresos GA4 están en USD según configuración de la propiedad GA4 — no comparables directo con prestashop_total_col_cop (COP).",
         "Mensajería Kommo: se encontró el endpoint correcto GET /api/v4/talks (funciona, devuelve chat_id, origin, is_read, status, entity_id/lead vinculado) — el widget AJAX interno que se probó antes SÍ estaba mal (endpoint equivocado, no problema de permisos). Falta implementar la agregación diaria/semanal (conteo por país vía cruce con pipeline_id del lead, tiempos de respuesta) en la tarea programada.",
-        "Verificación del rango real sin ventas en Ecuador (3-30 jul): NO es un apagón total — hubo 12 pedidos PrestaShop EC ($828.18) en 6 días distintos de ese período (3, 9, 10, 16, 27 y 28 jul), incluyendo un repunte notable el 28/jul (5 pedidos, el mejor día del período). La semana 20-26 jul sí tuvo 0 pedidos, pero encuadrarlo como una caída continua desde el 3/jul no es exacto — hay que seguir monitoreando, no asumir que sigue en cero."
+        "Verificación del rango real sin ventas en Ecuador (3-30 jul): NO es un apagón total — hubo 12 pedidos PrestaShop EC ($828.18) en 6 días distintos de ese período (3, 9, 10, 16, 27 y 28 jul), incluyendo un repunte notable el 28/jul (5 pedidos, el mejor día del período). La semana 20-26 jul sí tuvo 0 pedidos, pero encuadrarlo como una caída continua desde el 3/jul no es exacto — hay que seguir monitoreando, no asumir que sigue en cero.",
+        "CRITICO (corrige nota anterior): la 'recuperacion' del 27-28 jul en Ecuador reportada en la version previa de este reporte era incorrecta -- esos 6 pedidos estaban TODOS cancelados (pago por transferencia bancaria no confirmada). El periodo 3-30 jul tuvo solo 1 venta EC real y valida ($139.80). Ver nota_metodologica_critica en ecuador.ventas para el detalle completo, verificado orden por orden contra el estado real en PrestaShop."
       ]
     }
   ]
