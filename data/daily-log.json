@@ -16,14 +16,14 @@
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
       "contifico_fuente_caida": true,
-      "prestashop_pedidos_total": null,
-      "ga4_usuarios_ec": null,
-      "ga4_usuarios_col": null,
-      "meta_spend_usd": null,
-      "meta_compras": null,
+      "prestashop_pedidos_total": 0,
+      "ga4_usuarios_ec": 2,
+      "ga4_usuarios_col": 27,
+      "meta_spend_usd": 32.62,
+      "meta_compras": 0,
       "meta_roas": null,
       "parcial": true,
-      "nota_verificacion": "Fila creada manualmente para validar el pipeline tras corregir token Kommo, dominio y credenciales PrestaShop. Kommo leads y Contifico confirmados via API en vivo. Mensajeria Kommo (widget AJAX con Bearer) devolvio items vacios - no se pudo confirmar si es 0 real o problema de auth, se deja null. Filtro de fecha de PrestaShop no confirmado aun, se deja null en vez de asumir 0. GA4/Meta pendientes de revision por navegador."
+      "nota_verificacion": "Corrida automatica 2026-07-30 11am. Kommo leads EC/COL confirmados via API v4 (filtro created_at, 0 leads en ambos pipelines hasta el momento de la corrida). Kommo mensajeria (widget AJAX interno) devolvio 403/HTML con el token Bearer - requiere cookie de sesion de navegador, no disponible en este entorno; campos de mensajeria en null. Contifico: API respondio array vacio (documento) - fuente_caida=true, no se interpreta como 0 ventas reales. PrestaShop: filtro date_add confirmado funcional (se verifico con rango 20-30 jul, ultimo pedido real fue 28 jul) - 0 pedidos nuevos hoy. GA4 (Bou Entertainment, rango Hoy): 35 usuarios activos totales, Colombia 27, Ecuador 2. Meta Ads (cuenta Bou Entertainment, rango Hoy Guayaquil): 'la piel ecuador' desactivada (gasto 0), 'la piel colombia nuevo' activa con 32.62 USD gastado y 0 compras registradas en el dia - roas null por falta de conversiones."
     }
   ],
   "periodic": [
