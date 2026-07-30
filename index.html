@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<script type="application/json" id="cowork-artifact-meta">
+<!DOCTYPE html><script type="application/json" id="cowork-artifact-meta">
 {
   "name": "Bou Dashboard Julio 2026",
   "schemaVersion": 1,
-  "description": "Dashboard Ejecutivo BOU Entertainment — Junio 2026 vs Julio 2026. Meta Ads + GA4 + Kommo (Ecuador/Colombia) + Contífico (Ecuador) + Ventas Colombia (Sheets). Datos verificados.",
+  "description": "Dashboard Ejecutivo BOU Entertainment — Junio 2026 vs Julio 2026. Meta Ads + GA4 + Ventas Colombia (Excel) + Kommo (leads y mensajería). Datos verificados. Histórico semanal acumulado.",
   "mcpTools": [],
   "mcpServerNames": []
 }
@@ -329,7 +328,7 @@
       <div class="meta-info">
         Período comparado<br>
         <strong>Jun 2026 (30d)</strong> vs <strong>Jul 1–19 2026 (19d)</strong><br>
-        Actualizado 22 jul 2026 · GA4 + Meta Ads + Kommo + Contífico
+        Actualizado 29 jul 2026 · GA4 + Meta Ads + Kommo (leads + mensajería) + Contífico
       </div>
     </div>
     <h1>Tráfico ×6,<br>pero el ROAS <em>necesita</em> atención.</h1>
@@ -362,6 +361,7 @@
     <a href="#kommo">09 / Embudos Kommo</a>
     <a href="#hallazgos">10 / Hallazgos</a>
     <a href="#acciones">11 / Acciones</a>
+    <a href="#historico">12 / Histórico Semanal</a>
   </div>
 </nav>
 
@@ -1276,10 +1276,69 @@
   </div>
 </section>
 
+<!-- SECCIÓN 12: HISTÓRICO SEMANAL -->
+<section id="historico">
+  <div class="container">
+    <div class="section-label">12 — Histórico semanal · Reunión de Ads</div>
+    <h2>Corte de <em>hoy, 29 jul 2026</em>.</h2>
+    <p class="lead">Fila nueva cada martes antes de la reunión de Ads (tarea programada "actualizar-dashboard-ads-semanal"). No se borran semanas anteriores — esta es la primera fila del histórico. Kommo mensajería es dato nuevo desde hoy: se extrae vía el endpoint interno del dashboard (no es API pública documentada), segmentado por usuario "Operaciones" = Bou Entertainment.</p>
+
+    <div class="card" style="margin-top: 24px; overflow-x: auto;">
+      <div class="card-header">
+        <div class="card-title">Histórico semanal — EC vs COL</div>
+        <div class="card-tag">Se acumula cada martes 11am</div>
+      </div>
+      <table style="min-width: 900px;">
+        <thead>
+          <tr>
+            <th>Semana</th>
+            <th>Leads EC</th>
+            <th>Leads COL</th>
+            <th>Msj entrantes EC</th>
+            <th>Msj salientes EC</th>
+            <th>Lapso medio réplica</th>
+            <th>Lapso promedio réplica</th>
+            <th>GA4 usuarios EC</th>
+            <th>GA4 usuarios COL</th>
+            <th>Meta spend (30d)</th>
+            <th>Meta ROAS</th>
+            <th>Ventas Sheet COL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="product-name">22–29 jul 2026</td>
+            <td class="num">38</td>
+            <td class="num">0</td>
+            <td class="num">1,041</td>
+            <td class="num">1,637</td>
+            <td class="num">2s</td>
+            <td class="num">4h</td>
+            <td class="num">361</td>
+            <td class="num" style="color:var(--accent-2)">2,700 ⚠</td>
+            <td class="num">$2,904.15</td>
+            <td class="num">n/d</td>
+            <td class="num">1 pedido</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 16px; font-size: 13px; color: var(--ink-mute); font-family: var(--mono); line-height: 1.6;">→ Todas las cifras de esta fila están verificadas directamente en la fuente hoy (29 jul 2026). Contífico no devolvió documentos para ningún día de la semana revisada — se marca como fuente caída, no se estimó ni inventó ningún valor de ventas Ecuador facturadas. Meta ROAS de la semana exacta no se pudo aislar con el filtro de fecha del Ads Manager en este corte — el gasto mostrado es de los últimos 30 días (29 jun–28 jul), no solo esta semana.</p>
+    </div>
+
+    <div class="alert-box" style="margin-top: 24px;">
+      <strong>⚠ VERIFICAR ANTES DE LA REUNIÓN:</strong> GA4 esta semana (22–28 jul) muestra <strong>WEB COLOMBIA con 2,700 usuarios vs WEB ECUADOR con solo 361</strong> — una reversión total del patrón documentado hace unos días (Ecuador dominaba 17k vs 1.1k en la ventana de 28 días). <span>Esto puede ser un cambio real de tráfico o una señal de que el tag de GA4 dejó de dispararse correctamente en el dominio de Ecuador. Recomendado: confirmar en Google Tag Manager que el contenedor de bouentertainment.com sigue activo antes de tomar decisiones de pauta basadas en este número.</span>
+    </div>
+
+    <div class="info-box" style="margin-top: 24px;">
+      <strong>ℹ NUEVO — Mensajería Kommo vía endpoint interno:</strong> Confirmado que <code>/ajax/v1/dashboard/widgets/data/</code> (no es la API pública v4) expone mensajes entrantes/salientes y lapso de réplica, filtrable por pipeline y por usuario (<code>main_user_id[]=10436411</code> = Operaciones = Bou Entertainment). <span>Esta semana, Bou Entertainment (usuario Operaciones) generó 15 mensajes salientes con lapso medio de réplica 3h y lapso promedio 13h — más lento que el agregado de todos los usuarios (2s / 4h), porque el agregado incluye bots/respuestas automáticas de WhatsApp Cloud API que no pasan por Operaciones.</span>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <p>Bou Entertainment · Reporte Ejecutivo · Jul 2026<br>
-    Datos verificados: GA4 · a292150965p414923086 + Meta Ads · act=877286016115641 + Kommo CRM + Contífico API + Google Sheets<br>
+    Datos verificados: GA4 · a292150965p414923086 + Meta Ads · act=877286016115641 + Kommo CRM (API v4 + endpoint interno de mensajería) + Contífico API + Google Sheets<br>
     ⚠ Datos obtenidos directamente de las plataformas · No usar datos externos para decisiones de negocio</p>
   </div>
 </footer>
@@ -1663,5 +1722,3 @@ function setDay(day) {
 </script>
 </body>
 </html>
-
-
