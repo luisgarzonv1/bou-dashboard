@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "nota": "daily = granularidad real por día (Kommo API + endpoint interno, Contífico). periodic = fuentes sin API diaria (GA4, Meta Ads, Sheets COL vía navegador), cada entrada trae su propio rango de fechas real. No inventar granularidad diaria donde no existe.",
+  "schema_version": 2,
+  "nota": "daily = granularidad real por dia. Campos EC/COL separados donde la fuente lo permite. PrestaShop: EC=bouentertainment.com (USD), COL=co.bouentertainment.com (COP). Ads sin split por pais (no confiable), se reporta agregado. Mensajeria Kommo (widgets AJAX) aun no confirmada via Bearer token - queda null hasta validar con sesion de navegador real.",
   "daily": [
     {
       "date": "2026-07-30",
@@ -8,6 +8,8 @@
       "kommo_leads_col": 0,
       "kommo_msj_entrantes_ec": null,
       "kommo_msj_salientes_ec": null,
+      "kommo_msj_entrantes_col": null,
+      "kommo_msj_salientes_col": null,
       "kommo_lapso_medio_s": null,
       "kommo_lapso_promedio_s": null,
       "kommo_msj_salientes_be": null,
@@ -16,14 +18,24 @@
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
       "contifico_fuente_caida": true,
-      "prestashop_pedidos_total": 0,
-      "ga4_usuarios_ec": 2,
-      "ga4_usuarios_col": 27,
-      "meta_spend_usd": 32.62,
-      "meta_compras": 0,
+      "prestashop_pedidos_ec": 0,
+      "prestashop_total_ec_usd": 0,
+      "prestashop_pedidos_col": 1,
+      "prestashop_total_col_cop": 202000,
+      "ga4_usuarios_ec": null,
+      "ga4_usuarios_col": null,
+      "meta_spend_usd": null,
+      "meta_compras": null,
       "meta_roas": null,
+      "recomendaciones_ec": [
+        "Contifico sigue sin responder (10+ dias) - validar con el proveedor o usar PrestaShop EC como fuente principal mientras tanto.",
+        "Kommo mensajeria (widget interno) no confirmado via token - pendiente validar con sesion de navegador."
+      ],
+      "recomendaciones_col": [
+        "Un pedido registrado hoy en co.bouentertainment.com ($202.000 COP) - seguimiento normal."
+      ],
       "parcial": true,
-      "nota_verificacion": "Corrida automatica 2026-07-30 11am. Kommo leads EC/COL confirmados via API v4 (filtro created_at, 0 leads en ambos pipelines hasta el momento de la corrida). Kommo mensajeria (widget AJAX interno) devolvio 403/HTML con el token Bearer - requiere cookie de sesion de navegador, no disponible en este entorno; campos de mensajeria en null. Contifico: API respondio array vacio (documento) - fuente_caida=true, no se interpreta como 0 ventas reales. PrestaShop: filtro date_add confirmado funcional (se verifico con rango 20-30 jul, ultimo pedido real fue 28 jul) - 0 pedidos nuevos hoy. GA4 (Bou Entertainment, rango Hoy): 35 usuarios activos totales, Colombia 27, Ecuador 2. Meta Ads (cuenta Bou Entertainment, rango Hoy Guayaquil): 'la piel ecuador' desactivada (gasto 0), 'la piel colombia nuevo' activa con 32.62 USD gastado y 0 compras registradas en el dia - roas null por falta de conversiones."
+      "nota_verificacion": "Fila migrada al schema v2 (split EC/COL de PrestaShop + Kommo mensajeria) el 30/jul/2026, tras confirmar en vivo que PrestaShop es multitienda con dos dominios."
     }
   ],
   "periodic": [
