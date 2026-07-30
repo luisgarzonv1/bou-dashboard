@@ -243,7 +243,7 @@ function renderCountry(){
   if (isEc){
     const caidas = rows.filter(r=>r.contifico_fuente_caida).length;
     if (caidas >= 3){
-      html += '<div class="warn">&#9888; Contifico sin responder en '+caidas+' de los '+rows.length+' dias del rango seleccionado &mdash; posible fuente caida, no se interpreta como "cero ventas".</div>';
+      html += '<div class="warn">&#9888; BOU no ha facturado en Contifico en '+caidas+' de los '+rows.length+' dias del rango seleccionado &mdash; causa confirmada: falta de firma electronica vigente. No es una falla tecnica ni "cero ventas", es un bloqueo operativo para emitir facturas.</div>';
     }
   }
 
