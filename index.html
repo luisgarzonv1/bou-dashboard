@@ -145,7 +145,8 @@
 
   <footer>
     BOU Company &middot; Dashboard generado automaticamente (tarea diaria 11am) &middot; Verifica cifras criticas contra la fuente original antes de decisiones de negocio.<br>
-    Fuentes: Kommo CRM, Contifico, PrestaShop (bouentertainment.com / co.bouentertainment.com), Google Analytics 4, Meta Ads Manager.
+    Fuentes: Kommo CRM, Contifico, PrestaShop (bouentertainment.com / co.bouentertainment.com), Google Analytics 4 y Meta Ads via Windsor.ai.<br>
+    Nota: se detecto trafico GA4 bajo un hostname externo (nasa-histoires.myshopify.com) no incluido en EC/COL, pendiente de confirmar con el equipo.
   </footer>
 
 </div>
@@ -255,14 +256,826 @@ function renderCountry(){
     const pedidos = sumField(rows,'prestashop_pedidos_ec'), pedidosPrev = sumField(prevRows,'prestashop_pedidos_ec');
     const total = sumField(rows,'prestashop_total_ec_usd'), totalPrev = sumField(prevRows,'prestashop_total_ec_usd');
     const usuarios = sumField(rows,'ga4_usuarios_ec'), usuariosPrev = sumField(prevRows,'ga4_usuarios_ec');
+    const usuariosNuevos = sumField(rows,'ga4_usuarios_nuevos_ec'), usuariosNuevosPrev = sumField(prevRows,'ga4_usuarios_nuevos_ec');
+    const ga4Ingresos = sumField(rows,'ga4_ingresos_ec_usd'), ga4IngresosPrev = sumField(prevRows,'ga4_ingresos_ec_usd');
+    const ga4Compras = sumField(rows,'ga4_compras_ec'), ga4ComprasPrev = sumField(prevRows,'ga4_compras_ec');
     const entrantes = sumField(rows,'kommo_msj_entrantes_ec'), entrantesPrev = sumField(prevRows,'kommo_msj_entrantes_ec');
     const salientes = sumField(rows,'kommo_msj_salientes_ec'), salientesPrev = sumField(prevRows,'kommo_msj_salientes_ec');
     const lapso = avgField(rows,'kommo_lapso_medio_s');
 
     html += kpiCard('Leads Kommo', fmtInt(leads), pctDelta(leads, leadsPrev));
     html += kpiCard('Pedidos PrestaShop', fmtInt(pedidos), pctDelta(pedidos, pedidosPrev));
-    html += kpiCard('Ventas web (USD)', fmtMoney(total,'$'), pctDelta(total, totalPrev));
+    html += kpiCard('Ventas web (USD)', fmtMoney(total,'
+  } else {
+    const leads = sumField(rows,'kommo_leads_col'), leadsPrev = sumField(prevRows,'kommo_leads_col');
+    const pedidos = sumField(rows,'prestashop_pedidos_col'), pedidosPrev = sumField(prevRows,'prestashop_pedidos_col');
+    const total = sumField(rows,'prestashop_total_col_cop'), totalPrev = sumField(prevRows,'prestashop_total_col_cop');
+    const usuarios = sumField(rows,'ga4_usuarios_col'), usuariosPrev = sumField(prevRows,'ga4_usuarios_col');
+    const usuariosNuevos = sumField(rows,'ga4_usuarios_nuevos_col'), usuariosNuevosPrev = sumField(prevRows,'ga4_usuarios_nuevos_col');
+    const ga4Ingresos = sumField(rows,'ga4_ingresos_col_usd'), ga4IngresosPrev = sumField(prevRows,'ga4_ingresos_col_usd');
+    const ga4Compras = sumField(rows,'ga4_compras_col'), ga4ComprasPrev = sumField(prevRows,'ga4_compras_col');
+    const entrantes = sumField(rows,'kommo_msj_entrantes_col'), entrantesPrev = sumField(prevRows,'kommo_msj_entrantes_col');
+    const salientes = sumField(rows,'kommo_msj_salientes_col'), salientesPrev = sumField(prevRows,'kommo_msj_salientes_col');
+
+    html += kpiCard('Leads Kommo', fmtInt(leads), pctDelta(leads, leadsPrev));
+    html += kpiCard('Pedidos PrestaShop', fmtInt(pedidos), pctDelta(pedidos, pedidosPrev));
+    html += kpiCard('Ventas web (COP)', fmtMoney(total,'
+  }
+  html += '</div>';
+
+  html += '<div class="section-title">Recomendaciones <span class="accentline"></span></div>';
+  const sorted = rows.slice().sort((a,b)=> a.date < b.date ? 1 : -1);
+  const latest = sorted[0];
+  const field = isEc ? 'recomendaciones_ec' : 'recomendaciones_col';
+  const recos = latest && Array.isArray(latest[field]) ? latest[field] : [];
+  if (recos.length){
+    recos.forEach(r => { html += '<div class="reco">'+r+'</div>'; });
+  } else {
+    html += '<div class="reco empty">Sin recomendaciones generadas para el dia mas reciente del rango.</div>';
+  }
+
+  c.innerHTML = html;
+}
+
+function renderAds(){
+  const rows = rowsInRange(range);
+  const prev = prevRange();
+  const prevRows = rowsInRange(prev);
+  const spend = sumField(rows,'meta_spend_usd'), spendPrev = sumField(prevRows,'meta_spend_usd');
+  const compras = sumField(rows,'meta_compras'), comprasPrev = sumField(prevRows,'meta_compras');
+  const roas = avgField(rows,'meta_roas');
+
+  const grid = document.getElementById('adsGrid');
+  grid.innerHTML = kpiCard('Gasto (USD)', fmtMoney(spend,'$'), pctDelta(spend, spendPrev))
+    + kpiCard('Compras', fmtInt(compras), pctDelta(compras, comprasPrev))
+    + kpiCard('ROAS promedio', roas!==null ? roas.toFixed(2)+'x' : null, null);
+
+  const body = document.getElementById('adsHistBody');
+  const allSorted = (LOG.daily||[]).slice().sort((a,b)=> a.date < b.date ? 1 : -1).slice(0,14);
+  body.innerHTML = allSorted.map(r => {
+    const s = r.meta_spend_usd!==null && r.meta_spend_usd!==undefined ? '$'+Math.round(r.meta_spend_usd).toLocaleString('es-EC') : '&mdash;';
+    const c = r.meta_compras!==null && r.meta_compras!==undefined ? r.meta_compras : '&mdash;';
+    const ro = r.meta_roas!==null && r.meta_roas!==undefined ? r.meta_roas.toFixed(2)+'x' : '&mdash;';
+    const cpa = (r.meta_spend_usd!==null && r.meta_spend_usd!==undefined && r.meta_compras) ? '$'+(r.meta_spend_usd/r.meta_compras).toFixed(2) : '&mdash;';
+    const al = r.meta_alcance!==null && r.meta_alcance!==undefined ? Math.round(r.meta_alcance).toLocaleString('es-EC') : '&mdash;';
+    const im = r.meta_impresiones!==null && r.meta_impresiones!==undefined ? Math.round(r.meta_impresiones).toLocaleString('es-EC') : '&mdash;';
+    const cl = r.meta_clics!==null && r.meta_clics!==undefined ? Math.round(r.meta_clics).toLocaleString('es-EC') : '&mdash;';
+    const ctr = r.meta_ctr!==null && r.meta_ctr!==undefined ? r.meta_ctr.toFixed(2)+'%' : '&mdash;';
+    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td><td>'+cpa+'</td><td>'+al+'</td><td>'+im+'</td><td>'+cl+'</td><td>'+ctr+'</td></tr>';
+  }).join('');
+}
+
+function renderAll(){
+  document.getElementById('statusLine').innerHTML =
+    'Mostrando <b>'+range.from+'</b> a <b>'+range.to+'</b> &middot; '+rowsInRange(range).length+' dia(s) con datos en el rango.';
+  renderCountry();
+  renderAds();
+}
+
+document.querySelectorAll('.chip[data-range]').forEach(btn=>{
+  btn.addEventListener('click', ()=> setQuickRange(parseInt(btn.dataset.range)));
+});
+document.getElementById('applyRange').addEventListener('click', ()=>{
+  const from = document.getElementById('rangeFrom').value;
+  const to = document.getElementById('rangeTo').value;
+  if (!from || !to || from > to) return;
+  range = { from, to };
+  document.querySelectorAll('.chip[data-range]').forEach(c=>c.classList.remove('active'));
+  renderAll();
+});
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    activeCountry = btn.dataset.country;
+    renderCountry();
+  });
+});
+
+(async function init(){
+  try{
+    const res = await fetch('./data/daily-log.json', { cache: 'no-store' });
+    LOG = await res.json();
+    const lastDate = LOG.daily && LOG.daily.length ? LOG.daily.slice().sort((a,b)=>a.date<b.date?1:-1)[0].date : '—';
+    document.getElementById('lastUpdated').innerHTML = 'Ultimo dato disponible: <b>'+lastDate+'</b>';
+    setQuickRange(6);
+  } catch(e){
+    document.getElementById('lastUpdated').innerHTML = 'No se pudo cargar data/daily-log.json (esto es normal si estas viendo una vista previa fuera de GitHub Pages).';
+    document.getElementById('statusLine').innerHTML = 'Abre https://luisgarzonv1.github.io/bou-dashboard/ para ver datos reales.';
+  }
+})();
+</script>
+</body>
+</html>), pctDelta(total, totalPrev));
     html += kpiCard('Usuarios GA4', fmtInt(usuarios), pctDelta(usuarios, usuariosPrev));
+    html += kpiCard('Usuarios nuevos GA4', fmtInt(usuariosNuevos), pctDelta(usuariosNuevos, usuariosNuevosPrev));
+    html += kpiCard('Ingresos GA4 (USD)', fmtMoney(ga4Ingresos,'
+  } else {
+    const leads = sumField(rows,'kommo_leads_col'), leadsPrev = sumField(prevRows,'kommo_leads_col');
+    const pedidos = sumField(rows,'prestashop_pedidos_col'), pedidosPrev = sumField(prevRows,'prestashop_pedidos_col');
+    const total = sumField(rows,'prestashop_total_col_cop'), totalPrev = sumField(prevRows,'prestashop_total_col_cop');
+    const usuarios = sumField(rows,'ga4_usuarios_col'), usuariosPrev = sumField(prevRows,'ga4_usuarios_col');
+    const entrantes = sumField(rows,'kommo_msj_entrantes_col'), entrantesPrev = sumField(prevRows,'kommo_msj_entrantes_col');
+    const salientes = sumField(rows,'kommo_msj_salientes_col'), salientesPrev = sumField(prevRows,'kommo_msj_salientes_col');
+
+    html += kpiCard('Leads Kommo', fmtInt(leads), pctDelta(leads, leadsPrev));
+    html += kpiCard('Pedidos PrestaShop', fmtInt(pedidos), pctDelta(pedidos, pedidosPrev));
+    html += kpiCard('Ventas web (COP)', fmtMoney(total,'$'), pctDelta(total, totalPrev));
+    html += kpiCard('Usuarios GA4', fmtInt(usuarios), pctDelta(usuarios, usuariosPrev));
+    html += kpiCard('Msj entrantes', fmtInt(entrantes), pctDelta(entrantes, entrantesPrev));
+    html += kpiCard('Msj salientes', fmtInt(salientes), pctDelta(salientes, salientesPrev));
+    html += kpiCard('Ventas WhatsApp (Sheets)', '&mdash;', null);
+  }
+  html += '</div>';
+
+  html += '<div class="section-title">Recomendaciones <span class="accentline"></span></div>';
+  const sorted = rows.slice().sort((a,b)=> a.date < b.date ? 1 : -1);
+  const latest = sorted[0];
+  const field = isEc ? 'recomendaciones_ec' : 'recomendaciones_col';
+  const recos = latest && Array.isArray(latest[field]) ? latest[field] : [];
+  if (recos.length){
+    recos.forEach(r => { html += '<div class="reco">'+r+'</div>'; });
+  } else {
+    html += '<div class="reco empty">Sin recomendaciones generadas para el dia mas reciente del rango.</div>';
+  }
+
+  c.innerHTML = html;
+}
+
+function renderAds(){
+  const rows = rowsInRange(range);
+  const prev = prevRange();
+  const prevRows = rowsInRange(prev);
+  const spend = sumField(rows,'meta_spend_usd'), spendPrev = sumField(prevRows,'meta_spend_usd');
+  const compras = sumField(rows,'meta_compras'), comprasPrev = sumField(prevRows,'meta_compras');
+  const roas = avgField(rows,'meta_roas');
+
+  const grid = document.getElementById('adsGrid');
+  grid.innerHTML = kpiCard('Gasto (USD)', fmtMoney(spend,'$'), pctDelta(spend, spendPrev))
+    + kpiCard('Compras', fmtInt(compras), pctDelta(compras, comprasPrev))
+    + kpiCard('ROAS promedio', roas!==null ? roas.toFixed(2)+'x' : null, null);
+
+  const body = document.getElementById('adsHistBody');
+  const allSorted = (LOG.daily||[]).slice().sort((a,b)=> a.date < b.date ? 1 : -1).slice(0,14);
+  body.innerHTML = allSorted.map(r => {
+    const s = r.meta_spend_usd!==null && r.meta_spend_usd!==undefined ? '$'+Math.round(r.meta_spend_usd).toLocaleString('es-EC') : '&mdash;';
+    const c = r.meta_compras!==null && r.meta_compras!==undefined ? r.meta_compras : '&mdash;';
+    const ro = r.meta_roas!==null && r.meta_roas!==undefined ? r.meta_roas.toFixed(2)+'x' : '&mdash;';
+    const cpa = (r.meta_spend_usd!==null && r.meta_spend_usd!==undefined && r.meta_compras) ? '$'+(r.meta_spend_usd/r.meta_compras).toFixed(2) : '&mdash;';
+    const al = r.meta_alcance!==null && r.meta_alcance!==undefined ? Math.round(r.meta_alcance).toLocaleString('es-EC') : '&mdash;';
+    const im = r.meta_impresiones!==null && r.meta_impresiones!==undefined ? Math.round(r.meta_impresiones).toLocaleString('es-EC') : '&mdash;';
+    const cl = r.meta_clics!==null && r.meta_clics!==undefined ? Math.round(r.meta_clics).toLocaleString('es-EC') : '&mdash;';
+    const ctr = r.meta_ctr!==null && r.meta_ctr!==undefined ? r.meta_ctr.toFixed(2)+'%' : '&mdash;';
+    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td><td>'+cpa+'</td><td>'+al+'</td><td>'+im+'</td><td>'+cl+'</td><td>'+ctr+'</td></tr>';
+  }).join('');
+}
+
+function renderAll(){
+  document.getElementById('statusLine').innerHTML =
+    'Mostrando <b>'+range.from+'</b> a <b>'+range.to+'</b> &middot; '+rowsInRange(range).length+' dia(s) con datos en el rango.';
+  renderCountry();
+  renderAds();
+}
+
+document.querySelectorAll('.chip[data-range]').forEach(btn=>{
+  btn.addEventListener('click', ()=> setQuickRange(parseInt(btn.dataset.range)));
+});
+document.getElementById('applyRange').addEventListener('click', ()=>{
+  const from = document.getElementById('rangeFrom').value;
+  const to = document.getElementById('rangeTo').value;
+  if (!from || !to || from > to) return;
+  range = { from, to };
+  document.querySelectorAll('.chip[data-range]').forEach(c=>c.classList.remove('active'));
+  renderAll();
+});
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    activeCountry = btn.dataset.country;
+    renderCountry();
+  });
+});
+
+(async function init(){
+  try{
+    const res = await fetch('./data/daily-log.json', { cache: 'no-store' });
+    LOG = await res.json();
+    const lastDate = LOG.daily && LOG.daily.length ? LOG.daily.slice().sort((a,b)=>a.date<b.date?1:-1)[0].date : '—';
+    document.getElementById('lastUpdated').innerHTML = 'Ultimo dato disponible: <b>'+lastDate+'</b>';
+    setQuickRange(6);
+  } catch(e){
+    document.getElementById('lastUpdated').innerHTML = 'No se pudo cargar data/daily-log.json (esto es normal si estas viendo una vista previa fuera de GitHub Pages).';
+    document.getElementById('statusLine').innerHTML = 'Abre https://luisgarzonv1.github.io/bou-dashboard/ para ver datos reales.';
+  }
+})();
+</script>
+</body>
+</html>), pctDelta(ga4Ingresos, ga4IngresosPrev));
+    html += kpiCard('Compras GA4', fmtInt(ga4Compras), pctDelta(ga4Compras, ga4ComprasPrev));
+    html += kpiCard('Msj entrantes', fmtInt(entrantes), pctDelta(entrantes, entrantesPrev));
+    html += kpiCard('Msj salientes', fmtInt(salientes), pctDelta(salientes, salientesPrev));
+    html += kpiCard('Lapso resp. medio', fmtSec(lapso), null);
+  } else {
+    const leads = sumField(rows,'kommo_leads_col'), leadsPrev = sumField(prevRows,'kommo_leads_col');
+    const pedidos = sumField(rows,'prestashop_pedidos_col'), pedidosPrev = sumField(prevRows,'prestashop_pedidos_col');
+    const total = sumField(rows,'prestashop_total_col_cop'), totalPrev = sumField(prevRows,'prestashop_total_col_cop');
+    const usuarios = sumField(rows,'ga4_usuarios_col'), usuariosPrev = sumField(prevRows,'ga4_usuarios_col');
+    const entrantes = sumField(rows,'kommo_msj_entrantes_col'), entrantesPrev = sumField(prevRows,'kommo_msj_entrantes_col');
+    const salientes = sumField(rows,'kommo_msj_salientes_col'), salientesPrev = sumField(prevRows,'kommo_msj_salientes_col');
+
+    html += kpiCard('Leads Kommo', fmtInt(leads), pctDelta(leads, leadsPrev));
+    html += kpiCard('Pedidos PrestaShop', fmtInt(pedidos), pctDelta(pedidos, pedidosPrev));
+    html += kpiCard('Ventas web (COP)', fmtMoney(total,'$'), pctDelta(total, totalPrev));
+    html += kpiCard('Usuarios GA4', fmtInt(usuarios), pctDelta(usuarios, usuariosPrev));
+    html += kpiCard('Msj entrantes', fmtInt(entrantes), pctDelta(entrantes, entrantesPrev));
+    html += kpiCard('Msj salientes', fmtInt(salientes), pctDelta(salientes, salientesPrev));
+    html += kpiCard('Ventas WhatsApp (Sheets)', '&mdash;', null);
+  }
+  html += '</div>';
+
+  html += '<div class="section-title">Recomendaciones <span class="accentline"></span></div>';
+  const sorted = rows.slice().sort((a,b)=> a.date < b.date ? 1 : -1);
+  const latest = sorted[0];
+  const field = isEc ? 'recomendaciones_ec' : 'recomendaciones_col';
+  const recos = latest && Array.isArray(latest[field]) ? latest[field] : [];
+  if (recos.length){
+    recos.forEach(r => { html += '<div class="reco">'+r+'</div>'; });
+  } else {
+    html += '<div class="reco empty">Sin recomendaciones generadas para el dia mas reciente del rango.</div>';
+  }
+
+  c.innerHTML = html;
+}
+
+function renderAds(){
+  const rows = rowsInRange(range);
+  const prev = prevRange();
+  const prevRows = rowsInRange(prev);
+  const spend = sumField(rows,'meta_spend_usd'), spendPrev = sumField(prevRows,'meta_spend_usd');
+  const compras = sumField(rows,'meta_compras'), comprasPrev = sumField(prevRows,'meta_compras');
+  const roas = avgField(rows,'meta_roas');
+
+  const grid = document.getElementById('adsGrid');
+  grid.innerHTML = kpiCard('Gasto (USD)', fmtMoney(spend,'$'), pctDelta(spend, spendPrev))
+    + kpiCard('Compras', fmtInt(compras), pctDelta(compras, comprasPrev))
+    + kpiCard('ROAS promedio', roas!==null ? roas.toFixed(2)+'x' : null, null);
+
+  const body = document.getElementById('adsHistBody');
+  const allSorted = (LOG.daily||[]).slice().sort((a,b)=> a.date < b.date ? 1 : -1).slice(0,14);
+  body.innerHTML = allSorted.map(r => {
+    const s = r.meta_spend_usd!==null && r.meta_spend_usd!==undefined ? '$'+Math.round(r.meta_spend_usd).toLocaleString('es-EC') : '&mdash;';
+    const c = r.meta_compras!==null && r.meta_compras!==undefined ? r.meta_compras : '&mdash;';
+    const ro = r.meta_roas!==null && r.meta_roas!==undefined ? r.meta_roas.toFixed(2)+'x' : '&mdash;';
+    const cpa = (r.meta_spend_usd!==null && r.meta_spend_usd!==undefined && r.meta_compras) ? '$'+(r.meta_spend_usd/r.meta_compras).toFixed(2) : '&mdash;';
+    const al = r.meta_alcance!==null && r.meta_alcance!==undefined ? Math.round(r.meta_alcance).toLocaleString('es-EC') : '&mdash;';
+    const im = r.meta_impresiones!==null && r.meta_impresiones!==undefined ? Math.round(r.meta_impresiones).toLocaleString('es-EC') : '&mdash;';
+    const cl = r.meta_clics!==null && r.meta_clics!==undefined ? Math.round(r.meta_clics).toLocaleString('es-EC') : '&mdash;';
+    const ctr = r.meta_ctr!==null && r.meta_ctr!==undefined ? r.meta_ctr.toFixed(2)+'%' : '&mdash;';
+    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td><td>'+cpa+'</td><td>'+al+'</td><td>'+im+'</td><td>'+cl+'</td><td>'+ctr+'</td></tr>';
+  }).join('');
+}
+
+function renderAll(){
+  document.getElementById('statusLine').innerHTML =
+    'Mostrando <b>'+range.from+'</b> a <b>'+range.to+'</b> &middot; '+rowsInRange(range).length+' dia(s) con datos en el rango.';
+  renderCountry();
+  renderAds();
+}
+
+document.querySelectorAll('.chip[data-range]').forEach(btn=>{
+  btn.addEventListener('click', ()=> setQuickRange(parseInt(btn.dataset.range)));
+});
+document.getElementById('applyRange').addEventListener('click', ()=>{
+  const from = document.getElementById('rangeFrom').value;
+  const to = document.getElementById('rangeTo').value;
+  if (!from || !to || from > to) return;
+  range = { from, to };
+  document.querySelectorAll('.chip[data-range]').forEach(c=>c.classList.remove('active'));
+  renderAll();
+});
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    activeCountry = btn.dataset.country;
+    renderCountry();
+  });
+});
+
+(async function init(){
+  try{
+    const res = await fetch('./data/daily-log.json', { cache: 'no-store' });
+    LOG = await res.json();
+    const lastDate = LOG.daily && LOG.daily.length ? LOG.daily.slice().sort((a,b)=>a.date<b.date?1:-1)[0].date : '—';
+    document.getElementById('lastUpdated').innerHTML = 'Ultimo dato disponible: <b>'+lastDate+'</b>';
+    setQuickRange(6);
+  } catch(e){
+    document.getElementById('lastUpdated').innerHTML = 'No se pudo cargar data/daily-log.json (esto es normal si estas viendo una vista previa fuera de GitHub Pages).';
+    document.getElementById('statusLine').innerHTML = 'Abre https://luisgarzonv1.github.io/bou-dashboard/ para ver datos reales.';
+  }
+})();
+</script>
+</body>
+</html>), pctDelta(total, totalPrev));
+    html += kpiCard('Usuarios GA4', fmtInt(usuarios), pctDelta(usuarios, usuariosPrev));
+    html += kpiCard('Usuarios nuevos GA4', fmtInt(usuariosNuevos), pctDelta(usuariosNuevos, usuariosNuevosPrev));
+    html += kpiCard('Ingresos GA4 (USD)', fmtMoney(ga4Ingresos,'
+  }
+  html += '</div>';
+
+  html += '<div class="section-title">Recomendaciones <span class="accentline"></span></div>';
+  const sorted = rows.slice().sort((a,b)=> a.date < b.date ? 1 : -1);
+  const latest = sorted[0];
+  const field = isEc ? 'recomendaciones_ec' : 'recomendaciones_col';
+  const recos = latest && Array.isArray(latest[field]) ? latest[field] : [];
+  if (recos.length){
+    recos.forEach(r => { html += '<div class="reco">'+r+'</div>'; });
+  } else {
+    html += '<div class="reco empty">Sin recomendaciones generadas para el dia mas reciente del rango.</div>';
+  }
+
+  c.innerHTML = html;
+}
+
+function renderAds(){
+  const rows = rowsInRange(range);
+  const prev = prevRange();
+  const prevRows = rowsInRange(prev);
+  const spend = sumField(rows,'meta_spend_usd'), spendPrev = sumField(prevRows,'meta_spend_usd');
+  const compras = sumField(rows,'meta_compras'), comprasPrev = sumField(prevRows,'meta_compras');
+  const roas = avgField(rows,'meta_roas');
+
+  const grid = document.getElementById('adsGrid');
+  grid.innerHTML = kpiCard('Gasto (USD)', fmtMoney(spend,'$'), pctDelta(spend, spendPrev))
+    + kpiCard('Compras', fmtInt(compras), pctDelta(compras, comprasPrev))
+    + kpiCard('ROAS promedio', roas!==null ? roas.toFixed(2)+'x' : null, null);
+
+  const body = document.getElementById('adsHistBody');
+  const allSorted = (LOG.daily||[]).slice().sort((a,b)=> a.date < b.date ? 1 : -1).slice(0,14);
+  body.innerHTML = allSorted.map(r => {
+    const s = r.meta_spend_usd!==null && r.meta_spend_usd!==undefined ? '$'+Math.round(r.meta_spend_usd).toLocaleString('es-EC') : '&mdash;';
+    const c = r.meta_compras!==null && r.meta_compras!==undefined ? r.meta_compras : '&mdash;';
+    const ro = r.meta_roas!==null && r.meta_roas!==undefined ? r.meta_roas.toFixed(2)+'x' : '&mdash;';
+    const cpa = (r.meta_spend_usd!==null && r.meta_spend_usd!==undefined && r.meta_compras) ? '$'+(r.meta_spend_usd/r.meta_compras).toFixed(2) : '&mdash;';
+    const al = r.meta_alcance!==null && r.meta_alcance!==undefined ? Math.round(r.meta_alcance).toLocaleString('es-EC') : '&mdash;';
+    const im = r.meta_impresiones!==null && r.meta_impresiones!==undefined ? Math.round(r.meta_impresiones).toLocaleString('es-EC') : '&mdash;';
+    const cl = r.meta_clics!==null && r.meta_clics!==undefined ? Math.round(r.meta_clics).toLocaleString('es-EC') : '&mdash;';
+    const ctr = r.meta_ctr!==null && r.meta_ctr!==undefined ? r.meta_ctr.toFixed(2)+'%' : '&mdash;';
+    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td><td>'+cpa+'</td><td>'+al+'</td><td>'+im+'</td><td>'+cl+'</td><td>'+ctr+'</td></tr>';
+  }).join('');
+}
+
+function renderAll(){
+  document.getElementById('statusLine').innerHTML =
+    'Mostrando <b>'+range.from+'</b> a <b>'+range.to+'</b> &middot; '+rowsInRange(range).length+' dia(s) con datos en el rango.';
+  renderCountry();
+  renderAds();
+}
+
+document.querySelectorAll('.chip[data-range]').forEach(btn=>{
+  btn.addEventListener('click', ()=> setQuickRange(parseInt(btn.dataset.range)));
+});
+document.getElementById('applyRange').addEventListener('click', ()=>{
+  const from = document.getElementById('rangeFrom').value;
+  const to = document.getElementById('rangeTo').value;
+  if (!from || !to || from > to) return;
+  range = { from, to };
+  document.querySelectorAll('.chip[data-range]').forEach(c=>c.classList.remove('active'));
+  renderAll();
+});
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    activeCountry = btn.dataset.country;
+    renderCountry();
+  });
+});
+
+(async function init(){
+  try{
+    const res = await fetch('./data/daily-log.json', { cache: 'no-store' });
+    LOG = await res.json();
+    const lastDate = LOG.daily && LOG.daily.length ? LOG.daily.slice().sort((a,b)=>a.date<b.date?1:-1)[0].date : '—';
+    document.getElementById('lastUpdated').innerHTML = 'Ultimo dato disponible: <b>'+lastDate+'</b>';
+    setQuickRange(6);
+  } catch(e){
+    document.getElementById('lastUpdated').innerHTML = 'No se pudo cargar data/daily-log.json (esto es normal si estas viendo una vista previa fuera de GitHub Pages).';
+    document.getElementById('statusLine').innerHTML = 'Abre https://luisgarzonv1.github.io/bou-dashboard/ para ver datos reales.';
+  }
+})();
+</script>
+</body>
+</html>), pctDelta(total, totalPrev));
+    html += kpiCard('Usuarios GA4', fmtInt(usuarios), pctDelta(usuarios, usuariosPrev));
+    html += kpiCard('Usuarios nuevos GA4', fmtInt(usuariosNuevos), pctDelta(usuariosNuevos, usuariosNuevosPrev));
+    html += kpiCard('Ingresos GA4 (USD)', fmtMoney(ga4Ingresos,'
+  } else {
+    const leads = sumField(rows,'kommo_leads_col'), leadsPrev = sumField(prevRows,'kommo_leads_col');
+    const pedidos = sumField(rows,'prestashop_pedidos_col'), pedidosPrev = sumField(prevRows,'prestashop_pedidos_col');
+    const total = sumField(rows,'prestashop_total_col_cop'), totalPrev = sumField(prevRows,'prestashop_total_col_cop');
+    const usuarios = sumField(rows,'ga4_usuarios_col'), usuariosPrev = sumField(prevRows,'ga4_usuarios_col');
+    const entrantes = sumField(rows,'kommo_msj_entrantes_col'), entrantesPrev = sumField(prevRows,'kommo_msj_entrantes_col');
+    const salientes = sumField(rows,'kommo_msj_salientes_col'), salientesPrev = sumField(prevRows,'kommo_msj_salientes_col');
+
+    html += kpiCard('Leads Kommo', fmtInt(leads), pctDelta(leads, leadsPrev));
+    html += kpiCard('Pedidos PrestaShop', fmtInt(pedidos), pctDelta(pedidos, pedidosPrev));
+    html += kpiCard('Ventas web (COP)', fmtMoney(total,'$'), pctDelta(total, totalPrev));
+    html += kpiCard('Usuarios GA4', fmtInt(usuarios), pctDelta(usuarios, usuariosPrev));
+    html += kpiCard('Msj entrantes', fmtInt(entrantes), pctDelta(entrantes, entrantesPrev));
+    html += kpiCard('Msj salientes', fmtInt(salientes), pctDelta(salientes, salientesPrev));
+    html += kpiCard('Ventas WhatsApp (Sheets)', '&mdash;', null);
+  }
+  html += '</div>';
+
+  html += '<div class="section-title">Recomendaciones <span class="accentline"></span></div>';
+  const sorted = rows.slice().sort((a,b)=> a.date < b.date ? 1 : -1);
+  const latest = sorted[0];
+  const field = isEc ? 'recomendaciones_ec' : 'recomendaciones_col';
+  const recos = latest && Array.isArray(latest[field]) ? latest[field] : [];
+  if (recos.length){
+    recos.forEach(r => { html += '<div class="reco">'+r+'</div>'; });
+  } else {
+    html += '<div class="reco empty">Sin recomendaciones generadas para el dia mas reciente del rango.</div>';
+  }
+
+  c.innerHTML = html;
+}
+
+function renderAds(){
+  const rows = rowsInRange(range);
+  const prev = prevRange();
+  const prevRows = rowsInRange(prev);
+  const spend = sumField(rows,'meta_spend_usd'), spendPrev = sumField(prevRows,'meta_spend_usd');
+  const compras = sumField(rows,'meta_compras'), comprasPrev = sumField(prevRows,'meta_compras');
+  const roas = avgField(rows,'meta_roas');
+
+  const grid = document.getElementById('adsGrid');
+  grid.innerHTML = kpiCard('Gasto (USD)', fmtMoney(spend,'$'), pctDelta(spend, spendPrev))
+    + kpiCard('Compras', fmtInt(compras), pctDelta(compras, comprasPrev))
+    + kpiCard('ROAS promedio', roas!==null ? roas.toFixed(2)+'x' : null, null);
+
+  const body = document.getElementById('adsHistBody');
+  const allSorted = (LOG.daily||[]).slice().sort((a,b)=> a.date < b.date ? 1 : -1).slice(0,14);
+  body.innerHTML = allSorted.map(r => {
+    const s = r.meta_spend_usd!==null && r.meta_spend_usd!==undefined ? '$'+Math.round(r.meta_spend_usd).toLocaleString('es-EC') : '&mdash;';
+    const c = r.meta_compras!==null && r.meta_compras!==undefined ? r.meta_compras : '&mdash;';
+    const ro = r.meta_roas!==null && r.meta_roas!==undefined ? r.meta_roas.toFixed(2)+'x' : '&mdash;';
+    const cpa = (r.meta_spend_usd!==null && r.meta_spend_usd!==undefined && r.meta_compras) ? '$'+(r.meta_spend_usd/r.meta_compras).toFixed(2) : '&mdash;';
+    const al = r.meta_alcance!==null && r.meta_alcance!==undefined ? Math.round(r.meta_alcance).toLocaleString('es-EC') : '&mdash;';
+    const im = r.meta_impresiones!==null && r.meta_impresiones!==undefined ? Math.round(r.meta_impresiones).toLocaleString('es-EC') : '&mdash;';
+    const cl = r.meta_clics!==null && r.meta_clics!==undefined ? Math.round(r.meta_clics).toLocaleString('es-EC') : '&mdash;';
+    const ctr = r.meta_ctr!==null && r.meta_ctr!==undefined ? r.meta_ctr.toFixed(2)+'%' : '&mdash;';
+    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td><td>'+cpa+'</td><td>'+al+'</td><td>'+im+'</td><td>'+cl+'</td><td>'+ctr+'</td></tr>';
+  }).join('');
+}
+
+function renderAll(){
+  document.getElementById('statusLine').innerHTML =
+    'Mostrando <b>'+range.from+'</b> a <b>'+range.to+'</b> &middot; '+rowsInRange(range).length+' dia(s) con datos en el rango.';
+  renderCountry();
+  renderAds();
+}
+
+document.querySelectorAll('.chip[data-range]').forEach(btn=>{
+  btn.addEventListener('click', ()=> setQuickRange(parseInt(btn.dataset.range)));
+});
+document.getElementById('applyRange').addEventListener('click', ()=>{
+  const from = document.getElementById('rangeFrom').value;
+  const to = document.getElementById('rangeTo').value;
+  if (!from || !to || from > to) return;
+  range = { from, to };
+  document.querySelectorAll('.chip[data-range]').forEach(c=>c.classList.remove('active'));
+  renderAll();
+});
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    activeCountry = btn.dataset.country;
+    renderCountry();
+  });
+});
+
+(async function init(){
+  try{
+    const res = await fetch('./data/daily-log.json', { cache: 'no-store' });
+    LOG = await res.json();
+    const lastDate = LOG.daily && LOG.daily.length ? LOG.daily.slice().sort((a,b)=>a.date<b.date?1:-1)[0].date : '—';
+    document.getElementById('lastUpdated').innerHTML = 'Ultimo dato disponible: <b>'+lastDate+'</b>';
+    setQuickRange(6);
+  } catch(e){
+    document.getElementById('lastUpdated').innerHTML = 'No se pudo cargar data/daily-log.json (esto es normal si estas viendo una vista previa fuera de GitHub Pages).';
+    document.getElementById('statusLine').innerHTML = 'Abre https://luisgarzonv1.github.io/bou-dashboard/ para ver datos reales.';
+  }
+})();
+</script>
+</body>
+</html>), pctDelta(ga4Ingresos, ga4IngresosPrev));
+    html += kpiCard('Compras GA4', fmtInt(ga4Compras), pctDelta(ga4Compras, ga4ComprasPrev));
+    html += kpiCard('Msj entrantes', fmtInt(entrantes), pctDelta(entrantes, entrantesPrev));
+    html += kpiCard('Msj salientes', fmtInt(salientes), pctDelta(salientes, salientesPrev));
+    html += kpiCard('Lapso resp. medio', fmtSec(lapso), null);
+  } else {
+    const leads = sumField(rows,'kommo_leads_col'), leadsPrev = sumField(prevRows,'kommo_leads_col');
+    const pedidos = sumField(rows,'prestashop_pedidos_col'), pedidosPrev = sumField(prevRows,'prestashop_pedidos_col');
+    const total = sumField(rows,'prestashop_total_col_cop'), totalPrev = sumField(prevRows,'prestashop_total_col_cop');
+    const usuarios = sumField(rows,'ga4_usuarios_col'), usuariosPrev = sumField(prevRows,'ga4_usuarios_col');
+    const entrantes = sumField(rows,'kommo_msj_entrantes_col'), entrantesPrev = sumField(prevRows,'kommo_msj_entrantes_col');
+    const salientes = sumField(rows,'kommo_msj_salientes_col'), salientesPrev = sumField(prevRows,'kommo_msj_salientes_col');
+
+    html += kpiCard('Leads Kommo', fmtInt(leads), pctDelta(leads, leadsPrev));
+    html += kpiCard('Pedidos PrestaShop', fmtInt(pedidos), pctDelta(pedidos, pedidosPrev));
+    html += kpiCard('Ventas web (COP)', fmtMoney(total,'$'), pctDelta(total, totalPrev));
+    html += kpiCard('Usuarios GA4', fmtInt(usuarios), pctDelta(usuarios, usuariosPrev));
+    html += kpiCard('Msj entrantes', fmtInt(entrantes), pctDelta(entrantes, entrantesPrev));
+    html += kpiCard('Msj salientes', fmtInt(salientes), pctDelta(salientes, salientesPrev));
+    html += kpiCard('Ventas WhatsApp (Sheets)', '&mdash;', null);
+  }
+  html += '</div>';
+
+  html += '<div class="section-title">Recomendaciones <span class="accentline"></span></div>';
+  const sorted = rows.slice().sort((a,b)=> a.date < b.date ? 1 : -1);
+  const latest = sorted[0];
+  const field = isEc ? 'recomendaciones_ec' : 'recomendaciones_col';
+  const recos = latest && Array.isArray(latest[field]) ? latest[field] : [];
+  if (recos.length){
+    recos.forEach(r => { html += '<div class="reco">'+r+'</div>'; });
+  } else {
+    html += '<div class="reco empty">Sin recomendaciones generadas para el dia mas reciente del rango.</div>';
+  }
+
+  c.innerHTML = html;
+}
+
+function renderAds(){
+  const rows = rowsInRange(range);
+  const prev = prevRange();
+  const prevRows = rowsInRange(prev);
+  const spend = sumField(rows,'meta_spend_usd'), spendPrev = sumField(prevRows,'meta_spend_usd');
+  const compras = sumField(rows,'meta_compras'), comprasPrev = sumField(prevRows,'meta_compras');
+  const roas = avgField(rows,'meta_roas');
+
+  const grid = document.getElementById('adsGrid');
+  grid.innerHTML = kpiCard('Gasto (USD)', fmtMoney(spend,'$'), pctDelta(spend, spendPrev))
+    + kpiCard('Compras', fmtInt(compras), pctDelta(compras, comprasPrev))
+    + kpiCard('ROAS promedio', roas!==null ? roas.toFixed(2)+'x' : null, null);
+
+  const body = document.getElementById('adsHistBody');
+  const allSorted = (LOG.daily||[]).slice().sort((a,b)=> a.date < b.date ? 1 : -1).slice(0,14);
+  body.innerHTML = allSorted.map(r => {
+    const s = r.meta_spend_usd!==null && r.meta_spend_usd!==undefined ? '$'+Math.round(r.meta_spend_usd).toLocaleString('es-EC') : '&mdash;';
+    const c = r.meta_compras!==null && r.meta_compras!==undefined ? r.meta_compras : '&mdash;';
+    const ro = r.meta_roas!==null && r.meta_roas!==undefined ? r.meta_roas.toFixed(2)+'x' : '&mdash;';
+    const cpa = (r.meta_spend_usd!==null && r.meta_spend_usd!==undefined && r.meta_compras) ? '$'+(r.meta_spend_usd/r.meta_compras).toFixed(2) : '&mdash;';
+    const al = r.meta_alcance!==null && r.meta_alcance!==undefined ? Math.round(r.meta_alcance).toLocaleString('es-EC') : '&mdash;';
+    const im = r.meta_impresiones!==null && r.meta_impresiones!==undefined ? Math.round(r.meta_impresiones).toLocaleString('es-EC') : '&mdash;';
+    const cl = r.meta_clics!==null && r.meta_clics!==undefined ? Math.round(r.meta_clics).toLocaleString('es-EC') : '&mdash;';
+    const ctr = r.meta_ctr!==null && r.meta_ctr!==undefined ? r.meta_ctr.toFixed(2)+'%' : '&mdash;';
+    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td><td>'+cpa+'</td><td>'+al+'</td><td>'+im+'</td><td>'+cl+'</td><td>'+ctr+'</td></tr>';
+  }).join('');
+}
+
+function renderAll(){
+  document.getElementById('statusLine').innerHTML =
+    'Mostrando <b>'+range.from+'</b> a <b>'+range.to+'</b> &middot; '+rowsInRange(range).length+' dia(s) con datos en el rango.';
+  renderCountry();
+  renderAds();
+}
+
+document.querySelectorAll('.chip[data-range]').forEach(btn=>{
+  btn.addEventListener('click', ()=> setQuickRange(parseInt(btn.dataset.range)));
+});
+document.getElementById('applyRange').addEventListener('click', ()=>{
+  const from = document.getElementById('rangeFrom').value;
+  const to = document.getElementById('rangeTo').value;
+  if (!from || !to || from > to) return;
+  range = { from, to };
+  document.querySelectorAll('.chip[data-range]').forEach(c=>c.classList.remove('active'));
+  renderAll();
+});
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    activeCountry = btn.dataset.country;
+    renderCountry();
+  });
+});
+
+(async function init(){
+  try{
+    const res = await fetch('./data/daily-log.json', { cache: 'no-store' });
+    LOG = await res.json();
+    const lastDate = LOG.daily && LOG.daily.length ? LOG.daily.slice().sort((a,b)=>a.date<b.date?1:-1)[0].date : '—';
+    document.getElementById('lastUpdated').innerHTML = 'Ultimo dato disponible: <b>'+lastDate+'</b>';
+    setQuickRange(6);
+  } catch(e){
+    document.getElementById('lastUpdated').innerHTML = 'No se pudo cargar data/daily-log.json (esto es normal si estas viendo una vista previa fuera de GitHub Pages).';
+    document.getElementById('statusLine').innerHTML = 'Abre https://luisgarzonv1.github.io/bou-dashboard/ para ver datos reales.';
+  }
+})();
+</script>
+</body>
+</html>), pctDelta(ga4Ingresos, ga4IngresosPrev));
+    html += kpiCard('Compras GA4', fmtInt(ga4Compras), pctDelta(ga4Compras, ga4ComprasPrev));
+    html += kpiCard('Msj entrantes', fmtInt(entrantes), pctDelta(entrantes, entrantesPrev));
+    html += kpiCard('Msj salientes', fmtInt(salientes), pctDelta(salientes, salientesPrev));
+    html += kpiCard('Ventas WhatsApp (Sheets)', '&mdash;', null);
+  }
+  html += '</div>';
+
+  html += '<div class="section-title">Recomendaciones <span class="accentline"></span></div>';
+  const sorted = rows.slice().sort((a,b)=> a.date < b.date ? 1 : -1);
+  const latest = sorted[0];
+  const field = isEc ? 'recomendaciones_ec' : 'recomendaciones_col';
+  const recos = latest && Array.isArray(latest[field]) ? latest[field] : [];
+  if (recos.length){
+    recos.forEach(r => { html += '<div class="reco">'+r+'</div>'; });
+  } else {
+    html += '<div class="reco empty">Sin recomendaciones generadas para el dia mas reciente del rango.</div>';
+  }
+
+  c.innerHTML = html;
+}
+
+function renderAds(){
+  const rows = rowsInRange(range);
+  const prev = prevRange();
+  const prevRows = rowsInRange(prev);
+  const spend = sumField(rows,'meta_spend_usd'), spendPrev = sumField(prevRows,'meta_spend_usd');
+  const compras = sumField(rows,'meta_compras'), comprasPrev = sumField(prevRows,'meta_compras');
+  const roas = avgField(rows,'meta_roas');
+
+  const grid = document.getElementById('adsGrid');
+  grid.innerHTML = kpiCard('Gasto (USD)', fmtMoney(spend,'$'), pctDelta(spend, spendPrev))
+    + kpiCard('Compras', fmtInt(compras), pctDelta(compras, comprasPrev))
+    + kpiCard('ROAS promedio', roas!==null ? roas.toFixed(2)+'x' : null, null);
+
+  const body = document.getElementById('adsHistBody');
+  const allSorted = (LOG.daily||[]).slice().sort((a,b)=> a.date < b.date ? 1 : -1).slice(0,14);
+  body.innerHTML = allSorted.map(r => {
+    const s = r.meta_spend_usd!==null && r.meta_spend_usd!==undefined ? '$'+Math.round(r.meta_spend_usd).toLocaleString('es-EC') : '&mdash;';
+    const c = r.meta_compras!==null && r.meta_compras!==undefined ? r.meta_compras : '&mdash;';
+    const ro = r.meta_roas!==null && r.meta_roas!==undefined ? r.meta_roas.toFixed(2)+'x' : '&mdash;';
+    const cpa = (r.meta_spend_usd!==null && r.meta_spend_usd!==undefined && r.meta_compras) ? '$'+(r.meta_spend_usd/r.meta_compras).toFixed(2) : '&mdash;';
+    const al = r.meta_alcance!==null && r.meta_alcance!==undefined ? Math.round(r.meta_alcance).toLocaleString('es-EC') : '&mdash;';
+    const im = r.meta_impresiones!==null && r.meta_impresiones!==undefined ? Math.round(r.meta_impresiones).toLocaleString('es-EC') : '&mdash;';
+    const cl = r.meta_clics!==null && r.meta_clics!==undefined ? Math.round(r.meta_clics).toLocaleString('es-EC') : '&mdash;';
+    const ctr = r.meta_ctr!==null && r.meta_ctr!==undefined ? r.meta_ctr.toFixed(2)+'%' : '&mdash;';
+    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td><td>'+cpa+'</td><td>'+al+'</td><td>'+im+'</td><td>'+cl+'</td><td>'+ctr+'</td></tr>';
+  }).join('');
+}
+
+function renderAll(){
+  document.getElementById('statusLine').innerHTML =
+    'Mostrando <b>'+range.from+'</b> a <b>'+range.to+'</b> &middot; '+rowsInRange(range).length+' dia(s) con datos en el rango.';
+  renderCountry();
+  renderAds();
+}
+
+document.querySelectorAll('.chip[data-range]').forEach(btn=>{
+  btn.addEventListener('click', ()=> setQuickRange(parseInt(btn.dataset.range)));
+});
+document.getElementById('applyRange').addEventListener('click', ()=>{
+  const from = document.getElementById('rangeFrom').value;
+  const to = document.getElementById('rangeTo').value;
+  if (!from || !to || from > to) return;
+  range = { from, to };
+  document.querySelectorAll('.chip[data-range]').forEach(c=>c.classList.remove('active'));
+  renderAll();
+});
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    activeCountry = btn.dataset.country;
+    renderCountry();
+  });
+});
+
+(async function init(){
+  try{
+    const res = await fetch('./data/daily-log.json', { cache: 'no-store' });
+    LOG = await res.json();
+    const lastDate = LOG.daily && LOG.daily.length ? LOG.daily.slice().sort((a,b)=>a.date<b.date?1:-1)[0].date : '—';
+    document.getElementById('lastUpdated').innerHTML = 'Ultimo dato disponible: <b>'+lastDate+'</b>';
+    setQuickRange(6);
+  } catch(e){
+    document.getElementById('lastUpdated').innerHTML = 'No se pudo cargar data/daily-log.json (esto es normal si estas viendo una vista previa fuera de GitHub Pages).';
+    document.getElementById('statusLine').innerHTML = 'Abre https://luisgarzonv1.github.io/bou-dashboard/ para ver datos reales.';
+  }
+})();
+</script>
+</body>
+</html>), pctDelta(total, totalPrev));
+    html += kpiCard('Usuarios GA4', fmtInt(usuarios), pctDelta(usuarios, usuariosPrev));
+    html += kpiCard('Usuarios nuevos GA4', fmtInt(usuariosNuevos), pctDelta(usuariosNuevos, usuariosNuevosPrev));
+    html += kpiCard('Ingresos GA4 (USD)', fmtMoney(ga4Ingresos,'
+  } else {
+    const leads = sumField(rows,'kommo_leads_col'), leadsPrev = sumField(prevRows,'kommo_leads_col');
+    const pedidos = sumField(rows,'prestashop_pedidos_col'), pedidosPrev = sumField(prevRows,'prestashop_pedidos_col');
+    const total = sumField(rows,'prestashop_total_col_cop'), totalPrev = sumField(prevRows,'prestashop_total_col_cop');
+    const usuarios = sumField(rows,'ga4_usuarios_col'), usuariosPrev = sumField(prevRows,'ga4_usuarios_col');
+    const entrantes = sumField(rows,'kommo_msj_entrantes_col'), entrantesPrev = sumField(prevRows,'kommo_msj_entrantes_col');
+    const salientes = sumField(rows,'kommo_msj_salientes_col'), salientesPrev = sumField(prevRows,'kommo_msj_salientes_col');
+
+    html += kpiCard('Leads Kommo', fmtInt(leads), pctDelta(leads, leadsPrev));
+    html += kpiCard('Pedidos PrestaShop', fmtInt(pedidos), pctDelta(pedidos, pedidosPrev));
+    html += kpiCard('Ventas web (COP)', fmtMoney(total,'$'), pctDelta(total, totalPrev));
+    html += kpiCard('Usuarios GA4', fmtInt(usuarios), pctDelta(usuarios, usuariosPrev));
+    html += kpiCard('Msj entrantes', fmtInt(entrantes), pctDelta(entrantes, entrantesPrev));
+    html += kpiCard('Msj salientes', fmtInt(salientes), pctDelta(salientes, salientesPrev));
+    html += kpiCard('Ventas WhatsApp (Sheets)', '&mdash;', null);
+  }
+  html += '</div>';
+
+  html += '<div class="section-title">Recomendaciones <span class="accentline"></span></div>';
+  const sorted = rows.slice().sort((a,b)=> a.date < b.date ? 1 : -1);
+  const latest = sorted[0];
+  const field = isEc ? 'recomendaciones_ec' : 'recomendaciones_col';
+  const recos = latest && Array.isArray(latest[field]) ? latest[field] : [];
+  if (recos.length){
+    recos.forEach(r => { html += '<div class="reco">'+r+'</div>'; });
+  } else {
+    html += '<div class="reco empty">Sin recomendaciones generadas para el dia mas reciente del rango.</div>';
+  }
+
+  c.innerHTML = html;
+}
+
+function renderAds(){
+  const rows = rowsInRange(range);
+  const prev = prevRange();
+  const prevRows = rowsInRange(prev);
+  const spend = sumField(rows,'meta_spend_usd'), spendPrev = sumField(prevRows,'meta_spend_usd');
+  const compras = sumField(rows,'meta_compras'), comprasPrev = sumField(prevRows,'meta_compras');
+  const roas = avgField(rows,'meta_roas');
+
+  const grid = document.getElementById('adsGrid');
+  grid.innerHTML = kpiCard('Gasto (USD)', fmtMoney(spend,'$'), pctDelta(spend, spendPrev))
+    + kpiCard('Compras', fmtInt(compras), pctDelta(compras, comprasPrev))
+    + kpiCard('ROAS promedio', roas!==null ? roas.toFixed(2)+'x' : null, null);
+
+  const body = document.getElementById('adsHistBody');
+  const allSorted = (LOG.daily||[]).slice().sort((a,b)=> a.date < b.date ? 1 : -1).slice(0,14);
+  body.innerHTML = allSorted.map(r => {
+    const s = r.meta_spend_usd!==null && r.meta_spend_usd!==undefined ? '$'+Math.round(r.meta_spend_usd).toLocaleString('es-EC') : '&mdash;';
+    const c = r.meta_compras!==null && r.meta_compras!==undefined ? r.meta_compras : '&mdash;';
+    const ro = r.meta_roas!==null && r.meta_roas!==undefined ? r.meta_roas.toFixed(2)+'x' : '&mdash;';
+    const cpa = (r.meta_spend_usd!==null && r.meta_spend_usd!==undefined && r.meta_compras) ? '$'+(r.meta_spend_usd/r.meta_compras).toFixed(2) : '&mdash;';
+    const al = r.meta_alcance!==null && r.meta_alcance!==undefined ? Math.round(r.meta_alcance).toLocaleString('es-EC') : '&mdash;';
+    const im = r.meta_impresiones!==null && r.meta_impresiones!==undefined ? Math.round(r.meta_impresiones).toLocaleString('es-EC') : '&mdash;';
+    const cl = r.meta_clics!==null && r.meta_clics!==undefined ? Math.round(r.meta_clics).toLocaleString('es-EC') : '&mdash;';
+    const ctr = r.meta_ctr!==null && r.meta_ctr!==undefined ? r.meta_ctr.toFixed(2)+'%' : '&mdash;';
+    return '<tr><td>'+r.date+'</td><td>'+s+'</td><td>'+c+'</td><td>'+ro+'</td><td>'+cpa+'</td><td>'+al+'</td><td>'+im+'</td><td>'+cl+'</td><td>'+ctr+'</td></tr>';
+  }).join('');
+}
+
+function renderAll(){
+  document.getElementById('statusLine').innerHTML =
+    'Mostrando <b>'+range.from+'</b> a <b>'+range.to+'</b> &middot; '+rowsInRange(range).length+' dia(s) con datos en el rango.';
+  renderCountry();
+  renderAds();
+}
+
+document.querySelectorAll('.chip[data-range]').forEach(btn=>{
+  btn.addEventListener('click', ()=> setQuickRange(parseInt(btn.dataset.range)));
+});
+document.getElementById('applyRange').addEventListener('click', ()=>{
+  const from = document.getElementById('rangeFrom').value;
+  const to = document.getElementById('rangeTo').value;
+  if (!from || !to || from > to) return;
+  range = { from, to };
+  document.querySelectorAll('.chip[data-range]').forEach(c=>c.classList.remove('active'));
+  renderAll();
+});
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    activeCountry = btn.dataset.country;
+    renderCountry();
+  });
+});
+
+(async function init(){
+  try{
+    const res = await fetch('./data/daily-log.json', { cache: 'no-store' });
+    LOG = await res.json();
+    const lastDate = LOG.daily && LOG.daily.length ? LOG.daily.slice().sort((a,b)=>a.date<b.date?1:-1)[0].date : '—';
+    document.getElementById('lastUpdated').innerHTML = 'Ultimo dato disponible: <b>'+lastDate+'</b>';
+    setQuickRange(6);
+  } catch(e){
+    document.getElementById('lastUpdated').innerHTML = 'No se pudo cargar data/daily-log.json (esto es normal si estas viendo una vista previa fuera de GitHub Pages).';
+    document.getElementById('statusLine').innerHTML = 'Abre https://luisgarzonv1.github.io/bou-dashboard/ para ver datos reales.';
+  }
+})();
+</script>
+</body>
+</html>), pctDelta(ga4Ingresos, ga4IngresosPrev));
+    html += kpiCard('Compras GA4', fmtInt(ga4Compras), pctDelta(ga4Compras, ga4ComprasPrev));
     html += kpiCard('Msj entrantes', fmtInt(entrantes), pctDelta(entrantes, entrantesPrev));
     html += kpiCard('Msj salientes', fmtInt(salientes), pctDelta(salientes, salientesPrev));
     html += kpiCard('Lapso resp. medio', fmtSec(lapso), null);
