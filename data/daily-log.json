@@ -2501,6 +2501,93 @@
         "window_days": 30
       },
       "kommo_funnel_nota": "Snapshot de leads CREADOS en ventana movil de 30 dias, segmentados por etapa ACTUAL. No es el pipeline historico completo (ese tiene miles de leads acumulados, impractico para una tarea diaria)."
+    },
+    {
+      "date": "2026-07-31",
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 6,
+      "kommo_msj_salientes_ec": 0,
+      "kommo_msj_entrantes_col": 0,
+      "kommo_msj_salientes_col": 3,
+      "kommo_msj_salientes_be": null,
+      "kommo_lapso_medio_be_s": null,
+      "kommo_lapso_promedio_be_s": null,
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": true,
+      "prestashop_pedidos_ec": 0,
+      "prestashop_pedidos_ec_todos_estados": 0,
+      "prestashop_total_ec_usd": 0,
+      "prestashop_pedidos_col": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "prestashop_total_col_cop": 0,
+      "ga4_usuarios_ec": 0,
+      "ga4_usuarios_col": 7,
+      "meta_spend_usd": 18.42,
+      "meta_compras": 0,
+      "meta_roas": 0,
+      "recomendaciones_ec": [
+        "0 leads nuevos y 0 pedidos validos en PrestaShop EC hoy (igual que ayer 30/jul) - revisar si hay causa comun (stock, checkout, o pauta) antes de asumir estacionalidad.",
+        "Funnel EC (30d): 141 leads, solo 7 ganados (~5%) y 59 estancados en 'Reacciones y Comentarios' - priorizar seguimiento comercial sobre ese bloque antes de sumar mas leads nuevos.",
+        "Contifico sigue bloqueado por falta de firma electronica (21 dias desde 10/jul) - dar seguimiento a la gestion legal, no es un problema tecnico de la integracion."
+      ],
+      "recomendaciones_col": [
+        "Campana 'la piel colombia nuevo' gasto $16.92 con 61 link clicks y 0 compras registradas hoy - revisar landing/checkout COL antes de escalar presupuesto.",
+        "GA4 COL registra 7 usuarios nuevos hoy sin compras - dia aun no ha cerrado (corte ~11am hora Ecuador), monitorear cierre de dia.",
+        "Funnel COL (30d) es pequeno (12 leads) frente a EC (141) - evaluar si vale la pena mas inversion en adquisicion COL dado el volumen bajo."
+      ],
+      "parcial": true,
+      "nota_verificacion": "Corte parcial del dia (~11:00am hora Ecuador, dia aun no cierra). PrestaShop EC y COL: 0 pedidos hoy en ambas tiendas, verificado contra current_state (ningun pedido creado hoy en ninguna tienda, por lo que el conteo filtrado y el bruto sin filtrar coinciden en 0). Kommo mensajeria via /api/v4/events: de 251 eventos incoming/outgoing_chat_message del dia, solo 9 pertenecen a los pipelines EC/COL rastreados (6 in EC, 3 out COL); el resto (242) pertenece al pipeline principal 'Embudo de Gestion' (id 7768559) que no se segmenta por pais en este dashboard - limitacion conocida del metodo, no un error. Sin pares incoming->outgoing validos hoy en EC/COL, por eso kommo_lapso_medio_ec_s/col_s quedan null. Meta Ads: gasto parcial del dia ($18.42), 0 compras atribuidas por Windsor.ai hasta el corte - meta_cpa se deja null (no se divide entre 0 compras). GA4: Windsor.ai no devolvio fila para bouentertainment.com (EC) hoy hasta el corte - se asume 0 actividad registrada aun, no fuente caida.",
+      "meta_impresiones": 9521,
+      "meta_alcance": 7335,
+      "meta_clics": 129,
+      "meta_link_clics": 69,
+      "meta_ctr": 1.36,
+      "meta_ingresos_usd": 0,
+      "meta_cpa": null,
+      "ga4_usuarios_nuevos_ec": 0,
+      "ga4_sesiones_ec": 0,
+      "ga4_ingresos_ec_usd": 0,
+      "ga4_compras_ec": 0,
+      "ga4_usuarios_nuevos_col": 7,
+      "ga4_sesiones_col": 7,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "kommo_lapso_medio_ec_s": null,
+      "kommo_lapso_medio_col_s": null,
+      "kommo_funnel_ec": {
+        "total": 141,
+        "byStatus": {
+          "Reacciones y Comentarios": 59,
+          "leads Tibios (interacción)": 33,
+          "Leads ganados": 7,
+          "Contacto inicial": 11,
+          "Colaboraciones": 4,
+          "Leads perdidos": 6,
+          "Por entregar": 8,
+          "Por registrar y FACTURAR": 1,
+          "Servicios Adicionales": 3,
+          "Nueva consulta": 1,
+          "R.Comentarios Revisados": 6,
+          "SPAM": 1,
+          "CAMBIOS Y DEVOLUCIONES": 1
+        },
+        "window_days": 30
+      },
+      "kommo_funnel_col": {
+        "total": 12,
+        "byStatus": {
+          "Por entregar": 3,
+          "leads Calientes (datos bancarios)": 1,
+          "leads Tibios (interacción)": 3,
+          "Contacto inicial": 3,
+          "Ventas Perdidos": 1,
+          "Logrado con éxito": 1
+        },
+        "window_days": 30
+      },
+      "kommo_funnel_nota": "Snapshot de leads CREADOS en ventana movil de 30 dias, segmentados por etapa ACTUAL. No es el pipeline historico completo (ese tiene miles de leads acumulados, impractico para una tarea diaria)."
     }
   ],
   "periodic": [
