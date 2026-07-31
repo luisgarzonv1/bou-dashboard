@@ -39,9 +39,12 @@
   .chip { font-family: var(--mono); font-size: 11px; padding: 6px 12px; border: 1px solid var(--line-strong); border-radius: 100px; color: var(--ink-soft); letter-spacing: 0.05em; text-transform: uppercase; }
   .chip.accent { border-color: var(--accent); color: var(--accent); }
   .chip.warn { border-color: var(--red); color: var(--red); }
+  .chip.toggle { cursor: pointer; background: transparent; }
+  .chip.toggle.active { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 700; }
   select#weekSelector { font-family: var(--mono); font-size: 11px; background: var(--bg-soft); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 100px; padding: 6px 14px; text-transform: uppercase; letter-spacing: 0.05em; }
   nav { position: sticky; top: 0; background: rgba(15, 14, 12, 0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 50; padding: 16px 0; margin: 32px 0 0; }
-  nav .container { display: flex; gap: 24px; overflow-x: auto; }
+  nav .container { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; }
+  nav .container::-webkit-scrollbar { display: none; }
   nav a { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-mute); text-decoration: none; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; }
   nav a:hover { color: var(--ink); }
   section { padding: 72px 0; border-bottom: 1px solid var(--line); }
@@ -52,10 +55,12 @@
   h2 { font-family: var(--display); font-weight: 700; font-size: clamp(32px, 4.5vw, 48px); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 16px; }
   h2 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
   .lead { font-size: 17px; color: var(--ink-soft); max-width: 760px; margin-bottom: 36px; line-height: 1.55; }
-  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; margin-bottom: 32px; }
+  .subsection-title { font-family: var(--display); font-size: 21px; font-weight: 600; margin: 44px 0 4px; }
+  .subsection-sub { font-size: 12px; color: var(--ink-mute); font-family: var(--mono); margin-bottom: 16px; letter-spacing: .02em; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; margin-bottom: 32px; }
   .kpi { background: var(--bg-soft); padding: 26px 22px; }
   .kpi-label { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px; }
-  .kpi-value { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .kpi-value { font-family: var(--display); font-weight: 700; font-size: 32px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px; }
   .kpi-value em { color: var(--accent); font-style: normal; }
   .kpi-delta { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); }
   .kpi-delta.up { color: var(--green); }
@@ -63,7 +68,7 @@
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 8px; }
   @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
   .card { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 6px; padding: 28px; }
-  .card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 10px; }
   .card-title { font-family: var(--display); font-size: 18px; font-weight: 600; }
   .card-tag { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.1em; }
   .chart-wrap { position: relative; height: 260px; }
@@ -80,8 +85,10 @@
   .insight-tag.watch { color: var(--accent-2); }
   .insight-tag::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
   .insight-title { font-family: var(--display); font-size: 19px; font-weight: 600; margin-bottom: 10px; line-height: 1.25; }
-  .insight-body { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; }
+  .insight-body { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 14px; }
   .insight-body strong { color: var(--ink); font-weight: 500; }
+  .insight-action { padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; color: var(--ink-mute); line-height: 1.6; text-transform: uppercase; letter-spacing: 0.05em; }
+  .insight-action::before { content: '→ '; color: var(--accent); }
   table { width: 100%; border-collapse: collapse; margin-top: 8px; }
   th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line); }
   th { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
@@ -97,15 +104,30 @@
   .hero-stat-item .v { font-family: var(--display); font-size: 40px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
   .hero-stat-item .v em { color: var(--accent); font-style: normal; }
   .hero-stat-item .s { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); margin-top: 8px; }
+  .compare-row { display: grid; grid-template-columns: 150px 1fr 90px; gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-label { font-family: var(--display); font-size: 13px; font-weight: 500; }
+  .compare-bar-wrap { background: rgba(245,240,230,.04); height: 26px; border-radius: 3px; overflow: hidden; }
+  .compare-bar { height: 100%; background: var(--accent); display: flex; align-items: center; padding-left: 10px; font-family: var(--mono); font-size: 11px; color: var(--bg); font-weight: 700; }
+  .compare-bar.crit { background: var(--red); }
+  .compare-value { font-family: var(--mono); font-size: 12px; text-align: right; color: var(--ink-soft); }
   .alert-box { background: rgba(239, 90, 90, 0.06); border: 1px solid rgba(239, 90, 90, 0.3); border-radius: 6px; padding: 18px 22px; margin-top: 20px; font-family: var(--mono); font-size: 12px; color: var(--red); line-height: 1.7; }
   .alert-box strong { color: var(--red); font-weight: 700; }
   .alert-box span { color: var(--ink-mute); }
   .info-box { background: rgba(232, 197, 71, 0.06); border: 1px solid rgba(232, 197, 71, 0.3); border-radius: 6px; padding: 18px 22px; margin-top: 20px; font-family: var(--mono); font-size: 12px; color: var(--accent-2); line-height: 1.7; }
   .info-box strong { color: var(--accent-2); font-weight: 700; }
   .info-box span { color: var(--ink-mute); }
+  .event-note { font-size: 12px; color: var(--ink-mute); font-family: var(--mono); line-height: 1.6; margin-top: 12px; }
   .notes-list { list-style: none; margin-top: 8px; display: grid; gap: 10px; }
   .notes-list li { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); line-height: 1.6; padding-left: 20px; position: relative; }
   .notes-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+  .actions-list { display: grid; gap: 14px; margin-top: 8px; }
+  .action { display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center; padding: 20px 24px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 6px; }
+  .action-num { font-family: var(--display); font-size: 30px; font-weight: 900; color: var(--accent); line-height: 1; min-width: 42px; }
+  .action-content h4 { font-family: var(--display); font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+  .action-content p { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+  .action-owner { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.15em; padding: 6px 12px; background: rgba(245,240,230,.05); border-radius: 100px; text-align: center; }
+  @media (max-width: 700px) { .action { grid-template-columns: 1fr; } }
   footer { padding: 50px 0; text-align: center; font-family: var(--mono); font-size: 11px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.15em; }
   footer a { color: var(--accent); text-decoration: none; }
   #loadingMsg, #errorMsg { padding: 80px 32px; text-align: center; font-family: var(--mono); color: var(--ink-mute); }
@@ -147,7 +169,10 @@
     <a href="#ecuador">02 / Ecuador</a>
     <a href="#colombia">03 / Colombia</a>
     <a href="#ads">04 / Meta Ads</a>
-    <a href="#hallazgos">05 / Hallazgos</a>
+    <a href="#anuncios">05 / Ad Sets</a>
+    <a href="#hallazgos-tec">06 / Hallazgos técnicos</a>
+    <a href="#hallazgos-neg">07 / Hallazgos ventas</a>
+    <a href="#acciones">08 / Acciones</a>
     <a href="index.html" style="color:var(--accent-2);">← Dashboard diario</a>
   </div>
 </nav>
@@ -181,11 +206,39 @@
         <div class="chart-wrap"><canvas id="ecTraficoChart"></canvas></div>
       </div>
       <div class="card">
-        <div class="card-header"><div class="card-title">Funnel Kommo — leads nuevos por etapa actual</div><div class="card-tag" id="ecFunnelTag">—</div></div>
+        <div class="card-header"><div class="card-title">Funnel Kommo — leads por etapa actual</div><div class="card-tag" id="ecFunnelTag">—</div></div>
         <div class="funnel" id="ecFunnel"></div>
       </div>
     </div>
     <div id="ecAlertBox"></div>
+
+    <div class="subsection-title">Eventos GA4 — Ecuador</div>
+    <div class="subsection-sub" id="ecEventosSub">Fuente: GA4 · Todos los eventos registrados en la semana</div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header"><div class="card-title">Número de eventos por nombre</div><div class="card-tag">Top 8</div></div>
+        <table><thead><tr><th>Evento</th><th class="num">Conteo</th></tr></thead><tbody id="ecEventosBody"></tbody></table>
+        <p class="event-note" id="ecEventosNote"></p>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Eventos clave (conversión)</div><div class="card-tag">is_conversion_event = true</div></div>
+        <table><thead><tr><th>Evento clave</th><th class="num">Conteo</th></tr></thead><tbody id="ecEventosClaveBody"></tbody></table>
+        <p class="event-note" id="ecEventosClaveNote"></p>
+      </div>
+    </div>
+
+    <div class="subsection-title">Canales de tráfico — Ecuador</div>
+    <div class="subsection-sub">Fuente: GA4 · session_default_channel_group</div>
+    <div class="card">
+      <table><thead><tr><th>Canal</th><th class="num">Sesiones</th><th class="num">% del total</th></tr></thead><tbody id="ecCanalesBody"></tbody></table>
+      <p class="event-note" id="ecCanalesNote"></p>
+    </div>
+
+    <div class="subsection-title">Artículos comprados — Ecuador</div>
+    <div class="subsection-sub">Fuente: GA4 · item_name (items_purchased &gt; 0)</div>
+    <div class="card">
+      <table><thead><tr><th>Artículo</th><th class="num">Unidades</th><th class="num">Ingresos</th></tr></thead><tbody id="ecArticulosBody"></tbody></table>
+    </div>
   </div>
 </section>
 
@@ -202,11 +255,40 @@
         <div class="chart-wrap"><canvas id="colTraficoChart"></canvas></div>
       </div>
       <div class="card">
-        <div class="card-header"><div class="card-title">Funnel Kommo — leads nuevos por etapa actual</div><div class="card-tag" id="colFunnelTag">—</div></div>
+        <div class="card-header"><div class="card-title">Funnel Kommo — leads por etapa actual</div><div class="card-tag" id="colFunnelTag">—</div></div>
         <div class="funnel" id="colFunnel"></div>
       </div>
     </div>
     <div id="colAlertBox"></div>
+
+    <div class="subsection-title">Eventos GA4 — Colombia</div>
+    <div class="subsection-sub">Fuente: GA4 · Todos los eventos registrados en la semana</div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header"><div class="card-title">Número de eventos por nombre</div><div class="card-tag">Top 8</div></div>
+        <table><thead><tr><th>Evento</th><th class="num">Conteo</th></tr></thead><tbody id="colEventosBody"></tbody></table>
+        <p class="event-note" id="colEventosNote"></p>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Eventos clave (conversión)</div><div class="card-tag">is_conversion_event = true</div></div>
+        <table><thead><tr><th>Evento clave</th><th class="num">Conteo</th></tr></thead><tbody id="colEventosClaveBody"></tbody></table>
+        <p class="event-note" id="colEventosClaveNote"></p>
+      </div>
+    </div>
+
+    <div class="subsection-title">Canales de tráfico — Colombia</div>
+    <div class="subsection-sub">Fuente: GA4 · session_default_channel_group</div>
+    <div class="card">
+      <table><thead><tr><th>Canal</th><th class="num">Sesiones</th><th class="num">% del total</th></tr></thead><tbody id="colCanalesBody"></tbody></table>
+      <p class="event-note" id="colCanalesNote"></p>
+    </div>
+
+    <div class="subsection-title">Artículos comprados — Colombia</div>
+    <div class="subsection-sub">Fuente: GA4 · item_name (items_purchased &gt; 0)</div>
+    <div class="card">
+      <table><thead><tr><th>Artículo</th><th class="num">Unidades</th><th class="num">Ingresos GA4</th></tr></thead><tbody id="colArticulosBody"></tbody></table>
+      <div class="info-box" id="colArticulosNote" style="display:none;"></div>
+    </div>
   </div>
 </section>
 
@@ -217,20 +299,87 @@
     <h2>Inversión, ROAS y <em>alcance</em></h2>
     <p class="lead">Agregado de todas las campañas activas de la cuenta, sin segmentar por país (Meta no reporta split geográfico confiable). Fuente: Windsor.ai.</p>
     <div class="kpi-grid" id="adsKpis"></div>
-    <div class="card">
-      <div class="card-header"><div class="card-title">Spend vs Ingresos atribuidos — semana vs anterior</div><div class="card-tag">Fuente: Windsor.ai</div></div>
-      <div class="chart-wrap"><canvas id="adsChart"></canvas></div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Performance — Inversión vs Valor</div>
+          <div class="card-tag">Semana vs anterior</div>
+        </div>
+        <div style="margin-bottom:10px;">
+          <span class="chip toggle active" id="perfBtnUsd" onclick="setPerfFilter('usd')">USD</span>
+          <span class="chip toggle" id="perfBtnPct" onclick="setPerfFilter('pct')">% vs sem. anterior</span>
+        </div>
+        <div class="chart-wrap"><canvas id="adsChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Métricas de eficiencia</div><div class="card-tag" id="adsEfiTag">—</div></div>
+        <div id="adsEficiencia" style="display:grid; gap:6px; margin-top:6px;"></div>
+        <p class="event-note" id="adsEficienciaNote"></p>
+      </div>
     </div>
     <div class="info-box"><strong>Nota:</strong> <span>meta_alcance es la suma de alcance por campaña (no deduplicado) — puede sobreestimar si hay solapamiento de audiencias entre campañas activas simultáneamente.</span></div>
   </div>
 </section>
 
-<!-- 05 HALLAZGOS -->
-<section id="hallazgos" style="border-bottom:none;">
+<!-- 05 AD SETS -->
+<section id="anuncios">
   <div class="container">
-    <div class="section-label">05 — Hallazgos y notas de verificación</div>
-    <h2>Lo que hay que <em>verificar o vigilar</em></h2>
-    <p class="lead">Transparencia total: estos son huecos, discrepancias o hallazgos que no deben tomarse como cifra cerrada sin revisión adicional.</p>
+    <div class="section-label">05 — Detalle por ad set</div>
+    <h2 id="anunciosTitle">Ad sets <em>activos</em></h2>
+    <p class="lead" id="anunciosLead">—</p>
+
+    <div class="card">
+      <div class="card-header"><div class="card-title">Ad sets — semana actual</div><div class="card-tag">Fuente: Meta Ads vía Windsor.ai</div></div>
+      <table>
+        <thead><tr><th>Ad Set</th><th>Campaña</th><th>Estado</th><th class="num">Inversión</th><th class="num">Impresiones</th><th class="num">Alcance</th><th class="num">Frecuencia</th><th class="num">Compras</th><th class="num">CPA</th></tr></thead>
+        <tbody id="adsetBody"></tbody>
+      </table>
+      <p class="event-note">*Alcance sumado por ad set, no deduplicado entre audiencias — puede sobreestimar el alcance único real.</p>
+    </div>
+
+    <div class="two-col" style="margin-top:28px;">
+      <div class="card">
+        <div class="card-header"><div class="card-title">Inversión por ad set</div><div class="card-tag" id="adsetSpendTag">—</div></div>
+        <div class="chart-wrap"><canvas id="adsetSpendChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Frecuencia por ad set</div><div class="card-tag">Alerta si &gt; 5×</div></div>
+        <div class="chart-wrap"><canvas id="adsetFreqChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 HALLAZGOS TÉCNICOS -->
+<section id="hallazgos-tec">
+  <div class="container">
+    <div class="section-label">06 — Hallazgos técnicos</div>
+    <h2>Metodología y <em>estado de las fuentes</em></h2>
+    <p class="lead">Hallazgos de infraestructura, integraciones y calidad de datos — para el equipo de Ops/Tech.</p>
+    <div class="insights-grid" id="hallazgosTecGrid"></div>
+  </div>
+</section>
+
+<!-- 07 HALLAZGOS VENTAS -->
+<section id="hallazgos-neg">
+  <div class="container">
+    <div class="section-label">07 — Hallazgos de ventas y marketing</div>
+    <h2>Cosas que <em>requieren decisión</em> esta semana</h2>
+    <p class="lead">Hallazgos de negocio, accionables por CEO, Ads y equipo comercial.</p>
+    <div class="insights-grid" id="hallazgosNegGrid"></div>
+  </div>
+</section>
+
+<!-- 08 ACCIONES -->
+<section id="acciones" style="border-bottom:none;">
+  <div class="container">
+    <div class="section-label">08 — Acciones inmediatas</div>
+    <h2>Qué hacer <em>esta semana</em></h2>
+    <p class="lead">Priorizado por impacto en ventas y conversión.</p>
+    <div class="actions-list" id="accionesList"></div>
+
+    <div class="subsection-title">Notas de verificación adicionales</div>
     <ul class="notes-list" id="notesList"></ul>
   </div>
 </section>
@@ -239,7 +388,7 @@
 
 <footer>
   <div class="container">
-    Bou Entertainment · Reporte generado automáticamente desde data/weekly-log.json · Kommo CRM + PrestaShop + Windsor.ai (Meta Ads/GA4) + Contífico<br>
+    Bou Entertainment · Reporte generado automáticamente desde data/weekly-log.json · Kommo CRM + PrestaShop + Windsor.ai (Meta Ads/GA4) + Contífico + Google Sheets<br>
     <a href="index.html">Ver dashboard diario →</a>
   </div>
 </footer>
@@ -247,14 +396,12 @@
 <script>
 let WEEKLY_DATA = null;
 let charts = {};
+let CURRENT_WEEK = null;
 
-function fmtInt(n) { return Math.round(n).toLocaleString('es-EC'); }
-function fmtUsd(n) { return '$' + Number(n).toLocaleString('es-EC', {minimumFractionDigits:2, maximumFractionDigits:2}); }
-function fmtCop(n) { return '$' + Math.round(n).toLocaleString('es-CO') + ' COP'; }
-function pctDelta(curr, prev) {
-  if (!prev) return null;
-  return ((curr - prev) / prev) * 100;
-}
+function fmtInt(n) { return Math.round(n||0).toLocaleString('es-EC'); }
+function fmtUsd(n) { return '$' + Number(n||0).toLocaleString('es-EC', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+function fmtCop(n) { return '$' + Math.round(n||0).toLocaleString('es-CO') + ' COP'; }
+function pctDelta(curr, prev) { if (!prev) return null; return ((curr - prev) / prev) * 100; }
 function deltaLabel(curr, prev, suffix) {
   suffix = suffix || '';
   const d = pctDelta(curr, prev);
@@ -266,10 +413,9 @@ function deltaLabel(curr, prev, suffix) {
 function kpiCard(label, value, deltaHtml) {
   return '<div class="kpi"><div class="kpi-label">' + label + '</div><div class="kpi-value">' + value + '</div>' + (deltaHtml||'') + '</div>';
 }
-function insightCard(tag, tagLabel, title, body) {
-  return '<div class="insight"><div class="insight-tag ' + tag + '">' + tagLabel + '</div><div class="insight-title">' + title + '</div><div class="insight-body">' + body + '</div></div>';
+function insightCard(tag, tagLabel, title, body, action) {
+  return '<div class="insight"><div class="insight-tag ' + tag + '">' + tagLabel + '</div><div class="insight-title">' + title + '</div><div class="insight-body">' + body + '</div>' + (action ? '<div class="insight-action">' + action + '</div>' : '') + '</div>';
 }
-
 function destroyChart(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
 
 function barChart(canvasId, labels, currVals, prevVals, currLabel, prevLabel) {
@@ -277,120 +423,205 @@ function barChart(canvasId, labels, currVals, prevVals, currLabel, prevLabel) {
   const ctx = document.getElementById(canvasId).getContext('2d');
   charts[canvasId] = new Chart(ctx, {
     type: 'bar',
-    data: {
-      labels: labels,
-      datasets: [
-        { label: prevLabel, data: prevVals, backgroundColor: 'rgba(245,240,230,0.15)', borderRadius: 3 },
-        { label: currLabel, data: currVals, backgroundColor: '#ff5a1f', borderRadius: 3 }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { labels: { color: '#c8bfae', font: { family: 'JetBrains Mono', size: 11 } } } },
-      scales: {
-        x: { ticks: { color: '#807868', font: { family: 'JetBrains Mono', size: 10 } }, grid: { display: false } },
-        y: { ticks: { color: '#807868', font: { family: 'JetBrains Mono', size: 10 } }, grid: { color: 'rgba(245,240,230,0.06)' } }
-      }
-    }
+    data: { labels: labels, datasets: [
+      { label: prevLabel, data: prevVals, backgroundColor: 'rgba(245,240,230,0.15)', borderRadius: 3 },
+      { label: currLabel, data: currVals, backgroundColor: '#ff5a1f', borderRadius: 3 }
+    ] },
+    options: { responsive:true, maintainAspectRatio:false,
+      plugins: { legend: { labels: { color:'#c8bfae', font:{family:'JetBrains Mono', size:11} } } },
+      scales: { x: { ticks:{color:'#807868', font:{family:'JetBrains Mono', size:10}}, grid:{display:false} },
+                y: { ticks:{color:'#807868', font:{family:'JetBrains Mono', size:10}}, grid:{color:'rgba(245,240,230,0.06)'} } } }
   });
 }
 
 function renderFunnel(containerId, etapas) {
   const el = document.getElementById(containerId);
   const entries = Object.entries(etapas || {});
-  if (!entries.length) {
-    el.innerHTML = '<div class="funnel-step"><div class="funnel-name">Sin leads nuevos esta semana</div><div class="funnel-stat">—</div></div>';
-    return;
-  }
+  if (!entries.length) { el.innerHTML = '<div class="funnel-step"><div class="funnel-name">Sin leads en la ventana</div><div class="funnel-stat">—</div></div>'; return; }
   const max = Math.max(...entries.map(e => e[1]));
   el.innerHTML = entries.sort((a,b) => b[1]-a[1]).map(([name, count]) => {
     const pct = Math.round((count/max)*100);
     return '<div class="funnel-step" style="background: linear-gradient(90deg, rgba(255,90,31,'+(0.04+0.10*pct/100)+') '+pct+'%, rgba(245,240,230,0.03) '+pct+'%);">' +
-      '<div class="funnel-name">' + name + '</div>' +
-      '<div class="funnel-stat"><strong>' + count + '</strong> leads</div></div>';
+      '<div class="funnel-name">' + name + '</div><div class="funnel-stat"><strong>' + count + '</strong> leads</div></div>';
   }).join('');
+}
+
+function renderEventTable(bodyId, events) {
+  const tbody = document.getElementById(bodyId);
+  if (!events || !events.length) { tbody.innerHTML = '<tr><td colspan="2" style="color:var(--ink-mute)">Sin datos</td></tr>'; return; }
+  tbody.innerHTML = events.map(e => '<tr><td>' + e.event_name + '</td><td class="num">' + fmtInt(e.event_count) + '</td></tr>').join('');
+}
+function renderCanalesTable(bodyId, noteId, canales) {
+  const tbody = document.getElementById(bodyId);
+  if (!canales || !canales.length) { tbody.innerHTML = '<tr><td colspan="3" style="color:var(--ink-mute)">Sin datos</td></tr>'; return; }
+  const total = canales.reduce((a,c)=>a+c.sessions,0);
+  tbody.innerHTML = canales.map(c => '<tr><td>' + c.channel + '</td><td class="num">' + fmtInt(c.sessions) + '</td><td class="num">' + (total? Math.round(c.sessions/total*100):0) + '%</td></tr>').join('');
+  if (noteId) document.getElementById(noteId).textContent = canales[0] ? '→ Canal principal: ' + canales[0].channel + ' (' + Math.round(canales[0].sessions/total*100) + '% de las sesiones)' : '';
+}
+function renderArticulosTable(bodyId, articulos) {
+  const tbody = document.getElementById(bodyId);
+  if (!articulos || !articulos.length) { tbody.innerHTML = '<tr><td colspan="3" style="color:var(--ink-mute)">Sin compras registradas esta semana</td></tr>'; return; }
+  tbody.innerHTML = articulos.map(a => '<tr><td>' + a.item_name + '</td><td class="num">' + fmtInt(a.items_purchased) + '</td><td class="num">' + fmtUsd(a.item_revenue) + '</td></tr>').join('');
+}
+
+let PERF_MODE = 'usd';
+function buildPerfData(ads, mode) {
+  if (mode === 'usd') {
+    return { labels: ['Sem. anterior', 'Sem. actual'], datasets: [
+      { label:'Inversión Meta ($)', data:[ads.prev_meta_spend_usd, ads.meta_spend_usd], backgroundColor:'#ef5a5a', borderRadius:4 },
+      { label:'Valor atribuido Meta ($)', data:[ads.prev_meta_ingresos_usd, ads.meta_ingresos_usd], backgroundColor:'#e8c547', borderRadius:4 },
+      { label:'Ingresos totales GA4 ($)', data:[ads.prev_ga4_ingresos_total_usd, ads.ga4_ingresos_total_usd], backgroundColor:'#6fbf73', borderRadius:4 }
+    ] };
+  }
+  return { labels: ['Inversión Meta', 'Valor atribuido', 'Ingresos GA4'], datasets: [
+    { label:'% vs semana anterior', data:[ pctDelta(ads.meta_spend_usd, ads.prev_meta_spend_usd)||0, pctDelta(ads.meta_ingresos_usd, ads.prev_meta_ingresos_usd)||0, pctDelta(ads.ga4_ingresos_total_usd, ads.prev_ga4_ingresos_total_usd)||0 ], backgroundColor:'#ef5a5a', borderRadius:4 }
+  ] };
+}
+function renderPerfChart() {
+  const ads = CURRENT_WEEK.ads;
+  destroyChart('adsChart');
+  const ctx = document.getElementById('adsChart').getContext('2d');
+  const data = buildPerfData(ads, PERF_MODE);
+  charts['adsChart'] = new Chart(ctx, { type:'bar', data, options:{ responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{ labels:{ color:'#c8bfae', font:{family:'JetBrains Mono', size:10}, boxWidth:12 } } },
+    scales:{ y:{ ticks:{ color:'#807868', font:{family:'JetBrains Mono', size:10}, callback: v => PERF_MODE==='usd' ? '$'+v : v+'%' }, grid:{color:'rgba(245,240,230,0.06)'} },
+              x:{ ticks:{color:'#807868', font:{family:'JetBrains Mono', size:10}}, grid:{display:false} } } } });
+}
+function setPerfFilter(mode) {
+  PERF_MODE = mode;
+  document.getElementById('perfBtnUsd').classList.toggle('active', mode==='usd');
+  document.getElementById('perfBtnPct').classList.toggle('active', mode==='pct');
+  renderPerfChart();
+}
+
+function renderEficiencia(ef) {
+  const el = document.getElementById('adsEficiencia');
+  if (!ef) { el.innerHTML = '<div style="color:var(--ink-mute); font-size:13px;">Sin datos</div>'; return; }
+  const rows = [
+    {label:'CTR total', value: ef.ctr.toFixed(2)+'%', pct: Math.min(100, ef.ctr*20), status: ef.ctr>=3 ? ['Bueno','var(--green)'] : ef.ctr>=1.5 ? ['Regular','var(--accent-2)'] : ['Bajo','var(--red)']},
+    {label:'CPM', value: '$'+ef.cpm.toFixed(2), pct: Math.min(100, ef.cpm*20), status: ef.cpm<=2 ? ['Bajo','var(--green)'] : ['Alto','var(--red)']},
+    {label:'CPC', value: '$'+ef.cpc.toFixed(3), pct: Math.min(100, ef.cpc*400), status: ef.cpc<=0.1 ? ['Bajo','var(--green)'] : ['Alto','var(--red)']},
+    {label:'Frecuencia máx.', value: ef.freq_max.toFixed(2)+'×', pct: Math.min(100, ef.freq_max*10), status: ef.freq_max>5 ? ['Crítico ('+ef.freq_max_adset+')','var(--red)'] : ['Normal','var(--green)']},
+    {label:'CPA', value: ef.cpa ? '$'+ef.cpa.toFixed(2) : '—', pct: ef.cpa ? 100 : 0, status: (!ef.cpa || ef.cpa>150) ? ['Crítico','var(--red)'] : ['Ok','var(--green)']}
+  ];
+  el.innerHTML = rows.map(r => '<div class="compare-row"><div class="compare-label">'+r.label+'</div><div class="compare-bar-wrap"><div class="compare-bar'+(r.status[1]==='var(--red)'?' crit':'')+'" style="width:'+r.pct+'%;">'+r.value+'</div></div><div class="compare-value" style="color:'+r.status[1]+'">'+r.status[0]+'</div></div>').join('');
+  document.getElementById('adsEficienciaNote').innerHTML = ef.note || '';
+}
+
+function renderAdsets(adsets) {
+  const tbody = document.getElementById('adsetBody');
+  if (!adsets || !adsets.length) { tbody.innerHTML = '<tr><td colspan="9" style="color:var(--ink-mute)">Sin ad sets activos esta semana</td></tr>'; document.getElementById('anunciosLead').textContent = 'Sin actividad de Meta Ads esta semana.'; return; }
+  const totalSpend = adsets.reduce((a,s)=>a+s.spend,0);
+  const totalImpr = adsets.reduce((a,s)=>a+s.impressions,0);
+  const totalReach = adsets.reduce((a,s)=>a+s.reach,0);
+  const totalPurchases = adsets.reduce((a,s)=>a+(s.purchases||0),0);
+  tbody.innerHTML = adsets.map(s => '<tr><td class="product-name">'+s.adset_name+'</td><td>'+s.campaign_name+'</td><td><span class="badge '+(s.status==='ACTIVE'?'good':'bad')+'">'+(s.status==='ACTIVE'?'Activo':'Pausado')+'</span></td>' +
+    '<td class="num">'+fmtUsd(s.spend)+'</td><td class="num">'+fmtInt(s.impressions)+'</td><td class="num">'+fmtInt(s.reach)+'</td>' +
+    '<td class="num" style="'+(s.frequency>5?'color:var(--red)':'')+'">'+s.frequency.toFixed(2)+'×</td><td class="num">'+(s.purchases||0)+'</td><td class="num">'+(s.purchases ? fmtUsd(s.spend/s.purchases) : '—')+'</td></tr>').join('') +
+    '<tr style="font-weight:600;"><td class="product-name">Total semana</td><td>—</td><td>—</td><td class="num">'+fmtUsd(totalSpend)+'</td><td class="num">'+fmtInt(totalImpr)+'</td><td class="num">'+fmtInt(totalReach)+'*</td><td class="num">—</td><td class="num">'+totalPurchases+'</td><td class="num">'+(totalPurchases?fmtUsd(totalSpend/totalPurchases):'—')+'</td></tr>';
+  document.getElementById('anunciosLead').textContent = adsets.length + ' ad set(s) activos en ' + new Set(adsets.map(s=>s.campaign_name)).size + ' campaña(s) esta semana.';
+
+  destroyChart('adsetSpendChart');
+  new Chart(document.getElementById('adsetSpendChart'), { type:'doughnut',
+    data:{ labels: adsets.map(s=>s.adset_name), datasets:[{ data: adsets.map(s=>s.spend), backgroundColor:['#ff5a1f','#e8c547','rgba(245,240,230,0.15)','#6fbf73'], borderWidth:2, borderColor:'#0f0e0c' }] },
+    options:{ responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{ legend:{labels:{color:'#c8bfae', font:{size:10}, boxWidth:10}}, tooltip:{ callbacks:{ label: ctx => ' $'+ctx.parsed.toFixed(2)+' — '+ctx.label } } } } });
+  charts['adsetSpendChart'] = charts['adsetSpendChart'];
+
+  destroyChart('adsetFreqChart');
+  new Chart(document.getElementById('adsetFreqChart'), { type:'bar',
+    data:{ labels: adsets.map(s=>s.adset_name), datasets:[{ label:'Frecuencia', data: adsets.map(s=>s.frequency), backgroundColor: adsets.map(s=>s.frequency>5?'#ef5a5a':'#6fbf73'), borderRadius:4 }] },
+    options:{ responsive:true, maintainAspectRatio:false, scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v.toFixed(1)+'x', color:'#807868', font:{size:10}}, grid:{color:'rgba(245,240,230,0.06)'} }, x:{ ticks:{color:'#807868', font:{size:9}}, grid:{display:false} } }, plugins:{ legend:{display:false} } } });
 }
 
 function renderWeek(weekId) {
   const week = WEEKLY_DATA.weeks.find(w => w.week_id === weekId) || WEEKLY_DATA.weeks[WEEKLY_DATA.weeks.length - 1];
+  CURRENT_WEEK = week;
   const ec = week.ecuador, col = week.colombia, ads = week.ads;
 
   document.getElementById('genDate').textContent = week.generated_at;
-  document.getElementById('weekRangeChip').textContent = week.week_start + ' → ' + week.week_end;
+  document.getElementById('weekRangeChip').textContent = week.week_start + ' → ' + week.week_end + (week.parcial ? ' (parcial)' : '');
 
   const ecIngresosTotal = (ec.trafico.ga4_ingresos_usd||0);
   const colIngresosTotalUsd = (col.trafico.ga4_ingresos_usd||0);
   const totalGa4Ingresos = ecIngresosTotal + colIngresosTotalUsd;
   const prevTotalGa4Ingresos = (ec.trafico.prev_ga4_ingresos_usd||0) + (col.trafico.prev_ga4_ingresos_usd||0);
 
-  document.getElementById('resumenTitle').innerHTML = 'Semana ' + week.week_start + ' – ' + week.week_end;
-  document.getElementById('headline').innerHTML = 'Semana del <em>' + week.week_start.slice(8,10) + '</em> al ' + week.week_end.slice(8,10) + '.';
-  document.getElementById('subtitleText').textContent = 'Reporte ejecutivo Ecuador + Colombia + Meta Ads, comparado contra la semana previa (' + week.week_start_prev + ' – ' + week.week_end_prev + ').';
-  document.getElementById('resumenLead').innerHTML = 'Meta invirtió <strong>' + fmtUsd(ads.meta_spend_usd) + '</strong> con ROAS <strong>' + ads.meta_roas.toFixed(2) + 'x</strong>. GA4 registró <strong>' + fmtUsd(totalGa4Ingresos) + '</strong> en ingresos combinados (EC+COL). Ecuador no registró ventas web esta semana — ver sección 02.';
+  document.getElementById('resumenTitle').innerHTML = week.headline || ('Semana ' + week.week_start + ' – ' + week.week_end);
+  document.getElementById('headline').innerHTML = week.headline_html || ('Semana del <em>' + week.week_start.slice(8,10) + '</em> al ' + week.week_end.slice(8,10) + '.');
+  document.getElementById('subtitleText').textContent = week.subtitle || ('Reporte ejecutivo Ecuador + Colombia + Meta Ads, comparado contra la semana previa (' + week.week_start_prev + ' – ' + week.week_end_prev + ').');
+  document.getElementById('resumenLead').innerHTML = week.resumen_lead || '';
 
   document.getElementById('heroStat').innerHTML =
     '<div class="hero-stat-item"><div class="l">Meta Ads — inversión</div><div class="v">' + fmtUsd(ads.meta_spend_usd) + '</div><div class="s">' + ads.meta_compras + ' compras atribuidas · ROAS ' + ads.meta_roas.toFixed(2) + 'x</div></div>' +
     '<div class="hero-stat-item"><div class="l">Ingresos GA4 combinados</div><div class="v">' + fmtUsd(totalGa4Ingresos) + '</div><div class="s">' + deltaLabel(totalGa4Ingresos, prevTotalGa4Ingresos).replace('kpi-delta','') + '</div></div>' +
-    '<div class="hero-stat-item"><div class="l">Leads nuevos (Kommo, API)</div><div class="v">' + (ec.funnel_kommo.leads_nuevos_kommo_api + col.funnel_kommo.leads_nuevos_kommo_api) + '</div><div class="s">' + ec.funnel_kommo.leads_nuevos_kommo_api + ' Ecuador · ' + col.funnel_kommo.leads_nuevos_kommo_api + ' Colombia</div></div>';
+    '<div class="hero-stat-item"><div class="l">Leads nuevos (Kommo, API)</div><div class="v">' + ((ec.funnel_kommo.leads_nuevos_kommo_api||0) + (col.funnel_kommo.leads_nuevos_kommo_api||0)) + '</div><div class="s">' + (ec.funnel_kommo.leads_nuevos_kommo_api||0) + ' Ecuador · ' + (col.funnel_kommo.leads_nuevos_kommo_api||0) + ' Colombia</div></div>';
 
-  const insights = [];
-  if (ec.ventas.prestashop_pedidos === 0) {
-    insights.push(insightCard('critical', 'Crítico', 'Ecuador: 0 ventas web en la semana', 'PrestaShop EC registró <strong>0 pedidos</strong> y GA4 <strong>$0 en ingresos</strong> esta semana (y solo 1 pedido la semana previa). Con 257 usuarios y 158 nuevos, el tráfico existe pero no convierte — revisar checkout y flujo de pago de bouentertainment.com.'));
-  }
-  if (ads.meta_roas < 1) {
-    insights.push(insightCard('watch', 'Vigilar', 'ROAS Meta por debajo de 1x', 'ROAS de ' + ads.meta_roas.toFixed(2) + 'x (' + fmtUsd(ads.meta_spend_usd) + ' invertidos → ' + fmtUsd(ads.meta_ingresos_usd) + ' atribuidos). ' + (pctDelta(ads.meta_roas, ads.prev_meta_roas) < 0 ? 'Empeoró vs la semana anterior (' + ads.prev_meta_roas.toFixed(2) + 'x).' : 'Mejoró vs la semana anterior (' + ads.prev_meta_roas.toFixed(2) + 'x).')));
-  }
-  if (col.funnel_kommo.leads_nuevos_kommo_api === 0) {
-    insights.push(insightCard('watch', 'Vigilar', 'Colombia: 0 leads nuevos en Kommo', 'Verificado dos veces (suma diaria y API directa) — no es error de filtro. El pipeline tuvo actividad en el mes (12 leads en 30 días) pero ninguno esta semana puntual.'));
-  }
-  document.getElementById('resumenInsights').innerHTML = insights.join('');
+  document.getElementById('resumenInsights').innerHTML = (week.resumen_insights || []).map(i => insightCard(i.tag, i.tagLabel, i.title, i.body)).join('');
 
+  // Ecuador
   document.getElementById('ecKpis').innerHTML =
     kpiCard('Usuarios GA4', fmtInt(ec.trafico.ga4_usuarios), deltaLabel(ec.trafico.ga4_usuarios, ec.trafico.prev_ga4_usuarios)) +
-    kpiCard('Usuarios nuevos GA4', fmtInt(ec.trafico.ga4_usuarios_nuevos), deltaLabel(ec.trafico.ga4_usuarios_nuevos, ec.trafico.prev_ga4_usuarios_nuevos)) +
-    kpiCard('Ventas web (PrestaShop)', ec.ventas.prestashop_pedidos + ' pedidos', '<span class="kpi-delta">' + fmtUsd(ec.ventas.prestashop_total_usd) + ' · semana previa: ' + ec.ventas.prev_prestashop_pedidos + ' pedidos</span>') +
-    kpiCard('Leads Kommo (API)', ec.funnel_kommo.leads_nuevos_kommo_api, '<span class="kpi-delta down">daily-log: ' + ec.funnel_kommo.leads_nuevos_daily_log + ' — discrepancia sin resolver</span>');
+    kpiCard('Ingresos GA4 (USD)', fmtUsd(ec.trafico.ga4_ingresos_usd), deltaLabel(ec.trafico.ga4_ingresos_usd, ec.trafico.prev_ga4_ingresos_usd)) +
+    kpiCard('Ventas web (PrestaShop)', ec.ventas.prestashop_pedidos + ' pedidos', '<span class="kpi-delta">' + fmtUsd(ec.ventas.prestashop_total_usd) + ' · sem. previa: ' + ec.ventas.prev_prestashop_pedidos + ' pedidos</span>') +
+    kpiCard('Msj Kommo (ent/sal)', ec.mensajeria.entrantes + ' / ' + ec.mensajeria.salientes, '<span class="kpi-delta">sem. previa: ' + ec.mensajeria.prev_entrantes + ' / ' + ec.mensajeria.prev_salientes + '</span>');
 
-  barChart('ecTraficoChart', ['Usuarios', 'Usuarios nuevos', 'Sesiones'],
-    [ec.trafico.ga4_usuarios, ec.trafico.ga4_usuarios_nuevos, ec.trafico.ga4_sesiones],
-    [ec.trafico.prev_ga4_usuarios, ec.trafico.prev_ga4_usuarios_nuevos, ec.trafico.prev_ga4_sesiones],
-    week.week_start + '–' + week.week_end, week.week_start_prev + '–' + week.week_end_prev);
+  barChart('ecTraficoChart', ['Usuarios', 'Compras GA4'], [ec.trafico.ga4_usuarios, ec.trafico.ga4_compras], [ec.trafico.prev_ga4_usuarios, ec.trafico.prev_ga4_compras], week.week_start+'–'+week.week_end, week.week_start_prev+'–'+week.week_end_prev);
+  document.getElementById('ecFunnelTag').textContent = (ec.funnel_kommo.total || 0) + ' leads (ventana ' + (ec.funnel_kommo.window_days||30) + 'd)';
+  renderFunnel('ecFunnel', ec.funnel_kommo.etapas);
+  document.getElementById('ecAlertBox').innerHTML = ec.alerta ? '<div class="alert-box"><strong>' + (ec.alerta.label||'Alerta') + ':</strong> <span>' + ec.alerta.text + '</span></div>' : '';
 
-  document.getElementById('ecFunnelTag').textContent = ec.funnel_kommo.leads_nuevos_kommo_api + ' leads creados esta semana';
-  renderFunnel('ecFunnel', ec.funnel_kommo.etapas_actuales_leads_creados_en_semana);
+  renderEventTable('ecEventosBody', ec.ga4_eventos);
+  document.getElementById('ecEventosNote').textContent = ec.ga4_eventos_nota || '';
+  renderEventTable('ecEventosClaveBody', ec.ga4_eventos_clave);
+  document.getElementById('ecEventosClaveNote').textContent = ec.ga4_eventos_clave_nota || '';
+  renderCanalesTable('ecCanalesBody', 'ecCanalesNote', ec.ga4_canales);
+  renderArticulosTable('ecArticulosBody', ec.ga4_articulos);
 
-  document.getElementById('ecAlertBox').innerHTML = ec.ventas.prestashop_pedidos === 0
-    ? '<div class="alert-box"><strong>Alerta:</strong> <span>' + ec.contifico.nota + '</span></div>' : '';
-
+  // Colombia
   document.getElementById('colKpis').innerHTML =
     kpiCard('Usuarios GA4', fmtInt(col.trafico.ga4_usuarios), deltaLabel(col.trafico.ga4_usuarios, col.trafico.prev_ga4_usuarios)) +
-    kpiCard('Usuarios nuevos GA4', fmtInt(col.trafico.ga4_usuarios_nuevos), deltaLabel(col.trafico.ga4_usuarios_nuevos, col.trafico.prev_ga4_usuarios_nuevos)) +
-    kpiCard('Ventas web (PrestaShop)', col.ventas.prestashop_pedidos + ' pedidos', '<span class="kpi-delta">' + fmtCop(col.ventas.prestashop_total_cop) + ' · ' + deltaLabel(col.ventas.prestashop_pedidos, col.ventas.prev_prestashop_pedidos).replace('kpi-delta','').replace(/<\/?span[^>]*>/g,'') + '</span>') +
-    kpiCard('Ingresos GA4 (USD)', fmtUsd(col.trafico.ga4_ingresos_usd), deltaLabel(col.trafico.ga4_ingresos_usd, col.trafico.prev_ga4_ingresos_usd));
+    kpiCard('Ingresos GA4 (USD)', fmtUsd(col.trafico.ga4_ingresos_usd), deltaLabel(col.trafico.ga4_ingresos_usd, col.trafico.prev_ga4_ingresos_usd)) +
+    kpiCard('Ventas web (PrestaShop)', col.ventas.prestashop_pedidos + ' pedidos', '<span class="kpi-delta">' + fmtCop(col.ventas.prestashop_total_cop) + '</span>') +
+    kpiCard('Msj Kommo (ent/sal)', col.mensajeria.entrantes + ' / ' + col.mensajeria.salientes, '<span class="kpi-delta">sem. previa: ' + col.mensajeria.prev_entrantes + ' / ' + col.mensajeria.prev_salientes + '</span>');
 
-  barChart('colTraficoChart', ['Usuarios', 'Usuarios nuevos', 'Sesiones'],
-    [col.trafico.ga4_usuarios, col.trafico.ga4_usuarios_nuevos, col.trafico.ga4_sesiones],
-    [col.trafico.prev_ga4_usuarios, col.trafico.prev_ga4_usuarios_nuevos, col.trafico.prev_ga4_sesiones],
-    week.week_start + '–' + week.week_end, week.week_start_prev + '–' + week.week_end_prev);
+  barChart('colTraficoChart', ['Usuarios', 'Compras GA4'], [col.trafico.ga4_usuarios, col.trafico.ga4_compras], [col.trafico.prev_ga4_usuarios, col.trafico.prev_ga4_compras], week.week_start+'–'+week.week_end, week.week_start_prev+'–'+week.week_end_prev);
+  document.getElementById('colFunnelTag').textContent = (col.funnel_kommo.total || 0) + ' leads (ventana ' + (col.funnel_kommo.window_days||30) + 'd)';
+  renderFunnel('colFunnel', col.funnel_kommo.etapas);
+  document.getElementById('colAlertBox').innerHTML = col.alerta ? '<div class="alert-box"><strong>' + (col.alerta.label||'Alerta') + ':</strong> <span>' + col.alerta.text + '</span></div>' : '';
 
-  document.getElementById('colFunnelTag').textContent = col.funnel_kommo.leads_nuevos_kommo_api + ' leads creados esta semana';
-  renderFunnel('colFunnel', col.funnel_kommo.etapas_actuales_leads_creados_en_semana);
-  document.getElementById('colAlertBox').innerHTML = '<div class="info-box"><strong>Nota fuente:</strong> <span>' + col.ventas.nota_fuente + '</span></div>';
+  renderEventTable('colEventosBody', col.ga4_eventos);
+  document.getElementById('colEventosNote').textContent = col.ga4_eventos_nota || '';
+  renderEventTable('colEventosClaveBody', col.ga4_eventos_clave);
+  document.getElementById('colEventosClaveNote').textContent = col.ga4_eventos_clave_nota || '';
+  renderCanalesTable('colCanalesBody', 'colCanalesNote', col.ga4_canales);
+  renderArticulosTable('colArticulosBody', col.ga4_articulos);
+  if (col.ga4_articulos_nota) { document.getElementById('colArticulosNote').style.display='block'; document.getElementById('colArticulosNote').innerHTML = '<strong>ℹ NOTA:</strong> <span>' + col.ga4_articulos_nota + '</span>'; }
 
+  // Ads
   document.getElementById('adsKpis').innerHTML =
     kpiCard('Inversión Meta', fmtUsd(ads.meta_spend_usd), deltaLabel(ads.meta_spend_usd, ads.prev_meta_spend_usd)) +
+    kpiCard('Impresiones', fmtInt(ads.meta_impresiones), deltaLabel(ads.meta_impresiones, ads.prev_meta_impresiones)) +
+    kpiCard('Frecuencia (pond.)', ads.meta_frecuencia.toFixed(2)+'x', '<span class="kpi-delta">' + (ads.eficiencia.freq_max_adset||'') + ' en ' + ads.eficiencia.freq_max.toFixed(2) + 'x</span>') +
     kpiCard('ROAS', ads.meta_roas.toFixed(2) + 'x', deltaLabel(ads.meta_roas, ads.prev_meta_roas)) +
     kpiCard('Compras atribuidas', ads.meta_compras, deltaLabel(ads.meta_compras, ads.prev_meta_compras)) +
-    kpiCard('CPA', fmtUsd(ads.meta_cpa_usd), '<span class="kpi-delta">por compra atribuida</span>') +
-    kpiCard('Alcance (suma campañas)', fmtInt(ads.meta_alcance), deltaLabel(ads.meta_alcance, ads.prev_meta_alcance)) +
-    kpiCard('CTR', ads.meta_ctr.toFixed(2) + '%', '<span class="kpi-delta">' + fmtInt(ads.meta_clics) + ' clics totales</span>');
+    kpiCard('Alcance (suma campañas)', fmtInt(ads.meta_alcance), deltaLabel(ads.meta_alcance, ads.prev_meta_alcance));
 
-  barChart('adsChart', ['Inversión (USD)', 'Ingresos atribuidos (USD)'],
-    [ads.meta_spend_usd, ads.meta_ingresos_usd], [ads.prev_meta_spend_usd, ads.prev_meta_ingresos_usd],
-    week.week_start + '–' + week.week_end, week.week_start_prev + '–' + week.week_end_prev);
+  ads.ga4_ingresos_total_usd = totalGa4Ingresos;
+  ads.prev_ga4_ingresos_total_usd = prevTotalGa4Ingresos;
+  renderPerfChart();
+  document.getElementById('adsEfiTag').textContent = week.week_start + '–' + week.week_end;
+  renderEficiencia(ads.eficiencia);
 
-  document.getElementById('notesList').innerHTML = (week.notas_verificacion || []).map(n => '<li>' + n + '</li>').join('') +
-    '<li>' + ec.funnel_kommo.discrepancia_nota + '</li>';
+  renderAdsets(ads.ad_sets);
+
+  document.getElementById('hallazgosTecGrid').innerHTML = (week.hallazgos_tecnicos||[]).map(h => insightCard(h.tag, h.tagLabel, h.title, h.body, h.action)).join('');
+  document.getElementById('hallazgosNegGrid').innerHTML = (week.hallazgos_ventas||[]).map(h => insightCard(h.tag, h.tagLabel, h.title, h.body, h.action)).join('');
+
+  document.getElementById('accionesList').innerHTML = (week.acciones||[]).map((a,i) =>
+    '<div class="action"><div class="action-num">'+String(i+1).padStart(2,'0')+'</div><div class="action-content"><h4>'+a.title+'</h4><p>'+a.body+'</p></div><div class="action-owner">'+a.owner+'<br>'+a.timing+'</div></div>'
+  ).join('');
+
+  document.getElementById('notesList').innerHTML = (week.notas_verificacion || []).map(n => '<li>' + n + '</li>').join('');
 }
 
 async function init() {
