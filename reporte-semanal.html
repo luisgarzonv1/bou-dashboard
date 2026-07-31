@@ -77,6 +77,17 @@
   .funnel-name { font-family: var(--display); font-size: 14px; font-weight: 500; }
   .funnel-stat { font-family: var(--mono); font-size: 13px; color: var(--ink-soft); }
   .funnel-stat strong { color: var(--ink); font-weight: 500; }
+  .funnel-stat .pct { color: var(--accent-2); font-weight: 700; margin-left: 6px; }
+  .funnel-group-label { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.15em; margin: 14px 0 6px; }
+  .funnel-group-label:first-child { margin-top: 0; }
+  .funnel-step.nonsales { border-left-color: var(--ink-mute); opacity: 0.65; }
+  .funnel-step.nonsales .funnel-stat strong { color: var(--ink-soft); }
+  .narrative { font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); margin-top: 18px; }
+  .narrative + .narrative { margin-top: 10px; }
+  .narrative strong { color: var(--ink); font-weight: 600; }
+  .narrative em { color: var(--accent-2); font-style: normal; font-weight: 600; }
+  .narrative-block { background: rgba(245,240,230,0.025); border-left: 3px solid var(--accent-2); border-radius: 0 6px 6px 0; padding: 18px 22px; margin-top: 20px; }
+  .narrative-label { font-family: var(--mono); font-size: 10px; color: var(--accent-2); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 10px; }
   .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 8px; }
   .insight { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 6px; padding: 26px; }
   .insight-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 14px; }
@@ -200,6 +211,7 @@
     <h2>Tráfico, funnel y ventas <em>Ecuador</em></h2>
     <p class="lead">Sitio bouentertainment.com. Fuente: GA4 (Windsor.ai), Kommo CRM (pipeline "Embudo de Ventas"), PrestaShop webservice, Contífico.</p>
     <div class="kpi-grid" id="ecKpis"></div>
+    <div class="narrative" id="ecOverviewNarrative"></div>
     <div class="two-col">
       <div class="card">
         <div class="card-header"><div class="card-title">Usuarios GA4 — semana vs anterior</div><div class="card-tag">Fuente: GA4</div></div>
@@ -211,6 +223,7 @@
       </div>
     </div>
     <div id="ecAlertBox"></div>
+    <div class="narrative-block"><div class="narrative-label">Lectura del embudo</div><div class="narrative" id="ecFunnelNarrative"></div></div>
 
     <div class="subsection-title">Eventos GA4 — Ecuador</div>
     <div class="subsection-sub" id="ecEventosSub">Fuente: GA4 · Todos los eventos registrados en la semana</div>
@@ -238,6 +251,7 @@
     <div class="subsection-sub">Fuente: GA4 · item_name (items_purchased &gt; 0)</div>
     <div class="card">
       <table><thead><tr><th>Artículo</th><th class="num">Unidades</th><th class="num">Ingresos</th></tr></thead><tbody id="ecArticulosBody"></tbody></table>
+      <p class="event-note" id="ecArticulosNarrative"></p>
     </div>
   </div>
 </section>
@@ -249,6 +263,7 @@
     <h2>Tráfico, funnel y ventas <em>Colombia</em></h2>
     <p class="lead">Sitio co.bouentertainment.com. Fuente: GA4 (Windsor.ai), Kommo CRM (pipeline "Embudo Ventas Col"), PrestaShop webservice.</p>
     <div class="kpi-grid" id="colKpis"></div>
+    <div class="narrative" id="colOverviewNarrative"></div>
     <div class="two-col">
       <div class="card">
         <div class="card-header"><div class="card-title">Usuarios GA4 — semana vs anterior</div><div class="card-tag">Fuente: GA4</div></div>
@@ -260,6 +275,7 @@
       </div>
     </div>
     <div id="colAlertBox"></div>
+    <div class="narrative-block"><div class="narrative-label">Lectura del embudo</div><div class="narrative" id="colFunnelNarrative"></div></div>
 
     <div class="subsection-title">Eventos GA4 — Colombia</div>
     <div class="subsection-sub">Fuente: GA4 · Todos los eventos registrados en la semana</div>
@@ -318,6 +334,7 @@
         <p class="event-note" id="adsEficienciaNote"></p>
       </div>
     </div>
+    <div class="narrative-block"><div class="narrative-label">Lo que dicen los números</div><div class="narrative" id="adsNarrative"></div></div>
     <div class="info-box"><strong>Nota:</strong> <span>meta_alcance es la suma de alcance por campaña (no deduplicado) — puede sobreestimar si hay solapamiento de audiencias entre campañas activas simultáneamente.</span></div>
   </div>
 </section>
@@ -348,6 +365,7 @@
         <div class="chart-wrap"><canvas id="adsetFreqChart"></canvas></div>
       </div>
     </div>
+    <div class="narrative-block"><div class="narrative-label">Análisis por ad set</div><div class="narrative" id="adsetNarrative"></div></div>
   </div>
 </section>
 
@@ -398,6 +416,10 @@ let WEEKLY_DATA = null;
 let charts = {};
 let CURRENT_WEEK = null;
 
+const EC_PIPELINE_ORDER = ["Leads Entrantes","Contacto inicial","Nueva consulta","ATENCION AGENTE","leads frios (no responde)","leads Tibios (interacción)","leads Calientes (datos bancarios)","Por registrar y FACTURAR","Por entregar","Cliente Registrado","CAMBIOS Y DEVOLUCIONES","Falta stock","ERROR ENVIAR MENSAJE","CONFIRMADOS EVENTOS","BOU SESSION","Sorteos y concursos","Servicios Adicionales","Reacciones y Comentarios","R.Comentarios Revisados","Colaboraciones","SPAM","Leads ganados","Leads perdidos"];
+const EC_NON_SALES_STAGES = ["CONFIRMADOS EVENTOS","BOU SESSION","Sorteos y concursos","Servicios Adicionales","Reacciones y Comentarios","R.Comentarios Revisados","Colaboraciones","SPAM"];
+const COL_PIPELINE_ORDER = ["Leads Entrantes","Contacto inicial","Nueva consulta","ATENCION AGENTE","leads frios (no responde)","leads Tibios (interacción)","leads Calientes (datos bancarios)","Por registrar","Por entregar","CAMBIOS Y DEVOLUCIONES","ERROR ENVIAR MENSAJE","CONFIRMADOS","Logrado con éxito","Ventas Perdidos"];
+
 function fmtInt(n) { return Math.round(n||0).toLocaleString('es-EC'); }
 function fmtUsd(n) { return '$' + Number(n||0).toLocaleString('es-EC', {minimumFractionDigits:2, maximumFractionDigits:2}); }
 function fmtCop(n) { return '$' + Math.round(n||0).toLocaleString('es-CO') + ' COP'; }
@@ -434,16 +456,34 @@ function barChart(canvasId, labels, currVals, prevVals, currLabel, prevLabel) {
   });
 }
 
-function renderFunnel(containerId, etapas) {
+function funnelStepHtml(name, count, max, pct, nonSales) {
+  const barPct = Math.round((count/max)*100);
+  const pctHtml = (pct === null) ? '' : '<span class="pct">· ' + pct.toFixed(1) + '%</span>';
+  return '<div class="funnel-step' + (nonSales ? ' nonsales' : '') + '" style="background: linear-gradient(90deg, rgba(255,90,31,'+(0.04+0.10*barPct/100)+') '+barPct+'%, rgba(245,240,230,0.03) '+barPct+'%);">' +
+    '<div class="funnel-name">' + name + '</div><div class="funnel-stat"><strong>' + count + '</strong> leads' + pctHtml + '</div></div>';
+}
+
+function renderFunnel(containerId, etapas, pipelineOrder, nonSalesStages) {
   const el = document.getElementById(containerId);
-  const entries = Object.entries(etapas || {});
-  if (!entries.length) { el.innerHTML = '<div class="funnel-step"><div class="funnel-name">Sin leads en la ventana</div><div class="funnel-stat">—</div></div>'; return; }
-  const max = Math.max(...entries.map(e => e[1]));
-  el.innerHTML = entries.sort((a,b) => b[1]-a[1]).map(([name, count]) => {
-    const pct = Math.round((count/max)*100);
-    return '<div class="funnel-step" style="background: linear-gradient(90deg, rgba(255,90,31,'+(0.04+0.10*pct/100)+') '+pct+'%, rgba(245,240,230,0.03) '+pct+'%);">' +
-      '<div class="funnel-name">' + name + '</div><div class="funnel-stat"><strong>' + count + '</strong> leads</div></div>';
-  }).join('');
+  const raw = etapas || {};
+  const orderIndex = name => { const i = pipelineOrder.indexOf(name); return i === -1 ? 999 : i; };
+  const allNames = Object.keys(raw).filter(n => raw[n] > 0).sort((a,b) => orderIndex(a) - orderIndex(b));
+  if (!allNames.length) { el.innerHTML = '<div class="funnel-step"><div class="funnel-name">Sin leads en la ventana</div><div class="funnel-stat">—</div></div>'; return; }
+
+  const nonSales = new Set(nonSalesStages || []);
+  const salesNames = allNames.filter(n => !nonSales.has(n));
+  const nonSalesNames = allNames.filter(n => nonSales.has(n));
+  const salesTotal = salesNames.reduce((a,n) => a + raw[n], 0);
+  const maxAll = Math.max(...allNames.map(n => raw[n]));
+
+  let html = '';
+  if (nonSalesNames.length) html += '<div class="funnel-group-label">Etapas de venta (% sobre ' + salesTotal + ' leads de venta)</div>';
+  html += salesNames.map(n => funnelStepHtml(n, raw[n], maxAll, salesTotal ? (raw[n]/salesTotal*100) : 0, false)).join('');
+  if (nonSalesNames.length) {
+    html += '<div class="funnel-group-label">Otras interacciones (no cuentan para % de venta)</div>';
+    html += nonSalesNames.map(n => funnelStepHtml(n, raw[n], maxAll, null, true)).join('');
+  }
+  el.innerHTML = html;
 }
 
 function renderEventTable(bodyId, events) {
@@ -533,6 +573,74 @@ function renderAdsets(adsets) {
     options:{ responsive:true, maintainAspectRatio:false, scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v.toFixed(1)+'x', color:'#807868', font:{size:10}}, grid:{color:'rgba(245,240,230,0.06)'} }, x:{ ticks:{color:'#807868', font:{size:9}}, grid:{display:false} } }, plugins:{ legend:{display:false} } } });
 }
 
+function pctSafe(n, d) { return d ? (n/d*100) : 0; }
+function topName(obj) { const k = Object.keys(obj); if (!k.length) return null; return k.reduce((a,b) => obj[a]>=obj[b] ? a : b); }
+
+function narrativeFunnel(funnel, nonSalesStages) {
+  const raw = funnel.etapas || {};
+  const nonSales = new Set(nonSalesStages || []);
+  const salesNames = Object.keys(raw).filter(n => raw[n] > 0 && !nonSales.has(n));
+  const salesTotal = salesNames.reduce((a,n) => a + raw[n], 0);
+  const ganados = raw['Leads ganados'] || raw['Logrado con éxito'] || 0;
+  const perdidos = raw['Leads perdidos'] || raw['Ventas Perdidos'] || 0;
+  const nonSalesTotal = Object.keys(raw).filter(n => nonSales.has(n)).reduce((a,n) => a + raw[n], 0);
+  const stuckNames = salesNames.filter(n => !['Leads ganados','Leads perdidos','Logrado con éxito','Ventas Perdidos'].includes(n));
+  const stuckObj = {}; stuckNames.forEach(n => stuckObj[n] = raw[n]);
+  const top = topName(stuckObj);
+  let s = 'De <strong>' + salesTotal + ' leads de venta</strong> creados en la ventana de 30 días, <em>' + ganados + '</em> se cerraron como ganados (' + pctSafe(ganados, salesTotal).toFixed(1) + '%) y ' + perdidos + ' se perdieron (' + pctSafe(perdidos, salesTotal).toFixed(1) + '%).';
+  if (top) s += ' El cuello de botella es "<strong>' + top + '</strong>", con ' + stuckObj[top] + ' leads (' + pctSafe(stuckObj[top], salesTotal).toFixed(1) + '% del total de venta) sin avanzar de etapa.';
+  if (nonSalesTotal) s += ' Aparte quedan <strong>' + nonSalesTotal + ' interacciones</strong> (reacciones, comentarios, sorteos, colaboraciones) que no se cuentan en este % — son actividad de comunidad, no intención de compra activa.';
+  return s;
+}
+
+function narrativeEcuadorOverview(ec) {
+  const trafDelta = pctDelta(ec.trafico.ga4_usuarios, ec.trafico.prev_ga4_usuarios);
+  const ventasDelta = ec.ventas.prestashop_pedidos - ec.ventas.prev_prestashop_pedidos;
+  let s = 'Ecuador recibió <strong>' + fmtInt(ec.trafico.ga4_usuarios) + ' usuarios</strong> esta semana (' + (trafDelta===null?'sin dato previo':((trafDelta>=0?'+':'')+trafDelta.toFixed(0)+'% vs. la semana anterior')) + '), generando <strong>' + ec.ventas.prestashop_pedidos + ' pedidos</strong> en PrestaShop por ' + fmtUsd(ec.ventas.prestashop_total_usd) + '.';
+  if (ventasDelta > 0) s += ' Es una reactivación clara: ' + (ec.ventas.prev_prestashop_pedidos===0 ? 'la semana pasada no hubo ni un pedido.' : 'son ' + ventasDelta + ' pedidos más que la semana anterior.');
+  else if (ventasDelta < 0) s += ' Son ' + Math.abs(ventasDelta) + ' pedidos menos que la semana anterior — vale la pena cruzarlo con el tráfico y el funnel de leads.';
+  if (ec.trafico.ga4_ingresos_usd < 0) s += ' El ingreso GA4 aparece <em>negativo</em> por reembolsos registrados en la semana — no leer esto como caída de ventas, sino como un refund puntual superando el ingreso bruto nuevo.';
+  return s;
+}
+
+function narrativeColombiaOverview(col) {
+  const trafDelta = pctDelta(col.trafico.ga4_usuarios, col.trafico.prev_ga4_usuarios);
+  let s = 'Colombia sigue siendo el mercado de mayor volumen: <strong>' + fmtInt(col.trafico.ga4_usuarios) + ' usuarios</strong> esta semana (' + (trafDelta===null?'sin dato previo':((trafDelta>=0?'+':'')+trafDelta.toFixed(0)+'% vs. la semana anterior')) + '), con <strong>' + col.ventas.prestashop_pedidos + ' pedidos</strong> por ' + fmtCop(col.ventas.prestashop_total_cop) + '.';
+  const ventasDelta = col.ventas.prestashop_pedidos - col.ventas.prev_prestashop_pedidos;
+  if (ventasDelta < 0) s += ' Son ' + Math.abs(ventasDelta) + ' pedidos menos que la semana previa (' + col.ventas.prev_prestashop_pedidos + ') — en línea con la caída de tráfico.';
+  else if (ventasDelta > 0) s += ' Son ' + ventasDelta + ' pedidos más que la semana previa, pese a la caída de tráfico — mejoró la tasa de conversión.';
+  return s;
+}
+
+function narrativeArticulosEc(articulos) {
+  if (!articulos || !articulos.length) return '';
+  const top = articulos.reduce((a,b) => a.items_purchased >= b.items_purchased ? a : b);
+  const totalUnidades = articulos.reduce((a,x) => a + x.items_purchased, 0);
+  return '→ "' + top.item_name + '" fue el más vendido (' + top.items_purchased + ' de ' + totalUnidades + ' unidades totales esta semana).';
+}
+
+function narrativeAds(ads) {
+  const roasDelta = pctDelta(ads.meta_roas, ads.prev_meta_roas);
+  const spendDelta = pctDelta(ads.meta_spend_usd, ads.prev_meta_spend_usd);
+  let s = 'Se invirtieron <strong>' + fmtUsd(ads.meta_spend_usd) + '</strong> en Meta Ads esta semana (' + (spendDelta===null?'sin dato previo':((spendDelta>=0?'+':'')+spendDelta.toFixed(0)+'%')) + ' vs. la anterior), generando <strong>' + ads.meta_compras + ' compra' + (ads.meta_compras===1?'':'s') + '</strong> atribuida' + (ads.meta_compras===1?'':'s') + ' y un ROAS de <em>' + ads.meta_roas.toFixed(2) + 'x</em>';
+  s += (roasDelta===null ? '.' : (roasDelta >= 0 ? ', una mejora de ' + roasDelta.toFixed(0) + '% frente a la semana previa (' + ads.prev_meta_roas.toFixed(2) + 'x).' : ', un deterioro de ' + Math.abs(roasDelta).toFixed(0) + '% frente a la semana previa (' + ads.prev_meta_roas.toFixed(2) + 'x).'));
+  if (ads.meta_roas < 1) s += ' Con ROAS por debajo de 1x, cada dólar invertido en Meta está devolviendo menos de un dólar en valor atribuido — no es sostenible mantenerlo así sin ajustar audiencia, creativo o presupuesto.';
+  if (ads.eficiencia && ads.eficiencia.cpa) s += ' El CPA de la semana es <strong>' + fmtUsd(ads.eficiencia.cpa) + '</strong> por compra.';
+  return s;
+}
+
+function narrativeAdsets(adsets) {
+  if (!adsets || !adsets.length) return 'Sin actividad de Meta Ads esta semana.';
+  const totalSpend = adsets.reduce((a,s) => a + s.spend, 0);
+  const top = adsets.reduce((a,b) => a.spend >= b.spend ? a : b);
+  const fatigued = adsets.filter(s => s.frequency > 5);
+  let s = 'El ad set "<strong>' + top.adset_name + '</strong>" (campaña "' + top.campaign_name + '") concentra <em>' + pctSafe(top.spend, totalSpend).toFixed(0) + '%</em> del gasto semanal (' + fmtUsd(top.spend) + ' de ' + fmtUsd(totalSpend) + ') con ' + (top.purchases||0) + ' compra' + (top.purchases===1?'':'s') + '.';
+  if (fatigued.length) {
+    s += ' ' + fatigued.map(f => '"' + f.adset_name + '"').join(' y ') + ' muestra' + (fatigued.length===1?'':'n') + ' frecuencia por encima de 5x (' + fatigued.map(f=>f.frequency.toFixed(1)+'x').join(', ') + ') — la misma audiencia está viendo el anuncio demasiadas veces, señal de fatiga que suele bajar el CTR y subir el costo por resultado.';
+  }
+  return s;
+}
+
 function renderWeek(weekId) {
   const week = WEEKLY_DATA.weeks.find(w => w.week_id === weekId) || WEEKLY_DATA.weeks[WEEKLY_DATA.weeks.length - 1];
   CURRENT_WEEK = week;
@@ -567,8 +675,10 @@ function renderWeek(weekId) {
 
   barChart('ecTraficoChart', ['Usuarios', 'Compras GA4'], [ec.trafico.ga4_usuarios, ec.trafico.ga4_compras], [ec.trafico.prev_ga4_usuarios, ec.trafico.prev_ga4_compras], week.week_start+'–'+week.week_end, week.week_start_prev+'–'+week.week_end_prev);
   document.getElementById('ecFunnelTag').textContent = (ec.funnel_kommo.total || 0) + ' leads (ventana ' + (ec.funnel_kommo.window_days||30) + 'd)';
-  renderFunnel('ecFunnel', ec.funnel_kommo.etapas);
+  renderFunnel('ecFunnel', ec.funnel_kommo.etapas, EC_PIPELINE_ORDER, EC_NON_SALES_STAGES);
+  document.getElementById('ecFunnelNarrative').innerHTML = narrativeFunnel(ec.funnel_kommo, EC_NON_SALES_STAGES);
   document.getElementById('ecAlertBox').innerHTML = ec.alerta ? '<div class="alert-box"><strong>' + (ec.alerta.label||'Alerta') + ':</strong> <span>' + ec.alerta.text + '</span></div>' : '';
+  document.getElementById('ecOverviewNarrative').innerHTML = narrativeEcuadorOverview(ec);
 
   renderEventTable('ecEventosBody', ec.ga4_eventos);
   document.getElementById('ecEventosNote').textContent = ec.ga4_eventos_nota || '';
@@ -576,6 +686,7 @@ function renderWeek(weekId) {
   document.getElementById('ecEventosClaveNote').textContent = ec.ga4_eventos_clave_nota || '';
   renderCanalesTable('ecCanalesBody', 'ecCanalesNote', ec.ga4_canales);
   renderArticulosTable('ecArticulosBody', ec.ga4_articulos);
+  document.getElementById('ecArticulosNarrative').innerHTML = narrativeArticulosEc(ec.ga4_articulos);
 
   // Colombia
   document.getElementById('colKpis').innerHTML =
@@ -586,8 +697,10 @@ function renderWeek(weekId) {
 
   barChart('colTraficoChart', ['Usuarios', 'Compras GA4'], [col.trafico.ga4_usuarios, col.trafico.ga4_compras], [col.trafico.prev_ga4_usuarios, col.trafico.prev_ga4_compras], week.week_start+'–'+week.week_end, week.week_start_prev+'–'+week.week_end_prev);
   document.getElementById('colFunnelTag').textContent = (col.funnel_kommo.total || 0) + ' leads (ventana ' + (col.funnel_kommo.window_days||30) + 'd)';
-  renderFunnel('colFunnel', col.funnel_kommo.etapas);
+  renderFunnel('colFunnel', col.funnel_kommo.etapas, COL_PIPELINE_ORDER, []);
+  document.getElementById('colFunnelNarrative').innerHTML = narrativeFunnel(col.funnel_kommo, []);
   document.getElementById('colAlertBox').innerHTML = col.alerta ? '<div class="alert-box"><strong>' + (col.alerta.label||'Alerta') + ':</strong> <span>' + col.alerta.text + '</span></div>' : '';
+  document.getElementById('colOverviewNarrative').innerHTML = narrativeColombiaOverview(col);
 
   renderEventTable('colEventosBody', col.ga4_eventos);
   document.getElementById('colEventosNote').textContent = col.ga4_eventos_nota || '';
@@ -611,8 +724,10 @@ function renderWeek(weekId) {
   renderPerfChart();
   document.getElementById('adsEfiTag').textContent = week.week_start + '–' + week.week_end;
   renderEficiencia(ads.eficiencia);
+  document.getElementById('adsNarrative').innerHTML = narrativeAds(ads);
 
   renderAdsets(ads.ad_sets);
+  document.getElementById('adsetNarrative').innerHTML = narrativeAdsets(ads.ad_sets);
 
   document.getElementById('hallazgosTecGrid').innerHTML = (week.hallazgos_tecnicos||[]).map(h => insightCard(h.tag, h.tagLabel, h.title, h.body, h.action)).join('');
   document.getElementById('hallazgosNegGrid').innerHTML = (week.hallazgos_ventas||[]).map(h => insightCard(h.tag, h.tagLabel, h.title, h.body, h.action)).join('');
