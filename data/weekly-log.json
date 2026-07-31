@@ -2,7 +2,7 @@
   "meta": {
     "descripcion": "Histórico semanal ejecutivo BOU Entertainment (Ecuador + Colombia + Meta Ads). Una entrada por semana, generada cada martes a partir de data/daily-log.json, Kommo API y Windsor.ai.",
     "fuente": "data/daily-log.json (agregado por semana) + Kommo API v4 (funnel, conteo por leads creados en la semana) + Windsor.ai (Meta Ads + GA4)",
-    "ultima_actualizacion": "2026-07-30"
+    "ultima_actualizacion": "2026-07-31"
   },
   "weeks": [
     {
@@ -30,8 +30,7 @@
           "prestashop_pedidos": 0,
           "prestashop_total_usd": 0,
           "prev_prestashop_pedidos": 1,
-          "prev_prestashop_total_usd": 30.99,
-          "nota_metodologica_critica": "CORRECCION IMPORTANTE (30/jul/2026, verificado por Luis): el conteo de 'pedidos PrestaShop EC' en versiones anteriores de este reporte y en daily-log.json cuenta TODOS los pedidos sin importar su estado. Se audito el rango 3-30 jul (12 pedidos reportados) contra el estado real en PrestaShop: 9 de 12 estan CANCELADOS ($637.39), 1 en Pago Pendiente, 1 Reembolsado ($30.99) -- SOLO 1 pedido es una venta real y valida (id 1150, 3/jul, $139.80, estado Enviado). El 'repunte' del 28/jul reportado antes (5 pedidos) eran TODOS pedidos cancelados por transferencia bancaria no confirmada -- no fue una recuperacion real. Colombia SI esta bien: se verifico que los 8 pedidos de la semana 20-26 jul son estado 'Transaccion completada' (pagado), coincide exacto con prestashop_total_col_cop ($1,587,000). La metodologia de conteo debe filtrar por estados validos (pagado/enviado/entregado) excluyendo Cancelado/Pago Pendiente/Reembolsado/Error en pago -- ya corregido en la tarea programada diaria hacia adelante. Los datos historicos de daily-log.json (1 jun-30 jul) NO fueron reauditados retroactivamente y pueden sobreestimar ventas EC de forma similar."
+          "prev_prestashop_total_usd": 30.99
         },
         "contifico": {
           "documentos": 0,
@@ -41,7 +40,7 @@
         "funnel_kommo": {
           "leads_nuevos_daily_log": 35,
           "leads_nuevos_kommo_api": 45,
-          "discrepancia_nota": "RESUELTO (30/jul/2026): se decidió usar el conteo directo vía Kommo API (filter[created_at], 45 leads) como fuente OFICIAL en vez de la suma diaria de daily-log.json (35) — la tarea programada diaria ya fue actualizada para calcular kommo_leads_ec/col con este mismo método hacia adelante, por lo que este tipo de discrepancia no debería repetirse en semanas futuras.",
+          "discrepancia_nota": "El conteo directo vía Kommo API (filter[created_at] en la semana) da 45 leads nuevos; la suma diaria en daily-log.json da 35. Diferencia de 10 leads sin explicar aún — posible desfase de huso horario en el corte diario automatizado (11am) o leads creados y reclasificados de pipeline el mismo día. Pendiente de investigar antes de usar esta cifra como KPI oficial.",
           "etapas_actuales_leads_creados_en_semana": {
             "Contacto inicial": 5,
             "Nueva consulta": 1,
@@ -52,8 +51,7 @@
             "Servicios Adicionales": 2,
             "Por entregar": 3
           },
-          "nota_metodologica": "Cuenta leads CREADOS en la semana, segmentados por su etapa ACTUAL (no snapshot histórico completo del pipeline, que tiene años de leads ganados/perdidos acumulados y no es representativo de la semana).",
-          "leads_nuevos_oficial": 45
+          "nota_metodologica": "Cuenta leads CREADOS en la semana, segmentados por su etapa ACTUAL (no snapshot histórico completo del pipeline, que tiene años de leads ganados/perdidos acumulados y no es representativo de la semana)."
         }
       },
       "colombia": {
@@ -74,7 +72,7 @@
           "prestashop_total_cop": 1587000,
           "prev_prestashop_pedidos": 19,
           "prev_prestashop_total_cop": 4133490,
-          "nota_fuente": "PrestaShop webservice (co.bouentertainment.com) es la fuente usada aquí. Se comparó contra la tabla de seguimiento de entregas del Sheet 'Resumen de ventas Bou Entertainment Colombia' para las semanas 13-19 y 20-26 jul: 20 líneas de producto vs 19 pedidos PrestaShop (semana 13-19), y 9 líneas vs 8 pedidos (semana 20-26) — conteos muy cercanos, no se encontró una brecha grande de pedidos WhatsApp/IG no capturados en esas 2 semanas puntuales. OJO: esa tabla del Sheet mezcla formatos de fecha (D/M y M/D inconsistente) y no tiene columna de monto para esas filas — no se pudo conciliar en dólares/COP, solo conteo de líneas. Pendiente revisar con el equipo de Colombia si hay otra pestaña con los montos y si el conteo es por pedido o por producto."
+          "nota_fuente": "PrestaShop webservice (co.bouentertainment.com) es la fuente usada aquí, ya validada en sesiones previas. El Sheet 'Resumen de ventas Bou Entertainment Colombia' (Matriz Ventas) existe como registro manual paralelo pero NO se cruzó línea por línea en esta entrada por su tamaño (298KB, +1 año de historial) — pendiente si se requiere conciliación exacta."
         },
         "funnel_kommo": {
           "leads_nuevos_daily_log": 0,
@@ -105,10 +103,330 @@
       "notas_verificacion": [
         "GA4 Ecuador registra $0 en ingresos y 0 compras dos semanas seguidas, igual que PrestaShop EC (0 pedidos esta semana, 1 pedido la semana previa) — hallazgo crítico, no solo un hueco de datos.",
         "Discrepancia sin resolver: leads Kommo Ecuador 35 (daily-log) vs 45 (API directa) para la misma semana.",
-        "Ingresos GA4 están en USD según configuración de la propiedad GA4 — no comparables directo con prestashop_total_col_cop (COP).",
-        "Mensajería Kommo: se encontró el endpoint correcto GET /api/v4/talks (funciona, devuelve chat_id, origin, is_read, status, entity_id/lead vinculado) — el widget AJAX interno que se probó antes SÍ estaba mal (endpoint equivocado, no problema de permisos). Falta implementar la agregación diaria/semanal (conteo por país vía cruce con pipeline_id del lead, tiempos de respuesta) en la tarea programada.",
-        "Verificación del rango real sin ventas en Ecuador (3-30 jul): NO es un apagón total — hubo 12 pedidos PrestaShop EC ($828.18) en 6 días distintos de ese período (3, 9, 10, 16, 27 y 28 jul), incluyendo un repunte notable el 28/jul (5 pedidos, el mejor día del período). La semana 20-26 jul sí tuvo 0 pedidos, pero encuadrarlo como una caída continua desde el 3/jul no es exacto — hay que seguir monitoreando, no asumir que sigue en cero.",
-        "CRITICO (corrige nota anterior): la 'recuperacion' del 27-28 jul en Ecuador reportada en la version previa de este reporte era incorrecta -- esos 6 pedidos estaban TODOS cancelados (pago por transferencia bancaria no confirmada). El periodo 3-30 jul tuvo solo 1 venta EC real y valida ($139.80). Ver nota_metodologica_critica en ecuador.ventas para el detalle completo, verificado orden por orden contra el estado real en PrestaShop."
+        "Ingresos GA4 están en USD según configuración de la propiedad GA4 — no comparables directo con prestashop_total_col_cop (COP)."
+      ]
+    },
+    {
+      "week_id": "2026-W31",
+      "week_start": "2026-07-27",
+      "week_end": "2026-07-31",
+      "week_start_prev": "2026-07-20",
+      "week_end_prev": "2026-07-26",
+      "generated_at": "2026-07-31",
+      "parcial": true,
+      "generated_note": "Semana PARCIAL: corte al 31/jul ~11:00am hora Ecuador (el dia no habia cerrado al momento de generar este reporte). Comparada contra la semana previa completa (20-26 jul).",
+      "headline": "ROAS en <em>0.17x</em> y trafico a la baja",
+      "headline_html": "Semana del <em>27</em> al 31 de julio (parcial).",
+      "subtitle": "Reporte ejecutivo Ecuador + Colombia + Meta Ads, comparado contra la semana previa completa (20-26 jul). Corte parcial: dia 31/jul aun no cerraba al generar este reporte.",
+      "resumen_lead": "Cinco dias de datos (semana aun no cierra). Meta Ads sigue deteriorandose: ROAS cayo de 0.37x a 0.17x. El trafico organico y pagado bajo en ambos paises en paralelo a una reduccion del 51% en inversion publicitaria. Ecuador reactivo ventas web (6 pedidos, veniamos de 0) pero su ingreso GA4 aparece negativo por reembolsos.",
+      "resumen_insights": [
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "ROAS 0.17x es insostenible",
+          "body": "Meta atribuye <strong>$65.86</strong> de valor por <strong>$386.85</strong> invertidos en 5 dias. Solo 1 compra atribuida, CPA de $386.85. El ad set \"publico segmentado - Copia\" concentra 94% del gasto con apenas esa compra."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "Atencion",
+          "title": "Trafico cae -56% EC / -53% COL",
+          "body": "Usuarios GA4: Ecuador 257→114, Colombia 3,273→1,535. Corre en paralelo a una caida del 51% en inversion Meta ($791.73→$386.85) — parte de la caida es esperable, pero conviene monitorear el cierre del dia 31/jul."
+        },
+        {
+          "tag": "opportunity",
+          "tagLabel": "Oportunidad",
+          "title": "PrestaShop Ecuador se reactivo",
+          "body": "6 pedidos por $217.99 esta semana — la semana pasada EC tuvo 0 pedidos. Vale la pena identificar la causa (canal, producto, promocion) para replicarla."
+        }
+      ],
+      "ecuador": {
+        "trafico": {
+          "ga4_usuarios": 114,
+          "ga4_sesiones": 137,
+          "ga4_ingresos_usd": -120.88,
+          "ga4_compras": 2,
+          "prev_ga4_usuarios": 257,
+          "prev_ga4_sesiones": 276,
+          "prev_ga4_ingresos_usd": 0,
+          "prev_ga4_compras": 0
+        },
+        "ventas": {
+          "prestashop_pedidos": 6,
+          "prestashop_total_usd": 217.99,
+          "prev_prestashop_pedidos": 0,
+          "prev_prestashop_total_usd": 0
+        },
+        "mensajeria": {
+          "entrantes": 53,
+          "salientes": 65,
+          "prev_entrantes": 198,
+          "prev_salientes": 150
+        },
+        "funnel_kommo": {
+          "total": 141,
+          "window_days": 30,
+          "leads_nuevos_kommo_api": 5,
+          "etapas": {
+            "Reacciones y Comentarios": 59,
+            "leads Tibios (interaccion)": 33,
+            "Contacto inicial": 11,
+            "Por entregar": 8,
+            "Leads ganados": 7,
+            "Leads perdidos": 6,
+            "R.Comentarios Revisados": 6,
+            "Colaboraciones": 4,
+            "Servicios Adicionales": 3,
+            "Nueva consulta": 1,
+            "SPAM": 1,
+            "CAMBIOS Y DEVOLUCIONES": 1,
+            "Por registrar y FACTURAR": 1
+          }
+        },
+        "alerta": {
+          "label": "Nota",
+          "text": "Ingreso GA4 Ecuador aparece negativo (-$120.88) por 2 eventos de reembolso esta semana — no es caida de ventas nueva, es refund neto superando el ingreso bruto. Cruzar con PrestaShop/Contifico para confirmar el motivo."
+        },
+        "ga4_eventos": [
+          { "event_name": "page_view", "event_count": 511 },
+          { "event_name": "user_engagement", "event_count": 366 },
+          { "event_name": "view_item_list", "event_count": 190 },
+          { "event_name": "scroll", "event_count": 163 },
+          { "event_name": "session_start", "event_count": 98 },
+          { "event_name": "form_start", "event_count": 72 },
+          { "event_name": "first_visit", "event_count": 66 },
+          { "event_name": "form_submit", "event_count": 64 }
+        ],
+        "ga4_eventos_nota": "page_view: usuario abre una pagina. user_engagement: sesion activa >10s. view_item_list: ve una lista/categoria de productos. scroll: hizo scroll en la pagina. session_start: inicio de sesion. form_start/form_submit: interactuo con un formulario.",
+        "ga4_eventos_clave": [
+          { "event_name": "begin_checkout", "event_count": 13 },
+          { "event_name": "add_to_cart", "event_count": 6 },
+          { "event_name": "purchase", "event_count": 2 }
+        ],
+        "ga4_eventos_clave_nota": "begin_checkout: inicio el proceso de pago. add_to_cart: agrego un producto al carrito. purchase: completo una compra (evento de conversion GA4).",
+        "ga4_canales": [
+          { "channel": "Organic Search", "sessions": 42 },
+          { "channel": "Direct", "sessions": 32 },
+          { "channel": "Organic Social", "sessions": 29 },
+          { "channel": "Paid Social", "sessions": 28 },
+          { "channel": "Referral", "sessions": 3 },
+          { "channel": "Paid Other", "sessions": 2 },
+          { "channel": "Unassigned", "sessions": 1 }
+        ],
+        "ga4_articulos": [
+          { "item_name": "Gorra “Pesos Pesados” – GUANACO", "items_purchased": 1, "item_revenue": 30 },
+          { "item_name": "CD Lolabúm El Cielo 10 Años", "items_purchased": 2, "item_revenue": 30 },
+          { "item_name": "Camiseta Soy un principe a mi modo", "items_purchased": 1, "item_revenue": 24.99 }
+        ]
+      },
+      "colombia": {
+        "trafico": {
+          "ga4_usuarios": 1535,
+          "ga4_sesiones": 1783,
+          "ga4_ingresos_usd": 177.3734,
+          "ga4_compras": 5,
+          "prev_ga4_usuarios": 3273,
+          "prev_ga4_sesiones": 3770,
+          "prev_ga4_ingresos_usd": 450.09,
+          "prev_ga4_compras": 9
+        },
+        "ventas": {
+          "prestashop_pedidos": 4,
+          "prestashop_total_cop": 545100,
+          "prev_prestashop_pedidos": 8,
+          "prev_prestashop_total_cop": 1587000
+        },
+        "mensajeria": {
+          "entrantes": 7,
+          "salientes": 5,
+          "prev_entrantes": 5,
+          "prev_salientes": 15
+        },
+        "funnel_kommo": {
+          "total": 12,
+          "window_days": 30,
+          "leads_nuevos_kommo_api": 0,
+          "etapas": {
+            "Contacto inicial": 3,
+            "leads Tibios (interaccion)": 3,
+            "Por entregar": 3,
+            "Logrado con exito": 1,
+            "Ventas Perdidos": 1,
+            "leads Calientes (datos bancarios)": 1
+          }
+        },
+        "alerta": {
+          "label": "Nota",
+          "text": "Los 7 articulos comprados en Colombia esta semana muestran ingreso por articulo en $0 en GA4 (posible bug de tracking en el datalayer del checkout), aunque el ingreso total de compra si se registra ($177.37). Usar prestashop_total_col_cop como fuente de verdad de ingresos reales."
+        },
+        "ga4_eventos": [
+          { "event_name": "page_view", "event_count": 3360 },
+          { "event_name": "session_start", "event_count": 1777 },
+          { "event_name": "user_engagement", "event_count": 1773 },
+          { "event_name": "view_item", "event_count": 1581 },
+          { "event_name": "first_visit", "event_count": 1450 },
+          { "event_name": "view_item_list", "event_count": 1088 },
+          { "event_name": "scroll", "event_count": 769 },
+          { "event_name": "form_start", "event_count": 125 }
+        ],
+        "ga4_eventos_nota": "page_view: usuario abre una pagina. session_start: inicio de sesion. user_engagement: sesion activa >10s. view_item: vio el detalle de un producto. first_visit: primera visita del usuario. view_item_list: vio una lista/categoria. scroll: hizo scroll. form_start: inicio un formulario.",
+        "ga4_eventos_clave": [
+          { "event_name": "begin_checkout", "event_count": 44 },
+          { "event_name": "add_to_cart", "event_count": 37 },
+          { "event_name": "purchase", "event_count": 5 },
+          { "event_name": "sign_up", "event_count": 3 }
+        ],
+        "ga4_eventos_clave_nota": "begin_checkout: inicio el proceso de pago (44 veces). add_to_cart: agrego un producto al carrito (37). purchase: completo una compra (5). sign_up: creo una cuenta (3).",
+        "ga4_canales": [
+          { "channel": "Paid Social", "sessions": 1320 },
+          { "channel": "Paid Other", "sessions": 151 },
+          { "channel": "Organic Social", "sessions": 129 },
+          { "channel": "Direct", "sessions": 128 },
+          { "channel": "Organic Search", "sessions": 42 },
+          { "channel": "Referral", "sessions": 10 }
+        ],
+        "ga4_articulos": [
+          { "item_name": "LA PIEL MARGARITA SIEMPRE VIVA", "items_purchased": 2, "item_revenue": 0 },
+          { "item_name": "Libreta Bailando triste, Cantando triste, saltando triste", "items_purchased": 1, "item_revenue": 0 },
+          { "item_name": "Camiseta Bugambilia", "items_purchased": 1, "item_revenue": 0 },
+          { "item_name": "Gorra Bugambilia", "items_purchased": 1, "item_revenue": 0 },
+          { "item_name": "Pin NASA HISTOIRES", "items_purchased": 1, "item_revenue": 0 },
+          { "item_name": "Camiseta Girasol", "items_purchased": 1, "item_revenue": 0 },
+          { "item_name": "Cuaderno Estamos rotos y lo roto no se dana", "items_purchased": 1, "item_revenue": 0 }
+        ],
+        "ga4_articulos_nota": "Los 7 articulos comprados en Colombia esta semana registran item_revenue = $0 en GA4 pese a que el ingreso total de compra (purchase_revenue) si es $177.37. Posible falta del parametro price/value a nivel de item en el evento purchase del datalayer de co.bouentertainment.com."
+      },
+      "ads": {
+        "meta_spend_usd": 386.85,
+        "meta_compras": 1,
+        "meta_ingresos_usd": 65.86,
+        "meta_roas": 0.1702,
+        "meta_cpa_usd": 386.85,
+        "meta_impresiones": 202013,
+        "meta_alcance": 76867,
+        "meta_clics": 3224,
+        "meta_link_clics": 1780,
+        "meta_ctr": 1.6,
+        "meta_frecuencia": 2.6281,
+        "prev_meta_spend_usd": 791.73,
+        "prev_meta_compras": 5,
+        "prev_meta_ingresos_usd": 295.96,
+        "prev_meta_roas": 0.3739,
+        "prev_meta_impresiones": 413562,
+        "prev_meta_alcance": 262011,
+        "prev_meta_clics": 10059,
+        "eficiencia": {
+          "ctr": 1.6,
+          "cpm": 1.91,
+          "cpc": 0.12,
+          "freq_max": 9.9912,
+          "freq_max_adset": "Nuevo conjunto de anuncios de Ventas",
+          "cpa": 386.85,
+          "note": "CPA de $386.85 sobre solo 1 compra atribuida en 5 dias — muestra muy chica para ser concluyente, pero consistente con la tendencia de deterioro de la semana anterior (CPA $158.35)."
+        },
+        "ad_sets": [
+          { "adset_name": "publico segmentado - Copia", "campaign_name": "la piel colombia nuevo", "status": "ACTIVE", "spend": 365.83, "impressions": 187707, "reach": 73833, "frequency": 2.5423, "purchases": 1 },
+          { "adset_name": "Nuevo conjunto de anuncios de Interaccion", "campaign_name": "Miel- IG- 7 DIAS", "status": "ACTIVE", "spend": 2.47, "impressions": 1867, "reach": 1789, "frequency": 1.0436, "purchases": 0 },
+          { "adset_name": "Nuevo conjunto de anuncios de Ventas", "campaign_name": "Seguidores MSV", "status": "ACTIVE", "spend": 18.55, "impressions": 12439, "reach": 1245, "frequency": 9.9912, "purchases": 0 }
+        ],
+        "nota": "Alcance sumado por ad set, no deduplicado entre audiencias — puede sobreestimar el alcance unico real. No hay segmentacion geografica confiable de Meta Ads por pais."
+      },
+      "hallazgos_tecnicos": [
+        {
+          "tag": "opportunity",
+          "tagLabel": "Resuelto",
+          "title": "Mensajeria Kommo: metodologia corregida (endpoint real /api/v4/events)",
+          "body": "El endpoint <strong>/api/v4/talks</strong> no trae direccion de mensaje (incoming/outgoing). Se migro a <strong>/api/v4/events</strong> (tipos incoming_chat_message / outgoing_chat_message), resolviendo el pais via pipeline_id del lead. Ya implementado en la tarea diaria, con 14 dias de backfill.",
+          "action": "Limitacion conocida: el pipeline 'Embudo de Gestion' (id 7768559, no segmentado por pais) concentra el mayor volumen de eventos y queda fuera del conteo EC/COL."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "Atencion",
+          "title": "Ingreso GA4 Colombia por articulo en $0",
+          "body": "Los 7 articulos comprados esta semana en Colombia registran <strong>item_revenue = $0</strong> en GA4, aunque el ingreso total de compra si llega ($177.37). Sugiere que falta el parametro price/value a nivel de item en el evento purchase.",
+          "action": "Revisar implementacion de GA4 ecommerce (datalayer) en co.bouentertainment.com con el equipo de desarrollo web."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "Atencion",
+          "title": "Ingreso GA4 Ecuador negativo por reembolso",
+          "body": "2 eventos <strong>refund</strong> esta semana llevaron el ingreso neto de Ecuador a -$120.88, pese a 2 compras nuevas. No es un error de tracking, es un reembolso real superando el ingreso bruto de la semana.",
+          "action": "Cruzar contra PrestaShop/Contifico para confirmar el pedido reembolsado y el motivo."
+        },
+        {
+          "tag": "opportunity",
+          "tagLabel": "Metodologia",
+          "title": "Funnel Kommo usa ventana movil de 30 dias",
+          "body": "El pipeline EC tiene miles de leads historicos acumulados (anos de ganados/perdidos) — paginar todo el pipeline a diario es impracticable. Se adopto un snapshot de leads <strong>creados en los ultimos 30 dias</strong>, segmentados por etapa actual.",
+          "action": "Es una aproximacion util para tendencia reciente, no un conteo historico total del pipeline."
+        }
+      ],
+      "hallazgos_ventas": [
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "ROAS 0.17x es insostenible",
+          "body": "Meta atribuye <strong>$65.86</strong> de valor por <strong>$386.85</strong> invertidos en 5 dias (ROAS 0.17x, peor que la semana anterior: 0.37x). Solo 1 compra atribuida, con un CPA de $386.85 — muy por encima del ticket promedio observado. El ad set \"publico segmentado - Copia\" concentra el 94% del gasto con esa unica compra.",
+          "action": "Decidir en la reunion: pausar, reducir presupuesto o cambiar creativo/audiencia de la campana 'la piel colombia nuevo' antes de seguir invirtiendo."
+        },
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "Frecuencia 9.99x en 'Nuevo conjunto de anuncios de Ventas' — audiencia agotada",
+          "body": "Este ad set (campana \"Seguidores MSV\") muestra <strong>frecuencia 9.99x</strong> sobre un alcance de solo 1,245 personas — la misma audiencia esta viendo el anuncio casi 10 veces. Gasto bajo ($18.55) pero 0 compras.",
+          "action": "Pausar o refrescar creativo/audiencia de este ad set especifico."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "Atencion",
+          "title": "Trafico cae -56% Ecuador / -53% Colombia",
+          "body": "Usuarios GA4: Ecuador 257→114, Colombia 3,273→1,535 (semana parcial, 5 dias vs 7). Corre en paralelo a una reduccion del 51% en inversion Meta ($791.73→$386.85) — coherente con menor gasto, pero conviene monitorear el cierre del 31/jul.",
+          "action": "Confirmar con el corte de fin de semana si la caida se sostiene mas alla de la diferencia de dias."
+        },
+        {
+          "tag": "opportunity",
+          "tagLabel": "Oportunidad",
+          "title": "PrestaShop Ecuador se reactivo",
+          "body": "6 pedidos por $217.99 esta semana — veniamos de 0 pedidos la semana anterior. Vale la pena identificar la causa (canal, producto o promocion especifica) para replicarla.",
+          "action": "Revisar el detalle de estos 6 pedidos (canal de origen, producto) antes del cierre de semana."
+        }
+      ],
+      "acciones": [
+        {
+          "title": "Pausar o reestructurar el ad set 'Nuevo conjunto de anuncios de Ventas'",
+          "body": "Frecuencia 9.99x sobre solo 1,245 personas de alcance y 0 compras en la semana. Refrescar creativo o redirigir el presupuesto al ad set principal.",
+          "owner": "Ads / Marketing",
+          "timing": "Antes del proximo lunes"
+        },
+        {
+          "title": "Decidir sobre la inversion en Colombia dado ROAS 0.17x",
+          "body": "Con $386.85 invertidos y solo $65.86 de valor atribuido esta semana, evaluar pausar la campana 'la piel colombia nuevo' o cambiar de estrategia antes de seguir escalando presupuesto.",
+          "owner": "CEO / Ads",
+          "timing": "Reunion de esta semana"
+        },
+        {
+          "title": "Revisar tracking de item_revenue en checkout Colombia",
+          "body": "7 articulos comprados esta semana en GA4 COL con ingreso $0 por articulo, pese a que el ingreso total de compra si se registra. Validar el datalayer de purchase con el equipo de desarrollo web.",
+          "owner": "Tech / Desarrollo web",
+          "timing": "Esta semana"
+        },
+        {
+          "title": "Confirmar causa del reembolso en Ecuador",
+          "body": "GA4 registra un ingreso neto negativo (-$120.88) por 2 eventos refund esta semana. Cruzar contra PrestaShop/Contifico para confirmar el motivo.",
+          "owner": "Operaciones",
+          "timing": "Esta semana"
+        },
+        {
+          "title": "Dar seguimiento al bloque de 59 leads estancados en 'Reacciones y Comentarios' (EC)",
+          "body": "Es el grupo mas grande del funnel EC (59 de 141 leads) y no avanza de etapa. Priorizar seguimiento comercial sobre este bloque antes de sumar mas leads nuevos.",
+          "owner": "Ventas / Comercial",
+          "timing": "Esta semana"
+        }
+      ],
+      "notas_verificacion": [
+        "GA4 y Meta Ads verificados via Windsor.ai (fuente ya validada en sesiones previas, spend de Meta cruzado contra Graph API en dias de control anteriores).",
+        "Kommo (leads, mensajeria, funnel) y PrestaShop (pedidos, totales) verificados via data/daily-log.json, que se alimenta directo de las APIs cada dia.",
+        "Semana PARCIAL: corte al 31/jul ~11:00am hora Ecuador (el dia no habia cerrado). Los totales de la semana actual subestiman el dia 5 (31/jul) frente a los 7 dias completos de la semana anterior.",
+        "Alcance de Meta Ads (reach) es suma por ad set, no deduplicado entre audiencias — puede sobreestimar el alcance unico real."
       ]
     }
   ]
