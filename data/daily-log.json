@@ -2593,7 +2593,7 @@
       "date": "2026-08-03",
       "kommo_leads_ec": 0,
       "kommo_leads_col": 0,
-      "kommo_msj_entrantes_ec": 3,
+      "kommo_msj_entrantes_ec": 4,
       "kommo_msj_salientes_ec": 0,
       "kommo_msj_entrantes_col": 0,
       "kommo_msj_salientes_col": 0,
@@ -2615,16 +2615,17 @@
       "meta_compras": 0,
       "meta_roas": 0,
       "recomendaciones_ec": [
-        "0 leads nuevos y 0 pedidos validos en PrestaShop EC hoy (corte parcial, dia sin cerrar) - racha desde 29/jul sin ventas reales en EC (ultima venta valida: 28/jul, 5 pedidos); monitorear cierre del dia antes de asumir tendencia negativa.",
-        "Funnel EC (30d): 122 leads, solo 6 ganados (~5%) y 45 estancados en 'Reacciones y Comentarios' (37% del funnel) - revisar el proceso de seguimiento en esa etapa, es el cuello de botella mas grande.",
-        "Solo 1 campana activa hoy en Meta Ads (la piel colombia nuevo, $14.85 gastados) sin compras atribuidas aun - validar si hay campanas EC pausadas o sin presupuesto."
+        "Alerta: Ecuador acumula 0 pedidos válidos en PrestaShop en los últimos días con dato (29, 30, 31 jul y 3 ago) — revisar funnel de conversión y campañas activas para EC.",
+        "El funnel Kommo EC (ventana 30 días, 121 leads) tiene la mayoría de leads concentrados en 'Reacciones y Comentarios' (44) y 'leads Tibios' (29) sin avanzar a contacto inicial — reforzar seguimiento comercial.",
+        "Contífico sigue sin poder facturar por falta de firma electrónica vigente (24 días desde el 10/jul/2026) — evaluar impacto en los pedidos que sí se logren cerrar."
       ],
       "recomendaciones_col": [
-        "3 pedidos creados hoy en COL, ninguno con pago confirmado (1 Pago Pendiente, 2 Transaccion rechazada) - revisar friccion en el checkout o la pasarela de pago.",
-        "Funnel COL (30d) sigue siendo pequeno (8 leads) frente a EC (122) - evaluar si vale la pena mas inversion en adquisicion COL dado el volumen bajo."
+        "Colombia tuvo 3 pedidos brutos en PrestaShop hoy pero ninguno válido (1 pago pendiente, 2 transacciones rechazadas) — revisar fricción en checkout/pasarela de pago.",
+        "El tráfico GA4 COL (14 usuarios, 14 sesiones) fue el mayor entre ambos países hoy pero sin conversión — evaluar la relación entre tráfico y fallas de pago.",
+        "Funnel Kommo COL (30 días, 7 leads) es bajo frente a EC — evaluar si la inversión en Meta Ads ('la piel colombia nuevo', $14.85 hoy) está generando suficientes leads."
       ],
       "parcial": true,
-      "nota_verificacion": "Corte parcial del dia (~10:00am hora Ecuador, dia aun no cierra). OJO: faltan las filas de 01/ago y 02/ago en este log (ultima fila previa era 31/jul) - la tarea programada no corrio esos dos dias, pendiente decidir si se backfillea manualmente. Kommo: 0 leads nuevos hoy en EC/COL (normal a esta hora). Mensajeria via /api/v4/events: de 5 eventos incoming/outgoing del dia, solo 3 pertenecen a pipeline EC (los otros 2 son del pipeline 'Embudo de Gestion' id 7768559, no segmentado en este dashboard - limitacion conocida, no error). Sin pares incoming->outgoing validos hoy, por eso kommo_lapso_medio_ec_s/col_s quedan null. PrestaShop: verificado order-por-order contra /api/order_states - EC 0 pedidos (ningun registro hoy), COL 3 pedidos brutos pero los 3 con paid=0 confirmado via API (estados 10 y 39), por eso el oficial (filtrado) es 0 en ambos paises. Meta Ads: gasto parcial del dia (solo 1 campana con datos hasta el momento del corte), meta_cpa null por 0 compras. Contifico: 0 documentos, 24 dias consecutivos sin poder facturar por falta de firma electronica vigente (bloqueo legal/operativo desde 10/jul/2026, NO tecnico).",
+      "nota_verificacion": "Corte parcial del día (ejecutado ~11:00 hora Ecuador, día en curso). Mensajería Kommo: de los eventos del día, 7 correspondían a leads fuera de los pipelines EC/COL y se excluyeron del conteo. Sin pares incoming->outgoing válidos hoy para calcular lapso de respuesta (null en ambos países). Meta Ads: solo 1 campaña con actividad hoy ('la piel colombia nuevo'); meta_alcance es suma sin deduplicar entre campañas. GA4 ingresos en USD según config de la propiedad. Contífico: 0 documentos por bloqueo de firma electrónica (no es falla técnica), 24 días transcurridos desde 10/jul/2026.",
       "meta_impresiones": 12811,
       "meta_alcance": 10292,
       "meta_clics": 147,
@@ -2643,9 +2644,9 @@
       "kommo_lapso_medio_ec_s": null,
       "kommo_lapso_medio_col_s": null,
       "kommo_funnel_ec": {
-        "total": 122,
+        "total": 121,
         "byStatus": {
-          "Reacciones y Comentarios": 45,
+          "Reacciones y Comentarios": 44,
           "leads Tibios (interacción)": 29,
           "Contacto inicial": 11,
           "Colaboraciones": 4,
@@ -2662,12 +2663,11 @@
         "window_days": 30
       },
       "kommo_funnel_col": {
-        "total": 8,
+        "total": 7,
         "byStatus": {
           "Por entregar": 3,
           "leads Tibios (interacción)": 2,
           "Ventas Perdidos": 1,
-          "Contacto inicial": 1,
           "Logrado con éxito": 1
         },
         "window_days": 30
