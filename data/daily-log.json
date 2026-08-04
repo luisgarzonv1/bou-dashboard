@@ -2780,6 +2780,86 @@
         },
         "window_days": 30
       }
+    },
+    {
+      "date": "2026-08-04",
+      "parcial": true,
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 9,
+      "kommo_msj_salientes_ec": 0,
+      "kommo_msj_entrantes_col": 0,
+      "kommo_msj_salientes_col": 0,
+      "kommo_lapso_medio_ec_s": null,
+      "kommo_lapso_medio_col_s": null,
+      "kommo_funnel_ec": {
+        "total": 176,
+        "byStatus": {
+          "ATENCION AGENTE": 1,
+          "CAMBIOS Y DEVOLUCIONES": 1,
+          "Colaboraciones": 4,
+          "Contacto inicial": 18,
+          "Leads ganados": 9,
+          "Leads perdidos": 12,
+          "Por entregar": 8,
+          "Por registrar y FACTURAR": 1,
+          "R.Comentarios Revisados": 12,
+          "Reacciones y Comentarios": 71,
+          "SPAM": 1,
+          "Servicios Adicionales": 4,
+          "leads Tibios (interacción)": 34
+        },
+        "window_days": 30
+      },
+      "kommo_funnel_col": {
+        "total": 7,
+        "byStatus": {
+          "Logrado con éxito": 1,
+          "Por entregar": 3,
+          "Ventas Perdidos": 1,
+          "leads Tibios (interacción)": 2
+        },
+        "window_days": 30
+      },
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": true,
+      "prestashop_pedidos_ec": 0,
+      "prestashop_pedidos_ec_todos_estados": 0,
+      "prestashop_total_ec_usd": 0,
+      "prestashop_pedidos_col": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "prestashop_total_col_cop": 0,
+      "meta_spend_usd": 0,
+      "meta_impresiones": 0,
+      "meta_alcance": 0,
+      "meta_clics": 0,
+      "meta_link_clics": 0,
+      "meta_compras": 0,
+      "meta_ingresos_usd": 0,
+      "meta_cpa": null,
+      "meta_ctr": null,
+      "meta_roas": null,
+      "ga4_usuarios_ec": 0,
+      "ga4_usuarios_nuevos_ec": 0,
+      "ga4_sesiones_ec": 0,
+      "ga4_ingresos_ec_usd": 0,
+      "ga4_compras_ec": 0,
+      "ga4_usuarios_col": 1,
+      "ga4_usuarios_nuevos_col": 1,
+      "ga4_sesiones_col": 1,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "nota_verificacion": "Corte parcial del día en curso (ejecución automática). Kommo: 130 eventos de mensajería en el día, de los cuales solo 9 correspondían a leads de los pipelines EC/COL (9 entrantes EC, 0 salientes; 0 en COL) — el resto (121) pertenece a otros embudos (Embudo de Gestión, etc.) y se excluyó del conteo por diseño. Sin pares incoming->outgoing válidos hoy para EC ni COL, lapso de respuesta queda null en ambos. Kommo leads nuevos: 0 en EC y 0 en COL hasta el momento del corte. Meta Ads: única campaña con actividad histórica ('la piel colombia nuevo') registra spend, impresiones, alcance, clics y compras en 0/null hoy — meta_ctr/meta_roas/meta_cpa se dejan null por división 0/0, no se fuerza a 0. GA4: hostname bouentertainment.com (EC) no devolvió fila hoy (sin eventos registrados aún al momento del corte, se trata como 0, no como fuente caída); co.bouentertainment.com (COL) registra 1 usuario/sesión sin compra. PrestaShop: 0 pedidos en ambas tiendas (bruto y filtrado por paid=1) — Ecuador acumula así 3 días consecutivos sin ventas válidas (2, 3 y 4 de agosto). Contífico: 0 documentos, 25 días transcurridos desde el 10/jul/2026 sin poder facturar por bloqueo de firma electrónica (no es falla técnica).",
+      "recomendaciones_ec": [
+        "Alerta: Ecuador lleva 3 días consecutivos (2, 3 y 4 de agosto) sin pedidos válidos en PrestaShop — revisar el funnel de conversión y si hay campañas activas específicas para EC.",
+        "0 leads nuevos en Kommo EC hoy pese a 9 mensajes entrantes — validar si hay seguimiento comercial oportuno sobre esas conversaciones.",
+        "Contífico sigue bloqueado por falta de firma electrónica (25 días) — dar seguimiento a la resolución legal/operativa antes de que se acumule más facturación pendiente."
+      ],
+      "recomendaciones_col": [
+        "Colombia sin pedidos ni leads nuevos hoy y solo 1 usuario GA4 registrado — tráfico prácticamente nulo, revisar si hay actividad de marketing activa para COL.",
+        "Meta Ads no muestra inversión activa hoy en la única campaña histórica de COL — confirmar si la pausa es intencional antes de asumir bajo desempeño."
+      ]
     }
   ],
   "periodic": [
