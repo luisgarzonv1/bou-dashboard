@@ -109,121 +109,191 @@
     {
       "week_id": "2026-W31",
       "week_start": "2026-07-27",
-      "week_end": "2026-07-31",
+      "week_end": "2026-08-02",
       "week_start_prev": "2026-07-20",
       "week_end_prev": "2026-07-26",
-      "generated_at": "2026-07-31",
-      "parcial": true,
-      "generated_note": "Semana PARCIAL: corte al 31/jul ~11:00am hora Ecuador (el dia no habia cerrado al momento de generar este reporte). Comparada contra la semana previa completa (20-26 jul).",
-      "headline": "ROAS en <em>0.17x</em> y trafico a la baja",
-      "headline_html": "Semana del <em>27</em> al 31 de julio (parcial).",
-      "subtitle": "Reporte ejecutivo Ecuador + Colombia + Meta Ads, comparado contra la semana previa completa (20-26 jul). Corte parcial: dia 31/jul aun no cerraba al generar este reporte.",
-      "resumen_lead": "Cinco dias de datos (semana aun no cierra). Meta Ads sigue deteriorandose: ROAS cayo de 0.37x a 0.17x. El trafico organico y pagado bajo en ambos paises en paralelo a una reduccion del 51% en inversion publicitaria. Ecuador reactivo ventas web (6 pedidos, veniamos de 0) pero su ingreso GA4 aparece negativo por reembolsos.",
+      "generated_at": "2026-08-04",
+      "generated_note": "Semana completa (lunes 27/jul a domingo 2/ago), reemplaza el corte parcial generado el 31/jul (que solo cubria hasta el jueves). Comparada contra la semana previa completa (20-26 jul).",
+      "headline": "ROAS Meta se hunde a <em>0.11x</em>, Colombia cae en todos los frentes",
+      "headline_html": "Semana del <em>27 jul</em> al 2 de agosto.",
+      "subtitle": "Reporte ejecutivo Ecuador + Colombia + Meta Ads, semana completa (27 jul - 2 ago) comparada contra la semana previa completa (20-26 jul).",
+      "resumen_lead": "Semana completa cerrada: el deterioro de Meta Ads que se veia a mitad de semana se confirmo y empeoro (ROAS 0.11x, el mas bajo de las ultimas semanas). Colombia cayo en trafico, pedidos e ingresos en paralelo a que el 94% del gasto publicitario se concentro en una sola campana con retorno muy bajo. Ecuador, en cambio, revirtio la semana negativa anterior: paso de 0 a 7 pedidos y de ingresos GA4 negativos (por reembolsos) a positivos.",
       "resumen_insights": [
         {
           "tag": "critical",
           "tagLabel": "Critico",
-          "title": "ROAS 0.17x es insostenible",
-          "body": "Meta atribuye <strong>$65.86</strong> de valor por <strong>$386.85</strong> invertidos en 5 dias. Solo 1 compra atribuida, CPA de $386.85. El ad set \"publico segmentado - Copia\" concentra 94% del gasto con apenas esa compra."
+          "title": "ROAS 0.11x es el peor de las ultimas semanas",
+          "body": "Meta atribuye <strong>$67.41</strong> de valor por <strong>$607.36</strong> invertidos (segun daily-log; el detalle por ad set en Windsor.ai muestra un gasto real de $733.27 para la semana completa). Solo 1 compra atribuida en el agregado diario, CPA de $607."
         },
         {
           "tag": "watch",
           "tagLabel": "Atencion",
-          "title": "Trafico cae -56% EC / -53% COL",
-          "body": "Usuarios GA4: Ecuador 257→114, Colombia 3,273→1,535. Corre en paralelo a una caida del 51% en inversion Meta ($791.73→$386.85) — parte de la caida es esperable, pero conviene monitorear el cierre del dia 31/jul."
+          "title": "Colombia cae en trafico, pedidos e ingresos",
+          "body": "Pedidos PrestaShop -50% (8→4), ingresos -65.7% (1,587,000→545,100 COP), ingresos GA4 -71.5%, usuarios GA4 -39%. Coincide con el 94% del gasto Meta concentrado en la campana 'la piel colombia nuevo'."
         },
         {
           "tag": "opportunity",
           "tagLabel": "Oportunidad",
-          "title": "PrestaShop Ecuador se reactivo",
-          "body": "6 pedidos por $217.99 esta semana — la semana pasada EC tuvo 0 pedidos. Vale la pena identificar la causa (canal, producto, promocion) para replicarla."
+          "title": "Ecuador revierte la semana negativa anterior",
+          "body": "De 0 a <strong>7 pedidos</strong> PrestaShop ($252.99) y de ingresos GA4 negativos (-$120.88 por reembolsos) a <strong>+$45.01</strong>. El trafico sigue bajo (-41% usuarios) pero la conversion mejoro con fuerza."
         }
       ],
       "ecuador": {
         "trafico": {
-          "ga4_usuarios": 114,
-          "ga4_sesiones": 137,
-          "ga4_ingresos_usd": -120.88,
-          "ga4_compras": 2,
+          "ga4_usuarios": 151,
+          "ga4_sesiones": 170,
+          "ga4_ingresos_usd": 45.01,
+          "ga4_compras": 3,
           "prev_ga4_usuarios": 257,
           "prev_ga4_sesiones": 276,
           "prev_ga4_ingresos_usd": 0,
           "prev_ga4_compras": 0
         },
         "ventas": {
-          "prestashop_pedidos": 6,
-          "prestashop_total_usd": 217.99,
+          "prestashop_pedidos": 7,
+          "prestashop_total_usd": 252.99,
           "prev_prestashop_pedidos": 0,
           "prev_prestashop_total_usd": 0
         },
         "mensajeria": {
-          "entrantes": 53,
-          "salientes": 65,
+          "entrantes": 88,
+          "salientes": 66,
           "prev_entrantes": 198,
           "prev_salientes": 150
         },
         "funnel_kommo": {
-          "total": 141,
+          "total": 121,
           "window_days": 30,
-          "leads_nuevos_kommo_api": 5,
+          "leads_nuevos_kommo_api": 21,
           "etapas": {
-            "Reacciones y Comentarios": 59,
-            "leads Tibios (interacción)": 33,
-            "Contacto inicial": 11,
-            "Por entregar": 8,
-            "Leads ganados": 7,
-            "Leads perdidos": 6,
-            "R.Comentarios Revisados": 6,
-            "Colaboraciones": 4,
-            "Servicios Adicionales": 3,
-            "Nueva consulta": 1,
-            "SPAM": 1,
             "CAMBIOS Y DEVOLUCIONES": 1,
-            "Por registrar y FACTURAR": 1
+            "Colaboraciones": 4,
+            "Contacto inicial": 11,
+            "Leads ganados": 6,
+            "Leads perdidos": 6,
+            "Nueva consulta": 1,
+            "Por entregar": 8,
+            "Por registrar y FACTURAR": 1,
+            "R.Comentarios Revisados": 6,
+            "Reacciones y Comentarios": 44,
+            "SPAM": 1,
+            "Servicios Adicionales": 3,
+            "leads Tibios (interacción)": 29
           }
         },
         "alerta": {
-          "label": "Nota",
-          "text": "Ingreso GA4 Ecuador aparece negativo (-$120.88) por 2 eventos de reembolso esta semana — no es caida de ventas nueva, es refund neto superando el ingreso bruto. Cruzar con PrestaShop/Contifico para confirmar el motivo."
+          "label": "Recuperacion",
+          "text": "Ecuador revierte la semana negativa anterior: paso de 0 a 7 pedidos PrestaShop y de ingresos GA4 negativos (-$120.88 por reembolsos) a +$45.01. El trafico sigue bajo (-41% usuarios) pero la conversion mejoro notablemente."
         },
         "ga4_eventos": [
-          { "event_name": "page_view", "event_count": 511 },
-          { "event_name": "user_engagement", "event_count": 366 },
-          { "event_name": "view_item_list", "event_count": 190 },
-          { "event_name": "scroll", "event_count": 163 },
-          { "event_name": "session_start", "event_count": 98 },
-          { "event_name": "form_start", "event_count": 72 },
-          { "event_name": "first_visit", "event_count": 66 },
-          { "event_name": "form_submit", "event_count": 64 }
+          {
+            "event_name": "page_view",
+            "event_count": 799
+          },
+          {
+            "event_name": "user_engagement",
+            "event_count": 561
+          },
+          {
+            "event_name": "view_item_list",
+            "event_count": 319
+          },
+          {
+            "event_name": "scroll",
+            "event_count": 246
+          },
+          {
+            "event_name": "session_start",
+            "event_count": 177
+          },
+          {
+            "event_name": "first_visit",
+            "event_count": 123
+          },
+          {
+            "event_name": "view_item",
+            "event_count": 106
+          },
+          {
+            "event_name": "form_start",
+            "event_count": 93
+          }
         ],
-        "ga4_eventos_nota": "page_view: usuario abre una pagina. user_engagement: sesion activa >10s. view_item_list: ve una lista/categoria de productos. scroll: hizo scroll en la pagina. session_start: inicio de sesion. form_start/form_submit: interactuo con un formulario.",
+        "ga4_eventos_nota": "page_view: visita a una pagina. user_engagement: sesion activa con interaccion >10s. view_item_list: vio un listado/categoria de productos. scroll: hizo scroll en la pagina. session_start: inicio de una sesion nueva. first_visit: primera visita de un usuario nuevo. view_item: vio el detalle de un producto especifico. form_start: comenzo a llenar un formulario.",
         "ga4_eventos_clave": [
-          { "event_name": "begin_checkout", "event_count": 13 },
-          { "event_name": "add_to_cart", "event_count": 6 },
-          { "event_name": "purchase", "event_count": 2 }
+          {
+            "event_name": "begin_checkout",
+            "event_count": 26
+          },
+          {
+            "event_name": "add_to_cart",
+            "event_count": 13
+          },
+          {
+            "event_name": "purchase",
+            "event_count": 3
+          }
         ],
-        "ga4_eventos_clave_nota": "begin_checkout: inicio el proceso de pago. add_to_cart: agrego un producto al carrito. purchase: completo una compra (evento de conversion GA4).",
+        "ga4_eventos_clave_nota": "begin_checkout: inicio el proceso de pago. add_to_cart: agrego un producto al carrito. purchase: completo una compra.",
         "ga4_canales": [
-          { "channel": "Organic Search", "sessions": 42 },
-          { "channel": "Direct", "sessions": 32 },
-          { "channel": "Organic Social", "sessions": 29 },
-          { "channel": "Paid Social", "sessions": 28 },
-          { "channel": "Referral", "sessions": 3 },
-          { "channel": "Paid Other", "sessions": 2 },
-          { "channel": "Unassigned", "sessions": 1 }
+          {
+            "channel": "Organic Search",
+            "sessions": 77
+          },
+          {
+            "channel": "Organic Social",
+            "sessions": 50
+          },
+          {
+            "channel": "Direct",
+            "sessions": 47
+          },
+          {
+            "channel": "Paid Social",
+            "sessions": 40
+          },
+          {
+            "channel": "Referral",
+            "sessions": 13
+          },
+          {
+            "channel": "Paid Other",
+            "sessions": 2
+          },
+          {
+            "channel": "Unassigned",
+            "sessions": 2
+          }
         ],
         "ga4_articulos": [
-          { "item_name": "Gorra “Pesos Pesados” – GUANACO", "items_purchased": 1, "item_revenue": 30 },
-          { "item_name": "CD Lolabúm El Cielo 10 Años", "items_purchased": 2, "item_revenue": 30 },
-          { "item_name": "Camiseta Soy un principe a mi modo", "items_purchased": 1, "item_revenue": 24.99 }
+          {
+            "item_name": "Gorra “Pesos Pesados” – GUANACO",
+            "items_purchased": 1,
+            "item_revenue": 30
+          },
+          {
+            "item_name": "CD LolabúmEl Cielo 10 Años",
+            "items_purchased": 2,
+            "item_revenue": 30
+          },
+          {
+            "item_name": "Camiseta Soy un principe a mi modo",
+            "items_purchased": 1,
+            "item_revenue": 24.99
+          },
+          {
+            "item_name": "Gorra Swing Orginal Monks Roja Logo Rojo",
+            "items_purchased": 1,
+            "item_revenue": 30
+          }
         ]
       },
       "colombia": {
         "trafico": {
-          "ga4_usuarios": 1535,
-          "ga4_sesiones": 1783,
-          "ga4_ingresos_usd": 177.3734,
-          "ga4_compras": 5,
+          "ga4_usuarios": 1996,
+          "ga4_sesiones": 2217,
+          "ga4_ingresos_usd": 128.49,
+          "ga4_compras": 4,
           "prev_ga4_usuarios": 3273,
           "prev_ga4_sesiones": 3770,
           "prev_ga4_ingresos_usd": 450.09,
@@ -236,77 +306,162 @@
           "prev_prestashop_total_cop": 1587000
         },
         "mensajeria": {
-          "entrantes": 7,
+          "entrantes": 8,
           "salientes": 5,
           "prev_entrantes": 5,
           "prev_salientes": 15
         },
         "funnel_kommo": {
-          "total": 12,
+          "total": 7,
           "window_days": 30,
           "leads_nuevos_kommo_api": 0,
           "etapas": {
-            "Contacto inicial": 3,
-            "leads Tibios (interacción)": 3,
-            "Por entregar": 3,
             "Logrado con éxito": 1,
+            "Por entregar": 3,
             "Ventas Perdidos": 1,
-            "leads Calientes (datos bancarios)": 1
+            "leads Tibios (interacción)": 2
           }
         },
         "alerta": {
-          "label": "Nota",
-          "text": "Los 7 articulos comprados en Colombia esta semana muestran ingreso por articulo en $0 en GA4 (posible bug de tracking en el datalayer del checkout), aunque el ingreso total de compra si se registra ($177.37). Usar prestashop_total_col_cop como fuente de verdad de ingresos reales."
+          "label": "Alerta",
+          "text": "Colombia cae en todos los frentes esta semana: pedidos -50%, ingresos PrestaShop -65.7% (1,587,000→545,100 COP), ingresos GA4 -71.5%, trafico -39% a -41%. Coincide con el 94% del gasto Meta concentrado en la campana 'la piel colombia nuevo' que solo genero 2 compras."
         },
         "ga4_eventos": [
-          { "event_name": "page_view", "event_count": 3360 },
-          { "event_name": "session_start", "event_count": 1777 },
-          { "event_name": "user_engagement", "event_count": 1773 },
-          { "event_name": "view_item", "event_count": 1581 },
-          { "event_name": "first_visit", "event_count": 1450 },
-          { "event_name": "view_item_list", "event_count": 1088 },
-          { "event_name": "scroll", "event_count": 769 },
-          { "event_name": "form_start", "event_count": 125 }
+          {
+            "event_name": "page_view",
+            "event_count": 5229
+          },
+          {
+            "event_name": "user_engagement",
+            "event_count": 3021
+          },
+          {
+            "event_name": "session_start",
+            "event_count": 2683
+          },
+          {
+            "event_name": "view_item",
+            "event_count": 2374
+          },
+          {
+            "event_name": "first_visit",
+            "event_count": 2273
+          },
+          {
+            "event_name": "view_item_list",
+            "event_count": 1871
+          },
+          {
+            "event_name": "scroll",
+            "event_count": 1227
+          },
+          {
+            "event_name": "form_start",
+            "event_count": 187
+          }
         ],
-        "ga4_eventos_nota": "page_view: usuario abre una pagina. session_start: inicio de sesion. user_engagement: sesion activa >10s. view_item: vio el detalle de un producto. first_visit: primera visita del usuario. view_item_list: vio una lista/categoria. scroll: hizo scroll. form_start: inicio un formulario.",
+        "ga4_eventos_nota": "page_view: visita a una pagina. user_engagement: sesion activa con interaccion >10s. session_start: inicio de una sesion nueva. view_item: vio el detalle de un producto especifico. first_visit: primera visita de un usuario nuevo. view_item_list: vio un listado/categoria de productos. scroll: hizo scroll en la pagina. form_start: comenzo a llenar un formulario.",
         "ga4_eventos_clave": [
-          { "event_name": "begin_checkout", "event_count": 44 },
-          { "event_name": "add_to_cart", "event_count": 37 },
-          { "event_name": "purchase", "event_count": 5 },
-          { "event_name": "sign_up", "event_count": 3 }
+          {
+            "event_name": "begin_checkout",
+            "event_count": 52
+          },
+          {
+            "event_name": "add_to_cart",
+            "event_count": 48
+          },
+          {
+            "event_name": "purchase",
+            "event_count": 6
+          },
+          {
+            "event_name": "sign_up",
+            "event_count": 3
+          }
         ],
-        "ga4_eventos_clave_nota": "begin_checkout: inicio el proceso de pago (44 veces). add_to_cart: agrego un producto al carrito (37). purchase: completo una compra (5). sign_up: creo una cuenta (3).",
+        "ga4_eventos_clave_nota": "begin_checkout: inicio el proceso de pago. add_to_cart: agrego un producto al carrito. purchase: completo una compra. sign_up: se registro como usuario nuevo.",
         "ga4_canales": [
-          { "channel": "Paid Social", "sessions": 1320 },
-          { "channel": "Paid Other", "sessions": 151 },
-          { "channel": "Organic Social", "sessions": 129 },
-          { "channel": "Direct", "sessions": 128 },
-          { "channel": "Organic Search", "sessions": 42 },
-          { "channel": "Referral", "sessions": 10 }
+          {
+            "channel": "Paid Social",
+            "sessions": 2025
+          },
+          {
+            "channel": "Organic Social",
+            "sessions": 248
+          },
+          {
+            "channel": "Direct",
+            "sessions": 181
+          },
+          {
+            "channel": "Paid Other",
+            "sessions": 159
+          },
+          {
+            "channel": "Organic Search",
+            "sessions": 66
+          },
+          {
+            "channel": "Referral",
+            "sessions": 11
+          }
         ],
         "ga4_articulos": [
-          { "item_name": "LA PIEL MARGARITA SIEMPRE VIVA", "items_purchased": 2, "item_revenue": 0 },
-          { "item_name": "Libreta Bailando triste, Cantando triste, saltando triste", "items_purchased": 1, "item_revenue": 0 },
-          { "item_name": "Camiseta Bugambilia", "items_purchased": 1, "item_revenue": 0 },
-          { "item_name": "Gorra Bugambilia", "items_purchased": 1, "item_revenue": 0 },
-          { "item_name": "Pin NASA HISTOIRES", "items_purchased": 1, "item_revenue": 0 },
-          { "item_name": "Camiseta Girasol", "items_purchased": 1, "item_revenue": 0 },
-          { "item_name": "Cuaderno Estamos rotos y lo roto no se dana", "items_purchased": 1, "item_revenue": 0 }
+          {
+            "item_name": "Libreta Bailando triste, Cantando triste, saltando triste",
+            "items_purchased": 1,
+            "item_revenue": 0
+          },
+          {
+            "item_name": "Camiseta Bugambilia",
+            "items_purchased": 1,
+            "item_revenue": 0
+          },
+          {
+            "item_name": "Gorra Bugambilia",
+            "items_purchased": 1,
+            "item_revenue": 0
+          },
+          {
+            "item_name": "Pin NASA HISTOIRES",
+            "items_purchased": 1,
+            "item_revenue": 0
+          },
+          {
+            "item_name": "Camiseta Girasol",
+            "items_purchased": 1,
+            "item_revenue": 0
+          },
+          {
+            "item_name": "Cuaderno Estamos rotos y lo roto no se daña",
+            "items_purchased": 1,
+            "item_revenue": 0
+          },
+          {
+            "item_name": "LA PIEL MARGARITA SIEMPRE VIVA",
+            "items_purchased": 2,
+            "item_revenue": 0
+          },
+          {
+            "item_name": "LA PIEL ÁCIDO PANTERA",
+            "items_purchased": 1,
+            "item_revenue": 0
+          }
         ],
-        "ga4_articulos_nota": "Los 7 articulos comprados en Colombia esta semana registran item_revenue = $0 en GA4 pese a que el ingreso total de compra (purchase_revenue) si es $177.37. Posible falta del parametro price/value a nivel de item en el evento purchase del datalayer de co.bouentertainment.com."
+        "ga4_articulos_nota": "Los 9 items comprados esta semana en Colombia vuelven a registrar item_revenue=$0 en GA4 (2da semana consecutiva), aunque el ingreso total de compra si se registra ($128.49). Persiste el bug de tracking en el datalayer de co.bouentertainment.com — pendiente de fix con el equipo de desarrollo web."
       },
       "ads": {
-        "meta_spend_usd": 386.85,
+        "meta_spend_usd": 607.36,
         "meta_compras": 1,
-        "meta_ingresos_usd": 65.86,
-        "meta_roas": 0.1702,
-        "meta_cpa_usd": 386.85,
-        "meta_impresiones": 202013,
-        "meta_alcance": 76867,
-        "meta_clics": 3224,
-        "meta_link_clics": 1780,
-        "meta_ctr": 1.6,
-        "meta_frecuencia": 2.6281,
+        "meta_ingresos_usd": 67.41,
+        "meta_roas": 0.111,
+        "meta_cpa_usd": 607.36,
+        "meta_impresiones": 369906,
+        "meta_alcance": 243802,
+        "meta_clics": 5303,
+        "meta_link_clics": 2999,
+        "meta_ctr": 1.43,
+        "meta_frecuencia": 2.4374,
         "prev_meta_spend_usd": 791.73,
         "prev_meta_compras": 5,
         "prev_meta_ingresos_usd": 295.96,
@@ -315,118 +470,139 @@
         "prev_meta_alcance": 262011,
         "prev_meta_clics": 10059,
         "eficiencia": {
-          "ctr": 1.6,
-          "cpm": 1.91,
-          "cpc": 0.12,
-          "freq_max": 9.9912,
+          "ctr": 1.43,
+          "cpm": 1.64,
+          "cpc": 0.11,
+          "freq_max": 10.7444,
           "freq_max_adset": "Nuevo conjunto de anuncios de Ventas",
-          "cpa": 386.85,
-          "note": "CPA de $386.85 sobre solo 1 compra atribuida en 5 dias — muestra muy chica para ser concluyente, pero consistente con la tendencia de deterioro de la semana anterior (CPA $158.35)."
+          "cpa": 607.36,
+          "note": "CPA de $607.36 sobre solo 1 compra atribuida en la semana (agregado diario) — el ad set 'Nuevo conjunto de anuncios de Ventas' tiene frecuencia 10.74x sobre apenas 1,299 personas de alcance y 0 compras, senal clara de fatiga de audiencia sin retorno."
         },
         "ad_sets": [
-          { "adset_name": "publico segmentado - Copia", "campaign_name": "la piel colombia nuevo", "status": "ACTIVE", "spend": 365.83, "impressions": 187707, "reach": 73833, "frequency": 2.5423, "purchases": 1 },
-          { "adset_name": "Nuevo conjunto de anuncios de Interaccion", "campaign_name": "Miel- IG- 7 DIAS", "status": "ACTIVE", "spend": 2.47, "impressions": 1867, "reach": 1789, "frequency": 1.0436, "purchases": 0 },
-          { "adset_name": "Nuevo conjunto de anuncios de Ventas", "campaign_name": "Seguidores MSV", "status": "ACTIVE", "spend": 18.55, "impressions": 12439, "reach": 1245, "frequency": 9.9912, "purchases": 0 }
+          {
+            "adset_name": "publico segmentado - Copia",
+            "campaign_name": "la piel colombia nuevo",
+            "status": "ACTIVE",
+            "spend": 709.73,
+            "impressions": 432077,
+            "reach": 180673,
+            "frequency": 2.3915,
+            "purchases": 2
+          },
+          {
+            "adset_name": "Nuevo conjunto de anuncios de Interacción",
+            "campaign_name": "Miel- IG- 7 DIAS",
+            "status": "ACTIVE",
+            "spend": 2.47,
+            "impressions": 1867,
+            "reach": 1789,
+            "frequency": 1.0436,
+            "purchases": 0
+          },
+          {
+            "adset_name": "Nuevo conjunto de anuncios de Ventas",
+            "campaign_name": "Seguidores MSV",
+            "status": "ACTIVE",
+            "spend": 21.07,
+            "impressions": 13957,
+            "reach": 1299,
+            "frequency": 10.7444,
+            "purchases": 0
+          }
         ],
-        "nota": "Alcance sumado por ad set, no deduplicado entre audiencias — puede sobreestimar el alcance unico real. No hay segmentacion geografica confiable de Meta Ads por pais."
+        "nota": "Los totales de spend/compras/impresiones/etc. de este bloque vienen de la suma semanal de daily-log.json (corte parcial diario ~11am). El detalle por ad set (Windsor.ai, dia completo) muestra un gasto real de $733.27 y 2 compras para la semana — ver hallazgo tecnico sobre el corte diario."
       },
       "hallazgos_tecnicos": [
         {
-          "tag": "opportunity",
-          "tagLabel": "Resuelto",
-          "title": "Mensajeria Kommo: metodologia corregida (endpoint real /api/v4/events)",
-          "body": "El endpoint <strong>/api/v4/talks</strong> no trae direccion de mensaje (incoming/outgoing). Se migro a <strong>/api/v4/events</strong> (tipos incoming_chat_message / outgoing_chat_message), resolviendo el pais via pipeline_id del lead. Ya implementado en la tarea diaria, con 14 dias de backfill.",
-          "action": "Limitacion conocida: el pipeline 'Embudo de Gestion' (id 7768559, no segmentado por pais) concentra el mayor volumen de eventos y queda fuera del conteo EC/COL."
+          "tag": "watch",
+          "tagLabel": "Atencion",
+          "title": "Daily-log subestima el gasto y el trafico del dia completo (corte ~11am)",
+          "body": "El agregado semanal desde daily-log.json da <strong>$607.36</strong> de gasto Meta, pero la consulta directa a Windsor.ai por ad set (dia completo) suma <strong>$733.27</strong> — 20.7% mas. Mismo patron en sesiones GA4: daily-log da 170 (EC) y 2,217 (COL) vs 231 y 2,690 respectivamente en el detalle por canal via Windsor.ai.",
+          "action": "Evaluar mover el corte diario a fin de dia, o usar Windsor.ai como fuente primaria de los totales semanales en vez de sumar snapshots parciales de daily-log.json."
+        },
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "item_revenue=$0 en GA4 Colombia, 2da semana consecutiva sin resolver",
+          "body": "Los 9 articulos comprados esta semana en Colombia registran <strong>item_revenue=$0</strong> en GA4, igual que la semana anterior, pese a que el ingreso total de compra si se registra ($128.49). Confirma que no fue un evento aislado sino un problema de tracking persistente.",
+          "action": "Escalar con el equipo de desarrollo web la revision del datalayer de ecommerce en co.bouentertainment.com (falta el parametro price/value a nivel de item en el evento purchase)."
         },
         {
           "tag": "watch",
           "tagLabel": "Atencion",
-          "title": "Ingreso GA4 Colombia por articulo en $0",
-          "body": "Los 7 articulos comprados esta semana en Colombia registran <strong>item_revenue = $0</strong> en GA4, aunque el ingreso total de compra si llega ($177.37). Sugiere que falta el parametro price/value a nivel de item en el evento purchase.",
-          "action": "Revisar implementacion de GA4 ecommerce (datalayer) en co.bouentertainment.com con el equipo de desarrollo web."
-        },
-        {
-          "tag": "watch",
-          "tagLabel": "Atencion",
-          "title": "Ingreso GA4 Ecuador negativo por reembolso",
-          "body": "2 eventos <strong>refund</strong> esta semana llevaron el ingreso neto de Ecuador a -$120.88, pese a 2 compras nuevas. No es un error de tracking, es un reembolso real superando el ingreso bruto de la semana.",
-          "action": "Cruzar contra PrestaShop/Contifico para confirmar el pedido reembolsado y el motivo."
-        },
-        {
-          "tag": "opportunity",
-          "tagLabel": "Metodologia",
-          "title": "Funnel Kommo usa ventana movil de 30 dias",
-          "body": "El pipeline EC tiene miles de leads historicos acumulados (anos de ganados/perdidos) — paginar todo el pipeline a diario es impracticable. Se adopto un snapshot de leads <strong>creados en los ultimos 30 dias</strong>, segmentados por etapa actual.",
-          "action": "Es una aproximacion util para tendencia reciente, no un conteo historico total del pipeline."
+          "title": "Contifico sigue bloqueado — 25 dias sin firma electronica",
+          "body": "0 documentos facturados esta semana y la anterior. El bloqueo por falta de firma electronica vigente cumple 25 dias desde el 10/jul/2026, con riesgo de acumulacion de pedidos sin facturar.",
+          "action": "Dar seguimiento urgente a la renovacion de la firma electronica con el area legal/operaciones."
         }
       ],
       "hallazgos_ventas": [
         {
           "tag": "critical",
           "tagLabel": "Critico",
-          "title": "ROAS 0.17x es insostenible",
-          "body": "Meta atribuye <strong>$65.86</strong> de valor por <strong>$386.85</strong> invertidos en 5 dias (ROAS 0.17x, peor que la semana anterior: 0.37x). Solo 1 compra atribuida, con un CPA de $386.85 — muy por encima del ticket promedio observado. El ad set \"publico segmentado - Copia\" concentra el 94% del gasto con esa unica compra.",
-          "action": "Decidir en la reunion: pausar, reducir presupuesto o cambiar creativo/audiencia de la campana 'la piel colombia nuevo' antes de seguir invirtiendo."
-        },
-        {
-          "tag": "critical",
-          "tagLabel": "Critico",
-          "title": "Frecuencia 9.99x en 'Nuevo conjunto de anuncios de Ventas' — audiencia agotada",
-          "body": "Este ad set (campana \"Seguidores MSV\") muestra <strong>frecuencia 9.99x</strong> sobre un alcance de solo 1,245 personas — la misma audiencia esta viendo el anuncio casi 10 veces. Gasto bajo ($18.55) pero 0 compras.",
-          "action": "Pausar o refrescar creativo/audiencia de este ad set especifico."
+          "title": "ROAS Meta se hunde a 0.11x",
+          "body": "Con $607.36 invertidos (daily-log) o $733.27 (Windsor, dia completo), Meta solo atribuye $67.41 de valor esta semana. Es el ROAS mas bajo de las ultimas semanas (0.37x la semana previa, 0.17x en el corte parcial a mitad de esta semana).",
+          "action": "Revisar de fondo la estrategia de Meta Ads antes de seguir invirtiendo al mismo ritmo."
         },
         {
           "tag": "watch",
           "tagLabel": "Atencion",
-          "title": "Trafico cae -56% Ecuador / -53% Colombia",
-          "body": "Usuarios GA4: Ecuador 257→114, Colombia 3,273→1,535 (semana parcial, 5 dias vs 7). Corre en paralelo a una reduccion del 51% en inversion Meta ($791.73→$386.85) — coherente con menor gasto, pero conviene monitorear el cierre del 31/jul.",
-          "action": "Confirmar con el corte de fin de semana si la caida se sostiene mas alla de la diferencia de dias."
+          "title": "Colombia cae en todos los frentes",
+          "body": "Pedidos PrestaShop -50% (8→4), ingresos -65.7% (1,587,000→545,100 COP), ingresos GA4 -71.5%, usuarios GA4 -39%. La caida coincide con que el 94% del gasto Meta de la semana se concentro en la campana 'la piel colombia nuevo', que solo genero 2 compras.",
+          "action": "Decidir si se reestructura o se pausa la campana 'la piel colombia nuevo' mientras se investiga la caida organica en paralelo."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "Atencion",
+          "title": "Ad set con frecuencia 10.74x y 0 compras",
+          "body": "'Nuevo conjunto de anuncios de Ventas' (campana Seguidores MSV) muestra el mismo anuncio 10.74 veces en promedio a solo 1,299 personas, sin ninguna compra esta semana — senal clara de fatiga de audiencia.",
+          "action": "Pausar el ad set o refrescar el creativo y ampliar el publico."
         },
         {
           "tag": "opportunity",
           "tagLabel": "Oportunidad",
-          "title": "PrestaShop Ecuador se reactivo",
-          "body": "6 pedidos por $217.99 esta semana — veniamos de 0 pedidos la semana anterior. Vale la pena identificar la causa (canal, producto o promocion especifica) para replicarla.",
-          "action": "Revisar el detalle de estos 6 pedidos (canal de origen, producto) antes del cierre de semana."
+          "title": "Ecuador se recupera con fuerza",
+          "body": "De 0 a 7 pedidos PrestaShop ($252.99) y de ingresos GA4 negativos (-$120.88 por reembolsos la semana pasada) a +$45.01 esta semana. La conversion mejoro pese a que el trafico sigue 41% por debajo de la semana previa.",
+          "action": "Monitorear si la mejora se sostiene la proxima semana pese al trafico bajo; identificar que genero la recuperacion para replicarlo."
         }
       ],
       "acciones": [
         {
-          "title": "Pausar o reestructurar el ad set 'Nuevo conjunto de anuncios de Ventas'",
-          "body": "Frecuencia 9.99x sobre solo 1,245 personas de alcance y 0 compras en la semana. Refrescar creativo o redirigir el presupuesto al ad set principal.",
+          "title": "Pausar o refrescar 'Nuevo conjunto de anuncios de Ventas' (Seguidores MSV)",
+          "body": "Frecuencia 10.74x sobre solo 1,299 personas de alcance y 0 compras en la semana.",
           "owner": "Ads / Marketing",
           "timing": "Antes del proximo lunes"
         },
         {
-          "title": "Decidir sobre la inversion en Colombia dado ROAS 0.17x",
-          "body": "Con $386.85 invertidos y solo $65.86 de valor atribuido esta semana, evaluar pausar la campana 'la piel colombia nuevo' o cambiar de estrategia antes de seguir escalando presupuesto.",
+          "title": "Reevaluar la campana 'la piel colombia nuevo'",
+          "body": "$709.73 gastados (Windsor, semana completa) por solo $133.27 de valor atribuido — ROAS de 0.19x en ese ad set especifico, y concentra 94% del gasto de la semana.",
           "owner": "CEO / Ads",
           "timing": "Reunion de esta semana"
         },
         {
-          "title": "Revisar tracking de item_revenue en checkout Colombia",
-          "body": "7 articulos comprados esta semana en GA4 COL con ingreso $0 por articulo, pese a que el ingreso total de compra si se registra. Validar el datalayer de purchase con el equipo de desarrollo web.",
-          "owner": "Tech / Desarrollo web",
-          "timing": "Esta semana"
+          "title": "Escalar el fix de item_revenue=$0 en GA4 Colombia",
+          "body": "2 semanas consecutivas sin resolver, dificulta medir el performance real por producto en Colombia.",
+          "owner": "Web / Desarrollo",
+          "timing": "Proximos dias"
         },
         {
-          "title": "Confirmar causa del reembolso en Ecuador",
-          "body": "GA4 registra un ingreso neto negativo (-$120.88) por 2 eventos refund esta semana. Cruzar contra PrestaShop/Contifico para confirmar el motivo.",
-          "owner": "Operaciones",
-          "timing": "Esta semana"
+          "title": "Dar seguimiento urgente a la firma electronica de Contifico",
+          "body": "25 dias bloqueado (desde el 10/jul); riesgo de acumulacion de pedidos sin facturar.",
+          "owner": "Operaciones / Legal",
+          "timing": "Urgente, esta semana"
         },
         {
-          "title": "Dar seguimiento al bloque de 59 leads estancados en 'Reacciones y Comentarios' (EC)",
-          "body": "Es el grupo mas grande del funnel EC (59 de 141 leads) y no avanza de etapa. Priorizar seguimiento comercial sobre este bloque antes de sumar mas leads nuevos.",
-          "owner": "Ventas / Comercial",
+          "title": "Investigar la caida de Colombia en paralelo a la mensajeria",
+          "body": "Mensajes entrantes COL subieron 60% pero los salientes cayeron 66.7% — posible cuello de botella en respuesta comercial que podria estar afectando la conversion.",
+          "owner": "Comercial COL",
           "timing": "Esta semana"
         }
       ],
       "notas_verificacion": [
-        "GA4 y Meta Ads verificados via Windsor.ai (fuente ya validada en sesiones previas, spend de Meta cruzado contra Graph API en dias de control anteriores).",
-        "Kommo (leads, mensajeria, funnel) y PrestaShop (pedidos, totales) verificados via data/daily-log.json, que se alimenta directo de las APIs cada dia.",
-        "Semana PARCIAL: corte al 31/jul ~11:00am hora Ecuador (el dia no habia cerrado). Los totales de la semana actual subestiman el dia 5 (31/jul) frente a los 7 dias completos de la semana anterior.",
-        "Alcance de Meta Ads (reach) es suma por ad set, no deduplicado entre audiencias — puede sobreestimar el alcance unico real."
+        "Fuente primaria de trafico/ventas/mensajeria/ads diarios: data/daily-log.json (BOU dashboard), snapshot con corte ~11:00 hora Ecuador cada dia.",
+        "GA4 (eventos, canales, articulos) obtenido directamente de Windsor.ai (conector googleanalytics4, propiedad 414923086) para el rango 27/jul-2/ago — dato externo verificado contra la fuente.",
+        "Meta Ads (detalle por ad set) obtenido directamente de Windsor.ai (conector facebook, cuenta 877286016115641) para el rango 27/jul-2/ago — dato externo verificado contra la fuente.",
+        "funnel_kommo reutiliza el snapshot de kommo_funnel_ec/col del 2026-08-03 (ventana movil 30 dias) sin recalcular via API directa — antiguedad de 1 dia, dentro del umbral de 2 dias definido en la metodologia.",
+        "Esta entrada reemplaza la version parcial de 2026-W31 generada el 31/jul (corte a mitad de semana, solo hasta el jueves) con la semana completa (lunes 27/jul a domingo 2/ago)."
       ]
     }
   ]
