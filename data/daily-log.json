@@ -2860,6 +2860,87 @@
         "Colombia sin pedidos ni leads nuevos hoy y solo 1 usuario GA4 registrado — tráfico prácticamente nulo, revisar si hay actividad de marketing activa para COL.",
         "Meta Ads no muestra inversión activa hoy en la única campaña histórica de COL — confirmar si la pausa es intencional antes de asumir bajo desempeño."
       ]
+    },
+    {
+      "date": "2026-08-05",
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 2,
+      "kommo_msj_salientes_ec": 0,
+      "kommo_msj_entrantes_col": 0,
+      "kommo_msj_salientes_col": 0,
+      "kommo_lapso_medio_ec_s": null,
+      "kommo_lapso_medio_col_s": null,
+      "kommo_funnel_ec": {
+        "total": 176,
+        "byStatus": {
+          "Reacciones y Comentarios": 71,
+          "leads Tibios (interacción)": 34,
+          "Colaboraciones": 4,
+          "Leads perdidos": 12,
+          "Por entregar": 8,
+          "Por registrar y FACTURAR": 1,
+          "Leads ganados": 9,
+          "Servicios Adicionales": 4,
+          "R.Comentarios Revisados": 12,
+          "Contacto inicial": 18,
+          "SPAM": 1,
+          "CAMBIOS Y DEVOLUCIONES": 1,
+          "ATENCION AGENTE": 1
+        },
+        "window_days": 30
+      },
+      "kommo_funnel_col": {
+        "total": 7,
+        "byStatus": {
+          "Por entregar": 3,
+          "leads Tibios (interacción)": 2,
+          "Ventas Perdidos": 1,
+          "Logrado con éxito": 1
+        },
+        "window_days": 30
+      },
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": true,
+      "prestashop_pedidos_ec": 1,
+      "prestashop_total_ec_usd": 20,
+      "prestashop_pedidos_ec_todos_estados": 1,
+      "prestashop_pedidos_col": 0,
+      "prestashop_total_col_cop": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "ga4_usuarios_ec": 4,
+      "ga4_usuarios_nuevos_ec": 3,
+      "ga4_sesiones_ec": 5,
+      "ga4_ingresos_ec_usd": 0,
+      "ga4_compras_ec": 0,
+      "ga4_usuarios_col": 2,
+      "ga4_usuarios_nuevos_col": 1,
+      "ga4_sesiones_col": 4,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "meta_spend_usd": 0,
+      "meta_impresiones": null,
+      "meta_alcance": 0,
+      "meta_clics": 0,
+      "meta_link_clics": null,
+      "meta_ctr": null,
+      "meta_compras": null,
+      "meta_ingresos_usd": null,
+      "meta_roas": null,
+      "meta_cpa": null,
+      "recomendaciones_ec": [
+        "Contífico sigue bloqueado por falta de firma electrónica vigente: 26 días sin poder facturar (desde 10/jul/2026). Priorizar renovación.",
+        "0 leads nuevos en Kommo EC hasta las 11am (día en curso) — monitorear el resto del día antes de marcar alerta.",
+        "1 pedido válido pagado hoy en PrestaShop EC ($20 vía Payphone) — sin pedidos cancelados en el corte."
+      ],
+      "recomendaciones_col": [
+        "0 leads y 0 mensajes en Kommo COL hasta las 11am — funnel de 30 días muestra solo 7 leads totales, volumen bajo a vigilar.",
+        "0 pedidos en PrestaShop COL hoy.",
+        "Campaña Meta Ads 'la piel colombia nuevo' sin impresiones/clics/compras reportados hoy (spend=0) — revisar si está pausada o sin presupuesto activo."
+      ],
+      "parcial": true,
+      "nota_verificacion": "Corte parcial del día (~11:03am hora Ecuador, día en curso). Sin backfill necesario (última fecha registrada: 04/ago/2026, sin huecos). Kommo: 30 eventos de mensajería en la ventana horaria; 28 pertenecen al pipeline 'Embudo de Gestión' (id 7768559, no rastreado por este dashboard, es el pipeline principal/CRM interno) y solo 2 al pipeline EC — sin pares incoming→outgoing válidos hoy para calcular lapso de respuesta (kommo_lapso_medio_ec_s/col_s = null). Meta Ads: única campaña activa con impressions/link_clicks/compras en null (Windsor.ai aún sin datos de entrega a esta hora) — spend/reach/clics en 0, por eso meta_ctr/meta_roas/meta_cpa quedan null. GA4 excluye nasa-histoires.myshopify.com (1 sesión, 0 usuarios) de los totales EC/COL. PrestaShop EC: 1 pedido (id 1208, estado 'Pago con Payphone aprobado', paid=1 confirmado vía order_states), coincide con el conteo bruto sin filtrar (sin cancelados hoy). COL: 0 pedidos. Contífico: 0 documentos, 26 días sin facturar por falta de firma electrónica (bloqueo de negocio, no técnico)."
     }
   ],
   "periodic": [
