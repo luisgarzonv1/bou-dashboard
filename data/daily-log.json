@@ -8756,41 +8756,42 @@
     },
     {
       "date": "2026-08-05",
-      "kommo_leads_ec": 0,
+      "kommo_leads_ec": 2,
       "kommo_leads_col": 0,
-      "kommo_msj_entrantes_ec": 2,
-      "kommo_msj_salientes_ec": 0,
-      "kommo_msj_entrantes_col": 0,
-      "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_ec_s": null,
-      "kommo_lapso_medio_col_s": null,
+      "kommo_msj_entrantes_ec": 14,
+      "kommo_msj_salientes_ec": 12,
+      "kommo_msj_entrantes_col": 1,
+      "kommo_msj_salientes_col": 2,
+      "kommo_lapso_medio_ec_s": 158.5,
+      "kommo_lapso_medio_col_s": 488,
       "kommo_funnel_ec": {
+        "total": 194,
         "byStatus": {
-          "ATENCION AGENTE": 1,
-          "CAMBIOS Y DEVOLUCIONES": 1,
-          "Colaboraciones": 4,
-          "Contacto inicial": 18,
-          "Leads ganados": 9,
-          "Leads perdidos": 12,
-          "Por entregar": 8,
+          "Reacciones y Comentarios": 80,
+          "leads Tibios (interacción)": 38,
+          "Colaboraciones": 5,
+          "Leads perdidos": 13,
+          "Por entregar": 7,
           "Por registrar y FACTURAR": 1,
+          "Servicios Adicionales": 6,
+          "Leads ganados": 10,
           "R.Comentarios Revisados": 12,
-          "Reacciones y Comentarios": 71,
+          "Contacto inicial": 18,
           "SPAM": 1,
-          "Servicios Adicionales": 4,
-          "leads Tibios (interacción)": 34
+          "CAMBIOS Y DEVOLUCIONES": 1,
+          "ATENCION AGENTE": 1,
+          "Nueva consulta": 1
         },
-        "total": 176,
         "window_days": 30
       },
       "kommo_funnel_col": {
-        "byStatus": {
-          "Logrado con éxito": 1,
-          "Por entregar": 3,
-          "Ventas Perdidos": 1,
-          "leads Tibios (interacción)": 2
-        },
         "total": 7,
+        "byStatus": {
+          "Por entregar": 3,
+          "leads Tibios (interacción)": 2,
+          "Ventas Perdidos": 1,
+          "Logrado con éxito": 1
+        },
         "window_days": 30
       },
       "contifico_documentos": 0,
@@ -8802,38 +8803,37 @@
       "prestashop_pedidos_col": 0,
       "prestashop_total_col_cop": 0,
       "prestashop_pedidos_col_todos_estados": 0,
-      "ga4_usuarios_ec": 4,
-      "ga4_usuarios_nuevos_ec": 3,
-      "ga4_sesiones_ec": 5,
-      "ga4_ingresos_ec_usd": 0,
-      "ga4_compras_ec": 0,
-      "ga4_usuarios_col": 2,
+      "ga4_usuarios_ec": 11,
+      "ga4_usuarios_nuevos_ec": 7,
+      "ga4_sesiones_ec": 12,
+      "ga4_ingresos_ec_usd": 13.04,
+      "ga4_compras_ec": 1,
+      "ga4_usuarios_col": 5,
       "ga4_usuarios_nuevos_col": 1,
-      "ga4_sesiones_col": 4,
+      "ga4_sesiones_col": 7,
       "ga4_ingresos_col_usd": 0,
       "ga4_compras_col": 0,
       "meta_spend_usd": 0,
-      "meta_impresiones": null,
+      "meta_impresiones": 0,
       "meta_alcance": 0,
       "meta_clics": 0,
-      "meta_link_clics": null,
+      "meta_link_clics": 0,
       "meta_ctr": null,
-      "meta_compras": null,
-      "meta_ingresos_usd": null,
+      "meta_compras": 0,
+      "meta_ingresos_usd": 0,
       "meta_roas": null,
       "meta_cpa": null,
       "recomendaciones_ec": [
-        "Contífico sigue bloqueado por falta de firma electrónica vigente: 26 días sin poder facturar (desde 10/jul/2026). Priorizar renovación.",
-        "0 leads nuevos en Kommo EC hasta las 11am (día en curso) — monitorear el resto del día antes de marcar alerta.",
-        "1 pedido válido pagado hoy en PrestaShop EC ($20 vía Payphone) — sin pedidos cancelados en el corte."
+        "Cierre del día: Ecuador terminó con 2 leads nuevos en Kommo (ambos ganados) y 1 pedido pagado en PrestaShop por $20 — sin cambios frente al corte parcial de la mañana, jornada floja en volumen.",
+        "Mensajería EC activa (14 entrantes / 12 salientes) con tiempo de respuesta mediano de ~2.6 min, buen ritmo de atención pese al bajo volumen de leads nuevos.",
+        "Contífico sigue en 0 documentos por falta de firma electrónica — ya son más de 26 días de bloqueo, escalar seguimiento legal/operativo."
       ],
       "recomendaciones_col": [
-        "0 leads y 0 mensajes en Kommo COL hasta las 11am — funnel de 30 días muestra solo 7 leads totales, volumen bajo a vigilar.",
-        "0 pedidos en PrestaShop COL hoy.",
-        "Campaña Meta Ads 'la piel colombia nuevo' sin impresiones/clics/compras reportados hoy (spend=0) — revisar si está pausada o sin presupuesto activo."
+        "Colombia cerró el día sin pedidos ni leads nuevos en Kommo, con solo 7 sesiones y 5 usuarios en GA4 — tráfico y conversión prácticamente nulos.",
+        "Meta Ads no registró inversión activa hoy en la única campaña de COL ('la piel colombia nuevo') — confirmar si la pausa es intencional o si se debe reactivar presupuesto."
       ],
-      "parcial": true,
-      "nota_verificacion": "Corte parcial del día (~11:03am hora Ecuador, día en curso). Sin backfill necesario (última fecha registrada: 04/ago/2026, sin huecos). Kommo: 30 eventos de mensajería en la ventana horaria; 28 pertenecen al pipeline 'Embudo de Gestión' (id 7768559, no rastreado por este dashboard, es el pipeline principal/CRM interno) y solo 2 al pipeline EC — sin pares incoming→outgoing válidos hoy para calcular lapso de respuesta (kommo_lapso_medio_ec_s/col_s = null). Meta Ads: única campaña activa con impressions/link_clicks/compras en null (Windsor.ai aún sin datos de entrega a esta hora) — spend/reach/clics en 0, por eso meta_ctr/meta_roas/meta_cpa quedan null. GA4 excluye nasa-histoires.myshopify.com (1 sesión, 0 usuarios) de los totales EC/COL. PrestaShop EC: 1 pedido (id 1208, estado 'Pago con Payphone aprobado', paid=1 confirmado vía order_states), coincide con el conteo bruto sin filtrar (sin cancelados hoy). COL: 0 pedidos. Contífico: 0 documentos, 26 días sin facturar por falta de firma electrónica (bloqueo de negocio, no técnico)."
+      "parcial": false,
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am"
     }
   ],
   "periodic": [
