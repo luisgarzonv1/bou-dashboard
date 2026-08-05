@@ -438,18 +438,42 @@ document.querySelectorAll('.tab').forEach(btn=>{
 
     let lastEc=null, lastCol=null;
     for(let i=days.length-1;i>=0;i--){ if(!lastEc && days[i].kommo_funnel_ec) lastEc = days[i].kommo_funnel_ec; if(!lastCol && days[i].kommo_funnel_col) lastCol = days[i].kommo_funnel_col; if(lastEc&&lastCol) break; }
-    function renderFunnel(elId, funnel){
+    const EC_PIPELINE_ORDER = ["Leads Entrantes","Contacto inicial","Nueva consulta","ATENCION AGENTE","leads frios (no responde)","leads Tibios (interacción)","leads Calientes (datos bancarios)","Por registrar y FACTURAR","Por entregar","Cliente Registrado","CAMBIOS Y DEVOLUCIONES","Falta stock","ERROR ENVIAR MENSAJE","CONFIRMADOS EVENTOS","BOU SESSION","Sorteos y concursos","Servicios Adicionales","Reacciones y Comentarios","R.Comentarios Revisados","Colaboraciones","SPAM","Leads ganados","Leads perdidos"];
+    const EC_NON_SALES_STAGES = ["CONFIRMADOS EVENTOS","BOU SESSION","Sorteos y concursos","Servicios Adicionales","Reacciones y Comentarios","R.Comentarios Revisados","Colaboraciones","SPAM"];
+    const COL_PIPELINE_ORDER = ["Leads Entrantes","Contacto inicial","Nueva consulta","ATENCION AGENTE","leads frios (no responde)","leads Tibios (interacción)","leads Calientes (datos bancarios)","Por registrar","Por entregar","CAMBIOS Y DEVOLUCIONES","ERROR ENVIAR MENSAJE","CONFIRMADOS","Logrado con éxito","Ventas Perdidos"];
+    function funnelBarRow(name, count, max, pct, nonSales){
+      const barColor = nonSales ? '#5a5a5a' : '#ff7a45';
+      const pctLabel = (pct===null || pct===undefined) ? '' : ' <span style="color:#7cffb2;font-weight:700;">'+pct+'%</span>';
+      const barPct = max>0 ? Math.max(4, Math.round(count/max*100)) : 0;
+      return '<div style="margin-bottom:8px;'+(nonSales?'opacity:.6;':'')+'">'
+        + '<div style="display:flex;justify-content:space-between;font-size:11px;color:#ccc;margin-bottom:2px;"><span>'+name+'</span><span style="color:#ccc;">'+count+pctLabel+'</span></div>'
+        + '<div style="background:#0a0a0a;border-radius:3px;height:8px;overflow:hidden;"><div style="background:'+barColor+';height:8px;width:'+barPct+'%;"></div></div>'
+        + '</div>';
+    }
+    function renderFunnel(elId, funnel, pipelineOrder, nonSalesStages){
       const el = document.getElementById(elId);
       if(!el) return;
       if(!funnel || !funnel.byStatus){ el.innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>'; return; }
-      const entries = Object.entries(funnel.byStatus).sort(function(a,b){ return b[1]-a[1]; });
-      const max = entries.length ? entries[0][1] : 0;
-      el.innerHTML = entries.map(function(e){ return barRow(e[0], e[1], max, '#ff7a45'); }).join('') + '<div style="color:#666;font-size:10px;margin-top:6px;">Total: '+funnel.total+' leads creados en '+funnel.window_days+' dias</div>';
+      const nonSales = nonSalesStages || [];
+      const orderIdx = function(name){ const i = pipelineOrder.indexOf(name); return i===-1 ? 999 : i; };
+      const all = Object.entries(funnel.byStatus).sort(function(a,b){ return orderIdx(a[0])-orderIdx(b[0]); });
+      const salesEntries = all.filter(function(e){ return nonSales.indexOf(e[0])===-1; });
+      const nonSalesEntries = all.filter(function(e){ return nonSales.indexOf(e[0])!==-1; });
+      const salesTotal = salesEntries.reduce(function(a,e){return a+e[1];},0);
+      const max = all.length ? Math.max.apply(null, all.map(function(e){return e[1];})) : 0;
+      let html = salesEntries.map(function(e){
+        const pct = salesTotal>0 ? Math.round(e[1]/salesTotal*100) : null;
+        return funnelBarRow(e[0], e[1], max, pct, false);
+      }).join('');
+      if(nonSalesEntries.length){
+        html += '<div style="font-size:10px;color:#888;margin:10px 0 6px;text-transform:uppercase;letter-spacing:.5px;">No es venta (fuera del %)</div>';
+        html += nonSalesEntries.map(function(e){ return funnelBarRow(e[0], e[1], max, null, true); }).join('');
+      }
+      html += '<div style="color:#666;font-size:10px;margin-top:6px;">Total: '+funnel.total+' leads creados en '+funnel.window_days+' dias'+(nonSales.length?' &middot; % calculado solo sobre etapas de venta ('+salesTotal+')':'')+'</div>';
+      el.innerHTML = html;
     }
-    renderFunnel('funnelEc', lastEc);
-    renderFunnel('funnelCol', lastCol);
-  }).catch(function(e){ console.error('bou-extra error', e); });
-})();
+    renderFunnel('funnelEc', lastEc, EC_PIPELINE_ORDER, EC_NON_SALES_STAGES);
+    renderFunnel('funnelCol', lastCol, COL_PIPELINE_ORDER, []);)();
 </script>
 </body>
 </html>
