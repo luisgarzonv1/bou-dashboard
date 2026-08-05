@@ -8741,32 +8741,32 @@
       "kommo_lapso_medio_ec_s": null,
       "kommo_lapso_medio_col_s": null,
       "kommo_funnel_ec": {
-        "total": 176,
         "byStatus": {
-          "Reacciones y Comentarios": 71,
-          "leads Tibios (interacción)": 34,
+          "ATENCION AGENTE": 1,
+          "CAMBIOS Y DEVOLUCIONES": 1,
           "Colaboraciones": 4,
+          "Contacto inicial": 18,
+          "Leads ganados": 9,
           "Leads perdidos": 12,
           "Por entregar": 8,
           "Por registrar y FACTURAR": 1,
-          "Leads ganados": 9,
-          "Servicios Adicionales": 4,
           "R.Comentarios Revisados": 12,
-          "Contacto inicial": 18,
+          "Reacciones y Comentarios": 71,
           "SPAM": 1,
-          "CAMBIOS Y DEVOLUCIONES": 1,
-          "ATENCION AGENTE": 1
+          "Servicios Adicionales": 4,
+          "leads Tibios (interacción)": 34
         },
+        "total": 176,
         "window_days": 30
       },
       "kommo_funnel_col": {
-        "total": 7,
         "byStatus": {
+          "Logrado con éxito": 1,
           "Por entregar": 3,
-          "leads Tibios (interacción)": 2,
           "Ventas Perdidos": 1,
-          "Logrado con éxito": 1
+          "leads Tibios (interacción)": 2
         },
+        "total": 7,
         "window_days": 30
       },
       "contifico_documentos": 0,
