@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "nota": "daily = granularidad real por dia. Campos EC/COL separados donde la fuente lo permite. PrestaShop: EC=bouentertainment.com (USD), COL=co.bouentertainment.com (COP). Ads sin split por pais (no confiable), se reporta agregado. Mensajeria Kommo (widgets AJAX) aun no confirmada via Bearer token - queda null hasta validar con sesion de navegador real. GA4 usuarios EC/COL corregido el 30/jul/2026: se usa la comparacion por hostname (WEB ECUADOR = no co.bouentertainment.com, WEB COLOMBIA = si co.bouentertainment.com), NO por pais geografico del usuario -- coincide con la logica de PrestaShop (EC=bouentertainment.com, COL=co.bouentertainment.com). | Actualizacion 30/jul/2026: se incorpora Windsor.ai como fuente para Meta Ads (agregado de TODAS las campanas activas -- antes solo se trackeaba una) y GA4 (usuarios nuevos, ingresos, compras por hostname EC/COL). meta_alcance es SUMA por campana (no deduplicado, puede sobreestimar). ga4_ingresos en USD segun moneda de la propiedad GA4 -- no comparar directo contra prestashop_total_col_cop (COP). Se detecto un tercer hostname en GA4 (nasa-histoires.myshopify.com): CONFIRMADO por Luis (30/jul/2026) -- es una tienda Shopify creada y administrada por BOU para la merch del artista/coleccion 'NASA HISTOIRES' (coincide exactamente con el artista del mismo nombre que aparece en el Sheet de ventas Colombia, no es coincidencia). Shopify se conecta con YouTube y con el Shopify propio del artista. Sigue excluido de los totales EC/COL (bouentertainment.com/co.bouentertainment.com) porque es un canal de venta distinto (tienda Shopify separada, no PrestaShop) -- pendiente decidir si se agrega como un tercer segmento propio en el dashboard en vez de excluirlo. v3 (05/ago/2026): se agrega funnel_kommo (etapas por fecha de creacion + estado actual, EC/COL), mensajeria_be (volumen y tiempos de respuesta a nivel de todo el negocio -- la mayoria de conversaciones ocurren en 'Embudo de Gestion' antes de clasificarse por pais), ga4_canales/ga4_eventos_clave/ga4_articulos (detalle diario por pais) y ads_ad_sets (spend/alcance/frecuencia por ad set). Se completaron con datos reales los campos kommo_leads_ec/col, prestashop_pedidos/total y mensajeria que estaban en null en dias de junio. Contifico de junio sigue sin re-verificar.",
+  "nota": "daily = granularidad real por dia. Campos EC/COL separados donde la fuente lo permite. PrestaShop: EC=bouentertainment.com (USD), COL=co.bouentertainment.com (COP). Ads sin split por pais (no confiable), se reporta agregado. Mensajeria Kommo (widgets AJAX) aun no confirmada via Bearer token - queda null hasta validar con sesion de navegador real. GA4 usuarios EC/COL corregido el 30/jul/2026: se usa la comparacion por hostname (WEB ECUADOR = no co.bouentertainment.com, WEB COLOMBIA = si co.bouentertainment.com), NO por pais geografico del usuario -- coincide con la logica de PrestaShop (EC=bouentertainment.com, COL=co.bouentertainment.com). | Actualizacion 30/jul/2026: se incorpora Windsor.ai como fuente para Meta Ads (agregado de TODAS las campanas activas -- antes solo se trackeaba una) y GA4 (usuarios nuevos, ingresos, compras por hostname EC/COL). meta_alcance es SUMA por campana (no deduplicado, puede sobreestimar). ga4_ingresos en USD segun moneda de la propiedad GA4 -- no comparar directo contra prestashop_total_col_cop (COP). Se detecto un tercer hostname en GA4 (nasa-histoires.myshopify.com): CONFIRMADO por Luis (30/jul/2026) -- es una tienda Shopify creada y administrada por BOU para la merch del artista/coleccion 'NASA HISTOIRES' (coincide exactamente con el artista del mismo nombre que aparece en el Sheet de ventas Colombia, no es coincidencia). Shopify se conecta con YouTube y con el Shopify propio del artista. Sigue excluido de los totales EC/COL (bouentertainment.com/co.bouentertainment.com) porque es un canal de venta distinto (tienda Shopify separada, no PrestaShop) -- pendiente decidir si se agrega como un tercer segmento propio en el dashboard en vez de excluirlo. v3 (05/ago/2026): se agrega funnel_kommo (etapas por fecha de creacion + estado actual, EC/COL), mensajeria_be (volumen y tiempos de respuesta a nivel de todo el negocio -- la mayoria de conversaciones ocurren en 'Embudo de Gestion' antes de clasificarse por pais), ga4_canales/ga4_eventos_clave/ga4_articulos (detalle diario por pais) y ads_ad_sets (spend/alcance/frecuencia por ad set). Se completaron con datos reales los campos kommo_leads_ec/col, prestashop_pedidos/total y mensajeria que estaban en null en dias de junio. Contifico de junio sigue sin re-verificar. CORRECCION (5/ago/2026): mensajeria_be se recalculo para excluir el pipeline 'Embudo de Gestion' (7768559) y otros pipelines no-BE (Eventos, Business Logistica, Ventas Salud, Postulaciones) -- ese pipeline pertenece a BOU Logistics, no a BOU Entertainment. mensajeria_be ahora = suma exacta de EC (Embudo de Ventas) + COL (Embudo Ventas Col) unicamente.",
   "daily": [
     {
       "date": "2026-06-01",
@@ -10,8 +10,8 @@
       "kommo_msj_salientes_ec": 18,
       "kommo_msj_entrantes_col": 11,
       "kommo_msj_salientes_col": 14,
-      "kommo_lapso_medio_s": 11044,
-      "kommo_lapso_promedio_s": 2,
+      "kommo_lapso_medio_s": 51102,
+      "kommo_lapso_promedio_s": 50885,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -53,10 +53,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 479,
-        "salientes": 824,
-        "lapso_promedio_s": 11044,
-        "lapso_mediana_s": 2
+        "entrantes": 44,
+        "salientes": 32,
+        "lapso_promedio_s": 51102,
+        "lapso_mediana_s": 50885
       },
       "ga4_canales": {
         "ec": {
@@ -141,8 +141,8 @@
       "kommo_msj_salientes_ec": 46,
       "kommo_msj_entrantes_col": 7,
       "kommo_msj_salientes_col": 8,
-      "kommo_lapso_medio_s": 30327,
-      "kommo_lapso_promedio_s": 2,
+      "kommo_lapso_medio_s": 96523,
+      "kommo_lapso_promedio_s": 8400,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -185,10 +185,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 300,
-        "salientes": 424,
-        "lapso_promedio_s": 30327,
-        "lapso_mediana_s": 2
+        "entrantes": 89,
+        "salientes": 54,
+        "lapso_promedio_s": 96523,
+        "lapso_mediana_s": 8400
       },
       "ga4_canales": {
         "ec": {
@@ -289,8 +289,8 @@
       "kommo_msj_salientes_ec": 57,
       "kommo_msj_entrantes_col": 9,
       "kommo_msj_salientes_col": 4,
-      "kommo_lapso_medio_s": 9730,
-      "kommo_lapso_promedio_s": 14,
+      "kommo_lapso_medio_s": 20824,
+      "kommo_lapso_promedio_s": 3406,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -331,10 +331,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 360,
-        "salientes": 352,
-        "lapso_promedio_s": 9730,
-        "lapso_mediana_s": 14
+        "entrantes": 101,
+        "salientes": 61,
+        "lapso_promedio_s": 20824,
+        "lapso_mediana_s": 3406
       },
       "ga4_canales": {
         "ec": {
@@ -435,8 +435,8 @@
       "kommo_msj_salientes_ec": 40,
       "kommo_msj_entrantes_col": 7,
       "kommo_msj_salientes_col": 9,
-      "kommo_lapso_medio_s": 8043,
-      "kommo_lapso_promedio_s": 1,
+      "kommo_lapso_medio_s": 42684,
+      "kommo_lapso_promedio_s": 3628,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -476,10 +476,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 270,
-        "salientes": 366,
-        "lapso_promedio_s": 8043,
-        "lapso_mediana_s": 1
+        "entrantes": 53,
+        "salientes": 49,
+        "lapso_promedio_s": 42684,
+        "lapso_mediana_s": 3628
       },
       "ga4_canales": {
         "ec": {
@@ -579,8 +579,8 @@
       "kommo_msj_salientes_ec": 8,
       "kommo_msj_entrantes_col": 0,
       "kommo_msj_salientes_col": 1,
-      "kommo_lapso_medio_s": 35614,
-      "kommo_lapso_promedio_s": 1,
+      "kommo_lapso_medio_s": 278601,
+      "kommo_lapso_promedio_s": 259609,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -619,10 +619,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 177,
-        "salientes": 262,
-        "lapso_promedio_s": 35614,
-        "lapso_mediana_s": 1
+        "entrantes": 18,
+        "salientes": 9,
+        "lapso_promedio_s": 278601,
+        "lapso_mediana_s": 259609
       },
       "ga4_canales": {
         "ec": {
@@ -699,8 +699,8 @@
       "kommo_msj_salientes_ec": 5,
       "kommo_msj_entrantes_col": 5,
       "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_s": 142132,
-      "kommo_lapso_promedio_s": 160874,
+      "kommo_lapso_medio_s": 168350,
+      "kommo_lapso_promedio_s": 167718,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -740,10 +740,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 31,
-        "salientes": 7,
-        "lapso_promedio_s": 142132,
-        "lapso_mediana_s": 160874
+        "entrantes": 9,
+        "salientes": 5,
+        "lapso_promedio_s": 168350,
+        "lapso_mediana_s": 167718
       },
       "ga4_canales": {
         "ec": {
@@ -860,7 +860,7 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 34,
+        "entrantes": 11,
         "salientes": 0,
         "lapso_promedio_s": 77302,
         "lapso_mediana_s": 75030
@@ -943,8 +943,8 @@
       "kommo_msj_salientes_ec": 25,
       "kommo_msj_entrantes_col": 16,
       "kommo_msj_salientes_col": 14,
-      "kommo_lapso_medio_s": 4450,
-      "kommo_lapso_promedio_s": 2,
+      "kommo_lapso_medio_s": 30965,
+      "kommo_lapso_promedio_s": 3734,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -982,10 +982,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 454,
-        "salientes": 717,
-        "lapso_promedio_s": 4450,
-        "lapso_mediana_s": 2
+        "entrantes": 36,
+        "salientes": 39,
+        "lapso_promedio_s": 30965,
+        "lapso_mediana_s": 3734
       },
       "ga4_canales": {
         "ec": {
@@ -1072,8 +1072,8 @@
       "kommo_msj_salientes_ec": 18,
       "kommo_msj_entrantes_col": 22,
       "kommo_msj_salientes_col": 13,
-      "kommo_lapso_medio_s": 24482,
-      "kommo_lapso_promedio_s": 4,
+      "kommo_lapso_medio_s": 53745,
+      "kommo_lapso_promedio_s": 2727,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -1111,10 +1111,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 266,
-        "salientes": 385,
-        "lapso_promedio_s": 24482,
-        "lapso_mediana_s": 4
+        "entrantes": 45,
+        "salientes": 31,
+        "lapso_promedio_s": 53745,
+        "lapso_mediana_s": 2727
       },
       "ga4_canales": {
         "ec": {
@@ -1188,8 +1188,8 @@
       "kommo_msj_salientes_ec": 55,
       "kommo_msj_entrantes_col": 4,
       "kommo_msj_salientes_col": 2,
-      "kommo_lapso_medio_s": 9738,
-      "kommo_lapso_promedio_s": 53,
+      "kommo_lapso_medio_s": 31032,
+      "kommo_lapso_promedio_s": 4016,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -1228,10 +1228,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 370,
-        "salientes": 438,
-        "lapso_promedio_s": 9738,
-        "lapso_mediana_s": 53
+        "entrantes": 92,
+        "salientes": 57,
+        "lapso_promedio_s": 31032,
+        "lapso_mediana_s": 4016
       },
       "ga4_canales": {
         "ec": {
@@ -1309,8 +1309,8 @@
       "kommo_msj_salientes_ec": 117,
       "kommo_msj_entrantes_col": 7,
       "kommo_msj_salientes_col": 10,
-      "kommo_lapso_medio_s": 27629,
-      "kommo_lapso_promedio_s": 34,
+      "kommo_lapso_medio_s": 19109,
+      "kommo_lapso_promedio_s": 953,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -1351,10 +1351,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 366,
-        "salientes": 472,
-        "lapso_promedio_s": 27629,
-        "lapso_mediana_s": 34
+        "entrantes": 121,
+        "salientes": 127,
+        "lapso_promedio_s": 19109,
+        "lapso_mediana_s": 953
       },
       "ga4_canales": {
         "ec": {
@@ -1424,8 +1424,8 @@
       "kommo_msj_salientes_ec": 40,
       "kommo_msj_entrantes_col": 5,
       "kommo_msj_salientes_col": 3,
-      "kommo_lapso_medio_s": 27902,
-      "kommo_lapso_promedio_s": 186,
+      "kommo_lapso_medio_s": 100927,
+      "kommo_lapso_promedio_s": 13524,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -1464,10 +1464,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 175,
-        "salientes": 300,
-        "lapso_promedio_s": 27902,
-        "lapso_mediana_s": 186
+        "entrantes": 48,
+        "salientes": 43,
+        "lapso_promedio_s": 100927,
+        "lapso_mediana_s": 13524
       },
       "ga4_canales": {
         "ec": {
@@ -1553,8 +1553,8 @@
       "kommo_msj_salientes_ec": 29,
       "kommo_msj_entrantes_col": 12,
       "kommo_msj_salientes_col": 4,
-      "kommo_lapso_medio_s": 20785,
-      "kommo_lapso_promedio_s": 900,
+      "kommo_lapso_medio_s": 21584,
+      "kommo_lapso_promedio_s": 977,
       "contifico_documentos": null,
       "contifico_total_usd": null,
       "contifico_fuente_caida": null,
@@ -1592,10 +1592,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 70,
-        "salientes": 34,
-        "lapso_promedio_s": 20785,
-        "lapso_mediana_s": 900
+        "entrantes": 49,
+        "salientes": 33,
+        "lapso_promedio_s": 21584,
+        "lapso_mediana_s": 977
       },
       "ga4_canales": {
         "ec": {
@@ -1661,7 +1661,7 @@
       "kommo_msj_salientes_ec": 27,
       "kommo_msj_entrantes_col": 3,
       "kommo_msj_salientes_col": 4,
-      "kommo_lapso_medio_s": 28005,
+      "kommo_lapso_medio_s": 21049,
       "kommo_lapso_promedio_s": 10837,
       "contifico_documentos": null,
       "contifico_total_usd": null,
@@ -1698,9 +1698,9 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 42,
-        "salientes": 33,
-        "lapso_promedio_s": 28005,
+        "entrantes": 29,
+        "salientes": 31,
+        "lapso_promedio_s": 21049,
         "lapso_mediana_s": 10837
       },
       "ga4_canales": {
@@ -1804,10 +1804,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 808,
-        "salientes": 1134,
-        "lapso_promedio_s": 22540,
-        "lapso_mediana_s": 2
+        "entrantes": 27,
+        "salientes": 18,
+        "lapso_promedio_s": 229104,
+        "lapso_mediana_s": 1593
       },
       "ga4_canales": {
         "ec": {
@@ -1928,10 +1928,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 552,
-        "salientes": 782,
-        "lapso_promedio_s": 20456,
-        "lapso_mediana_s": 2
+        "entrantes": 37,
+        "salientes": 15,
+        "lapso_promedio_s": 31430,
+        "lapso_mediana_s": 16068
       },
       "ga4_canales": {
         "ec": {
@@ -2023,10 +2023,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 640,
-        "salientes": 882,
-        "lapso_promedio_s": 25673,
-        "lapso_mediana_s": 2
+        "entrantes": 58,
+        "salientes": 26,
+        "lapso_promedio_s": 133842,
+        "lapso_mediana_s": 38968
       },
       "ga4_canales": {
         "ec": {
@@ -2128,10 +2128,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 656,
-        "salientes": 990,
-        "lapso_promedio_s": 40941,
-        "lapso_mediana_s": 2
+        "entrantes": 36,
+        "salientes": 35,
+        "lapso_promedio_s": 201779,
+        "lapso_mediana_s": 3128
       },
       "ga4_canales": {
         "ec": {
@@ -2249,10 +2249,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 532,
-        "salientes": 858,
-        "lapso_promedio_s": 36912,
-        "lapso_mediana_s": 2
+        "entrantes": 39,
+        "salientes": 31,
+        "lapso_promedio_s": 4268,
+        "lapso_mediana_s": 564
       },
       "ga4_canales": {
         "ec": {
@@ -2355,10 +2355,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 68,
-        "salientes": 22,
-        "lapso_promedio_s": 75094,
-        "lapso_mediana_s": 3
+        "entrantes": 8,
+        "salientes": 1,
+        "lapso_promedio_s": 92339,
+        "lapso_mediana_s": 85680
       },
       "ga4_canales": {
         "ec": {
@@ -2464,9 +2464,9 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 58,
-        "salientes": 12,
-        "lapso_promedio_s": 109378,
+        "entrantes": 3,
+        "salientes": 3,
+        "lapso_promedio_s": 84006,
         "lapso_mediana_s": 60877
       },
       "ga4_canales": {
@@ -2591,10 +2591,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 1092,
-        "salientes": 1866,
-        "lapso_promedio_s": 9002,
-        "lapso_mediana_s": 3
+        "entrantes": 2,
+        "salientes": 3,
+        "lapso_promedio_s": null,
+        "lapso_mediana_s": null
       },
       "ga4_canales": {
         "ec": {
@@ -2692,10 +2692,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 754,
-        "salientes": 1116,
-        "lapso_promedio_s": 11782,
-        "lapso_mediana_s": 2
+        "entrantes": 5,
+        "salientes": 8,
+        "lapso_promedio_s": 130013,
+        "lapso_mediana_s": 155427
       },
       "ga4_canales": {
         "ec": {
@@ -2794,10 +2794,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 680,
-        "salientes": 900,
-        "lapso_promedio_s": 12085,
-        "lapso_mediana_s": 2
+        "entrantes": 16,
+        "salientes": 5,
+        "lapso_promedio_s": 148536,
+        "lapso_mediana_s": 78008
       },
       "ga4_canales": {
         "ec": {
@@ -2909,10 +2909,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 510,
-        "salientes": 828,
-        "lapso_promedio_s": 29058,
-        "lapso_mediana_s": 1
+        "entrantes": 16,
+        "salientes": 12,
+        "lapso_promedio_s": 230350,
+        "lapso_mediana_s": 212108
       },
       "ga4_canales": {
         "ec": {
@@ -3029,10 +3029,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 520,
-        "salientes": 716,
-        "lapso_promedio_s": 8632,
-        "lapso_mediana_s": 2
+        "entrantes": 8,
+        "salientes": 0,
+        "lapso_promedio_s": 357178,
+        "lapso_mediana_s": 357178
       },
       "ga4_canales": {
         "ec": {
@@ -3125,10 +3125,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 94,
-        "salientes": 8,
-        "lapso_promedio_s": 128324,
-        "lapso_mediana_s": 39835
+        "entrantes": 5,
+        "salientes": 0,
+        "lapso_promedio_s": 176598,
+        "lapso_mediana_s": 176598
       },
       "ga4_canales": {
         "ec": {
@@ -3216,10 +3216,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 60,
-        "salientes": 8,
-        "lapso_promedio_s": 19828,
-        "lapso_mediana_s": 2
+        "entrantes": 3,
+        "salientes": 1,
+        "lapso_promedio_s": 59479,
+        "lapso_mediana_s": 59479
       },
       "ga4_canales": {
         "ec": {
@@ -3325,10 +3325,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 1466,
-        "salientes": 2518,
-        "lapso_promedio_s": 4207,
-        "lapso_mediana_s": 1
+        "entrantes": 22,
+        "salientes": 3,
+        "lapso_promedio_s": 91891,
+        "lapso_mediana_s": 86863
       },
       "ga4_canales": {
         "ec": {
@@ -3429,10 +3429,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 834,
-        "salientes": 1208,
-        "lapso_promedio_s": 8351,
-        "lapso_mediana_s": 6
+        "entrantes": 37,
+        "salientes": 22,
+        "lapso_promedio_s": 30914,
+        "lapso_mediana_s": 6560
       },
       "ga4_canales": {
         "ec": {
@@ -3534,10 +3534,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 730,
-        "salientes": 796,
-        "lapso_promedio_s": 29340,
-        "lapso_mediana_s": 4
+        "entrantes": 29,
+        "salientes": 12,
+        "lapso_promedio_s": 246336,
+        "lapso_mediana_s": 61397
       },
       "ga4_canales": {
         "col": {
@@ -3650,10 +3650,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 656,
-        "salientes": 788,
-        "lapso_promedio_s": 10361,
-        "lapso_mediana_s": 2
+        "entrantes": 48,
+        "salientes": 34,
+        "lapso_promedio_s": 85714,
+        "lapso_mediana_s": 285
       },
       "ga4_canales": {
         "col": {
@@ -3760,10 +3760,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 544,
-        "salientes": 644,
-        "lapso_promedio_s": 24257,
-        "lapso_mediana_s": 2
+        "entrantes": 38,
+        "salientes": 9,
+        "lapso_promedio_s": 244553,
+        "lapso_mediana_s": 337259
       },
       "ga4_canales": {
         "col": {
@@ -3884,10 +3884,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 100,
-        "salientes": 42,
-        "lapso_promedio_s": 44238,
-        "lapso_mediana_s": 3
+        "entrantes": 8,
+        "salientes": 10,
+        "lapso_promedio_s": 176930,
+        "lapso_mediana_s": 250242
       },
       "ga4_canales": {
         "col": {
@@ -3982,10 +3982,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 68,
-        "salientes": 2,
-        "lapso_promedio_s": 82772,
-        "lapso_mediana_s": 82772
+        "entrantes": 3,
+        "salientes": 0,
+        "lapso_promedio_s": 165542,
+        "lapso_mediana_s": 165542
       },
       "ga4_canales": {
         "col": {
@@ -4089,10 +4089,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 1200,
-        "salientes": 1948,
-        "lapso_promedio_s": 1954,
-        "lapso_mediana_s": 3
+        "entrantes": 10,
+        "salientes": 4,
+        "lapso_promedio_s": 54173,
+        "lapso_mediana_s": 67492
       },
       "ga4_canales": {
         "col": {
@@ -4176,8 +4176,8 @@
       "kommo_msj_salientes_ec": 30,
       "kommo_msj_entrantes_col": 19,
       "kommo_msj_salientes_col": 25,
-      "kommo_lapso_medio_s": 7342,
-      "kommo_lapso_promedio_s": 2,
+      "kommo_lapso_medio_s": 79874,
+      "kommo_lapso_promedio_s": 3347,
       "contifico_documentos": 10,
       "contifico_total_usd": 981.38,
       "contifico_fuente_caida": false,
@@ -4218,10 +4218,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 519,
-        "salientes": 780,
-        "lapso_promedio_s": 7342,
-        "lapso_mediana_s": 2
+        "entrantes": 30,
+        "salientes": 38,
+        "lapso_promedio_s": 79874,
+        "lapso_mediana_s": 3347
       },
       "ga4_canales": {
         "col": {
@@ -4316,7 +4316,7 @@
       "kommo_msj_salientes_ec": 9,
       "kommo_msj_entrantes_col": 97,
       "kommo_msj_salientes_col": 437,
-      "kommo_lapso_medio_s": 3015,
+      "kommo_lapso_medio_s": 6734,
       "kommo_lapso_promedio_s": 1,
       "contifico_documentos": 7,
       "contifico_total_usd": 461.45,
@@ -4353,9 +4353,9 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 362,
-        "salientes": 843,
-        "lapso_promedio_s": 3015,
+        "entrantes": 99,
+        "salientes": 446,
+        "lapso_promedio_s": 6734,
         "lapso_mediana_s": 1
       },
       "ga4_canales": {
@@ -4465,8 +4465,8 @@
       "kommo_msj_salientes_ec": 11,
       "kommo_msj_entrantes_col": 7,
       "kommo_msj_salientes_col": 56,
-      "kommo_lapso_medio_s": 33270,
-      "kommo_lapso_promedio_s": 3,
+      "kommo_lapso_medio_s": 28066,
+      "kommo_lapso_promedio_s": 1786,
       "contifico_documentos": 6,
       "contifico_total_usd": 1251,
       "contifico_fuente_caida": false,
@@ -4507,10 +4507,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 47,
-        "salientes": 89,
-        "lapso_promedio_s": 33270,
-        "lapso_mediana_s": 3
+        "entrantes": 11,
+        "salientes": 67,
+        "lapso_promedio_s": 28066,
+        "lapso_mediana_s": 1786
       },
       "ga4_canales": {
         "col": {
@@ -4615,7 +4615,7 @@
       "kommo_msj_salientes_ec": 8,
       "kommo_msj_entrantes_col": 12,
       "kommo_msj_salientes_col": 8,
-      "kommo_lapso_medio_s": 60712,
+      "kommo_lapso_medio_s": 63365,
       "kommo_lapso_promedio_s": 31474,
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
@@ -4657,9 +4657,9 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 23,
-        "salientes": 27,
-        "lapso_promedio_s": 60712,
+        "entrantes": 20,
+        "salientes": 16,
+        "lapso_promedio_s": 63365,
         "lapso_mediana_s": 31474
       },
       "ga4_canales": {
@@ -4808,7 +4808,7 @@
       },
       "mensajeria_be": {
         "entrantes": 27,
-        "salientes": 80,
+        "salientes": 79,
         "lapso_promedio_s": 31649,
         "lapso_mediana_s": 375
       },
@@ -5053,8 +5053,8 @@
       "kommo_msj_salientes_ec": 12,
       "kommo_msj_entrantes_col": 0,
       "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_s": 8013,
-      "kommo_lapso_promedio_s": 3,
+      "kommo_lapso_medio_s": 403735,
+      "kommo_lapso_promedio_s": 178447,
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
       "contifico_fuente_caida": true,
@@ -5095,10 +5095,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 614,
-        "salientes": 1193,
-        "lapso_promedio_s": 8013,
-        "lapso_mediana_s": 3
+        "entrantes": 11,
+        "salientes": 12,
+        "lapso_promedio_s": 403735,
+        "lapso_mediana_s": 178447
       },
       "ga4_canales": {
         "col": {
@@ -5214,8 +5214,8 @@
       "kommo_msj_salientes_ec": 0,
       "kommo_msj_entrantes_col": 5,
       "kommo_msj_salientes_col": 26,
-      "kommo_lapso_medio_s": 39818,
-      "kommo_lapso_promedio_s": 2,
+      "kommo_lapso_medio_s": 698381,
+      "kommo_lapso_promedio_s": 534737,
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
       "contifico_fuente_caida": true,
@@ -5256,10 +5256,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 190,
-        "salientes": 313,
-        "lapso_promedio_s": 39818,
-        "lapso_mediana_s": 2
+        "entrantes": 23,
+        "salientes": 26,
+        "lapso_promedio_s": 698381,
+        "lapso_mediana_s": 534737
       },
       "ga4_canales": {
         "col": {
@@ -5368,8 +5368,8 @@
       "kommo_msj_salientes_ec": 21,
       "kommo_msj_entrantes_col": 11,
       "kommo_msj_salientes_col": 46,
-      "kommo_lapso_medio_s": 43000,
-      "kommo_lapso_promedio_s": 2,
+      "kommo_lapso_medio_s": 314815,
+      "kommo_lapso_promedio_s": 16807,
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
       "contifico_fuente_caida": true,
@@ -5416,10 +5416,10 @@
         }
       },
       "mensajeria_be": {
-        "entrantes": 265,
-        "salientes": 412,
-        "lapso_promedio_s": 43000,
-        "lapso_mediana_s": 2
+        "entrantes": 49,
+        "salientes": 67,
+        "lapso_promedio_s": 314815,
+        "lapso_mediana_s": 16807
       },
       "ga4_canales": {
         "col": {
@@ -5517,8 +5517,8 @@
       "kommo_msj_salientes_ec": 21,
       "kommo_msj_entrantes_col": 0,
       "kommo_msj_salientes_col": 1,
-      "kommo_lapso_medio_s": 21767,
-      "kommo_lapso_promedio_s": 2,
+      "kommo_lapso_medio_s": 26684,
+      "kommo_lapso_promedio_s": 8004,
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
       "contifico_fuente_caida": true,
@@ -5560,10 +5560,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 182,
-        "salientes": 213,
-        "lapso_promedio_s": 21767,
-        "lapso_mediana_s": 2
+        "entrantes": 51,
+        "salientes": 22,
+        "lapso_promedio_s": 26684,
+        "lapso_mediana_s": 8004
       },
       "ga4_canales": {
         "col": {
@@ -5726,10 +5726,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 175,
-        "salientes": 227,
-        "lapso_promedio_s": 10337,
-        "lapso_mediana_s": 2
+        "entrantes": 21,
+        "salientes": 22,
+        "lapso_promedio_s": 43488,
+        "lapso_mediana_s": 566
       },
       "ga4_canales": {
         "col": {
@@ -5878,10 +5878,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 39,
-        "salientes": 9,
-        "lapso_promedio_s": 216024,
-        "lapso_mediana_s": 65
+        "entrantes": 13,
+        "salientes": 0,
+        "lapso_promedio_s": 468040,
+        "lapso_mediana_s": 217374
       },
       "ga4_canales": {
         "col": {
@@ -5976,7 +5976,9 @@
           "compras": 0,
           "clicks": 908
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 468040,
+      "kommo_lapso_promedio_s": 217374
     },
     {
       "date": "2026-07-19",
@@ -6027,10 +6029,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 31,
-        "salientes": 4,
-        "lapso_promedio_s": 68615,
-        "lapso_mediana_s": 82052
+        "entrantes": 12,
+        "salientes": 1,
+        "lapso_promedio_s": 82971,
+        "lapso_mediana_s": 84662
       },
       "ga4_canales": {
         "col": {
@@ -6164,10 +6166,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 69,
-        "salientes": 71,
-        "lapso_promedio_s": 75639,
-        "lapso_mediana_s": 7400
+        "entrantes": 35,
+        "salientes": 46,
+        "lapso_promedio_s": 130435,
+        "lapso_mediana_s": 19097
       },
       "ga4_canales": {
         "col": {
@@ -6326,10 +6328,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 689,
-        "salientes": 1102,
-        "lapso_promedio_s": 6047,
-        "lapso_mediana_s": 2
+        "entrantes": 50,
+        "salientes": 31,
+        "lapso_promedio_s": 72538,
+        "lapso_mediana_s": 15676
       },
       "ga4_canales": {
         "col": {
@@ -6422,7 +6424,9 @@
           "compras": 0,
           "clicks": 656
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 72538,
+      "kommo_lapso_promedio_s": 15676
     },
     {
       "date": "2026-07-22",
@@ -6476,10 +6480,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 352,
-        "salientes": 506,
-        "lapso_promedio_s": 10424,
-        "lapso_mediana_s": 2
+        "entrantes": 59,
+        "salientes": 54,
+        "lapso_promedio_s": 43664,
+        "lapso_mediana_s": 12567
       },
       "ga4_canales": {
         "col": {
@@ -6570,7 +6574,9 @@
           "compras": 0,
           "clicks": 439
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 43664,
+      "kommo_lapso_promedio_s": 12567
     },
     {
       "date": "2026-07-23",
@@ -6621,10 +6627,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 244,
-        "salientes": 343,
-        "lapso_promedio_s": 21550,
-        "lapso_mediana_s": 2
+        "entrantes": 30,
+        "salientes": 21,
+        "lapso_promedio_s": 71281,
+        "lapso_mediana_s": 10120
       },
       "ga4_canales": {
         "col": {
@@ -6732,7 +6738,9 @@
           "compras": 0,
           "clicks": 2848
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 71281,
+      "kommo_lapso_promedio_s": 10120
     },
     {
       "date": "2026-07-24",
@@ -6785,10 +6793,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 194,
-        "salientes": 309,
-        "lapso_promedio_s": 17886,
-        "lapso_mediana_s": 2
+        "entrantes": 20,
+        "salientes": 13,
+        "lapso_promedio_s": 173848,
+        "lapso_mediana_s": 126133
       },
       "ga4_canales": {
         "col": {
@@ -6897,7 +6905,9 @@
           "compras": 0,
           "clicks": 1167
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 173848,
+      "kommo_lapso_promedio_s": 126133
     },
     {
       "date": "2026-07-25",
@@ -6947,10 +6957,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 30,
-        "salientes": 6,
-        "lapso_promedio_s": 61471,
-        "lapso_mediana_s": 33
+        "entrantes": 9,
+        "salientes": 0,
+        "lapso_promedio_s": 163900,
+        "lapso_mediana_s": 160087
       },
       "ga4_canales": {
         "col": {
@@ -7043,7 +7053,9 @@
           "compras": 0,
           "clicks": 963
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 163900,
+      "kommo_lapso_promedio_s": 160087
     },
     {
       "date": "2026-07-26",
@@ -7242,10 +7254,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 497,
-        "salientes": 873,
-        "lapso_promedio_s": 2311,
-        "lapso_mediana_s": 2
+        "entrantes": 6,
+        "salientes": 13,
+        "lapso_promedio_s": 61169,
+        "lapso_mediana_s": 90960
       },
       "ga4_canales": {
         "col": {
@@ -7362,7 +7374,9 @@
           "compras": 0,
           "clicks": 14
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 61169,
+      "kommo_lapso_promedio_s": 90960
     },
     {
       "date": "2026-07-28",
@@ -7412,10 +7426,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 304,
-        "salientes": 452,
-        "lapso_promedio_s": 2233,
-        "lapso_mediana_s": 2
+        "entrantes": 14,
+        "salientes": 7,
+        "lapso_promedio_s": 13821,
+        "lapso_mediana_s": 494
       },
       "ga4_canales": {
         "col": {
@@ -7541,7 +7555,9 @@
           "compras": 0,
           "clicks": 55
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 13821,
+      "kommo_lapso_promedio_s": 494
     },
     {
       "date": "2026-07-29",
@@ -7590,10 +7606,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 255,
-        "salientes": 315,
-        "lapso_promedio_s": 7936,
-        "lapso_mediana_s": 2
+        "entrantes": 21,
+        "salientes": 17,
+        "lapso_promedio_s": 27990,
+        "lapso_mediana_s": 17680
       },
       "ga4_canales": {
         "col": {
@@ -7699,7 +7715,9 @@
           "compras": 0,
           "clicks": 44
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 27990,
+      "kommo_lapso_promedio_s": 17680
     },
     {
       "date": "2026-07-30",
@@ -7793,10 +7811,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 197,
-        "salientes": 343,
-        "lapso_promedio_s": 5267,
-        "lapso_mediana_s": 2
+        "entrantes": 13,
+        "salientes": 30,
+        "lapso_promedio_s": 34410,
+        "lapso_mediana_s": 30016
       },
       "ga4_canales": {
         "col": {
@@ -7891,7 +7909,9 @@
           "compras": 0,
           "clicks": 52
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 34410,
+      "kommo_lapso_promedio_s": 30016
     },
     {
       "date": "2026-07-31",
@@ -7989,10 +8009,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 247,
-        "salientes": 343,
-        "lapso_promedio_s": 11456,
-        "lapso_mediana_s": 2
+        "entrantes": 25,
+        "salientes": 21,
+        "lapso_promedio_s": 35907,
+        "lapso_mediana_s": 14661
       },
       "ga4_canales": {
         "col": {
@@ -8143,10 +8163,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 47,
-        "salientes": 6,
-        "lapso_promedio_s": 136008,
-        "lapso_mediana_s": 164382
+        "entrantes": 24,
+        "salientes": 1,
+        "lapso_promedio_s": 172277,
+        "lapso_mediana_s": 172111
       },
       "ga4_canales": {
         "col": {
@@ -8234,7 +8254,9 @@
           "compras": 0,
           "clicks": 1366
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 172277,
+      "kommo_lapso_promedio_s": 172111
     },
     {
       "date": "2026-08-02",
@@ -8298,10 +8320,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 23,
-        "salientes": 2,
-        "lapso_promedio_s": 94864,
-        "lapso_mediana_s": 87705
+        "entrantes": 12,
+        "salientes": 0,
+        "lapso_promedio_s": 108416,
+        "lapso_mediana_s": 89186
       },
       "ga4_canales": {
         "col": {
@@ -8386,7 +8408,9 @@
           "compras": 1,
           "clicks": 959
         }
-      ]
+      ],
+      "kommo_lapso_medio_s": 108416,
+      "kommo_lapso_promedio_s": 89186
     },
     {
       "date": "2026-08-03",
@@ -8481,10 +8505,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 388,
-        "salientes": 625,
-        "lapso_promedio_s": 7048,
-        "lapso_mediana_s": 2
+        "entrantes": 36,
+        "salientes": 51,
+        "lapso_promedio_s": 29933,
+        "lapso_mediana_s": 14327
       },
       "ga4_canales": {
         "col": {
@@ -8660,10 +8684,10 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 143,
-        "salientes": 200,
-        "lapso_promedio_s": 2418,
-        "lapso_mediana_s": 2
+        "entrantes": 29,
+        "salientes": 22,
+        "lapso_promedio_s": 14745,
+        "lapso_mediana_s": 12441
       },
       "ga4_canales": {
         "col": {
