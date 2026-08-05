@@ -403,6 +403,24 @@ document.querySelectorAll('.tab').forEach(btn=>{
     </div>
   </div>
 </section>
+<section id="bou-extra2" style="max-width:1100px;margin:32px auto;padding:0 20px;font-family:'Courier New',monospace;color:#eee;">
+  <h2 style="font-size:14px;color:#999;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #2a2a2a;padding-bottom:8px;">Mensajeria, trafico y ads (ultimo dia con dato completo)</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:16px 0 32px;">
+    <div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:14px;">
+      <div style="color:#999;font-size:11px;letter-spacing:1px;margin-bottom:10px;">MENSAJERIA (TODO EL NEGOCIO)</div>
+      <div id="bouMsjHoy"></div>
+    </div>
+    <div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:14px;">
+      <div style="color:#999;font-size:11px;letter-spacing:1px;margin-bottom:10px;">CANALES DE TRAFICO (top 3)</div>
+      <div id="bouCanalesHoy"></div>
+    </div>
+    <div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:14px;">
+      <div style="color:#999;font-size:11px;letter-spacing:1px;margin-bottom:10px;">AD SETS ACTIVOS</div>
+      <div id="bouAdsetsHoy"></div>
+    </div>
+  </div>
+</section>
+
 <script>
 (function(){
   function fmtDate(d){ return d.slice(5); }
@@ -471,6 +489,31 @@ document.querySelectorAll('.tab').forEach(btn=>{
       }
       html += '<div style="color:#666;font-size:10px;margin-top:6px;">Total: '+funnel.total+' leads creados en '+funnel.window_days+' dias'+(nonSales.length?' &middot; % calculado solo sobre etapas de venta ('+salesTotal+')':'')+'</div>';
       el.innerHTML = html;
+    }
+    let lastFull=null;
+    for(let i=days.length-1;i>=0;i--){ if(days[i].mensajeria_be && days[i].mensajeria_be.entrantes){ lastFull = days[i]; break; } }
+    if(lastFull){
+      const m = lastFull.mensajeria_be;
+      document.getElementById('bouMsjHoy').innerHTML = '<div style="font-size:22px;font-weight:700;">'+m.entrantes+' <span style="font-size:11px;color:#999;">entrantes</span></div>'
+        + '<div style="font-size:14px;color:#ccc;margin-top:4px;">'+m.salientes+' salientes</div>'
+        + '<div style="font-size:11px;color:#888;margin-top:8px;">Mediana respuesta: '+(m.lapso_mediana_s!=null? m.lapso_mediana_s+'s' : 'n/d')+' &middot; Promedio: '+(m.lapso_promedio_s!=null? Math.round(m.lapso_promedio_s/60)+'min':'n/d')+'</div>'
+        + '<div style="font-size:10px;color:#666;margin-top:8px;">'+lastFull.date+' &middot; todo el negocio (incluye Embudo de Gestion)</div>';
+      const canalesHtml = ['ec','col'].map(function(c){
+        const canales = (lastFull.ga4_canales && lastFull.ga4_canales[c]) || {};
+        const entries = Object.entries(canales).sort(function(a,b){return b[1].sessions-a[1].sessions;}).slice(0,3);
+        const label = c==='ec' ? 'EC' : 'COL';
+        return '<div style="font-size:10px;color:#999;margin-top:8px;">'+label+'</div>' + entries.map(function(e){ return '<div style="display:flex;justify-content:space-between;font-size:11px;color:#ccc;"><span>'+e[0]+'</span><span>'+e[1].sessions+'</span></div>'; }).join('');
+      }).join('');
+      document.getElementById('bouCanalesHoy').innerHTML = canalesHtml || '<div style="color:#666;font-size:11px;">Sin dato</div>';
+      const adsets = lastFull.ads_ad_sets || [];
+      document.getElementById('bouAdsetsHoy').innerHTML = adsets.length ? adsets.map(function(a){
+        const alerta = (a.frequency && a.frequency>5) ? ' <span style="color:#ff5a5a;">&#9888; fatiga</span>' : '';
+        return '<div style="margin-bottom:8px;"><div style="font-size:11px;color:#ccc;">'+a.adset+alerta+'</div><div style="font-size:10px;color:#888;">$'+a.spend.toFixed(2)+' &middot; freq '+(a.frequency? a.frequency.toFixed(2):'n/d')+' &middot; '+a.compras+' compras</div></div>';
+      }).join('') : '<div style="color:#666;font-size:11px;">Sin ad sets activos</div>';
+    } else {
+      document.getElementById('bouMsjHoy').innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
+      document.getElementById('bouCanalesHoy').innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
+      document.getElementById('bouAdsetsHoy').innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
     }
     renderFunnel('funnelEc', lastEc, EC_PIPELINE_ORDER, EC_NON_SALES_STAGES);
     renderFunnel('funnelCol', lastCol, COL_PIPELINE_ORDER, []);
