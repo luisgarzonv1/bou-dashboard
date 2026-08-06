@@ -8834,6 +8834,127 @@
       ],
       "parcial": false,
       "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am"
+    },
+    {
+      "date": "2026-08-06",
+      "kommo_leads_ec": 3,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 19,
+      "kommo_msj_salientes_ec": 6,
+      "kommo_msj_entrantes_col": 9,
+      "kommo_msj_salientes_col": 5,
+      "kommo_lapso_medio_ec_s": 3872.5,
+      "kommo_lapso_medio_col_s": 969.5,
+      "kommo_funnel_ec": {
+        "total": 193,
+        "byStatus": {
+          "Reacciones y Comentarios": 83,
+          "leads Tibios (interacción)": 37,
+          "Colaboraciones": 6,
+          "Leads perdidos": 12,
+          "Por entregar": 1,
+          "Servicios Adicionales": 6,
+          "Leads ganados": 14,
+          "R.Comentarios Revisados": 12,
+          "Contacto inicial": 18,
+          "SPAM": 1,
+          "CAMBIOS Y DEVOLUCIONES": 2,
+          "Nueva consulta": 1
+        },
+        "window_days": 30
+      },
+      "kommo_funnel_col": {
+        "total": 8,
+        "byStatus": {
+          "Por entregar": 3,
+          "Ventas Perdidos": 1,
+          "Logrado con éxito": 2,
+          "CAMBIOS Y DEVOLUCIONES": 1,
+          "Nueva consulta": 1
+        },
+        "window_days": 30
+      },
+      "funnel_kommo": {
+        "ec": {
+          "Colaboraciones": 1,
+          "Reacciones y Comentarios": 2
+        },
+        "col": {}
+      },
+      "mensajeria_be": {
+        "entrantes": 28,
+        "salientes": 11,
+        "lapso_promedio_s": 3333.8,
+        "lapso_mediana_s": 1857.5
+      },
+      "contifico_documentos": 1,
+      "contifico_total_usd": 80.01,
+      "contifico_fuente_caida": null,
+      "prestashop_pedidos_ec": 0,
+      "prestashop_total_ec_usd": 0,
+      "prestashop_pedidos_ec_todos_estados": 0,
+      "prestashop_pedidos_col": 0,
+      "prestashop_total_col_cop": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "ga4_usuarios_ec": 7,
+      "ga4_usuarios_nuevos_ec": 6,
+      "ga4_sesiones_ec": 7,
+      "ga4_ingresos_ec_usd": 0,
+      "ga4_compras_ec": 0,
+      "ga4_usuarios_col": 3,
+      "ga4_usuarios_nuevos_col": 3,
+      "ga4_sesiones_col": 3,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "ga4_canales": {
+        "ec": {
+          "Direct": 3,
+          "Organic Social": 3,
+          "Organic Search": 1,
+          "Unassigned": 1
+        },
+        "col": {
+          "Direct": 1,
+          "Organic Search": 1,
+          "Organic Social": 1
+        }
+      },
+      "ga4_eventos_clave": {
+        "ec": {
+          "view_item": 1
+        },
+        "col": {
+          "view_item": 2
+        }
+      },
+      "ga4_articulos": {
+        "ec": [],
+        "col": []
+      },
+      "meta_spend_usd": 0,
+      "meta_impresiones": 0,
+      "meta_alcance": 0,
+      "meta_clics": 0,
+      "meta_link_clics": 0,
+      "meta_ctr": null,
+      "meta_compras": 0,
+      "meta_ingresos_usd": 0,
+      "meta_roas": null,
+      "meta_cpa": null,
+      "ads_ad_sets": [],
+      "recomendaciones_ec": [
+        "Cierre del día: Ecuador terminó con 3 leads nuevos en Kommo (2 en Reacciones y Comentarios, 1 en Colaboraciones) pero 0 pedidos pagados en PrestaShop — tráfico sin conversión a venta hoy.",
+        "Mensajería EC activa (19 entrantes / 6 salientes) con tiempo de respuesta mediano de ~65 min (3872.5s), alto frente a días recientes — revisar carga del equipo de atención en Instagram/WhatsApp.",
+        "GA4 EC: 7 usuarios (6 nuevos), 7 sesiones, $0 en ingresos — tráfico repartido entre directo (3) y social orgánico (3), sin compras registradas.",
+        "Meta Ads sin datos para hoy vía Windsor (el último dato disponible en el conector es del 3/ago) — no se puede evaluar inversión ni retorno del día, dar seguimiento mañana."
+      ],
+      "recomendaciones_col": [
+        "Cierre del día: Colombia sin leads nuevos en Kommo y 0 pedidos pagados en PrestaShop hoy — día sin actividad comercial nueva.",
+        "Mensajería COL moderada (9 entrantes / 5 salientes) con tiempo de respuesta mediano de ~16 min (969.5s), buen ritmo de atención.",
+        "GA4 COL: 3 usuarios (3 nuevos), 3 sesiones, $0 en ingresos — tráfico repartido entre directo, búsqueda orgánica y social orgánico."
+      ],
+      "parcial": false,
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día completo (00:00-23:59 hora Ecuador). La fila de las 10:30am no existía en daily-log.json (la corrida de la mañana no corrió o falló), por lo que se creó directamente con los números de cierre — no hay comparativo parcial-vs-cierre disponible para hoy. Meta Ads: Windsor.ai no tiene datos para 4-6/ago (rezago de reporting, último dato real es 3/ago) — campos Meta publicados en 0, no interpretar como gasto real cero. Contífico: 1 documento por $80.01. PrestaShop EC y COL: 0 pedidos pagados en ambos países."
     }
   ],
   "periodic": [
