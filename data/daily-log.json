@@ -8958,55 +8958,57 @@
     },
     {
       "date": "2026-08-07",
-      "kommo_leads_ec": 0,
+      "kommo_leads_ec": 4,
       "kommo_leads_col": 0,
-      "kommo_msj_entrantes_ec": 3,
-      "kommo_msj_salientes_ec": 0,
+      "kommo_msj_entrantes_ec": 15,
+      "kommo_msj_salientes_ec": 10,
       "kommo_msj_entrantes_col": 0,
       "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_ec_s": null,
+      "kommo_lapso_medio_ec_s": 1840,
       "kommo_lapso_medio_col_s": null,
       "kommo_funnel_ec": {
-        "total": 191,
+        "total": 200,
         "byStatus": {
-          "Reacciones y Comentarios": 81,
-          "leads Tibios (interacción)": 37,
-          "Colaboraciones": 6,
-          "Leads perdidos": 12,
-          "Por entregar": 1,
-          "Servicios Adicionales": 6,
-          "Leads ganados": 14,
-          "R.Comentarios Revisados": 12,
-          "Contacto inicial": 18,
-          "SPAM": 1,
           "CAMBIOS Y DEVOLUCIONES": 2,
-          "Nueva consulta": 1
+          "Colaboraciones": 6,
+          "Contacto inicial": 18,
+          "Leads ganados": 14,
+          "Leads perdidos": 12,
+          "Nueva consulta": 1,
+          "Por entregar": 1,
+          "R.Comentarios Revisados": 12,
+          "Reacciones y Comentarios": 89,
+          "SPAM": 1,
+          "Servicios Adicionales": 6,
+          "leads Tibios (interacción)": 38
         },
         "window_days": 30
       },
       "kommo_funnel_col": {
         "total": 8,
         "byStatus": {
-          "Por entregar": 3,
-          "Ventas Perdidos": 1,
-          "Logrado con éxito": 2,
           "CAMBIOS Y DEVOLUCIONES": 1,
-          "Nueva consulta": 1
+          "Logrado con éxito": 2,
+          "Nueva consulta": 1,
+          "Por entregar": 3,
+          "Ventas Perdidos": 1
         },
         "window_days": 30
       },
       "funnel_kommo": {
-        "ec": {},
+        "ec": {
+          "Reacciones y Comentarios": 4
+        },
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 3,
-        "salientes": 0,
+        "entrantes": 15,
+        "salientes": 10,
         "lapso_promedio_s": null,
-        "lapso_mediana_s": null
+        "lapso_mediana_s": 1840
       },
-      "contifico_documentos": 0,
-      "contifico_total_usd": 0,
+      "contifico_documentos": 7,
+      "contifico_total_usd": 9399.26,
       "contifico_fuente_caida": false,
       "prestashop_pedidos_ec": 0,
       "prestashop_total_ec_usd": 0,
@@ -9014,39 +9016,64 @@
       "prestashop_pedidos_col": 0,
       "prestashop_total_col_cop": 0,
       "prestashop_pedidos_col_todos_estados": 0,
-      "ga4_usuarios_ec": null,
-      "ga4_usuarios_nuevos_ec": null,
-      "ga4_sesiones_ec": null,
-      "ga4_ingresos_ec_usd": null,
-      "ga4_compras_ec": null,
-      "ga4_usuarios_col": null,
-      "ga4_usuarios_nuevos_col": null,
-      "ga4_sesiones_col": null,
-      "ga4_ingresos_col_usd": null,
-      "ga4_compras_col": null,
-      "ga4_canales": null,
-      "ga4_eventos_clave": null,
-      "ga4_articulos": null,
-      "meta_spend_usd": null,
-      "meta_impresiones": null,
-      "meta_alcance": null,
-      "meta_clics": null,
-      "meta_link_clics": null,
-      "meta_ctr": null,
-      "meta_compras": null,
-      "meta_ingresos_usd": null,
-      "meta_roas": null,
+      "ga4_usuarios_ec": 3,
+      "ga4_usuarios_nuevos_ec": 3,
+      "ga4_sesiones_ec": 3,
+      "ga4_ingresos_ec_usd": 0,
+      "ga4_compras_ec": 0,
+      "ga4_usuarios_col": 0,
+      "ga4_usuarios_nuevos_col": 0,
+      "ga4_sesiones_col": 1,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "ga4_canales": {
+        "ec": {
+          "Organic Social": 2,
+          "Direct": 1
+        },
+        "col": {
+          "Direct": 1
+        }
+      },
+      "ga4_eventos_clave": {
+        "ec": {},
+        "col": {
+          "view_item": 1
+        }
+      },
+      "ga4_articulos": [],
+      "meta_spend_usd": 0,
+      "meta_impresiones": 0,
+      "meta_alcance": 0,
+      "meta_clics": 0,
+      "meta_link_clics": 0,
+      "meta_ctr": 0,
+      "meta_compras": 0,
+      "meta_ingresos_usd": 0,
+      "meta_roas": 0,
       "meta_cpa": null,
-      "ads_ad_sets": null,
+      "ads_ad_sets": [
+        {
+          "adset": "publico segmentado - Copia",
+          "spend": 0,
+          "impressions": 0,
+          "reach": 0,
+          "frequency": 0,
+          "compras": 0,
+          "clicks": 0
+        }
+      ],
       "recomendaciones_ec": [
-        "Contífico sigue bloqueado por falta de firma electrónica vigente: 28 días sin poder facturar (desde 10/jul/2026) — dar seguimiento urgente a la renovación.",
-        "0 pedidos PrestaShop EC y 0 leads Kommo EC hasta el corte de las 10:30am; normal a esta hora, el corte de cierre (6pm) dará la foto completa del día."
+        "Contífico se destrabó durante el día: 7 documentos emitidos por $9,399.26 (vs. 0 en el corte de la mañana) — confirmar con contabilidad si fue renovación de firma electrónica o resolución puntual del bloqueo.",
+        "Kommo EC cerró con 4 leads nuevos y 15 mensajes entrantes / 10 salientes (vs. 3 entrantes / 0 salientes en la mañana), lapso mediano de respuesta ~31 min — dentro de rango razonable.",
+        "0 pedidos en PrestaShop EC y $0 de gasto en Meta Ads (única campaña activa 'la piel colombia nuevo' sin inversión) — confirmar si las campañas están pausadas intencionalmente."
       ],
       "recomendaciones_col": [
-        "0 pedidos PrestaShop COL y 0 leads Kommo COL hasta el corte de la mañana; revisar en el corte de cierre de las 6pm."
+        "0 pedidos PrestaShop COL y 0 leads Kommo COL en todo el día — revisar causa (stock, marketing, operación) ya que se mantiene sin actividad comercial desde la mañana.",
+        "GA4 COL registró solo 1 sesión y 0 usuarios nuevos en el día completo — tráfico prácticamente nulo, evaluar salud del canal/sitio."
       ],
-      "parcial": true,
-      "nota_verificacion": "CORTE DE MAÑANA (10:30am). Windsor.ai (Meta Ads y GA4) aún no tiene datos disponibles para hoy 07/ago/2026 al momento de este corte — es rezago normal de procesamiento/atribución de esas plataformas (último dato Meta Ads: 03/ago; último dato GA4: 06/ago); estos campos se completan en el corte de cierre de las 6pm. Contífico en 0 documentos: bloqueo confirmado por falta de firma electrónica vigente, NO es falla técnica (28 días transcurridos desde 10/jul/2026). Kommo EC/COL: 0 leads creados y mensajería mínima (3 entrantes EC, 0 salientes) hasta el corte — normal para la mañana. kommo_funnel_ec/col es snapshot rolling de 30 días. Caveat de proceso conocido: reclasificación manual EC→COL por CX puede subestimar leads COL."
+      "parcial": false,
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Kommo EC: 0→4 leads, mensajería 3 entrantes/0 salientes→15/10 (lapso mediano 31 min). Contífico: 0→7 documentos ($9,399.26) — el bloqueo por falta de firma electrónica reportado en la mañana se resolvió durante el día. PrestaShop EC y COL: se mantuvieron en 0 pedidos todo el día (confirmado con filtro paid=1 y sin filtrar, ambos en 0). GA4/Meta Ads: disponibles por primera vez hoy en este corte (Windsor.ai no los tenía listos a las 10:30am) — EC 3 sesiones/3 usuarios nuevos, COL 1 sesión/0 usuarios nuevos, sin compras. Meta Ads: $0 de gasto, única campaña activa sin inversión el día de hoy. kommo_funnel_ec/col es snapshot rolling de 30 días, se sobreescribe en cada corrida (normal que cambie vs. la mañana). Caveat de proceso conocido: reclasificación manual EC→COL por CX puede subestimar leads COL."
     }
   ],
   "periodic": [
