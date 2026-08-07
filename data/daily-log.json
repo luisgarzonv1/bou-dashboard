@@ -8955,6 +8955,98 @@
       ],
       "parcial": false,
       "nota_verificacion": "Corte de cierre 6pm — números finales del día completo (00:00-23:59 hora Ecuador). La fila de las 10:30am no existía en daily-log.json (la corrida de la mañana no corrió o falló), por lo que se creó directamente con los números de cierre — no hay comparativo parcial-vs-cierre disponible para hoy. Meta Ads: Windsor.ai no tiene datos para 4-6/ago (rezago de reporting, último dato real es 3/ago) — campos Meta publicados en 0, no interpretar como gasto real cero. Contífico: 1 documento por $80.01. PrestaShop EC y COL: 0 pedidos pagados en ambos países."
+    },
+    {
+      "date": "2026-08-07",
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 3,
+      "kommo_msj_salientes_ec": 0,
+      "kommo_msj_entrantes_col": 0,
+      "kommo_msj_salientes_col": 0,
+      "kommo_lapso_medio_ec_s": null,
+      "kommo_lapso_medio_col_s": null,
+      "kommo_funnel_ec": {
+        "total": 191,
+        "byStatus": {
+          "Reacciones y Comentarios": 81,
+          "leads Tibios (interacción)": 37,
+          "Colaboraciones": 6,
+          "Leads perdidos": 12,
+          "Por entregar": 1,
+          "Servicios Adicionales": 6,
+          "Leads ganados": 14,
+          "R.Comentarios Revisados": 12,
+          "Contacto inicial": 18,
+          "SPAM": 1,
+          "CAMBIOS Y DEVOLUCIONES": 2,
+          "Nueva consulta": 1
+        },
+        "window_days": 30
+      },
+      "kommo_funnel_col": {
+        "total": 8,
+        "byStatus": {
+          "Por entregar": 3,
+          "Ventas Perdidos": 1,
+          "Logrado con éxito": 2,
+          "CAMBIOS Y DEVOLUCIONES": 1,
+          "Nueva consulta": 1
+        },
+        "window_days": 30
+      },
+      "funnel_kommo": {
+        "ec": {},
+        "col": {}
+      },
+      "mensajeria_be": {
+        "entrantes": 3,
+        "salientes": 0,
+        "lapso_promedio_s": null,
+        "lapso_mediana_s": null
+      },
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": false,
+      "prestashop_pedidos_ec": 0,
+      "prestashop_total_ec_usd": 0,
+      "prestashop_pedidos_ec_todos_estados": 0,
+      "prestashop_pedidos_col": 0,
+      "prestashop_total_col_cop": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "ga4_usuarios_ec": null,
+      "ga4_usuarios_nuevos_ec": null,
+      "ga4_sesiones_ec": null,
+      "ga4_ingresos_ec_usd": null,
+      "ga4_compras_ec": null,
+      "ga4_usuarios_col": null,
+      "ga4_usuarios_nuevos_col": null,
+      "ga4_sesiones_col": null,
+      "ga4_ingresos_col_usd": null,
+      "ga4_compras_col": null,
+      "ga4_canales": null,
+      "ga4_eventos_clave": null,
+      "ga4_articulos": null,
+      "meta_spend_usd": null,
+      "meta_impresiones": null,
+      "meta_alcance": null,
+      "meta_clics": null,
+      "meta_link_clics": null,
+      "meta_ctr": null,
+      "meta_compras": null,
+      "meta_ingresos_usd": null,
+      "meta_roas": null,
+      "meta_cpa": null,
+      "ads_ad_sets": null,
+      "recomendaciones_ec": [
+        "Contífico sigue bloqueado por falta de firma electrónica vigente: 28 días sin poder facturar (desde 10/jul/2026) — dar seguimiento urgente a la renovación.",
+        "0 pedidos PrestaShop EC y 0 leads Kommo EC hasta el corte de las 10:30am; normal a esta hora, el corte de cierre (6pm) dará la foto completa del día."
+      ],
+      "recomendaciones_col": [
+        "0 pedidos PrestaShop COL y 0 leads Kommo COL hasta el corte de la mañana; revisar en el corte de cierre de las 6pm."
+      ],
+      "parcial": true,
+      "nota_verificacion": "CORTE DE MAÑANA (10:30am). Windsor.ai (Meta Ads y GA4) aún no tiene datos disponibles para hoy 07/ago/2026 al momento de este corte — es rezago normal de procesamiento/atribución de esas plataformas (último dato Meta Ads: 03/ago; último dato GA4: 06/ago); estos campos se completan en el corte de cierre de las 6pm. Contífico en 0 documentos: bloqueo confirmado por falta de firma electrónica vigente, NO es falla técnica (28 días transcurridos desde 10/jul/2026). Kommo EC/COL: 0 leads creados y mensajería mínima (3 entrantes EC, 0 salientes) hasta el corte — normal para la mañana. kommo_funnel_ec/col es snapshot rolling de 30 días. Caveat de proceso conocido: reclasificación manual EC→COL por CX puede subestimar leads COL."
     }
   ],
   "periodic": [
