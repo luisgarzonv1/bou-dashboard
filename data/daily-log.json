@@ -9074,6 +9074,134 @@
       ],
       "parcial": false,
       "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Kommo EC: 0→4 leads, mensajería 3 entrantes/0 salientes→15/10 (lapso mediano 31 min). Contífico: 0→7 documentos ($9,399.26) — el bloqueo por falta de firma electrónica reportado en la mañana se resolvió durante el día. PrestaShop EC y COL: se mantuvieron en 0 pedidos todo el día (confirmado con filtro paid=1 y sin filtrar, ambos en 0). GA4/Meta Ads: disponibles por primera vez hoy en este corte (Windsor.ai no los tenía listos a las 10:30am) — EC 3 sesiones/3 usuarios nuevos, COL 1 sesión/0 usuarios nuevos, sin compras. Meta Ads: $0 de gasto, única campaña activa sin inversión el día de hoy. kommo_funnel_ec/col es snapshot rolling de 30 días, se sobreescribe en cada corrida (normal que cambie vs. la mañana). Caveat de proceso conocido: reclasificación manual EC→COL por CX puede subestimar leads COL."
+    },
+    {
+      "date": "2026-08-10",
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 7,
+      "kommo_msj_salientes_ec": 0,
+      "kommo_msj_entrantes_col": 0,
+      "kommo_msj_salientes_col": 0,
+      "kommo_lapso_medio_ec_s": null,
+      "kommo_lapso_medio_col_s": null,
+      "kommo_funnel_ec": {
+        "total": 185,
+        "byStatus": {
+          "Colaboraciones": 5,
+          "Leads perdidos": 11,
+          "Reacciones y Comentarios": 78,
+          "leads Tibios (interacción)": 36,
+          "Servicios Adicionales": 6,
+          "Leads ganados": 14,
+          "R.Comentarios Revisados": 12,
+          "Contacto inicial": 18,
+          "SPAM": 1,
+          "CAMBIOS Y DEVOLUCIONES": 2,
+          "Nueva consulta": 1,
+          "Por entregar": 1
+        },
+        "window_days": 30
+      },
+      "kommo_funnel_col": {
+        "total": 6,
+        "byStatus": {
+          "Ventas Perdidos": 1,
+          "Logrado con éxito": 2,
+          "Por entregar": 1,
+          "CAMBIOS Y DEVOLUCIONES": 1,
+          "Nueva consulta": 1
+        },
+        "window_days": 30
+      },
+      "funnel_kommo": {
+        "ec": {},
+        "col": {}
+      },
+      "mensajeria_be": {
+        "entrantes": 7,
+        "salientes": 0,
+        "lapso_promedio_s": null,
+        "lapso_mediana_s": null
+      },
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": true,
+      "prestashop_pedidos_ec": 1,
+      "prestashop_total_ec_usd": 20,
+      "prestashop_pedidos_ec_todos_estados": 1,
+      "prestashop_pedidos_col": 0,
+      "prestashop_total_col_cop": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "ga4_usuarios_ec": 7,
+      "ga4_usuarios_nuevos_ec": 7,
+      "ga4_sesiones_ec": 7,
+      "ga4_ingresos_ec_usd": 0,
+      "ga4_compras_ec": 0,
+      "ga4_usuarios_col": 5,
+      "ga4_usuarios_nuevos_col": 3,
+      "ga4_sesiones_col": 7,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "ga4_canales": {
+        "ec": {
+          "Direct": 4,
+          "Organic Search": 2,
+          "Referral": 1
+        },
+        "col": {
+          "Organic Search": 4,
+          "Direct": 3
+        }
+      },
+      "ga4_eventos_clave": {
+        "ec": {
+          "form_submit": 12,
+          "view_item": 6,
+          "begin_checkout": 4,
+          "add_payment_info": 2,
+          "add_shipping_info": 2,
+          "add_to_cart": 1,
+          "purchase": 1
+        },
+        "col": {
+          "view_item": 7,
+          "form_submit": 1,
+          "add_shipping_info": 1
+        }
+      },
+      "ga4_articulos": {
+        "ec": [
+          {
+            "item_name": "CD LolabúmEl Cielo 10 Años",
+            "items_purchased": 1,
+            "item_revenue": 15
+          }
+        ],
+        "col": []
+      },
+      "meta_spend_usd": 0,
+      "meta_impresiones": 0,
+      "meta_alcance": 0,
+      "meta_clics": 0,
+      "meta_link_clics": 0,
+      "meta_ctr": 0,
+      "meta_compras": 0,
+      "meta_ingresos_usd": 0,
+      "meta_roas": 0,
+      "meta_cpa": null,
+      "ads_ad_sets": [],
+      "recomendaciones_ec": [
+        "0 leads nuevos en Kommo EC en todo el día, pero PrestaShop registró 1 pedido pagado ($20.00) — revisar si la venta llegó por un canal fuera de Kommo o si hay un problema de sincronización de leads.",
+        "GA4 EC registró 1 evento 'purchase' pero las métricas ecommerce_purchases/purchase_revenue marcan 0 — posible discrepancia de tagging en GA4, validar antes de usar esos ingresos como oficiales.",
+        "Meta Ads (Windsor.ai) no reporta datos desde el 2026-08-03 — verificar la conexión del connector antes de tomar decisiones de pauta con estas cifras."
+      ],
+      "recomendaciones_col": [
+        "0 pedidos en PrestaShop COL y 0 leads en Kommo COL en todo el día pese a 7 sesiones en GA4 — revisar fricción en el checkout o disponibilidad de stock.",
+        "Contífico no emitió documentos por bloqueo de firma electrónica (vigente desde 10/jul/2026) — no es una falla técnica del conector."
+      ],
+      "parcial": false,
+      "nota_verificacion": "Corte de cierre 6pm — la fila de la mañana (corte 10:30am) no existe en daily-log.json (no corrió o falló), por lo que no hay comparativo mañana vs cierre para hoy; estos son los primeros y únicos números publicados del día 2026-08-10. Kommo EC/COL: 0 leads creados, 7 mensajes entrantes EC (0 salientes, sin pares para calcular lapso). Contífico: 0 documentos por bloqueo de firma electrónica, no es falla técnica. PrestaShop: EC 1 pedido pagado ($20.00, estado 10, no está en el set de estados inválidos), COL 0 pedidos — ambos confirmados con filtro paid=1 y sin filtrar, pedidos desde el dominio correspondiente. GA4: EC 7 usuarios/7 nuevos/7 sesiones, COL 5 usuarios/3 nuevos/7 sesiones; ecommerce_purchases=0 en ambos pese a 1 evento 'purchase' registrado en EC (discrepancia de tagging a validar, no confirmada como venta oficial). Meta Ads vía Windsor.ai: sin datos desde 2026-08-03 — gap del conector, se publican ceros en vez de inventar cifras."
     }
   ],
   "periodic": [
