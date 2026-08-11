@@ -420,6 +420,11 @@ document.querySelectorAll('.tab').forEach(btn=>{
     </div>
   </div>
 </section>
+<section id="bou-extra3" style="max-width:1100px;margin:32px auto;padding:0 20px;font-family:'Courier New',monospace;color:#eee;">
+  <h2 style="font-size:14px;color:#999;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #2a2a2a;padding-bottom:8px;">Inventario vendible por artista (Bou Entertainment)</h2>
+  <div id="bouInvArtista"></div>
+</section>
+
 
 <script>
 (function(){
@@ -514,6 +519,39 @@ document.querySelectorAll('.tab').forEach(btn=>{
       document.getElementById('bouMsjHoy').innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
       document.getElementById('bouCanalesHoy').innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
       document.getElementById('bouAdsetsHoy').innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
+    }
+    {
+      let lastInv = null, lastInvDate = null;
+      for (let i = days.length - 1; i >= 0; i--) {
+        if (days[i].inventario_total && days[i].inventario_total.cantidad) { lastInv = days[i]; lastInvDate = days[i].date; break; }
+      }
+      const elInv = document.getElementById('bouInvArtista');
+      if (lastInv && elInv) {
+        const art = lastInv.inventario_por_artista || {};
+        const rows = Object.keys(art).map(k => ({nombre: k, cantidad: art[k].cantidad, monto: art[k].monto_pvp}))
+          .sort((a,b) => b.monto - a.monto);
+        const maxMonto = rows.length ? rows[0].monto : 1;
+        let html2 = '<div style="display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap;">';
+        html2 += '<div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:12px 16px;"><div style="color:#666;font-size:10px;text-transform:uppercase;">Unidades vendibles</div><div style="font-size:20px;color:#fff;">' + lastInv.inventario_total.cantidad.toLocaleString('es-EC') + '</div></div>';
+        html2 += '<div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:12px 16px;"><div style="color:#666;font-size:10px;text-transform:uppercase;">Valor PVP total</div><div style="font-size:20px;color:#fff;">$' + lastInv.inventario_total.monto_pvp.toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2}) + '</div></div>';
+        html2 += '</div>';
+        html2 += '<div style="font-size:10px;color:#666;margin-bottom:10px;">' + lastInvDate + ' \u00b7 excluye Productos con da\u00f1os, Caducados, Bodega Pr\u00e9stamos y Bodega COL EMPRESAS EN CONSIGNACI\u00d3N (referencial)</div>';
+        rows.forEach(r => {
+          const pct = maxMonto > 0 ? (r.monto / maxMonto * 100) : 0;
+          html2 += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">';
+          html2 += '<div style="width:170px;font-size:11px;color:#ccc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + r.nombre + '</div>';
+          html2 += '<div style="flex:1;background:#1a1a1a;border-radius:3px;height:14px;position:relative;"><div style="background:#3a6ea5;height:14px;border-radius:3px;width:' + pct + '%;"></div></div>';
+          html2 += '<div style="width:90px;text-align:right;font-size:11px;color:#fff;">$' + r.monto.toLocaleString('es-EC',{maximumFractionDigits:0}) + '</div>';
+          html2 += '<div style="width:60px;text-align:right;font-size:10px;color:#666;">' + r.cantidad + ' u.</div>';
+          html2 += '</div>';
+        });
+        if (lastInv.inventario_alertas_pvp && lastInv.inventario_alertas_pvp.length) {
+          html2 += '<div style="margin-top:10px;background:#2a1a1a;border:1px solid #5a2a2a;border-radius:4px;padding:8px 12px;font-size:10px;color:#e08080;">PVP sin cargar en Cont\u00edfico (valor real no disponible): ' + lastInv.inventario_alertas_pvp.join(' \u00b7 ') + '</div>';
+        }
+        elInv.innerHTML = html2;
+      } else if (elInv) {
+        elInv.innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
+      }
     }
     renderFunnel('funnelEc', lastEc, EC_PIPELINE_ORDER, EC_NON_SALES_STAGES);
     renderFunnel('funnelCol', lastCol, COL_PIPELINE_ORDER, []);
