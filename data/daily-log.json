@@ -9076,6 +9076,237 @@
       "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Kommo EC: 0→4 leads, mensajería 3 entrantes/0 salientes→15/10 (lapso mediano 31 min). Contífico: 0→7 documentos ($9,399.26) — el bloqueo por falta de firma electrónica reportado en la mañana se resolvió durante el día. PrestaShop EC y COL: se mantuvieron en 0 pedidos todo el día (confirmado con filtro paid=1 y sin filtrar, ambos en 0). GA4/Meta Ads: disponibles por primera vez hoy en este corte (Windsor.ai no los tenía listos a las 10:30am) — EC 3 sesiones/3 usuarios nuevos, COL 1 sesión/0 usuarios nuevos, sin compras. Meta Ads: $0 de gasto, única campaña activa sin inversión el día de hoy. kommo_funnel_ec/col es snapshot rolling de 30 días, se sobreescribe en cada corrida (normal que cambie vs. la mañana). Caveat de proceso conocido: reclasificación manual EC→COL por CX puede subestimar leads COL."
     },
     {
+      "date": "2026-08-08",
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 13,
+      "kommo_msj_salientes_ec": 0,
+      "kommo_msj_entrantes_col": 0,
+      "kommo_msj_salientes_col": 0,
+      "kommo_lapso_medio_ec_s": null,
+      "kommo_lapso_medio_col_s": null,
+      "kommo_funnel_ec": null,
+      "kommo_funnel_col": null,
+      "funnel_kommo": {
+        "ec": {},
+        "col": {}
+      },
+      "mensajeria_be": {
+        "entrantes": 13,
+        "salientes": 0,
+        "lapso_promedio_s": null,
+        "lapso_mediana_s": null
+      },
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": false,
+      "prestashop_pedidos_ec": 0,
+      "prestashop_total_ec_usd": 0,
+      "prestashop_pedidos_ec_todos_estados": 0,
+      "prestashop_pedidos_col": 0,
+      "prestashop_total_col_cop": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "ga4_usuarios_ec": 24,
+      "ga4_usuarios_nuevos_ec": 21,
+      "ga4_sesiones_ec": 27,
+      "ga4_ingresos_ec_usd": 0,
+      "ga4_compras_ec": 0,
+      "ga4_usuarios_col": 11,
+      "ga4_usuarios_nuevos_col": 8,
+      "ga4_sesiones_col": 13,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "ga4_canales": {
+        "ec": {
+          "Organic Social": {
+            "sessions": 10,
+            "active_users": 9
+          },
+          "Direct": {
+            "sessions": 8,
+            "active_users": 8
+          },
+          "Organic Search": {
+            "sessions": 6,
+            "active_users": 5
+          },
+          "Referral": {
+            "sessions": 3,
+            "active_users": 2
+          }
+        },
+        "col": {
+          "Organic Search": {
+            "sessions": 4,
+            "active_users": 3
+          },
+          "Organic Social": {
+            "sessions": 4,
+            "active_users": 4
+          },
+          "Direct": {
+            "sessions": 3,
+            "active_users": 3
+          },
+          "Paid Social": {
+            "sessions": 2,
+            "active_users": 1
+          }
+        }
+      },
+      "ga4_eventos_clave": {
+        "ec": {
+          "view_item": 24,
+          "form_submit": 8,
+          "begin_checkout": 2,
+          "add_shipping_info": 1,
+          "add_to_cart": 1
+        },
+        "col": {
+          "view_item": 20,
+          "form_submit": 2,
+          "add_to_cart": 1,
+          "begin_checkout": 1
+        }
+      },
+      "ga4_articulos": {},
+      "meta_spend_usd": 0,
+      "meta_impresiones": 0,
+      "meta_alcance": 0,
+      "meta_clics": 0,
+      "meta_link_clics": 0,
+      "meta_ctr": null,
+      "meta_compras": 0,
+      "meta_ingresos_usd": 0,
+      "meta_roas": null,
+      "meta_cpa": null,
+      "ads_ad_sets": [],
+      "recomendaciones_ec": [
+        "Sin leads nuevos y sin pedidos válidos en Ecuador (sábado) — revisar si es estacionalidad de fin de semana."
+      ],
+      "recomendaciones_col": [
+        "Mensajería sin respuesta saliente registrada — verificar cobertura de CX en fin de semana."
+      ],
+      "parcial": false,
+      "nota_verificacion": "Fila generada por backfill automático (corte 11/ago/2026) — sábado sin ejecución programada. kommo_funnel_ec/col no reconstruible retroactivamente (null). Meta Ads sin actividad (campañas sin spend desde ~04/ago)."
+    },
+    {
+      "date": "2026-08-09",
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 5,
+      "kommo_msj_salientes_ec": 0,
+      "kommo_msj_entrantes_col": 3,
+      "kommo_msj_salientes_col": 0,
+      "kommo_lapso_medio_ec_s": null,
+      "kommo_lapso_medio_col_s": null,
+      "kommo_funnel_ec": null,
+      "kommo_funnel_col": null,
+      "funnel_kommo": {
+        "ec": {},
+        "col": {}
+      },
+      "mensajeria_be": {
+        "entrantes": 8,
+        "salientes": 0,
+        "lapso_promedio_s": null,
+        "lapso_mediana_s": null
+      },
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": false,
+      "prestashop_pedidos_ec": 0,
+      "prestashop_total_ec_usd": 0,
+      "prestashop_pedidos_ec_todos_estados": 0,
+      "prestashop_pedidos_col": 0,
+      "prestashop_total_col_cop": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "ga4_usuarios_ec": 19,
+      "ga4_usuarios_nuevos_ec": 17,
+      "ga4_sesiones_ec": 21,
+      "ga4_ingresos_ec_usd": 0,
+      "ga4_compras_ec": 0,
+      "ga4_usuarios_col": 15,
+      "ga4_usuarios_nuevos_col": 9,
+      "ga4_sesiones_col": 16,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "ga4_canales": {
+        "ec": {
+          "Organic Search": {
+            "sessions": 6,
+            "active_users": 5
+          },
+          "Organic Social": {
+            "sessions": 6,
+            "active_users": 6
+          },
+          "Direct": {
+            "sessions": 5,
+            "active_users": 5
+          },
+          "Referral": {
+            "sessions": 3,
+            "active_users": 3
+          },
+          "Paid Social": {
+            "sessions": 1,
+            "active_users": 0
+          }
+        },
+        "col": {
+          "Organic Search": {
+            "sessions": 9,
+            "active_users": 9
+          },
+          "Direct": {
+            "sessions": 4,
+            "active_users": 4
+          },
+          "Organic Social": {
+            "sessions": 3,
+            "active_users": 2
+          }
+        }
+      },
+      "ga4_eventos_clave": {
+        "ec": {
+          "view_item": 11,
+          "begin_checkout": 5,
+          "add_to_cart": 3,
+          "form_submit": 2
+        },
+        "col": {
+          "view_item": 13,
+          "begin_checkout": 2,
+          "form_submit": 2,
+          "add_shipping_info": 1,
+          "add_to_cart": 1,
+          "sign_up": 1
+        }
+      },
+      "ga4_articulos": {},
+      "meta_spend_usd": 0,
+      "meta_impresiones": 0,
+      "meta_alcance": 0,
+      "meta_clics": 0,
+      "meta_link_clics": 0,
+      "meta_ctr": null,
+      "meta_compras": 0,
+      "meta_ingresos_usd": 0,
+      "meta_roas": null,
+      "meta_cpa": null,
+      "ads_ad_sets": [],
+      "recomendaciones_ec": [
+        "Segundo día consecutivo sin leads nuevos ni pedidos válidos — monitorear si continúa el lunes."
+      ],
+      "recomendaciones_col": [
+        "COL mostró 3 mensajes entrantes sin ninguna respuesta saliente — riesgo de leads perdidos por falta de respuesta."
+      ],
+      "parcial": false,
+      "nota_verificacion": "Fila generada por backfill automático (corte 11/ago/2026) — domingo sin ejecución programada. kommo_funnel_ec/col no reconstruible retroactivamente (null)."
+    },
+    {
       "date": "2026-08-10",
       "kommo_leads_ec": 0,
       "kommo_leads_col": 0,
@@ -9085,12 +9316,132 @@
       "kommo_msj_salientes_col": 0,
       "kommo_lapso_medio_ec_s": null,
       "kommo_lapso_medio_col_s": null,
+      "kommo_funnel_ec": null,
+      "kommo_funnel_col": null,
+      "funnel_kommo": {
+        "ec": {},
+        "col": {}
+      },
+      "mensajeria_be": {
+        "entrantes": 7,
+        "salientes": 0,
+        "lapso_promedio_s": null,
+        "lapso_mediana_s": null
+      },
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": false,
+      "prestashop_pedidos_ec": 0,
+      "prestashop_total_ec_usd": 0,
+      "prestashop_pedidos_ec_todos_estados": 1,
+      "prestashop_pedidos_col": 0,
+      "prestashop_total_col_cop": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "ga4_usuarios_ec": 19,
+      "ga4_usuarios_nuevos_ec": 18,
+      "ga4_sesiones_ec": 21,
+      "ga4_ingresos_ec_usd": 13.04,
+      "ga4_compras_ec": 1,
+      "ga4_usuarios_col": 9,
+      "ga4_usuarios_nuevos_col": 6,
+      "ga4_sesiones_col": 12,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "ga4_canales": {
+        "ec": {
+          "Direct": {
+            "sessions": 11,
+            "active_users": 10
+          },
+          "Organic Social": {
+            "sessions": 5,
+            "active_users": 4
+          },
+          "Organic Search": {
+            "sessions": 4,
+            "active_users": 4
+          },
+          "Referral": {
+            "sessions": 1,
+            "active_users": 1
+          }
+        },
+        "col": {
+          "Organic Search": {
+            "sessions": 6,
+            "active_users": 4
+          },
+          "Direct": {
+            "sessions": 5,
+            "active_users": 5
+          },
+          "Paid Social": {
+            "sessions": 1,
+            "active_users": 0
+          }
+        }
+      },
+      "ga4_eventos_clave": {
+        "ec": {
+          "form_submit": 12,
+          "view_item": 6,
+          "begin_checkout": 4,
+          "add_payment_info": 2,
+          "add_shipping_info": 2,
+          "add_to_cart": 1,
+          "purchase": 1
+        },
+        "col": {
+          "view_item": 7,
+          "add_shipping_info": 1,
+          "form_submit": 1
+        }
+      },
+      "ga4_articulos": {
+        "ec": [
+          {
+            "item": "CD LolabúmEl Cielo 10 Años",
+            "cant": 1,
+            "rev": 15
+          }
+        ]
+      },
+      "meta_spend_usd": 0,
+      "meta_impresiones": 0,
+      "meta_alcance": 0,
+      "meta_clics": 0,
+      "meta_link_clics": 0,
+      "meta_ctr": null,
+      "meta_compras": 0,
+      "meta_ingresos_usd": 0,
+      "meta_roas": null,
+      "meta_cpa": null,
+      "ads_ad_sets": [],
+      "recomendaciones_ec": [
+        "Lunes sin ejecución automática (posible feriado o corrida fallida) — hubo 1 pedido PrestaShop pero quedó en 'Pendiente de pago con Payphone' (no válido); GA4 sí registró 1 compra ($13.04) que no calza con PrestaShop, revisar conciliación."
+      ],
+      "recomendaciones_col": [
+        "Tercer día seguido sin leads ni mensajería saliente registrada en COL."
+      ],
+      "parcial": false,
+      "nota_verificacion": "Fila generada por backfill automático (corte 11/ago/2026) — lunes sin ejecución previa (feriado o corrida fallida, no confirmado). kommo_funnel_ec/col no reconstruible retroactivamente (null). Discrepancia GA4 (1 compra, $13.04) vs PrestaShop (0 pedidos válidos) anotada para revisión manual."
+    },
+    {
+      "date": "2026-08-11",
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 2,
+      "kommo_msj_salientes_ec": 1,
+      "kommo_msj_entrantes_col": 0,
+      "kommo_msj_salientes_col": 0,
+      "kommo_lapso_medio_ec_s": null,
+      "kommo_lapso_medio_col_s": null,
       "kommo_funnel_ec": {
-        "total": 185,
+        "total": 183,
         "byStatus": {
-          "Colaboraciones": 5,
+          "Colaboraciones": 4,
           "Leads perdidos": 11,
-          "Reacciones y Comentarios": 78,
+          "Reacciones y Comentarios": 77,
           "leads Tibios (interacción)": 36,
           "Servicios Adicionales": 6,
           "Leads ganados": 14,
@@ -9119,89 +9470,70 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 7,
-        "salientes": 0,
+        "entrantes": 2,
+        "salientes": 1,
         "lapso_promedio_s": null,
         "lapso_mediana_s": null
       },
-      "contifico_documentos": 0,
-      "contifico_total_usd": 0,
-      "contifico_fuente_caida": true,
-      "prestashop_pedidos_ec": 1,
-      "prestashop_total_ec_usd": 20,
+      "contifico_documentos": 1,
+      "contifico_total_usd": 30,
+      "contifico_fuente_caida": false,
+      "prestashop_pedidos_ec": 0,
+      "prestashop_total_ec_usd": 0,
       "prestashop_pedidos_ec_todos_estados": 1,
       "prestashop_pedidos_col": 0,
       "prestashop_total_col_cop": 0,
       "prestashop_pedidos_col_todos_estados": 0,
-      "ga4_usuarios_ec": 7,
-      "ga4_usuarios_nuevos_ec": 7,
-      "ga4_sesiones_ec": 7,
+      "ga4_usuarios_ec": 2,
+      "ga4_usuarios_nuevos_ec": 2,
+      "ga4_sesiones_ec": 2,
       "ga4_ingresos_ec_usd": 0,
       "ga4_compras_ec": 0,
-      "ga4_usuarios_col": 5,
-      "ga4_usuarios_nuevos_col": 3,
-      "ga4_sesiones_col": 7,
+      "ga4_usuarios_col": 0,
+      "ga4_usuarios_nuevos_col": 0,
+      "ga4_sesiones_col": 0,
       "ga4_ingresos_col_usd": 0,
       "ga4_compras_col": 0,
       "ga4_canales": {
         "ec": {
-          "Direct": 4,
-          "Organic Search": 2,
-          "Referral": 1
+          "Direct": {
+            "sessions": 1,
+            "active_users": 1
+          },
+          "Organic Social": {
+            "sessions": 1,
+            "active_users": 1
+          }
         },
-        "col": {
-          "Organic Search": 4,
-          "Direct": 3
-        }
+        "col": {}
       },
       "ga4_eventos_clave": {
         "ec": {
-          "form_submit": 12,
-          "view_item": 6,
-          "begin_checkout": 4,
-          "add_payment_info": 2,
-          "add_shipping_info": 2,
-          "add_to_cart": 1,
-          "purchase": 1
+          "view_item": 2
         },
-        "col": {
-          "view_item": 7,
-          "form_submit": 1,
-          "add_shipping_info": 1
-        }
+        "col": {}
       },
-      "ga4_articulos": {
-        "ec": [
-          {
-            "item_name": "CD LolabúmEl Cielo 10 Años",
-            "items_purchased": 1,
-            "item_revenue": 15
-          }
-        ],
-        "col": []
-      },
+      "ga4_articulos": {},
       "meta_spend_usd": 0,
       "meta_impresiones": 0,
       "meta_alcance": 0,
       "meta_clics": 0,
       "meta_link_clics": 0,
-      "meta_ctr": 0,
+      "meta_ctr": null,
       "meta_compras": 0,
       "meta_ingresos_usd": 0,
-      "meta_roas": 0,
+      "meta_roas": null,
       "meta_cpa": null,
       "ads_ad_sets": [],
       "recomendaciones_ec": [
-        "0 leads nuevos en Kommo EC en todo el día, pero PrestaShop registró 1 pedido pagado ($20.00) — revisar si la venta llegó por un canal fuera de Kommo o si hay un problema de sincronización de leads.",
-        "GA4 EC registró 1 evento 'purchase' pero las métricas ecommerce_purchases/purchase_revenue marcan 0 — posible discrepancia de tagging en GA4, validar antes de usar esos ingresos como oficiales.",
-        "Meta Ads (Windsor.ai) no reporta datos desde el 2026-08-03 — verificar la conexión del connector antes de tomar decisiones de pauta con estas cifras."
+        "4to día consecutivo sin leads nuevos en Kommo EC — validar si hay un problema de tracking/formulario o si es una baja real de tráfico calificado.",
+        "Meta Ads sin spend activo desde ~04/ago (campañas 'la piel colombia nuevo' y 'Seguidores MSV' en 0) — pauta pausada, revisar si es intencional."
       ],
       "recomendaciones_col": [
-        "0 pedidos en PrestaShop COL y 0 leads en Kommo COL en todo el día pese a 7 sesiones en GA4 — revisar fricción en el checkout o disponibilidad de stock.",
-        "Contífico no emitió documentos por bloqueo de firma electrónica (vigente desde 10/jul/2026) — no es una falla técnica del conector."
+        "COL sin leads, sin mensajería y sin sesiones GA4 registradas hasta las 10:30am — normal para la hora del corte, pero seguir de cerca en el cierre de las 6pm."
       ],
-      "parcial": false,
-      "nota_verificacion": "Corte de cierre 6pm — la fila de la mañana (corte 10:30am) no existe en daily-log.json (no corrió o falló), por lo que no hay comparativo mañana vs cierre para hoy; estos son los primeros y únicos números publicados del día 2026-08-10. Kommo EC/COL: 0 leads creados, 7 mensajes entrantes EC (0 salientes, sin pares para calcular lapso). Contífico: 0 documentos por bloqueo de firma electrónica, no es falla técnica. PrestaShop: EC 1 pedido pagado ($20.00, estado 10, no está en el set de estados inválidos), COL 0 pedidos — ambos confirmados con filtro paid=1 y sin filtrar, pedidos desde el dominio correspondiente. GA4: EC 7 usuarios/7 nuevos/7 sesiones, COL 5 usuarios/3 nuevos/7 sesiones; ecommerce_purchases=0 en ambos pese a 1 evento 'purchase' registrado en EC (discrepancia de tagging a validar, no confirmada como venta oficial). Meta Ads vía Windsor.ai: sin datos desde 2026-08-03 — gap del conector, se publican ceros en vez de inventar cifras."
+      "parcial": true,
+      "nota_verificacion": "CORTE DE MAÑANA (10:30am) — día en curso, números parciales. Se recuperaron automáticamente por backfill los días 8, 9 y 10 de agosto (sin ejecución previa: fin de semana + posible feriado/corrida fallida el lunes 10). Contífico registró 1 documento hoy ($30), rompiendo la racha de 32 días sin facturar por falta de firma electrónica (10/jul–10/ago) — confirmar si el bloqueo se resolvió o es un caso aislado. Meta Ads sin actividad en todo el período de backfill + hoy."
     }
   ],
   "periodic": [
