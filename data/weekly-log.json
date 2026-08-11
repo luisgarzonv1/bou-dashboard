@@ -604,6 +604,445 @@
         "funnel_kommo reutiliza el snapshot de kommo_funnel_ec/col del 2026-08-03 (ventana movil 30 dias) sin recalcular via API directa — antiguedad de 1 dia, dentro del umbral de 2 dias definido en la metodologia.",
         "Esta entrada reemplaza la version parcial de 2026-W31 generada el 31/jul (corte a mitad de semana, solo hasta el jueves) con la semana completa (lunes 27/jul a domingo 2/ago)."
       ]
+    },
+    {
+      "week_id": "2026-W32",
+      "week_start": "2026-08-03",
+      "week_end": "2026-08-09",
+      "week_start_prev": "2026-07-27",
+      "week_end_prev": "2026-08-02",
+      "generated_at": "2026-08-11",
+      "generated_note": "Semana completa (lunes 3/ago a domingo 9/ago), comparada contra la semana previa completa (27 jul - 2 ago). El agregado de daily-log.json mostro subestimacion severa de GA4 y Meta Ads esta semana; se uso Windsor.ai como fuente primaria de trafico y Meta Ads, escalando la recomendacion tecnica dejada en el reporte de la semana pasada (2026-W31).",
+      "headline": "Meta Ads se apaga (<em>-97%</em> de gasto) y Colombia se desploma <em>-91%</em> en trafico",
+      "headline_html": "Semana del <em>3</em> al 9 de agosto.",
+      "subtitle": "Reporte ejecutivo Ecuador + Colombia + Meta Ads, semana completa (3-9 ago) comparada contra la semana previa completa (27 jul - 2 ago).",
+      "resumen_lead": "Semana marcada por un recorte drastico en Meta Ads (-97.4% de gasto, de $607 a solo $15.90) que coincide con el desplome del trafico de Colombia (-91% en usuarios y sesiones, 0 pedidos pagados). Ecuador tambien retrocede pero de forma mas moderada. En paralelo, se resolvio el bloqueo de 25 dias en la firma electronica de Contifico, liberando $9,479 en documentos facturados. Los datos de trafico GA4 y Meta Ads de esta semana se tomaron directo de Windsor.ai porque el agregado diario mostro una subestimacion severa (ver hallazgos tecnicos).",
+      "resumen_insights": [
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "Meta Ads casi se apaga: gasto cae 97.4%",
+          "body": "Solo <strong>$15.90</strong> invertidos en toda la semana (vs $607.36 la semana previa), concentrados en un unico ad set activo. 1 compra atribuida por $26.07 (ROAS 1.64x), pero sobre un presupuesto marginal que ya no sostiene el volumen de trafico pagado."
+        },
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "Colombia se desploma -91% en trafico y 0 pedidos",
+          "body": "Usuarios GA4 caen de 2,376 a <strong>173</strong> (-92.7%), sesiones de 2,692 a 229 (-91.5%). <strong>0 pedidos PrestaShop pagados</strong> en toda la semana (vs 4 la anterior). Coincide directamente con el retiro del gasto en Meta Ads."
+        },
+        {
+          "tag": "opportunity",
+          "tagLabel": "Oportunidad",
+          "title": "Contifico se destrabo: $9,479 facturados",
+          "body": "El bloqueo de <strong>25 dias</strong> en la firma electronica reportado la semana pasada se resolvio el 7/ago, liberando 8 documentos por $9,479.27 — riesgo de acumulacion de pedidos sin facturar desactivado."
+        }
+      ],
+      "ecuador": {
+        "trafico": {
+          "ga4_usuarios": 136,
+          "ga4_sesiones": 170,
+          "ga4_ingresos_usd": 13.04,
+          "ga4_compras": 1,
+          "prev_ga4_usuarios": 193,
+          "prev_ga4_sesiones": 231,
+          "prev_ga4_ingresos_usd": -94.79,
+          "prev_ga4_compras": 5
+        },
+        "ventas": {
+          "prestashop_pedidos": 1,
+          "prestashop_total_usd": 20,
+          "prev_prestashop_pedidos": 7,
+          "prev_prestashop_total_usd": 252.99
+        },
+        "mensajeria": {
+          "entrantes": 79,
+          "salientes": 28,
+          "prev_entrantes": 88,
+          "prev_salientes": 66
+        },
+        "funnel_kommo": {
+          "total": 183,
+          "window_days": 30,
+          "leads_nuevos_kommo_api": 9,
+          "etapas": {
+            "Colaboraciones": 4,
+            "Leads perdidos": 11,
+            "Reacciones y Comentarios": 77,
+            "leads Tibios (interacción)": 36,
+            "Servicios Adicionales": 6,
+            "Leads ganados": 14,
+            "R.Comentarios Revisados": 12,
+            "Contacto inicial": 18,
+            "SPAM": 1,
+            "CAMBIOS Y DEVOLUCIONES": 2,
+            "Nueva consulta": 1,
+            "Por entregar": 1
+          }
+        },
+        "alerta": {
+          "label": "Atencion",
+          "text": "Ecuador tambien cae: pedidos PrestaShop -85.7% (7→1), usuarios GA4 -29.5% (193→136). El unico punto positivo es que el ingreso GA4 volvio a ser positivo (+$13.04) tras el reembolso neto negativo de la semana anterior (-$94.79)."
+        },
+        "ga4_eventos": [
+          {
+            "event_name": "page_view",
+            "event_count": 438
+          },
+          {
+            "event_name": "user_engagement",
+            "event_count": 261
+          },
+          {
+            "event_name": "session_start",
+            "event_count": 163
+          },
+          {
+            "event_name": "view_item_list",
+            "event_count": 141
+          },
+          {
+            "event_name": "scroll",
+            "event_count": 127
+          },
+          {
+            "event_name": "first_visit",
+            "event_count": 116
+          },
+          {
+            "event_name": "view_item",
+            "event_count": 87
+          },
+          {
+            "event_name": "form_start",
+            "event_count": 35
+          }
+        ],
+        "ga4_eventos_nota": "page_view: visita a una pagina. user_engagement: sesion activa con interaccion >10s. session_start: inicio de una sesion nueva. view_item_list: vio un listado/categoria de productos. scroll: hizo scroll en la pagina. first_visit: primera visita de un usuario nuevo. view_item: vio el detalle de un producto especifico. form_start: comenzo a llenar un formulario.",
+        "ga4_eventos_clave": [
+          {
+            "event_name": "begin_checkout",
+            "event_count": 18
+          },
+          {
+            "event_name": "add_to_cart",
+            "event_count": 10
+          },
+          {
+            "event_name": "purchase",
+            "event_count": 1
+          },
+          {
+            "event_name": "sign_up",
+            "event_count": 1
+          }
+        ],
+        "ga4_eventos_clave_nota": "begin_checkout: inicio el proceso de pago. add_to_cart: agrego un producto al carrito. purchase: completo una compra. sign_up: creo una cuenta nueva.",
+        "ga4_canales": [
+          {
+            "channel": "Organic Search",
+            "sessions": 54
+          },
+          {
+            "channel": "Organic Social",
+            "sessions": 49
+          },
+          {
+            "channel": "Direct",
+            "sessions": 45
+          },
+          {
+            "channel": "Referral",
+            "sessions": 20
+          },
+          {
+            "channel": "Paid Social",
+            "sessions": 1
+          },
+          {
+            "channel": "Unassigned",
+            "sessions": 1
+          }
+        ],
+        "ga4_articulos": [
+          {
+            "item_name": "CD LolabúmEl Cielo 10 Años",
+            "items_purchased": 1,
+            "item_revenue": 15
+          }
+        ]
+      },
+      "colombia": {
+        "trafico": {
+          "ga4_usuarios": 173,
+          "ga4_sesiones": 229,
+          "ga4_ingresos_usd": 117.28,
+          "ga4_compras": 3,
+          "prev_ga4_usuarios": 2376,
+          "prev_ga4_sesiones": 2692,
+          "prev_ga4_ingresos_usd": 228.24,
+          "prev_ga4_compras": 7
+        },
+        "ventas": {
+          "prestashop_pedidos": 0,
+          "prestashop_total_cop": 0,
+          "prev_prestashop_pedidos": 4,
+          "prev_prestashop_total_cop": 545100
+        },
+        "mensajeria": {
+          "entrantes": 13,
+          "salientes": 7,
+          "prev_entrantes": 8,
+          "prev_salientes": 5
+        },
+        "funnel_kommo": {
+          "total": 6,
+          "window_days": 30,
+          "leads_nuevos_kommo_api": 0,
+          "etapas": {
+            "Ventas Perdidos": 1,
+            "Logrado con éxito": 2,
+            "Por entregar": 1,
+            "CAMBIOS Y DEVOLUCIONES": 1,
+            "Nueva consulta": 1
+          }
+        },
+        "alerta": {
+          "label": "Alerta critica",
+          "text": "Colombia se desploma en todos los frentes: usuarios GA4 -92.7% (2,376→173), sesiones -91.5% (2,692→229), ingresos GA4 -48.6% ($228→$117), 0 pedidos PrestaShop pagados en toda la semana (vs 4 la semana anterior). Coincide con el retiro del 97% del gasto en Meta Ads."
+        },
+        "ga4_eventos": [
+          {
+            "event_name": "page_view",
+            "event_count": 656
+          },
+          {
+            "event_name": "user_engagement",
+            "event_count": 474
+          },
+          {
+            "event_name": "view_item_list",
+            "event_count": 225
+          },
+          {
+            "event_name": "scroll",
+            "event_count": 225
+          },
+          {
+            "event_name": "session_start",
+            "event_count": 219
+          },
+          {
+            "event_name": "view_item",
+            "event_count": 201
+          },
+          {
+            "event_name": "first_visit",
+            "event_count": 145
+          },
+          {
+            "event_name": "form_start",
+            "event_count": 68
+          }
+        ],
+        "ga4_eventos_nota": "page_view: visita a una pagina. user_engagement: sesion activa con interaccion >10s. view_item_list: vio un listado/categoria de productos. scroll: hizo scroll en la pagina. session_start: inicio de una sesion nueva. view_item: vio el detalle de un producto especifico. first_visit: primera visita de un usuario nuevo. form_start: comenzo a llenar un formulario.",
+        "ga4_eventos_clave": [
+          {
+            "event_name": "begin_checkout",
+            "event_count": 22
+          },
+          {
+            "event_name": "add_to_cart",
+            "event_count": 16
+          },
+          {
+            "event_name": "purchase",
+            "event_count": 3
+          },
+          {
+            "event_name": "sign_up",
+            "event_count": 2
+          }
+        ],
+        "ga4_eventos_clave_nota": "begin_checkout: inicio el proceso de pago. add_to_cart: agrego un producto al carrito. purchase: completo una compra. sign_up: creo una cuenta nueva.",
+        "ga4_canales": [
+          {
+            "channel": "Paid Social",
+            "sessions": 65
+          },
+          {
+            "channel": "Direct",
+            "sessions": 60
+          },
+          {
+            "channel": "Organic Social",
+            "sessions": 48
+          },
+          {
+            "channel": "Organic Search",
+            "sessions": 47
+          },
+          {
+            "channel": "Referral",
+            "sessions": 8
+          },
+          {
+            "channel": "AI Assistant",
+            "sessions": 1
+          }
+        ],
+        "ga4_articulos": [
+          {
+            "item_name": "LA PIEL NICOLÁS Y LOS FUMADORES",
+            "items_purchased": 2,
+            "item_revenue": 0
+          },
+          {
+            "item_name": "Tote Bag NO ES TRABAJO – Limited Edition",
+            "items_purchased": 1,
+            "item_revenue": 0
+          }
+        ],
+        "ga4_articulos_nota": "3ra semana consecutiva con item_revenue=$0 en todos los articulos de Colombia en GA4, pese a que el ingreso total de compra si se registra ($117.28 segun Windsor.ai). Bug de tracking a nivel de item no resuelto, escalar con prioridad alta."
+      },
+      "ads": {
+        "meta_spend_usd": 15.9,
+        "meta_compras": 1,
+        "meta_ingresos_usd": 26.07,
+        "meta_roas": 1.64,
+        "meta_cpa_usd": 15.9,
+        "meta_impresiones": 13476,
+        "meta_alcance": 10859,
+        "meta_clics": 155,
+        "meta_link_clics": 94,
+        "meta_ctr": 1.15,
+        "meta_frecuencia": 1.241,
+        "prev_meta_spend_usd": 607.36,
+        "prev_meta_compras": 1,
+        "prev_meta_ingresos_usd": 67.41,
+        "prev_meta_roas": 0.111,
+        "prev_meta_impresiones": 369906,
+        "prev_meta_alcance": 243802,
+        "prev_meta_clics": 5303,
+        "eficiencia": {
+          "ctr": 1.15,
+          "cpm": 1.18,
+          "cpc": 0.1,
+          "freq_max": 1.241,
+          "freq_max_adset": "publico segmentado - Copia",
+          "cpa": 15.9,
+          "note": "Solo 1 ad set activo esta semana (vs multiples semanas previas), consolidacion drastica de la cuenta. Frecuencia de 1.24x, sin senales de fatiga de audiencia (muy por debajo del 10.74x de la semana con alerta). El gasto cayo 97.4% vs la semana anterior."
+        },
+        "ad_sets": [
+          {
+            "adset_name": "publico segmentado - Copia",
+            "campaign_name": "la piel colombia nuevo",
+            "status": "ACTIVE",
+            "spend": 15.9,
+            "impressions": 13476,
+            "reach": 10859,
+            "frequency": 1.241,
+            "purchases": 1
+          }
+        ],
+        "nota": "Windsor.ai (ad set) usado como fuente primaria: el agregado diario solo capturo gasto real el lunes 3/ago ($14.85) y no reflejo la unica compra de la semana; Windsor.ai (consulta directa por ad set, semana completa) da $15.90 de gasto y 1 compra ($26.07)."
+      },
+      "hallazgos_tecnicos": [
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "daily-log.json subestima trafico GA4 de forma severa esta semana",
+          "body": "Windsor.ai (consulta directa) da <strong>136 usuarios/170 sesiones</strong> en Ecuador y <strong>173 usuarios/229 sesiones</strong> en Colombia, vs el agregado de daily-log.json que da solo 65/71 (EC) y 49/55 (COL) — el agregado diario tambien reporto <strong>$0 de ingresos y 0 compras</strong> en Colombia cuando en realidad hubo $117.28 y 3 compras.",
+          "action": "Migrar el corte diario de GA4/Meta a Windsor.ai como fuente primaria (no solo para el reporte semanal) o mover el corte a fin de dia para evitar el rezago de reporting."
+        },
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "item_revenue=$0 en GA4 Colombia, 3ra semana consecutiva sin resolver",
+          "body": "Los 3 articulos comprados esta semana en Colombia (LA PIEL NICOLAS Y LOS FUMADORES x2, Tote Bag x1) registran <strong>item_revenue=$0</strong> en GA4, igual que las 2 semanas anteriores, pese a que el ingreso total de compra si se registra ($117.28).",
+          "action": "Escalar con prioridad alta al equipo de desarrollo web — revisar el evento 'purchase' y el parametro 'value' a nivel de item en el datalayer de co.bouentertainment.com."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "Atencion",
+          "title": "Snapshot de Kommo funnel solo confiable el dia de la corrida (11/ago)",
+          "body": "El campo 'funnel_kommo' diario (2-6 leads por dia) no corresponde al snapshot rolling de 30 dias esperado; se uso en su lugar 'kommo_funnel_ec/col' del dia de hoy (0 dias de antiguedad) en vez de reusar un snapshot de mas de 2 dias.",
+          "action": "Confirmar con el equipo tecnico cual es el campo correcto y consolidar a uno solo para evitar ambiguedad en corridas futuras."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "Atencion",
+          "title": "leads_nuevos_kommo_api Colombia = 0 por segunda semana consecutiva",
+          "body": "Pese a que Colombia genero 3 compras y actividad de mensajeria en la semana, el conteo de leads nuevos via API se mantiene en 0 — posible gap de tracking, no necesariamente ausencia real de leads.",
+          "action": "Verificar el pipeline_id de Colombia (13432788) y el filtro de fecha de creacion usado para contar leads nuevos."
+        }
+      ],
+      "hallazgos_ventas": [
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "Colombia sin ventas: 0 pedidos PrestaShop en 7 dias",
+          "body": "De 4 pedidos ($545,100 COP) la semana anterior a <strong>0 pedidos</strong> esta semana. Coincide con el desplome de trafico y el recorte de gasto en Meta Ads.",
+          "action": "Revisar con el equipo comercial COL si hay un problema operativo (stock, checkout, pasarela de pago) ademas de la caida de trafico."
+        },
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "Gasto en Meta Ads cae 97.4% en la misma semana que Colombia se desploma",
+          "body": "De $607.36 a $15.90, con un solo ad set activo. La correlacion temporal con la caida de trafico y ventas de Colombia es directa: ¿fue un recorte deliberado de presupuesto o un problema de cuenta/pago?",
+          "action": "Confirmar con el equipo de Ads si el recorte fue intencional; si no, restaurar el gasto lo antes posible."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "Atencion",
+          "title": "Ecuador retrocede pero de forma mas moderada",
+          "body": "Pedidos PrestaShop -85.7% (7→1), usuarios GA4 -29.5% (193→136). El ingreso GA4 si volvio a ser positivo (+$13.04) tras el neto negativo de la semana anterior por reembolsos (-$94.79)."
+        },
+        {
+          "tag": "opportunity",
+          "tagLabel": "Oportunidad",
+          "title": "Contifico resuelto: riesgo de acumulacion desactivado",
+          "body": "8 documentos por $9,479.27 facturados el 7/ago tras 25 dias de bloqueo por falta de firma electronica — el cuello de botella reportado la semana pasada ya no esta activo."
+        }
+      ],
+      "acciones": [
+        {
+          "title": "Confirmar si el recorte de 97% en Meta Ads fue deliberado",
+          "body": "Gasto cayo de $607 a $15.90 en la misma semana que Colombia se desplomo -91% en trafico. Si no fue intencional, restaurar el presupuesto de inmediato.",
+          "owner": "CEO / Ads",
+          "timing": "Urgente, hoy"
+        },
+        {
+          "title": "Investigar la caida operativa de Colombia (0 pedidos en 7 dias)",
+          "body": "Revisar stock, checkout y pasarela de pago de co.bouentertainment.com ademas del trafico pagado.",
+          "owner": "Operaciones / Comercial COL",
+          "timing": "Esta semana"
+        },
+        {
+          "title": "Escalar (3ra vez) el fix de item_revenue=$0 en GA4 Colombia",
+          "body": "2 semanas de escalamiento previo sin resolver; dificulta medir performance real por producto.",
+          "owner": "Web / Desarrollo",
+          "timing": "Proximos dias"
+        },
+        {
+          "title": "Verificar el gap de leads_nuevos_kommo_api en Colombia",
+          "body": "Se mantiene en 0 pese a actividad comercial real (3 compras esta semana).",
+          "owner": "CRM / Operaciones",
+          "timing": "Esta semana"
+        },
+        {
+          "title": "Consolidar el campo de snapshot del funnel Kommo en el pipeline diario",
+          "body": "Confusion entre 'funnel_kommo' (diario, delgado) y 'kommo_funnel_ec/col' (snapshot 30 dias) genera ambiguedad en las corridas semanales.",
+          "owner": "Tecnologia / Datos",
+          "timing": "Proximos dias"
+        }
+      ],
+      "notas_verificacion": [
+        "Semana actual (3-9 ago) con datos completos de daily-log.json (7/7 dias).",
+        "Trafico GA4 (usuarios/sesiones/ingresos/compras) de EC y COL tomado directo de Windsor.ai en vez de daily-log.json — el agregado diario subestimo severamente esta semana (ver hallazgos tecnicos). Se aplico el mismo criterio a la semana previa para mantener la comparacion consistente.",
+        "Meta Ads: mismo criterio — se uso el detalle por ad set de Windsor.ai ($15.90, 1 compra) en vez del agregado diario ($14.85, 0 compras), que no capturo la unica compra de la semana.",
+        "Kommo funnel: se uso el snapshot del 11/ago (0 dias de antiguedad) por ser mas reciente que el disponible previamente (7/ago, ya con 4 dias).",
+        "Colombia: leads_nuevos_kommo_api=0 no se interpreta como ausencia real de leads nuevos, dado que hubo actividad comercial (compras, mensajeria) en la semana — ver hallazgo tecnico."
+      ]
     }
   ]
 }
