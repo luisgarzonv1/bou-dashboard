@@ -9430,19 +9430,19 @@
       "date": "2026-08-11",
       "kommo_leads_ec": 0,
       "kommo_leads_col": 0,
-      "kommo_msj_entrantes_ec": 2,
-      "kommo_msj_salientes_ec": 1,
+      "kommo_msj_entrantes_ec": 15,
+      "kommo_msj_salientes_ec": 10,
       "kommo_msj_entrantes_col": 0,
-      "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_ec_s": null,
+      "kommo_msj_salientes_col": 1,
+      "kommo_lapso_medio_ec_s": 356,
       "kommo_lapso_medio_col_s": null,
       "kommo_funnel_ec": {
-        "total": 183,
+        "total": 181,
         "byStatus": {
           "Colaboraciones": 4,
           "Leads perdidos": 11,
-          "Reacciones y Comentarios": 77,
-          "leads Tibios (interacción)": 36,
+          "Reacciones y Comentarios": 75,
+          "leads Tibios (interacción)": 34,
           "Servicios Adicionales": 6,
           "Leads ganados": 14,
           "R.Comentarios Revisados": 12,
@@ -9450,16 +9450,17 @@
           "SPAM": 1,
           "CAMBIOS Y DEVOLUCIONES": 2,
           "Nueva consulta": 1,
-          "Por entregar": 1
+          "Por entregar": 1,
+          "leads Calientes (datos bancarios)": 2
         },
         "window_days": 30
       },
       "kommo_funnel_col": {
-        "total": 6,
+        "total": 7,
         "byStatus": {
           "Ventas Perdidos": 1,
           "Logrado con éxito": 2,
-          "Por entregar": 1,
+          "Por entregar": 2,
           "CAMBIOS Y DEVOLUCIONES": 1,
           "Nueva consulta": 1
         },
@@ -9470,23 +9471,23 @@
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 2,
-        "salientes": 1,
+        "entrantes": 15,
+        "salientes": 11,
         "lapso_promedio_s": null,
-        "lapso_mediana_s": null
+        "lapso_mediana_s": 356
       },
       "contifico_documentos": 1,
       "contifico_total_usd": 30,
       "contifico_fuente_caida": false,
-      "prestashop_pedidos_ec": 0,
-      "prestashop_total_ec_usd": 0,
-      "prestashop_pedidos_ec_todos_estados": 1,
+      "prestashop_pedidos_ec": 2,
+      "prestashop_total_ec_usd": 70,
+      "prestashop_pedidos_ec_todos_estados": 2,
       "prestashop_pedidos_col": 0,
       "prestashop_total_col_cop": 0,
       "prestashop_pedidos_col_todos_estados": 0,
-      "ga4_usuarios_ec": 2,
-      "ga4_usuarios_nuevos_ec": 2,
-      "ga4_sesiones_ec": 2,
+      "ga4_usuarios_ec": 6,
+      "ga4_usuarios_nuevos_ec": 6,
+      "ga4_sesiones_ec": 6,
       "ga4_ingresos_ec_usd": 0,
       "ga4_compras_ec": 0,
       "ga4_usuarios_col": 0,
@@ -9497,10 +9498,14 @@
       "ga4_canales": {
         "ec": {
           "Direct": {
+            "sessions": 4,
+            "active_users": 4
+          },
+          "Organic Social": {
             "sessions": 1,
             "active_users": 1
           },
-          "Organic Social": {
+          "Referral": {
             "sessions": 1,
             "active_users": 1
           }
@@ -9509,7 +9514,12 @@
       },
       "ga4_eventos_clave": {
         "ec": {
-          "view_item": 2
+          "form_submit": 4,
+          "add_shipping_info": 3,
+          "view_item": 3,
+          "add_payment_info": 2,
+          "begin_checkout": 2,
+          "sign_up": 1
         },
         "col": {}
       },
@@ -9525,15 +9535,6 @@
       "meta_roas": null,
       "meta_cpa": null,
       "ads_ad_sets": [],
-      "recomendaciones_ec": [
-        "4to día consecutivo sin leads nuevos en Kommo EC — validar si hay un problema de tracking/formulario o si es una baja real de tráfico calificado.",
-        "Meta Ads sin spend activo desde ~04/ago (campañas 'la piel colombia nuevo' y 'Seguidores MSV' en 0) — pauta pausada, revisar si es intencional."
-      ],
-      "recomendaciones_col": [
-        "COL sin leads, sin mensajería y sin sesiones GA4 registradas hasta las 10:30am — normal para la hora del corte, pero seguir de cerca en el cierre de las 6pm."
-      ],
-      "parcial": true,
-      "nota_verificacion": "CORTE DE MAÑANA (10:30am) — día en curso, números parciales. Se recuperaron automáticamente por backfill los días 8, 9 y 10 de agosto (sin ejecución previa: fin de semana + posible feriado/corrida fallida el lunes 10). Contífico registró 1 documento hoy ($30), rompiendo la racha de 32 días sin facturar por falta de firma electrónica (10/jul–10/ago) — confirmar si el bloqueo se resolvió o es un caso aislado. Meta Ads sin actividad en todo el período de backfill + hoy.",
       "inventario_por_artista": {
         "Machaka": {
           "cantidad": 15,
@@ -9576,8 +9577,8 @@
           "monto_pvp": 3860.23
         },
         "SED": {
-          "cantidad": 71,
-          "monto_pvp": 1460.06
+          "cantidad": 70,
+          "monto_pvp": 1438.32
         },
         "JATUN MAMA": {
           "cantidad": 46,
@@ -9596,8 +9597,8 @@
           "monto_pvp": 92.17
         },
         "Nasa": {
-          "cantidad": 20,
-          "monto_pvp": 20
+          "cantidad": 19,
+          "monto_pvp": 19
         },
         "Alex Eugenio": {
           "cantidad": 18,
@@ -9646,8 +9647,8 @@
       },
       "inventario_por_bodega": {
         "Bodega EMPRESAS EN CONSIGNACIÓN": {
-          "cantidad": 1396,
-          "monto_pvp": 12869.72
+          "cantidad": 1395,
+          "monto_pvp": 12847.98
         },
         "EVENTOS BOU": {
           "cantidad": 125,
@@ -9672,349 +9673,190 @@
         "CHULLA VIDA": {
           "cantidad": 51,
           "monto_pvp": 1108.7
+        },
+        "Bodega BOU COMPANY": {
+          "cantidad": -1,
+          "monto_pvp": -1
         }
       },
       "inventario_total": {
-        "cantidad": 1805,
-        "monto_pvp": 22804.44
+        "cantidad": 1803,
+        "monto_pvp": 22781.7
       },
-      "inventario_alertas_pvp": [
-        "Nasa (PVP sin cargar o placeholder en Contífico)",
-        "Alex Eugenio (PVP sin cargar en Contífico)",
-        "Obrero Del Ritmo (PVP sin cargar en Contífico)"
-      ],
       "inventario_matriz": {
         "Machaka": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 2,
-            "monto_pvp": 33.04
-          },
-          "EVENTOS BOU": {
-            "cantidad": 10,
-            "monto_pvp": 231.3
-          },
-          "Bodega España": {
-            "cantidad": 3,
-            "monto_pvp": 33.91
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 2,
+          "EVENTOS BOU": 10,
+          "Bodega España": 3
         },
         "BE Bou": {
-          "EVENTOS BOU": {
-            "cantidad": 50,
-            "monto_pvp": 1343.48
-          },
-          "SHOWROOM": {
-            "cantidad": 17,
-            "monto_pvp": 526.09
-          },
-          "Bodega Prestamos": {
-            "cantidad": 10,
-            "monto_pvp": 282.61
-          },
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 632,
-            "monto_pvp": 626.09
-          },
-          "Bodega España": {
-            "cantidad": 13,
-            "monto_pvp": 456.52
-          }
+          "EVENTOS BOU": 50,
+          "SHOWROOM": 17,
+          "Bodega Prestamos": 10,
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 632,
+          "Bodega España": 13
         },
         "Nicolás y los Fumadores": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 35,
-            "monto_pvp": 378.48
-          },
-          "SHOWROOM": {
-            "cantidad": 10,
-            "monto_pvp": 109.78
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 35,
+          "SHOWROOM": 10
         },
         "Verde70": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 26,
-            "monto_pvp": 408.7
-          },
-          "SHOWROOM": {
-            "cantidad": 6,
-            "monto_pvp": 130.43
-          },
-          "EVENTOS BOU": {
-            "cantidad": 13,
-            "monto_pvp": 386.94
-          },
-          "Bodega España": {
-            "cantidad": 8,
-            "monto_pvp": 227.81
-          },
-          "Bodega Prestamos": {
-            "cantidad": 1,
-            "monto_pvp": 39.12
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 26,
+          "SHOWROOM": 6,
+          "EVENTOS BOU": 13,
+          "Bodega España": 8,
+          "Bodega Prestamos": 1
         },
         "Ácido Pantera": {
-          "SHOWROOM": {
-            "cantidad": 1,
-            "monto_pvp": 46.09
-          }
+          "SHOWROOM": 1
         },
         "Crudo Means Raw": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 14,
-            "monto_pvp": 694.78
-          },
-          "SHOWROOM": {
-            "cantidad": 2,
-            "monto_pvp": 108.7
-          },
-          "Bodega Prestamos": {
-            "cantidad": 1,
-            "monto_pvp": 62.61
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 14,
+          "SHOWROOM": 2,
+          "Bodega Prestamos": 1
         },
         "Don Medardo": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 36,
-            "monto_pvp": 915.65
-          },
-          "SHOWROOM": {
-            "cantidad": 9,
-            "monto_pvp": 203.48
-          },
-          "Bodega España": {
-            "cantidad": 14,
-            "monto_pvp": 300.87
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 36,
+          "SHOWROOM": 9,
+          "Bodega España": 14
         },
         "Aterciopelados": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 7,
-            "monto_pvp": 130.44
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 7
         },
         "FIEBRE": {
-          "SHOWROOM": {
-            "cantidad": 2,
-            "monto_pvp": 52.17
-          },
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 8,
-            "monto_pvp": 200
-          }
+          "SHOWROOM": 2,
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 8
         },
         "BE Guanaco": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 166,
-            "monto_pvp": 2621.65
-          },
-          "Bodega España": {
-            "cantidad": 6,
-            "monto_pvp": 182.61
-          },
-          "SHOWROOM": {
-            "cantidad": 4,
-            "monto_pvp": 126.09
-          },
-          "EVENTOS BOU": {
-            "cantidad": 22,
-            "monto_pvp": 799.9
-          },
-          "Bodega BOU ENTERTAINMENT CONSIGNACIÓN": {
-            "cantidad": 2,
-            "monto_pvp": 51.74
-          },
-          "Bodega Prestamos": {
-            "cantidad": 2,
-            "monto_pvp": 78.24
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 166,
+          "Bodega España": 6,
+          "SHOWROOM": 4,
+          "EVENTOS BOU": 22,
+          "Bodega BOU ENTERTAINMENT CONSIGNACIÓN": 2,
+          "Bodega Prestamos": 2
         },
         "SED": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 24,
-            "monto_pvp": 521.76
-          },
-          "SHOWROOM": {
-            "cantidad": 7,
-            "monto_pvp": 152.18
-          },
-          "EVENTOS BOU": {
-            "cantidad": 29,
-            "monto_pvp": 578.29
-          },
-          "Bodega España": {
-            "cantidad": 11,
-            "monto_pvp": 207.83
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 23,
+          "SHOWROOM": 7,
+          "EVENTOS BOU": 29,
+          "Bodega España": 11
         },
         "JATUN MAMA": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 44,
-            "monto_pvp": 1071.3
-          },
-          "SHOWROOM": {
-            "cantidad": 2,
-            "monto_pvp": 48.7
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 44,
+          "SHOWROOM": 2
         },
         "DE lA TORRE": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 22,
-            "monto_pvp": 535.65
-          },
-          "SHOWROOM": {
-            "cantidad": 2,
-            "monto_pvp": 48.7
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 22,
+          "SHOWROOM": 2
         },
         "BE Miel": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 7,
-            "monto_pvp": 152.17
-          },
-          "Bodega Prestamos": {
-            "cantidad": 8,
-            "monto_pvp": 191.3
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 7,
+          "Bodega Prestamos": 8
         },
         "Margarita Siempre Viva": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 1,
-            "monto_pvp": 46.09
-          },
-          "SHOWROOM": {
-            "cantidad": 1,
-            "monto_pvp": 46.09
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 1,
+          "SHOWROOM": 1
         },
         "Nasa": {
-          "Bodega Prestamos": {
-            "cantidad": 20,
-            "monto_pvp": 20
-          }
+          "Bodega Prestamos": 20,
+          "Bodega BOU COMPANY": -1
         },
         "Alex Eugenio": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 18,
-            "monto_pvp": 0
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 18
         },
         "Lolabum": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 214,
-            "monto_pvp": 1640
-          },
-          "SHOWROOM": {
-            "cantidad": 4,
-            "monto_pvp": 54.35
-          },
-          "Bodega Prestamos": {
-            "cantidad": 1,
-            "monto_pvp": 39.12
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 214,
+          "SHOWROOM": 4,
+          "Bodega Prestamos": 1
         },
         "BE Dieztro": {
-          "Bodega España": {
-            "cantidad": 3,
-            "monto_pvp": 208.7
-          }
+          "Bodega España": 3
         },
         "Warax": {
-          "Bodega España": {
-            "cantidad": 1,
-            "monto_pvp": 26.09
-          }
+          "Bodega España": 1
         },
         "Máquina Camaleón": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 6,
-            "monto_pvp": 130.43
-          },
-          "SHOWROOM": {
-            "cantidad": 2,
-            "monto_pvp": 65.22
-          },
-          "EVENTOS BOU": {
-            "cantidad": 1,
-            "monto_pvp": 21.74
-          },
-          "Bodega España": {
-            "cantidad": 1,
-            "monto_pvp": 21.74
-          },
-          "Bodega Prestamos": {
-            "cantidad": 1,
-            "monto_pvp": 39.12
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 6,
+          "SHOWROOM": 2,
+          "EVENTOS BOU": 1,
+          "Bodega España": 1,
+          "Bodega Prestamos": 1
         },
         "Máximo Escaleras": {
-          "CHULLA VIDA": {
-            "cantidad": 51,
-            "monto_pvp": 1108.7
-          },
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 83,
-            "monto_pvp": 1804.35
-          },
-          "Bodega España": {
-            "cantidad": 26,
-            "monto_pvp": 565.22
-          },
-          "SHOWROOM": {
-            "cantidad": 6,
-            "monto_pvp": 130.43
-          }
+          "CHULLA VIDA": 51,
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 83,
+          "Bodega España": 26,
+          "SHOWROOM": 6
         },
         "MELINA": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 5,
-            "monto_pvp": 96.52
-          },
-          "SHOWROOM": {
-            "cantidad": 1,
-            "monto_pvp": 26.09
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 5,
+          "SHOWROOM": 1
         },
         "Obrero Del Ritmo": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 6,
-            "monto_pvp": 0
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 6
         },
         "Santa Muerte": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 14,
-            "monto_pvp": 402.17
-          },
-          "SHOWROOM": {
-            "cantidad": 5,
-            "monto_pvp": 126.3
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 14,
+          "SHOWROOM": 5
         },
         "StartupGrind": {
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 10,
-            "monto_pvp": 217.39
-          },
-          "SHOWROOM": {
-            "cantidad": 8,
-            "monto_pvp": 173.91
-          }
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 10,
+          "SHOWROOM": 8
         },
         "SWING ORIGINAL MONKS": {
-          "Bodega España": {
-            "cantidad": 7,
-            "monto_pvp": 194.35
-          },
-          "Bodega EMPRESAS EN CONSIGNACIÓN": {
-            "cantidad": 16,
-            "monto_pvp": 243.04
-          },
-          "SHOWROOM": {
-            "cantidad": 5,
-            "monto_pvp": 60.09
-          }
+          "Bodega España": 7,
+          "Bodega EMPRESAS EN CONSIGNACIÓN": 16,
+          "SHOWROOM": 5
         }
-      }
+      },
+      "inventario_alertas_pvp": [
+        {
+          "artista": "BE Bou",
+          "productos_con_pvp_0": 3,
+          "total_productos": 39,
+          "tipo": "algunos_productos_en_pvp_0"
+        },
+        {
+          "artista": "Verde70",
+          "productos_con_pvp_0": 1,
+          "total_productos": 28,
+          "tipo": "algunos_productos_en_pvp_0"
+        },
+        {
+          "artista": "Aterciopelados",
+          "productos_con_pvp_0": 1,
+          "total_productos": 4,
+          "tipo": "algunos_productos_en_pvp_0"
+        },
+        {
+          "artista": "BE Guanaco",
+          "productos_con_pvp_0": 2,
+          "total_productos": 17,
+          "tipo": "algunos_productos_en_pvp_0"
+        },
+        {
+          "artista": "Alex Eugenio",
+          "productos_con_pvp_0": 1,
+          "total_productos": 1,
+          "tipo": "todo_el_stock_en_pvp_0"
+        },
+        {
+          "artista": "Obrero Del Ritmo",
+          "productos_con_pvp_0": 6,
+          "total_productos": 6,
+          "tipo": "todo_el_stock_en_pvp_0"
+        }
+      ],
+      "recomendaciones_ec": [
+        "4to día consecutivo sin leads nuevos en Kommo EC — validar si hay un problema de tracking/formulario o si es una baja real de tráfico calificado; hoy tampoco entraron leads nuevos pese a 25 mensajes de chat (15 entrantes, 10 salientes).",
+        "Meta Ads sin spend activo en todo el día (0 impresiones, 0 clics) — pauta sigue pausada, confirmar con el equipo de marketing si es intencional antes de perder más días de alcance.",
+        "6 artistas con productos en PVP $0 (ej. 'Obrero Del Ritmo' con TODO su stock en $0, 'Alex Eugenio' igual) — revisar y corregir precios antes de que afecte ventas online."
+      ],
+      "recomendaciones_col": [
+        "COL cerró el día sin leads nuevos, sin sesiones GA4 y sin pedidos PrestaShop — mensajería casi nula (0 entrantes, 1 saliente). Canal prácticamente inactivo hoy, evaluar si vale la pena mantener pauta/atención dedicada mientras no haya tracción."
+      ],
+      "parcial": false,
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Comparativo vs mañana: PrestaShop EC pasó de 0 a 2 pedidos ($70), Contífico se mantuvo en 1 documento ($30, sin cambios desde la mañana), GA4 EC subió de 2 a 6 usuarios/6 sesiones (aún sin compras), Kommo EC/COL siguió en 0 leads nuevos todo el día, mensajería EC subió de 2 entrantes/1 saliente (parcial) a 15/10 finales. Meta Ads sin actividad en todo el día. Inventario vendible bajó levemente de 1805 a 1803 unidades ($22,804.44 → $22,781.70 PVP) por las 2 ventas del día. Se detectaron 6 artistas con productos en PVP $0, incluir en seguimiento."
     }
   ],
   "periodic": [
