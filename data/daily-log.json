@@ -11372,60 +11372,62 @@
     },
     {
       "date": "2026-08-12",
-      "kommo_leads_ec": 0,
+      "kommo_leads_ec": 1,
       "kommo_leads_col": 0,
-      "kommo_msj_entrantes_ec": 2,
-      "kommo_msj_salientes_ec": 0,
-      "kommo_msj_entrantes_col": 1,
-      "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_ec_s": null,
-      "kommo_lapso_medio_col_s": null,
+      "kommo_msj_entrantes_ec": 20,
+      "kommo_msj_salientes_ec": 17,
+      "kommo_msj_entrantes_col": 17,
+      "kommo_msj_salientes_col": 21,
+      "kommo_lapso_medio_ec_s": 310,
+      "kommo_lapso_medio_col_s": 239,
       "kommo_funnel_ec": {
-        "total": 173,
+        "total": 180,
         "byStatus": {
-          "Colaboraciones": 4,
-          "Leads perdidos": 10,
-          "Reacciones y Comentarios": 70,
+          "Colaboraciones": 5,
+          "Leads perdidos": 11,
+          "Reacciones y Comentarios": 73,
           "leads Tibios (interacción)": 34,
-          "Servicios Adicionales": 6,
+          "Servicios Adicionales": 7,
           "Leads ganados": 13,
-          "R.Comentarios Revisados": 12,
-          "Contacto inicial": 17,
+          "R.Comentarios Revisados": 13,
+          "Contacto inicial": 18,
           "SPAM": 1,
           "CAMBIOS Y DEVOLUCIONES": 2,
-          "Nueva consulta": 1,
           "leads Calientes (datos bancarios)": 2,
           "Por entregar": 1
         },
-        "win_rate": 7.5,
+        "window_days": 30,
         "won": 13,
-        "lost": 10
+        "lost": 11,
+        "win_rate": 7.2
       },
       "kommo_funnel_col": {
         "total": 9,
         "byStatus": {
           "Ventas Perdidos": 1,
-          "Logrado con éxito": 3,
-          "Por entregar": 3,
-          "Nueva consulta": 1,
+          "Logrado con éxito": 5,
+          "Por entregar": 2,
           "CAMBIOS Y DEVOLUCIONES": 1
         },
-        "win_rate": 33.3,
-        "won": 3,
-        "lost": 1
+        "window_days": 30,
+        "won": 5,
+        "lost": 1,
+        "win_rate": 55.6
       },
       "funnel_kommo": {
-        "ec": {},
+        "ec": {
+          "Servicios Adicionales": 1
+        },
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 3,
-        "salientes": 0,
-        "lapso_promedio_s": null,
-        "lapso_mediana_s": null
+        "entrantes": 37,
+        "salientes": 38,
+        "lapso_promedio_s": 2613,
+        "lapso_mediana_s": 290
       },
-      "contifico_documentos": 0,
-      "contifico_total_usd": 0,
+      "contifico_documentos": 1,
+      "contifico_total_usd": 50,
       "contifico_fuente_caida": false,
       "prestashop_pedidos_ec": 0,
       "prestashop_total_ec_usd": 0,
@@ -11433,23 +11435,30 @@
       "prestashop_pedidos_col": 0,
       "prestashop_total_col_cop": 0,
       "prestashop_pedidos_col_todos_estados": 0,
-      "ga4_usuarios_ec": 0,
-      "ga4_usuarios_nuevos_ec": 0,
-      "ga4_sesiones_ec": 0,
+      "ga4_usuarios_ec": 2,
+      "ga4_usuarios_nuevos_ec": 1,
+      "ga4_sesiones_ec": 2,
       "ga4_ingresos_ec_usd": 0,
       "ga4_compras_ec": 0,
-      "ga4_usuarios_col": 0,
-      "ga4_usuarios_nuevos_col": 0,
-      "ga4_sesiones_col": 0,
+      "ga4_usuarios_col": 2,
+      "ga4_usuarios_nuevos_col": 1,
+      "ga4_sesiones_col": 2,
       "ga4_ingresos_col_usd": 0,
       "ga4_compras_col": 0,
       "ga4_canales": {
-        "ec": {},
-        "col": {}
+        "ec": {
+          "Direct": 2
+        },
+        "col": {
+          "Direct": 1,
+          "Organic Search": 1
+        }
       },
       "ga4_eventos_clave": {
         "ec": {},
-        "col": {}
+        "col": {
+          "view_item": 1
+        }
       },
       "ga4_articulos": {},
       "meta_spend_usd": 0,
@@ -12054,16 +12063,18 @@
         "StartupGrind: sus 11 productos con stock tienen el mismo PVP plano ($21.73913) — posible dato sin cargar"
       ],
       "recomendaciones_ec": [
-        "Kommo EC sin leads nuevos hoy (0) y sin salientes de chat aun -- normal a esta hora del corte de manana (10:30am), revisar en el cierre de las 6pm si persiste.",
-        "Meta Ads sigue sin spend activo (0 impresiones en los ultimos 7 dias) -- confirmar con marketing si la pauta sigue pausada intencionalmente.",
-        "Inventario vendible BE: 35.863 unidades por $22.781,70 en valor PVP -- 14 artistas con posibles problemas de PVP cargado, revisar catalogo en Contifico."
+        "Kommo EC cerró el día con 1 lead nuevo y mensajería activa (20 entrantes / 17 salientes), lapso de respuesta mediana ~5 min (310s) -- buen tiempo de atención.",
+        "Meta Ads cerró el día sin spend activo (0 impresiones) -- confirmar con marketing si la pauta sigue pausada intencionalmente.",
+        "PrestaShop EC cerró sin pedidos pagados hoy -- revisar si hubo intentos de checkout sin completar.",
+        "Inventario vendible BE (dato de la mañana, no recalculado en este corte): 35.863 unidades por $22.781,70 en valor PVP -- 14 artistas con posibles problemas de PVP cargado, revisar catálogo en Contífico."
       ],
       "recomendaciones_col": [
-        "Kommo COL sin leads nuevos hoy (0) -- volumen bajo consistente con dias anteriores, monitorear tendencia semanal.",
-        "PrestaShop COL sin pedidos pagados registrados aun hoy -- normal a esta hora, verificar en el cierre de las 6pm."
+        "Kommo COL cerró sin leads nuevos hoy, pero con mensajería activa (17 entrantes / 21 salientes) y lapso de respuesta mediana ~4 min (239s) -- buena atención pese a bajo volumen de leads.",
+        "PrestaShop COL cerró sin pedidos pagados registrados hoy.",
+        "GA4 COL registró 1 view_item pero sin conversión a compra -- tráfico bajo (2 usuarios), monitorear tendencia."
       ],
-      "parcial": true,
-      "nota_verificacion": "Corte de manana (10:30am). GA4 sin datos aun para 2026-08-12 (latencia normal de reporting de Windsor/GA4, no es fuente caida). Contifico facturacion en 0 por bloqueo de firma electronica desde 10/jul/2026 (bloqueo de negocio conocido, no fuente caida). Meta Ads sin spend en los ultimos 7 dias. Inventario recalculado integramente hoy (866 productos activos BE, stock por bodega via Contifico).",
+      "parcial": false,
+      "nota_verificacion": "Corte de cierre 6pm -- números finales del día, actualiza el corte parcial de las 10:30am. Contífico registró 1 documento por $50 (vs 0 en la mañana). Kommo EC/COL con mensajería activa todo el día. GA4 ya reportó datos (vs latencia de la mañana): 2 usuarios EC, 2 usuarios COL, sin compras. Meta Ads sin spend en todo el día. PrestaShop EC y COL sin pedidos pagados. Inventario no se recalcula en este corte (solo en el de la mañana, valores preservados tal cual).",
       "ventas_consolidadas_ec": {
         "fuente": "contifico",
         "tienda": 0,
