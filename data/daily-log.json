@@ -1,6 +1,6 @@
 {
-  "schema_version": 3,
-  "nota": "daily = granularidad real por dia. Campos EC/COL separados donde la fuente lo permite. PrestaShop: EC=bouentertainment.com (USD), COL=co.bouentertainment.com (COP). Ads sin split por pais (no confiable), se reporta agregado. Mensajeria Kommo (widgets AJAX) aun no confirmada via Bearer token - queda null hasta validar con sesion de navegador real. GA4 usuarios EC/COL corregido el 30/jul/2026: se usa la comparacion por hostname (WEB ECUADOR = no co.bouentertainment.com, WEB COLOMBIA = si co.bouentertainment.com), NO por pais geografico del usuario -- coincide con la logica de PrestaShop (EC=bouentertainment.com, COL=co.bouentertainment.com). | Actualizacion 30/jul/2026: se incorpora Windsor.ai como fuente para Meta Ads (agregado de TODAS las campanas activas -- antes solo se trackeaba una) y GA4 (usuarios nuevos, ingresos, compras por hostname EC/COL). meta_alcance es SUMA por campana (no deduplicado, puede sobreestimar). ga4_ingresos en USD segun moneda de la propiedad GA4 -- no comparar directo contra prestashop_total_col_cop (COP). Se detecto un tercer hostname en GA4 (nasa-histoires.myshopify.com): CONFIRMADO por Luis (30/jul/2026) -- es una tienda Shopify creada y administrada por BOU para la merch del artista/coleccion 'NASA HISTOIRES' (coincide exactamente con el artista del mismo nombre que aparece en el Sheet de ventas Colombia, no es coincidencia). Shopify se conecta con YouTube y con el Shopify propio del artista. Sigue excluido de los totales EC/COL (bouentertainment.com/co.bouentertainment.com) porque es un canal de venta distinto (tienda Shopify separada, no PrestaShop) -- pendiente decidir si se agrega como un tercer segmento propio en el dashboard en vez de excluirlo. v3 (05/ago/2026): se agrega funnel_kommo (etapas por fecha de creacion + estado actual, EC/COL), mensajeria_be (volumen y tiempos de respuesta a nivel de todo el negocio -- la mayoria de conversaciones ocurren en 'Embudo de Gestion' antes de clasificarse por pais), ga4_canales/ga4_eventos_clave/ga4_articulos (detalle diario por pais) y ads_ad_sets (spend/alcance/frecuencia por ad set). Se completaron con datos reales los campos kommo_leads_ec/col, prestashop_pedidos/total y mensajeria que estaban en null en dias de junio. Contifico de junio sigue sin re-verificar. CORRECCION (5/ago/2026): mensajeria_be se recalculo para excluir el pipeline 'Embudo de Gestion' (7768559) y otros pipelines no-BE (Eventos, Business Logistica, Ventas Salud, Postulaciones) -- ese pipeline pertenece a BOU Logistics, no a BOU Entertainment. mensajeria_be ahora = suma exacta de EC (Embudo de Ventas) + COL (Embudo Ventas Col) unicamente.",
+  "schema_version": 4,
+  "nota": "daily = granularidad real por dia. Campos EC/COL separados donde la fuente lo permite. PrestaShop: EC=bouentertainment.com (USD), COL=co.bouentertainment.com (COP). Ads sin split por pais (no confiable), se reporta agregado. Mensajeria Kommo (widgets AJAX) aun no confirmada via Bearer token - queda null hasta validar con sesion de navegador real. GA4 usuarios EC/COL corregido el 30/jul/2026: se usa la comparacion por hostname (WEB ECUADOR = no co.bouentertainment.com, WEB COLOMBIA = si co.bouentertainment.com), NO por pais geografico del usuario -- coincide con la logica de PrestaShop (EC=bouentertainment.com, COL=co.bouentertainment.com). | Actualizacion 30/jul/2026: se incorpora Windsor.ai como fuente para Meta Ads (agregado de TODAS las campanas activas -- antes solo se trackeaba una) y GA4 (usuarios nuevos, ingresos, compras por hostname EC/COL). meta_alcance es SUMA por campana (no deduplicado, puede sobreestimar). ga4_ingresos en USD segun moneda de la propiedad GA4 -- no comparar directo contra prestashop_total_col_cop (COP). Se detecto un tercer hostname en GA4 (nasa-histoires.myshopify.com): CONFIRMADO por Luis (30/jul/2026) -- es una tienda Shopify creada y administrada por BOU para la merch del artista/coleccion 'NASA HISTOIRES' (coincide exactamente con el artista del mismo nombre que aparece en el Sheet de ventas Colombia, no es coincidencia). Shopify se conecta con YouTube y con el Shopify propio del artista. Sigue excluido de los totales EC/COL (bouentertainment.com/co.bouentertainment.com) porque es un canal de venta distinto (tienda Shopify separada, no PrestaShop) -- pendiente decidir si se agrega como un tercer segmento propio en el dashboard en vez de excluirlo. v3 (05/ago/2026): se agrega funnel_kommo (etapas por fecha de creacion + estado actual, EC/COL), mensajeria_be (volumen y tiempos de respuesta a nivel de todo el negocio -- la mayoria de conversaciones ocurren en 'Embudo de Gestion' antes de clasificarse por pais), ga4_canales/ga4_eventos_clave/ga4_articulos (detalle diario por pais) y ads_ad_sets (spend/alcance/frecuencia por ad set). Se completaron con datos reales los campos kommo_leads_ec/col, prestashop_pedidos/total y mensajeria que estaban en null en dias de junio. Contifico de junio sigue sin re-verificar. CORRECCION (5/ago/2026): mensajeria_be se recalculo para excluir el pipeline 'Embudo de Gestion' (7768559) y otros pipelines no-BE (Eventos, Business Logistica, Ventas Salud, Postulaciones) -- ese pipeline pertenece a BOU Logistics, no a BOU Entertainment. mensajeria_be ahora = suma exacta de EC (Embudo de Ventas) + COL (Embudo Ventas Col) unicamente. | Actualizacion 12/ago/2026: se agregan ventas_consolidadas_ec (Contifico, filtrado a canales BE: Tienda/Web/En linea/Evento, excluyendo facturacion de BOU Logistics como Servicios/Cortes/Envios/Correcciones/Cortesias/Canjes) y ventas_consolidadas_col (Matriz de Ventas Google Sheets, filtrado a Estado pago=Cobrado, desglosado por Tipo de Evento: en_linea/web/concierto/evento, en COP). Estos dos campos son ahora la fuente de verdad de ventas -- PrestaShop y Kommo quedan como detalle de canal Web/Linea, no como fuente principal. pendiente_no_cobrado_cop en COL y excluido_no_be_usd en EC muestran lo que quedo fuera del total (pendientes de pago / facturacion no-BE) para visibilidad, sin sumar a ingresos.",
   "daily": [
     {
       "date": "2026-06-01",
@@ -131,7 +131,28 @@
           "compras": 0,
           "clicks": 119
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-02",
@@ -279,7 +300,28 @@
           "compras": 0,
           "clicks": 96
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 130.99,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 130.99,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-03",
@@ -425,7 +467,28 @@
           "compras": 0,
           "clicks": 97
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 75,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 75,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-04",
@@ -569,7 +632,28 @@
           "compras": 0,
           "clicks": 0
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 45,
+        "en_linea": 75,
+        "evento": 402.99,
+        "total_usd": 522.99,
+        "excluido_no_be_usd": 1417.02,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-05",
@@ -689,7 +773,28 @@
           "compras": 0,
           "clicks": 0
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-06",
@@ -808,7 +913,28 @@
           "compras": 0,
           "clicks": 0
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-07",
@@ -933,7 +1059,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-08",
@@ -1062,7 +1209,28 @@
           "compras": 0,
           "clicks": 0
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 45,
+        "en_linea": 0,
+        "evento": 442,
+        "total_usd": 487,
+        "excluido_no_be_usd": 47.5,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-09",
@@ -1178,7 +1346,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 110000,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-10",
@@ -1299,7 +1488,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 210,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 210,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-11",
@@ -1414,7 +1624,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 134.15,
+        "web": 95,
+        "en_linea": 0,
+        "evento": 88,
+        "total_usd": 317.15,
+        "excluido_no_be_usd": 15637.9,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 570000,
+        "web": 60000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 630000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-12",
@@ -1543,7 +1774,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 72.51,
+        "total_usd": 72.51,
+        "excluido_no_be_usd": 18,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 190000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 190000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-13",
@@ -1651,7 +1903,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-14",
@@ -1755,7 +2028,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-15",
@@ -1879,7 +2173,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 161000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 161000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-16",
@@ -1974,7 +2289,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-17",
@@ -2079,7 +2415,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-18",
@@ -2200,7 +2557,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 110,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 110,
+        "excluido_no_be_usd": 36,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-19",
@@ -2308,7 +2686,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 160.9,
+        "en_linea": 45,
+        "evento": 0,
+        "total_usd": 205.9,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 165000,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 165000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-20",
@@ -2417,7 +2816,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-21",
@@ -2544,7 +2964,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 207000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 207000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-22",
@@ -2645,7 +3086,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-23",
@@ -2745,7 +3207,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-24",
@@ -2860,7 +3343,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-25",
@@ -2980,7 +3484,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-26",
@@ -3078,7 +3603,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-27",
@@ -3169,7 +3715,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-28",
@@ -3276,7 +3843,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-29",
@@ -3379,7 +3967,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-06-30",
@@ -3481,7 +4090,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 18183.65,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-01",
@@ -3600,7 +4230,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-02",
@@ -3707,7 +4358,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-03",
@@ -3832,7 +4504,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 380000,
+        "web": 146539,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 526539,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-04",
@@ -3935,7 +4628,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-05",
@@ -4037,7 +4751,28 @@
         }
       },
       "ga4_articulos": {},
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-06",
@@ -4166,7 +4901,28 @@
           }
         ]
       },
-      "ads_ad_sets": []
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 57500,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 57500,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-07",
@@ -4306,7 +5062,28 @@
           "compras": 0,
           "clicks": 389
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 981.38,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-08",
@@ -4455,7 +5232,28 @@
           "compras": 1,
           "clicks": 488
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 461.45,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 380000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 380000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-09",
@@ -4605,7 +5403,28 @@
           "compras": 0,
           "clicks": 1003
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 110,
+        "en_linea": 60,
+        "evento": 0,
+        "total_usd": 170,
+        "excluido_no_be_usd": 1081,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-10",
@@ -4757,7 +5576,28 @@
           "compras": 0,
           "clicks": 1034
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-11",
@@ -4905,7 +5745,28 @@
           "compras": 0,
           "clicks": 5022
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 161000,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 161000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-12",
@@ -5043,7 +5904,28 @@
           "compras": 0,
           "clicks": 5438
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-13",
@@ -5204,7 +6086,28 @@
           "compras": 0,
           "clicks": 2159
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-14",
@@ -5358,7 +6261,28 @@
           "compras": 3,
           "clicks": 3790
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 160000,
+        "web": 1008000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 1168000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-15",
@@ -5507,7 +6431,28 @@
           "compras": 0,
           "clicks": 1865
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-16",
@@ -5675,7 +6620,28 @@
           "compras": 1,
           "clicks": 1070
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 160000,
+        "web": 160000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 320000,
+        "pendiente_no_cobrado_cop": 160000,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-17",
@@ -5826,7 +6792,28 @@
           "compras": 0,
           "clicks": 2042
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 420000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 420000,
+        "pendiente_no_cobrado_cop": 50000,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-18",
@@ -5978,7 +6965,28 @@
         }
       ],
       "kommo_lapso_medio_s": 468040,
-      "kommo_lapso_promedio_s": 217374
+      "kommo_lapso_promedio_s": 217374,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 190000,
+        "web": 350000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 540000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-19",
@@ -6116,7 +7124,28 @@
           "compras": 2,
           "clicks": 1078
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 380000,
+        "web": 250000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 630000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-20",
@@ -6277,7 +7306,28 @@
           "compras": 4,
           "clicks": 1126
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 890000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 890000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-21",
@@ -6426,7 +7476,28 @@
         }
       ],
       "kommo_lapso_medio_s": 72538,
-      "kommo_lapso_promedio_s": 15676
+      "kommo_lapso_promedio_s": 15676,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 380000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 380000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-22",
@@ -6576,7 +7647,28 @@
         }
       ],
       "kommo_lapso_medio_s": 43664,
-      "kommo_lapso_promedio_s": 12567
+      "kommo_lapso_promedio_s": 12567,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-23",
@@ -6740,7 +7832,28 @@
         }
       ],
       "kommo_lapso_medio_s": 71281,
-      "kommo_lapso_promedio_s": 10120
+      "kommo_lapso_promedio_s": 10120,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-24",
@@ -6907,7 +8020,28 @@
         }
       ],
       "kommo_lapso_medio_s": 173848,
-      "kommo_lapso_promedio_s": 126133
+      "kommo_lapso_promedio_s": 126133,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 161000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 161000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-25",
@@ -7055,7 +8189,28 @@
         }
       ],
       "kommo_lapso_medio_s": 163900,
-      "kommo_lapso_promedio_s": 160087
+      "kommo_lapso_promedio_s": 160087,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-26",
@@ -7204,7 +8359,28 @@
           "compras": 0,
           "clicks": 0
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-27",
@@ -7376,7 +8552,28 @@
         }
       ],
       "kommo_lapso_medio_s": 61169,
-      "kommo_lapso_promedio_s": 90960
+      "kommo_lapso_promedio_s": 90960,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-28",
@@ -7557,7 +8754,28 @@
         }
       ],
       "kommo_lapso_medio_s": 13821,
-      "kommo_lapso_promedio_s": 494
+      "kommo_lapso_promedio_s": 494,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 147400,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 147400,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-29",
@@ -7717,7 +8935,28 @@
         }
       ],
       "kommo_lapso_medio_s": 27990,
-      "kommo_lapso_promedio_s": 17680
+      "kommo_lapso_promedio_s": 17680,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 112900,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 112900,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-30",
@@ -7911,7 +9150,28 @@
         }
       ],
       "kommo_lapso_medio_s": 34410,
-      "kommo_lapso_promedio_s": 30016
+      "kommo_lapso_promedio_s": 30016,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 380000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 380000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-07-31",
@@ -8098,7 +9358,28 @@
           "compras": 0,
           "clicks": 29
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 37.51,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 40.5,
+        "total_usd": 78.01,
+        "excluido_no_be_usd": 53007.84,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-01",
@@ -8256,7 +9537,28 @@
         }
       ],
       "kommo_lapso_medio_s": 172277,
-      "kommo_lapso_promedio_s": 172111
+      "kommo_lapso_promedio_s": 172111,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-02",
@@ -8410,7 +9712,28 @@
         }
       ],
       "kommo_lapso_medio_s": 108416,
-      "kommo_lapso_promedio_s": 89186
+      "kommo_lapso_promedio_s": 89186,
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-03",
@@ -8598,7 +9921,28 @@
           "compras": 1,
           "clicks": 155
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 1072.67,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 190000,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 190000,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-04",
@@ -8752,7 +10096,28 @@
           "compras": 0,
           "clicks": 0
         }
-      ]
+      ],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-05",
@@ -8833,7 +10198,28 @@
         "Meta Ads no registró inversión activa hoy en la única campaña de COL ('la piel colombia nuevo') — confirmar si la pausa es intencional o si se debe reactivar presupuesto."
       ],
       "parcial": false,
-      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am"
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am",
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-06",
@@ -8954,7 +10340,28 @@
         "GA4 COL: 3 usuarios (3 nuevos), 3 sesiones, $0 en ingresos — tráfico repartido entre directo, búsqueda orgánica y social orgánico."
       ],
       "parcial": false,
-      "nota_verificacion": "Corte de cierre 6pm — números finales del día completo (00:00-23:59 hora Ecuador). La fila de las 10:30am no existía en daily-log.json (la corrida de la mañana no corrió o falló), por lo que se creó directamente con los números de cierre — no hay comparativo parcial-vs-cierre disponible para hoy. Meta Ads: Windsor.ai no tiene datos para 4-6/ago (rezago de reporting, último dato real es 3/ago) — campos Meta publicados en 0, no interpretar como gasto real cero. Contífico: 1 documento por $80.01. PrestaShop EC y COL: 0 pedidos pagados en ambos países."
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día completo (00:00-23:59 hora Ecuador). La fila de las 10:30am no existía en daily-log.json (la corrida de la mañana no corrió o falló), por lo que se creó directamente con los números de cierre — no hay comparativo parcial-vs-cierre disponible para hoy. Meta Ads: Windsor.ai no tiene datos para 4-6/ago (rezago de reporting, último dato real es 3/ago) — campos Meta publicados en 0, no interpretar como gasto real cero. Contífico: 1 documento por $80.01. PrestaShop EC y COL: 0 pedidos pagados en ambos países.",
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 80.01,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 80.01,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-07",
@@ -9073,7 +10480,28 @@
         "GA4 COL registró solo 1 sesión y 0 usuarios nuevos en el día completo — tráfico prácticamente nulo, evaluar salud del canal/sitio."
       ],
       "parcial": false,
-      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Kommo EC: 0→4 leads, mensajería 3 entrantes/0 salientes→15/10 (lapso mediano 31 min). Contífico: 0→7 documentos ($9,399.26) — el bloqueo por falta de firma electrónica reportado en la mañana se resolvió durante el día. PrestaShop EC y COL: se mantuvieron en 0 pedidos todo el día (confirmado con filtro paid=1 y sin filtrar, ambos en 0). GA4/Meta Ads: disponibles por primera vez hoy en este corte (Windsor.ai no los tenía listos a las 10:30am) — EC 3 sesiones/3 usuarios nuevos, COL 1 sesión/0 usuarios nuevos, sin compras. Meta Ads: $0 de gasto, única campaña activa sin inversión el día de hoy. kommo_funnel_ec/col es snapshot rolling de 30 días, se sobreescribe en cada corrida (normal que cambie vs. la mañana). Caveat de proceso conocido: reclasificación manual EC→COL por CX puede subestimar leads COL."
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Kommo EC: 0→4 leads, mensajería 3 entrantes/0 salientes→15/10 (lapso mediano 31 min). Contífico: 0→7 documentos ($9,399.26) — el bloqueo por falta de firma electrónica reportado en la mañana se resolvió durante el día. PrestaShop EC y COL: se mantuvieron en 0 pedidos todo el día (confirmado con filtro paid=1 y sin filtrar, ambos en 0). GA4/Meta Ads: disponibles por primera vez hoy en este corte (Windsor.ai no los tenía listos a las 10:30am) — EC 3 sesiones/3 usuarios nuevos, COL 1 sesión/0 usuarios nuevos, sin compras. Meta Ads: $0 de gasto, única campaña activa sin inversión el día de hoy. kommo_funnel_ec/col es snapshot rolling de 30 días, se sobreescribe en cada corrida (normal que cambie vs. la mañana). Caveat de proceso conocido: reclasificación manual EC→COL por CX puede subestimar leads COL.",
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 54.99,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 54.99,
+        "excluido_no_be_usd": 9399.26,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-08",
@@ -9188,7 +10616,28 @@
         "Mensajería sin respuesta saliente registrada — verificar cobertura de CX en fin de semana."
       ],
       "parcial": false,
-      "nota_verificacion": "Fila generada por backfill automático (corte 11/ago/2026) — sábado sin ejecución programada. kommo_funnel_ec/col no reconstruible retroactivamente (null). Meta Ads sin actividad (campañas sin spend desde ~04/ago)."
+      "nota_verificacion": "Fila generada por backfill automático (corte 11/ago/2026) — sábado sin ejecución programada. kommo_funnel_ec/col no reconstruible retroactivamente (null). Meta Ads sin actividad (campañas sin spend desde ~04/ago).",
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-09",
@@ -9304,7 +10753,28 @@
         "COL mostró 3 mensajes entrantes sin ninguna respuesta saliente — riesgo de leads perdidos por falta de respuesta."
       ],
       "parcial": false,
-      "nota_verificacion": "Fila generada por backfill automático (corte 11/ago/2026) — domingo sin ejecución programada. kommo_funnel_ec/col no reconstruible retroactivamente (null)."
+      "nota_verificacion": "Fila generada por backfill automático (corte 11/ago/2026) — domingo sin ejecución programada. kommo_funnel_ec/col no reconstruible retroactivamente (null).",
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-10",
@@ -9424,7 +10894,28 @@
         "Tercer día seguido sin leads ni mensajería saliente registrada en COL."
       ],
       "parcial": false,
-      "nota_verificacion": "Fila generada por backfill automático (corte 11/ago/2026) — lunes sin ejecución previa (feriado o corrida fallida, no confirmado). kommo_funnel_ec/col no reconstruible retroactivamente (null). Discrepancia GA4 (1 compra, $13.04) vs PrestaShop (0 pedidos válidos) anotada para revisión manual."
+      "nota_verificacion": "Fila generada por backfill automático (corte 11/ago/2026) — lunes sin ejecución previa (feriado o corrida fallida, no confirmado). kommo_funnel_ec/col no reconstruible retroactivamente (null). Discrepancia GA4 (1 compra, $13.04) vs PrestaShop (0 pedidos válidos) anotada para revisión manual.",
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-11",
@@ -9856,7 +11347,28 @@
         "COL cerró el día sin leads nuevos, sin sesiones GA4 y sin pedidos PrestaShop — mensajería casi nula (0 entrantes, 1 saliente). Canal prácticamente inactivo hoy, evaluar si vale la pena mantener pauta/atención dedicada mientras no haya tracción."
       ],
       "parcial": false,
-      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Comparativo vs mañana: PrestaShop EC pasó de 0 a 2 pedidos ($70), Contífico se mantuvo en 1 documento ($30, sin cambios desde la mañana), GA4 EC subió de 2 a 6 usuarios/6 sesiones (aún sin compras), Kommo EC/COL siguió en 0 leads nuevos todo el día, mensajería EC subió de 2 entrantes/1 saliente (parcial) a 15/10 finales. Meta Ads sin actividad en todo el día. Inventario vendible bajó levemente de 1805 a 1803 unidades ($22,804.44 → $22,781.70 PVP) por las 2 ventas del día. Se detectaron 6 artistas con productos en PVP $0, incluir en seguimiento."
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Comparativo vs mañana: PrestaShop EC pasó de 0 a 2 pedidos ($70), Contífico se mantuvo en 1 documento ($30, sin cambios desde la mañana), GA4 EC subió de 2 a 6 usuarios/6 sesiones (aún sin compras), Kommo EC/COL siguió en 0 leads nuevos todo el día, mensajería EC subió de 2 entrantes/1 saliente (parcial) a 15/10 finales. Meta Ads sin actividad en todo el día. Inventario vendible bajó levemente de 1805 a 1803 unidades ($22,804.44 → $22,781.70 PVP) por las 2 ventas del día. Se detectaron 6 artistas con productos en PVP $0, incluir en seguimiento.",
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 30,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     },
     {
       "date": "2026-08-12",
@@ -10551,7 +12063,28 @@
         "PrestaShop COL sin pedidos pagados registrados aun hoy -- normal a esta hora, verificar en el cierre de las 6pm."
       ],
       "parcial": true,
-      "nota_verificacion": "Corte de manana (10:30am). GA4 sin datos aun para 2026-08-12 (latencia normal de reporting de Windsor/GA4, no es fuente caida). Contifico facturacion en 0 por bloqueo de firma electronica desde 10/jul/2026 (bloqueo de negocio conocido, no fuente caida). Meta Ads sin spend en los ultimos 7 dias. Inventario recalculado integramente hoy (866 productos activos BE, stock por bodega via Contifico)."
+      "nota_verificacion": "Corte de manana (10:30am). GA4 sin datos aun para 2026-08-12 (latencia normal de reporting de Windsor/GA4, no es fuente caida). Contifico facturacion en 0 por bloqueo de firma electronica desde 10/jul/2026 (bloqueo de negocio conocido, no fuente caida). Meta Ads sin spend en los ultimos 7 dias. Inventario recalculado integramente hoy (866 productos activos BE, stock por bodega via Contifico).",
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP"
+      }
     }
   ],
   "periodic": [
