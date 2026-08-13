@@ -403,6 +403,18 @@ with tab_ec:
 
     st.write("")
     st.write("")
+    panel_header("Ticket promedio (tendencia)", "Contífico si hay dato, si no PrestaShop EC")
+    dfrows_tk = pd.DataFrame(rows).sort_values("date")
+    dfrows_tk["ticket_dia"] = dfrows_tk.apply(
+        lambda r: (r["contifico_total_usd"] / r["contifico_documentos"]) if r.get("contifico_total_usd") and r.get("contifico_documentos")
+        else ((r["prestashop_total_ec_usd"] / r["prestashop_pedidos_ec"]) if r.get("prestashop_total_ec_usd") and r.get("prestashop_pedidos_ec") else None),
+        axis=1,
+    )
+    fig_tk = go.Figure(go.Scatter(x=dfrows_tk["date"], y=dfrows_tk["ticket_dia"], mode="lines+markers", line=dict(color=CORAL, width=2)))
+    fig_tk = mark_parcial_day(fig_tk, rows, end)
+    st.plotly_chart(plotly_dark_layout(fig_tk, height=220), use_container_width=True)
+
+    st.write("")
     panel_header("Método de cobro (BE, Contífico)", "cobros[].forma_cobro — solo documentos clasificados como BE, netea facturas con nota de crédito")
     cobro_totales = {}
     for r in rows:
@@ -606,36 +618,61 @@ with tab_mkt:
     st.plotly_chart(plotly_dark_layout(fig, height=260), use_container_width=True)
 
     st.write("")
-    panel_header("Embudo GA4 (eventos clave)", "add_to_cart → begin_checkout → purchase, agregado del periodo")
-    add_cart = add_checkout = purchases = 0
+    panel_header("Canales de adquisición (GA4)", "sesiones por canal, EC + COL agregado del periodo")
+    canal_totales = {}
+    for r in rows:
+        ga4c = r.get("ga4_canales") or {}
+        for pais_canales in (ga4c.values() if isinstance(ga4c, dict) else []):
+            if isinstance(pais_canales, dict):
+                for canal, val in pais_canales.items():
+                    canal_totales[canal] = canal_totales.get(canal, 0) + (val or 0)
+    if canal_totales:
+        cdf = pd.DataFrame(sorted(canal_totales.items(), key=lambda x: -x[1]), columns=["canal", "sesiones"])
+        fig_canal = go.Figure(go.Bar(x=cdf["sesiones"], y=cdf["canal"], orientation="h", marker_color=CYAN))
+        st.plotly_chart(plotly_dark_layout(fig_canal, height=260), use_container_width=True)
+    else:
+        st.markdown('<div class="bcc-note-box">sin dato de canales GA4 en el periodo seleccionado</div>', unsafe_allow_html=True)
+
+    st.write("")
+    panel_header("Embudo GA4 (eventos clave)", "view_item → add_to_cart → begin_checkout → purchase, agregado del periodo")
+    view_items = add_cart = add_checkout = purchases = 0
     has_events = False
     for r in rows:
         ev = r.get("ga4_eventos_clave") or {}
         for pais_events in ev.values() if isinstance(ev, dict) else []:
             if isinstance(pais_events, dict):
                 has_events = True
+                view_items += pais_events.get("view_item", 0) or 0
                 add_cart += pais_events.get("add_to_cart", 0) or 0
                 add_checkout += pais_events.get("begin_checkout", 0) or 0
                 purchases += pais_events.get("purchase", 0) or 0
     if has_events:
-        fig = go.Figure(go.Funnel(y=["Add to cart", "Begin checkout", "Purchase"], x=[add_cart, add_checkout, purchases],
-                                   marker=dict(color=[GOLD, BLUE, MINT])))
+        fig = go.Figure(go.Funnel(y=["View item", "Add to cart", "Begin checkout", "Purchase"], x=[view_items, add_cart, add_checkout, purchases],
+                                   marker=dict(color=[CYAN, GOLD, BLUE, MINT])))
         st.plotly_chart(plotly_dark_layout(fig, height=280), use_container_width=True)
     else:
         st.markdown('<div class="bcc-note-box">sin dato de eventos GA4 en el periodo seleccionado</div>', unsafe_allow_html=True)
 
     st.write("")
-    panel_header("Ad sets — alerta de fatiga", "frequency > 5 = posible fatiga de audiencia")
-    fatigued = []
+    panel_header("Ad sets — frecuencia (fatiga)", "frequency > 5 = posible fatiga de audiencia (linea roja) · último valor observado en el periodo")
+    adset_freq = {}
     for r in rows:
         for adset in (r.get("ads_ad_sets") or []):
             freq = adset.get("frequency")
-            if freq and freq > 5:
-                fatigued.append({"fecha": r["date"], "ad set": adset.get("adset_name"), "frequency": freq, "spend": adset.get("spend")})
-    if fatigued:
-        st.dataframe(pd.DataFrame(fatigued), use_container_width=True, hide_index=True)
+            name = adset.get("adset")
+            if name and freq:
+                adset_freq[name] = freq
+    if adset_freq:
+        fdf = pd.DataFrame(sorted(adset_freq.items(), key=lambda x: -x[1]), columns=["ad set", "frequency"])
+        bar_colors = [CORAL if f > 5 else BLUE for f in fdf["frequency"]]
+        fig_freq = go.Figure(go.Bar(x=fdf["frequency"], y=fdf["ad set"], orientation="h", marker_color=bar_colors))
+        fig_freq.add_vline(x=5, line_width=1, line_dash="dash", line_color=CORAL)
+        st.plotly_chart(plotly_dark_layout(fig_freq, height=max(200, 30 * len(fdf))), use_container_width=True)
+        n_fatigued = int((fdf["frequency"] > 5).sum())
+        if n_fatigued:
+            st.caption(f"⚠️ {n_fatigued} ad set(s) por encima de frequency 5 en el periodo.")
     else:
-        st.markdown('<div class="bcc-note-box">sin señales de fatiga (frequency > 5) en el periodo seleccionado</div>', unsafe_allow_html=True)
+        st.markdown('<div class="bcc-note-box">sin dato de ad sets en el periodo seleccionado</div>', unsafe_allow_html=True)
 
     st.write("")
     st.markdown(
