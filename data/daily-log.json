@@ -152,7 +152,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-02",
@@ -321,6 +322,9 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
+      },
+      "contifico_metodo_cobro": {
+        "TC": 45
       }
     },
     {
@@ -488,6 +492,9 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
+      },
+      "contifico_metodo_cobro": {
+        "TC": 30
       }
     },
     {
@@ -653,6 +660,10 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
+      },
+      "contifico_metodo_cobro": {
+        "TRA": 435.5,
+        "TC": 87.49000000000001
       }
     },
     {
@@ -794,7 +805,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-06",
@@ -934,7 +946,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-07",
@@ -1080,7 +1093,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-08",
@@ -1230,6 +1244,10 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
+      },
+      "contifico_metodo_cobro": {
+        "TC": 251,
+        "TRA": 236
       }
     },
     {
@@ -1368,7 +1386,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 0,
         "web": 0
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-10",
@@ -1510,6 +1529,10 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
+      },
+      "contifico_metodo_cobro": {
+        "TRA": 155,
+        "TC": 55
       }
     },
     {
@@ -1647,6 +1670,10 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 60000,
         "web": 60000
+      },
+      "contifico_metodo_cobro": {
+        "TC": 272.15,
+        "TRA": 45
       }
     },
     {
@@ -1798,6 +1825,9 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 190000,
         "web": 190000
+      },
+      "contifico_metodo_cobro": {
+        "TRA": 72.51
       }
     },
     {
@@ -1927,7 +1957,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-14",
@@ -2052,7 +2083,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-15",
@@ -2198,7 +2230,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 161000,
         "web": 161000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-16",
@@ -2314,7 +2347,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-17",
@@ -2440,7 +2474,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-18",
@@ -2582,7 +2617,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-19",
@@ -2712,6 +2748,10 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 165000,
         "web": 0
+      },
+      "contifico_metodo_cobro": {
+        "TC": 115.9,
+        "TRA": 20
       }
     },
     {
@@ -2842,7 +2882,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-21",
@@ -2991,7 +3032,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 207000,
         "web": 207000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-22",
@@ -3113,7 +3155,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-23",
@@ -3234,7 +3277,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-24",
@@ -3370,7 +3414,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-25",
@@ -3511,7 +3556,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-26",
@@ -3630,7 +3676,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-27",
@@ -3742,7 +3789,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-28",
@@ -3870,7 +3918,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-29",
@@ -3994,7 +4043,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-06-30",
@@ -4117,7 +4167,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-01",
@@ -4257,7 +4308,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-02",
@@ -4385,7 +4437,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-03",
@@ -4532,7 +4585,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 380000,
         "web": 0
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-04",
@@ -4656,7 +4710,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-05",
@@ -4779,7 +4834,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-06",
@@ -4930,7 +4986,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 57500,
         "web": 57500
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-07",
@@ -5091,7 +5148,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-08",
@@ -5262,7 +5320,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 380000,
         "web": 380000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-09",
@@ -5433,6 +5492,10 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
+      },
+      "contifico_metodo_cobro": {
+        "TC": 90,
+        "TRA": 598
       }
     },
     {
@@ -5606,7 +5669,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-11",
@@ -5775,7 +5839,8 @@
         "total_cop": 161000,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-12",
@@ -5934,7 +5999,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-13",
@@ -6116,7 +6182,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-14",
@@ -6292,7 +6359,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 1168000,
         "web": 1008000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-15",
@@ -6462,7 +6530,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-16",
@@ -6652,7 +6721,8 @@
         "pendiente_no_cobrado_cop": 160000,
         "total_cop": 320000,
         "web": 160000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-17",
@@ -6825,7 +6895,8 @@
         "pendiente_no_cobrado_cop": 50000,
         "total_cop": 420000,
         "web": 420000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-18",
@@ -6999,7 +7070,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 540000,
         "web": 350000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-19",
@@ -7159,7 +7231,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 630000,
         "web": 250000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-20",
@@ -7342,7 +7415,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 890000,
         "web": 890000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-21",
@@ -7513,7 +7587,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 380000,
         "web": 380000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-22",
@@ -7684,7 +7759,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-23",
@@ -7869,7 +7945,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-24",
@@ -8058,7 +8135,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 161000,
         "web": 161000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-25",
@@ -8227,7 +8305,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-26",
@@ -8397,7 +8476,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-27",
@@ -8590,7 +8670,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-28",
@@ -8793,7 +8874,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 147400,
         "web": 147400
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-29",
@@ -8975,7 +9057,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 112900,
         "web": 112900
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-30",
@@ -9191,7 +9274,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 380000,
         "web": 380000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-07-31",
@@ -9400,6 +9484,10 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 0,
         "web": 0
+      },
+      "contifico_metodo_cobro": {
+        "TRA": 63.010000000000005,
+        "TC": 15
       }
     },
     {
@@ -9579,7 +9667,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-02",
@@ -9754,7 +9843,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-03",
@@ -9964,7 +10054,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 190000,
         "web": 190000
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-04",
@@ -10139,7 +10230,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-05",
@@ -10242,7 +10334,8 @@
         "pendiente_no_cobrado_cop": 0,
         "total_cop": 2927400,
         "web": 0
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-06",
@@ -10384,7 +10477,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-07",
@@ -10524,6 +10618,9 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
+      },
+      "contifico_metodo_cobro": {
+        "TC": 54.99
       }
     },
     {
@@ -10660,7 +10757,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-09",
@@ -10797,7 +10895,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-10",
@@ -10938,7 +11037,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-11",
@@ -11391,7 +11491,8 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
-      }
+      },
+      "contifico_metodo_cobro": {}
     },
     {
       "date": "2026-08-12",
@@ -12118,6 +12219,10 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP"
+      },
+      "contifico_metodo_cobro": {
+        "TC": 20,
+        "TRA": 50
       }
     },
     {
@@ -12853,7 +12958,8 @@
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP",
         "nota": "No recalculado en el corte de mañana -- pendiente del corte de cierre (6pm)."
-      }
+      },
+      "contifico_metodo_cobro": {}
     }
   ],
   "periodic": [
