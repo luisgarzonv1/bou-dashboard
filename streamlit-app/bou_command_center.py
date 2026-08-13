@@ -324,22 +324,6 @@ with tab_resumen:
     if nota:
         st.caption(f"Nota de verificación del corte más reciente ({last_day['date']}): {nota}")
 
-    st.write("")
-    panel_header("Método de cobro (BE, Contífico)", "cobros[].forma_cobro — solo documentos clasificados como BE, netea facturas con nota de crédito")
-    cobro_totales = {}
-    for r in rows:
-        mc = r.get("contifico_metodo_cobro") or {}
-        for k, v in mc.items():
-            cobro_totales[k] = cobro_totales.get(k, 0) + (v or 0)
-    if cobro_totales:
-        labels = [COBRO_LABELS.get(k, k) for k in cobro_totales.keys()]
-        colors = [COBRO_COLORS.get(k, MUTED) for k in cobro_totales.keys()]
-        fig = go.Figure(go.Pie(labels=labels, values=list(cobro_totales.values()), hole=0.55,
-                                marker=dict(colors=colors), textinfo="label+percent"))
-        st.plotly_chart(plotly_dark_layout(fig, height=280, showlegend=False), use_container_width=True)
-    else:
-        st.markdown('<div class="bcc-note-box">sin dato de método de cobro en este rango</div>', unsafe_allow_html=True)
-
 # ============================================================
 # ECUADOR
 # ============================================================
@@ -418,6 +402,22 @@ with tab_ec:
     st.plotly_chart(plotly_dark_layout(fig_ec2, height=180), use_container_width=True)
 
     st.write("")
+    st.write("")
+    panel_header("Método de cobro (BE, Contífico)", "cobros[].forma_cobro — solo documentos clasificados como BE, netea facturas con nota de crédito")
+    cobro_totales = {}
+    for r in rows:
+        mc = r.get("contifico_metodo_cobro") or {}
+        for k, v in mc.items():
+            cobro_totales[k] = cobro_totales.get(k, 0) + (v or 0)
+    if cobro_totales:
+        labels = [COBRO_LABELS.get(k, k) for k in cobro_totales.keys()]
+        colors = [COBRO_COLORS.get(k, MUTED) for k in cobro_totales.keys()]
+        fig = go.Figure(go.Pie(labels=labels, values=list(cobro_totales.values()), hole=0.55,
+                                marker=dict(colors=colors), textinfo="label+percent"))
+        st.plotly_chart(plotly_dark_layout(fig, height=280, showlegend=False), use_container_width=True)
+    else:
+        st.markdown('<div class="bcc-note-box">sin dato de método de cobro en este rango</div>', unsafe_allow_html=True)
+
     panel_header("Funnel Kommo EC", "ventana móvil 30 días · orden real del pipeline")
     fec = last_day.get("kommo_funnel_ec") or {}
     by_status = fec.get("byStatus") or {}
@@ -487,17 +487,20 @@ with tab_col:
     col_usd_equiv = (col_total / trm) if col_total is not None else None
     leads_col = sum_field(rows, "kommo_leads_col")
 
-    # Jerarquía de fuente COL (a pedido de Luis, 12/ago): la Matriz de Ventas Colombia (Google
-    # Sheets) es la fuente PRIMARIA declarada — tiene columna de monto, Delivery cruzado con
-    # PrestaShop e "Id orden Prestashop" para cruce exacto. Pero la extracción automática todavía
-    # falla porque el equipo de Colombia combina celdas en el Sheet (rompe la lectura por API),
-    # así que ventas_consolidadas_col sigue en 0. Mientras se resuelve, PrestaShop COL es el
-    # complemento funcional que se usa para el día a día; Kommo aporta contexto de leads.
+    # Jerarquía de fuente COL (actualizado 13/ago): la Matriz de Ventas Colombia (Google
+    # Sheets) es la fuente PRIMARIA declarada -- tiene columna de monto, Delivery cruzado con
+    # PrestaShop e "Id orden Prestashop" para cruce exacto. La extracción vía export CSV YA
+    # funciona (las celdas combinadas dejaron de ser un problema -- se lee la hoja completa,
+    # 581 filas históricas desde may/2025). La única limitante real ahora: el equipo de
+    # Colombia carga el Sheet de forma manual, así que un día sin filas registradas ahí
+    # todavía se ve como 0 (no es un bug de lectura). PrestaShop COL sigue como complemento
+    # funcional; Kommo aporta contexto de leads.
     vcol_preview = last_day.get("ventas_consolidadas_col") or {}
+    vcol_total = vcol_preview.get("total_cop")
 
     k1, k2, k3, k4 = st.columns(4)
     with k1:
-        kpi_card("Matriz Sheets (fuente primaria)", "en desarrollo", "extracción bloqueada por celdas combinadas — ver nota abajo", GOLD, "\U0001F6A7")
+        kpi_card("Matriz Sheets (fuente primaria)", fmt_or_missing(vcol_total, "${:,.0f}"), "carga manual del equipo Colombia -- puede ir 1-2 días atrás del corte", MINT, "U0001F4CB")
     with k2:
         kpi_card("PrestaShop COL (complementario, activo)", fmt_or_missing(col_total, "${:,.0f}"), f"{fmt_or_missing(col_pedidos)} pedidos pagados", MINT, "\U0001F4B5")
     with k3:
@@ -547,22 +550,21 @@ with tab_col:
         st.markdown('<div class="bcc-note-box">sin dato de funnel para Colombia en este corte</div>', unsafe_allow_html=True)
 
     st.write("")
-    panel_header("Detalle: Matriz Sheets Colombia (fuente primaria, en desarrollo)", "por qué sigue en 0 en ventas_consolidadas_col")
+    panel_header("Detalle: Matriz Sheets Colombia (fuente primaria)", "metodología y estado real de ventas_consolidadas_col")
     st.markdown(
-        '<div class="bcc-dev-box">\U0001F6A7 <b>La metodología SÍ está definida, la automatización no.</b> '
+        '<div class="bcc-note-box">✅ <b>Extracción resuelta el 13/ago — ya no está bloqueada.</b> '
         'El Sheet "Resumen de ventas Bou Entertainment Colombia" tiene columna de monto (PVP), columna Delivery '
         'que cruza contra PrestaShop, y columna "Id orden Prestashop" para cruce exacto. Se registra por producto '
         '(una fila por producto, no por pedido). Columna "Tipo de Evento": Web = pedido web, EN LINEA = pedido '
         'por WhatsApp.<br><br>'
-        '<b>Bloqueo actual:</b> el equipo de Colombia combina celdas (merge) en algunas filas, y eso rompe la '
-        'lectura automatizada — la API de Sheets solo devuelve el valor en la celda superior-izquierda de un '
-        'rango combinado, el resto queda vacío. Recomendación ya comunicada: duplicar el valor en cada fila en '
-        'vez de combinar celdas. Hasta que eso se aplique, <code>ventas_consolidadas_col</code> sigue en 0 y no '
-        'se muestra como venta real.<br><br>'
+        'Las celdas combinadas ya no son un problema: se lee el Sheet como export CSV completo (no la API de '
+        'lectura celda por celda), lo que trae las 581 filas reales sin perder datos. Se hizo un backfill '
+        'histórico completo (may/2025 – ago/2026) sobre daily-log.json.<br><br>'
+        '<b>Limitante real, no de metodología:</b> el equipo de Colombia carga el Sheet manualmente — si un día '
+        'todavía no tiene filas ahí, este campo legítimamente muestra 0 (no significa que el dashboard esté roto). '
+        'La última fecha con filas en el Sheet fuente puede ir 1-2 días atrás de hoy.<br><br>'
         f'<code>{vcol_preview}</code></div>', unsafe_allow_html=True,
-    )
-
-# ============================================================
+    )# ============================================================
 # MARKETING
 # ============================================================
 with tab_mkt:
