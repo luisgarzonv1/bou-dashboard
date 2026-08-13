@@ -56,6 +56,12 @@ STATUS_CFG = {
     "down": {"icon": "\U0001F534", "color": CORAL, "text": "Bloqueado"},
 }
 
+KOMMO_STAGE_ORDER_EC = ["Incoming leads", "Contacto inicial", "Nueva consulta", "ATENCION AGENTE", "leads frios (no responde)", "leads Tibios (interacción)", "leads Calientes (datos bancarios)", "Por registrar y FACTURAR", "Por entregar", "Cliente Registrado", "CAMBIOS Y DEVOLUCIONES", "Falta stock", "ERROR ENVIAR MENSAJE", "CONFIRMADOS EVENTOS", "BOU SESSION", "Sorteos y concursos", "Servicios Adicionales", "Reacciones y Comentarios", "R.Comentarios Revisados", "Colaboraciones", "SPAM", "Leads ganados", "Leads perdidos"]
+KOMMO_STAGE_ORDER_COL = ["Incoming leads", "Contacto inicial", "Nueva consulta", "ATENCION AGENTE", "leads frios (no responde)", "leads Tibios (interacción)", "leads Calientes (datos bancarios)", "Por registrar ", "Por entregar", "CAMBIOS Y DEVOLUCIONES", "ERROR ENVIAR MENSAJE", "CONFIRMADOS", "Logrado con éxito", "Ventas Perdidos"]
+
+COBRO_LABELS = {"TC": "Tarjeta de credito", "TRA": "Transferencia", "CH": "Cheque", "EF": "Efectivo", "SIN_DATO": "Sin dato"}
+COBRO_COLORS = {"TC": GOLD, "TRA": MINT, "CH": BLUE, "EF": LILAC, "SIN_DATO": MUTED}
+
 st.set_page_config(page_title="BOU Sales Command Center", layout="wide", page_icon="\U0001F4CA")
 
 st.markdown(f"""
@@ -307,7 +313,7 @@ with tab_resumen:
         badge("ok", "PrestaShop EC — referencia/respaldo", "filtrado por current_state válido")
         badge("ok", "Kommo (EC + COL)", "conteo oficial vía API")
     with b2:
-        badge("warn", "Matriz Sheets — fuente primaria COL", "bloqueada por celdas combinadas en el Sheet")
+        badge("ok", "Matriz Sheets — fuente primaria COL", "conectada via CSV export, celdas combinadas ya no bloquean")
         badge("ok", "PrestaShop COL — complementario", "activo, se usa mientras se resuelve el Sheet")
     with b3:
         ga4_ok = last_day.get("ga4_usuarios_ec") is not None or last_day.get("ga4_usuarios_col") is not None
@@ -317,6 +323,22 @@ with tab_resumen:
     nota = last_day.get("nota_verificacion")
     if nota:
         st.caption(f"Nota de verificación del corte más reciente ({last_day['date']}): {nota}")
+
+    st.write("")
+    panel_header("Método de cobro (BE, Contífico)", "cobros[].forma_cobro — solo documentos clasificados como BE, netea facturas con nota de crédito")
+    cobro_totales = {}
+    for r in rows:
+        mc = r.get("contifico_metodo_cobro") or {}
+        for k, v in mc.items():
+            cobro_totales[k] = cobro_totales.get(k, 0) + (v or 0)
+    if cobro_totales:
+        labels = [COBRO_LABELS.get(k, k) for k in cobro_totales.keys()]
+        colors = [COBRO_COLORS.get(k, MUTED) for k in cobro_totales.keys()]
+        fig = go.Figure(go.Pie(labels=labels, values=list(cobro_totales.values()), hole=0.55,
+                                marker=dict(colors=colors), textinfo="label+percent"))
+        st.plotly_chart(plotly_dark_layout(fig, height=280, showlegend=False), use_container_width=True)
+    else:
+        st.markdown('<div class="bcc-note-box">sin dato de método de cobro en este rango</div>', unsafe_allow_html=True)
 
 # ============================================================
 # ECUADOR
@@ -396,13 +418,16 @@ with tab_ec:
     st.plotly_chart(plotly_dark_layout(fig_ec2, height=180), use_container_width=True)
 
     st.write("")
-    panel_header("Funnel Kommo EC", "ventana móvil 30 días")
+    panel_header("Funnel Kommo EC", "ventana móvil 30 días · orden real del pipeline")
     fec = last_day.get("kommo_funnel_ec") or {}
     by_status = fec.get("byStatus") or {}
     if by_status:
-        sdf = pd.DataFrame(sorted(by_status.items(), key=lambda x: -x[1]), columns=["etapa", "leads"])
-        fig = go.Figure(go.Bar(x=sdf["etapa"], y=sdf["leads"], marker_color=BLUE))
-        st.plotly_chart(plotly_dark_layout(fig, height=260), use_container_width=True)
+        total_funnel_ec = sum(by_status.values())
+        items_ec = sorted(by_status.items(), key=lambda x: KOMMO_STAGE_ORDER_EC.index(x[0]) if x[0] in KOMMO_STAGE_ORDER_EC else 999)
+        sdf = pd.DataFrame(items_ec, columns=["etapa", "leads"])
+        sdf["pct"] = sdf["leads"].apply(lambda v: f"{(v/total_funnel_ec*100):.0f}%" if total_funnel_ec else "")
+        fig = go.Figure(go.Bar(x=sdf["etapa"], y=sdf["leads"], text=sdf["pct"], textposition="outside", marker_color=BLUE))
+        st.plotly_chart(plotly_dark_layout(fig, height=280), use_container_width=True)
     else:
         st.markdown('<div class="bcc-note-box">sin dato de funnel para Ecuador en este corte</div>', unsafe_allow_html=True)
 
@@ -508,13 +533,16 @@ with tab_col:
                      f'<div class="sub">Lapso resp. {(str(int(lapso//60))+"m") if lapso else "sin dato"}</div></div>', unsafe_allow_html=True)
 
     st.write("")
-    panel_header("Funnel Kommo COL", "ventana móvil 30 días")
+    panel_header("Funnel Kommo COL", "ventana móvil 30 días · orden real del pipeline")
     fcol = last_day.get("kommo_funnel_col") or {}
     by_status = fcol.get("byStatus") or {}
     if by_status:
-        sdf = pd.DataFrame(sorted(by_status.items(), key=lambda x: -x[1]), columns=["etapa", "leads"])
-        fig = go.Figure(go.Bar(x=sdf["etapa"], y=sdf["leads"], marker_color=LILAC))
-        st.plotly_chart(plotly_dark_layout(fig, height=260), use_container_width=True)
+        total_funnel_col = sum(by_status.values())
+        items_col = sorted(by_status.items(), key=lambda x: KOMMO_STAGE_ORDER_COL.index(x[0]) if x[0] in KOMMO_STAGE_ORDER_COL else 999)
+        sdf = pd.DataFrame(items_col, columns=["etapa", "leads"])
+        sdf["pct"] = sdf["leads"].apply(lambda v: f"{(v/total_funnel_col*100):.0f}%" if total_funnel_col else "")
+        fig = go.Figure(go.Bar(x=sdf["etapa"], y=sdf["leads"], text=sdf["pct"], textposition="outside", marker_color=LILAC))
+        st.plotly_chart(plotly_dark_layout(fig, height=280), use_container_width=True)
     else:
         st.markdown('<div class="bcc-note-box">sin dato de funnel para Colombia en este corte</div>', unsafe_allow_html=True)
 
