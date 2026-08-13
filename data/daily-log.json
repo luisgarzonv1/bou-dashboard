@@ -1358,15 +1358,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 0,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 2,
     "otros": 0,
+    "pendiente_no_cobrado_cop": 0,
     "total_cop": 0,
-    "pendiente_no_cobrado_cop": 110000,
-    "moneda": "COP"
+    "web": 0
    }
   },
   {
@@ -1636,15 +1637,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 570000,
-    "web": 60000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 1,
     "otros": 0,
-    "total_cop": 630000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 60000,
+    "web": 60000
    }
   },
   {
@@ -1786,15 +1788,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 190000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 1,
     "otros": 0,
-    "total_cop": 190000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 190000,
+    "web": 190000
    }
   },
   {
@@ -2185,15 +2188,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 161000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 1,
     "otros": 0,
-    "total_cop": 161000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 161000,
+    "web": 161000
    }
   },
   {
@@ -2698,15 +2702,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 165000,
-    "web": 0,
     "concierto": 0,
+    "en_linea": 165000,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 1,
     "otros": 0,
-    "total_cop": 165000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 165000,
+    "web": 0
    }
   },
   {
@@ -2976,15 +2981,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 207000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 1,
     "otros": 0,
-    "total_cop": 207000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 207000,
+    "web": 207000
    }
   },
   {
@@ -4516,15 +4522,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 380000,
-    "web": 146539,
     "concierto": 0,
+    "en_linea": 380000,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 2,
     "otros": 0,
-    "total_cop": 526539,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 380000,
+    "web": 0
    }
   },
   {
@@ -4913,15 +4920,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 57500,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 2,
     "otros": 0,
-    "total_cop": 57500,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 57500,
+    "web": 57500
    }
   },
   {
@@ -5244,15 +5252,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 380000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 3,
     "otros": 0,
-    "total_cop": 380000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 380000,
+    "web": 380000
    }
   },
   {
@@ -6273,15 +6282,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 160000,
-    "web": 1008000,
     "concierto": 0,
+    "en_linea": 160000,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 6,
     "otros": 0,
-    "total_cop": 1168000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 1168000,
+    "web": 1008000
    }
   },
   {
@@ -6632,15 +6642,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 160000,
-    "web": 160000,
     "concierto": 0,
+    "en_linea": 160000,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 3,
     "otros": 0,
-    "total_cop": 320000,
     "pendiente_no_cobrado_cop": 160000,
-    "moneda": "COP"
+    "total_cop": 320000,
+    "web": 160000
    }
   },
   {
@@ -6804,15 +6815,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 420000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 4,
     "otros": 0,
-    "total_cop": 420000,
     "pendiente_no_cobrado_cop": 50000,
-    "moneda": "COP"
+    "total_cop": 420000,
+    "web": 420000
    }
   },
   {
@@ -6977,15 +6989,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 190000,
-    "web": 350000,
     "concierto": 0,
+    "en_linea": 190000,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 3,
     "otros": 0,
-    "total_cop": 540000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 540000,
+    "web": 350000
    }
   },
   {
@@ -7136,15 +7149,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 380000,
-    "web": 250000,
     "concierto": 0,
+    "en_linea": 380000,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 4,
     "otros": 0,
-    "total_cop": 630000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 630000,
+    "web": 250000
    }
   },
   {
@@ -7318,15 +7332,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 890000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 5,
     "otros": 0,
-    "total_cop": 890000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 890000,
+    "web": 890000
    }
   },
   {
@@ -7488,15 +7503,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 380000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 2,
     "otros": 0,
-    "total_cop": 380000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 380000,
+    "web": 380000
    }
   },
   {
@@ -8032,15 +8048,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 161000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 1,
     "otros": 0,
-    "total_cop": 161000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 161000,
+    "web": 161000
    }
   },
   {
@@ -8766,15 +8783,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 147400,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 3,
     "otros": 0,
-    "total_cop": 147400,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 147400,
+    "web": 147400
    }
   },
   {
@@ -8947,15 +8965,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 112900,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 2,
     "otros": 0,
-    "total_cop": 112900,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 112900,
+    "web": 112900
    }
   },
   {
@@ -9162,15 +9181,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 380000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 2,
     "otros": 0,
-    "total_cop": 380000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 380000,
+    "web": 380000
    }
   },
   {
@@ -9370,15 +9390,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 0,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 3,
     "otros": 0,
-    "total_cop": 0,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 0,
+    "web": 0
    }
   },
   {
@@ -9933,15 +9954,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 190000,
     "concierto": 0,
+    "en_linea": 0,
     "evento": 0,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 1,
     "otros": 0,
-    "total_cop": 190000,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 190000,
+    "web": 190000
    }
   },
   {
@@ -10210,15 +10232,16 @@
     "moneda": "USD"
    },
    "ventas_consolidadas_col": {
-    "fuente": "matriz_google_sheets",
-    "en_linea": 0,
-    "web": 0,
     "concierto": 0,
-    "evento": 0,
+    "en_linea": 0,
+    "evento": 2927400,
+    "fuente": "matriz_google_sheets",
+    "moneda": "COP",
+    "n_registros": 5,
     "otros": 0,
-    "total_cop": 0,
     "pendiente_no_cobrado_cop": 0,
-    "moneda": "COP"
+    "total_cop": 2927400,
+    "web": 0
    }
   },
   {
