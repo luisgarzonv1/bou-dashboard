@@ -625,7 +625,8 @@ with tab_mkt:
         for pais_canales in (ga4c.values() if isinstance(ga4c, dict) else []):
             if isinstance(pais_canales, dict):
                 for canal, val in pais_canales.items():
-                    canal_totales[canal] = canal_totales.get(canal, 0) + (val or 0)
+                    sesiones_val = val.get("sessions", 0) if isinstance(val, dict) else (val or 0)
+                    canal_totales[canal] = canal_totales.get(canal, 0) + (sesiones_val or 0)
     if canal_totales:
         cdf = pd.DataFrame(sorted(canal_totales.items(), key=lambda x: -x[1]), columns=["canal", "sesiones"])
         fig_canal = go.Figure(go.Bar(x=cdf["sesiones"], y=cdf["canal"], orientation="h", marker_color=CYAN))
