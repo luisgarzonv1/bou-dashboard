@@ -12977,62 +12977,57 @@
     },
     {
       "date": "2026-08-14",
-      "kommo_leads_ec": 0,
+      "kommo_leads_ec": 9,
       "kommo_leads_col": 0,
-      "kommo_msj_entrantes_ec": 8,
-      "kommo_msj_salientes_ec": 8,
+      "kommo_msj_entrantes_ec": 22,
+      "kommo_msj_salientes_ec": 28,
       "kommo_msj_entrantes_col": 0,
       "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_ec_s": 24123,
-      "kommo_lapso_medio_col_s": 0,
+      "kommo_lapso_medio_ec_s": 3359,
+      "kommo_lapso_medio_col_s": null,
       "kommo_funnel_ec": {
         "total": 165,
         "byStatus": {
-          "Colaboraciones": 5,
-          "Reacciones y Comentarios": 71,
+          "Reacciones y Comentarios": 80,
           "leads Tibios (interacción)": 38,
-          "Leads perdidos": 14,
-          "Servicios Adicionales": 7,
-          "Leads ganados": 12,
-          "R.Comentarios Revisados": 10,
+          "Leads perdidos": 10,
+          "Servicios Adicionales": 8,
+          "Leads ganados": 11,
+          "R.Comentarios Revisados": 8,
           "SPAM": 1,
+          "Colaboraciones": 3,
           "Por entregar": 1,
           "ATENCION AGENTE": 1,
-          "leads frios (no responde)": 5
+          "leads frios (no responde)": 4
         },
-        "window_days": 30,
-        "won": 12,
-        "lost": 14,
-        "win_rate": 7.3
+        "window_days": 30
       },
       "kommo_funnel_col": {
-        "total": 15,
+        "total": 13,
         "byStatus": {
-          "Ventas Perdidos": 1,
-          "Logrado con éxito": 5,
+          "Logrado con éxito": 4,
           "Por entregar": 3,
           "CAMBIOS Y DEVOLUCIONES": 3,
           "leads Tibios (interacción)": 1,
-          "Contacto inicial": 1,
-          "leads frios (no responde)": 1
+          "leads frios (no responde)": 2
         },
-        "window_days": 30,
-        "won": 5,
-        "lost": 1,
-        "win_rate": 33.3
+        "window_days": 30
       },
       "funnel_kommo": {
-        "ec": {},
+        "ec": {
+          "Reacciones y Comentarios": 8,
+          "Servicios Adicionales": 1
+        },
         "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 8,
-        "salientes": 8,
-        "lapso_promedio_s": 24123,
-        "lapso_mediana_s": 28707
+        "entrantes": 22,
+        "salientes": 28,
+        "lapso_promedio_s": 5343,
+        "lapso_mediana_s": 3359
       },
-      "contifico_documentos": 0,
-      "contifico_total_usd": 0,
+      "contifico_documentos": 1,
+      "contifico_total_usd": 25,
       "contifico_fuente_caida": false,
       "prestashop_pedidos_ec": 0,
       "prestashop_total_ec_usd": 0,
@@ -13040,24 +13035,36 @@
       "prestashop_pedidos_col": 0,
       "prestashop_total_col_cop": 0,
       "prestashop_pedidos_col_todos_estados": 0,
-      "ga4_usuarios_ec": 1,
-      "ga4_usuarios_nuevos_ec": 1,
-      "ga4_sesiones_ec": 1,
+      "ga4_usuarios_ec": 4,
+      "ga4_usuarios_nuevos_ec": 4,
+      "ga4_sesiones_ec": 4,
       "ga4_ingresos_ec_usd": 0,
       "ga4_compras_ec": 0,
-      "ga4_usuarios_col": 1,
+      "ga4_usuarios_col": 2,
       "ga4_usuarios_nuevos_col": 1,
-      "ga4_sesiones_col": 1,
+      "ga4_sesiones_col": 2,
       "ga4_ingresos_col_usd": 0,
       "ga4_compras_col": 0,
       "ga4_canales": {
         "ec": {
+          "Direct": {
+            "sessions": 2,
+            "active_users": 2
+          },
           "Organic Search": {
+            "sessions": 1,
+            "active_users": 1
+          },
+          "Organic Social": {
             "sessions": 1,
             "active_users": 1
           }
         },
         "col": {
+          "Organic Search": {
+            "sessions": 1,
+            "active_users": 1
+          },
           "Organic Social": {
             "sessions": 1,
             "active_users": 1
@@ -13066,18 +13073,10 @@
       },
       "ga4_eventos_clave": {
         "ec": {
-          "page_view": 1,
-          "first_visit": 1,
-          "session_start": 1
+          "view_item": 1
         },
         "col": {
-          "user_engagement": 16,
-          "page_view": 10,
-          "scroll": 4,
-          "view_item_list": 4,
-          "view_item": 2,
-          "first_visit": 1,
-          "session_start": 1
+          "view_item": 3
         }
       },
       "ga4_articulos": {
@@ -13093,7 +13092,7 @@
       "meta_compras": 0,
       "meta_ingresos_usd": 0,
       "meta_roas": 0,
-      "meta_cpa": 0,
+      "meta_cpa": null,
       "ads_ad_sets": [],
       "inventario_por_artista": {
         "NOVESS": {
@@ -13675,19 +13674,20 @@
         "SANATE FILTROS S A"
       ],
       "recomendaciones_ec": [
-        "Kommo EC: 0 leads nuevos en el corte de la mañana; mensajería del día 8 entrantes / 8 salientes, lapso mediana ~8h (28.707s) -- revisar por qué la respuesta tardó tanto en esos casos.",
-        "Meta Ads sigue sin spend activo -- 11 días consecutivos sin inversión (último gasto registrado el 3 de agosto). Confirmar con marketing si las campañas están pausadas intencionalmente.",
-        "Contífico y PrestaShop EC sin ventas registradas aún (corte de las 10:30am, normal a esta hora).",
-        "GA4 EC: 1 usuario nuevo, 1 sesión, sin compras (dato parcial de la mañana).",
-        "Alerta de inventario: 11 categorías/artistas tienen TODOS sus productos con stock en PVP $0 (revisar carga de precios en Contífico): NOVESS, Alex Eugenio, ECOM GLOBAL, GRUPOESHOP, FSA NATURAL, GREEN LINE, LSJ SAS, Mindco, Obrero Del Ritmo, SADE BUSINESS PERU S.A.C., SANATE FILTROS S A."
+        "Kommo EC cerró el día con 9 leads nuevos (vs 0 en el corte de las 10:30am); mensajería del día: 22 entrantes / 28 salientes (vs 8/8 en la mañana), lapso mediana ~56 min (3.359s).",
+        "Contífico EC registró 1 documento por $25 (vs 0 documentos en la mañana) -- venta de merch (categoría SED), cobrada en caja.",
+        "PrestaShop EC cerró sin pedidos pagados (0), igual que en la mañana -- última venta registrada fue el 11/ago.",
+        "Meta Ads sigue sin spend activo -- 11 días consecutivos sin inversión (desde el 3/ago). Confirmar con marketing si es intencional.",
+        "GA4 EC cerró con 4 usuarios (4 nuevos), 4 sesiones y 1 vista de producto, sin compras.",
+        "Inventario vendible BE (corte de la mañana, no recalculado en este cierre): 34.675 unidades por $22.747,92 en valor PVP -- top 3 por valor: BE Guanaco ($3.860,23), Máximo Escaleras ($3.608,70), BE Bou ($3.234,78)."
       ],
       "recomendaciones_col": [
-        "Kommo COL: 0 leads y 0 mensajes en el corte de la mañana.",
-        "Matriz de ventas Colombia (Google Sheets) sin filas nuevas desde el 5 de agosto -- es una limitante de carga manual del equipo COL, no un fallo técnico. Confirmar con el equipo si van a actualizar el registro.",
-        "GA4 COL: 1 usuario nuevo, 1 sesión vía Organic Social, sin compras (dato parcial de la mañana)."
+        "Kommo COL cerró el día sin leads nuevos (igual que en la mañana); mensajería del día sin actividad (0 entrantes / 0 salientes).",
+        "PrestaShop COL sin pedidos pagados. Matriz de Ventas Colombia sigue sin filas para hoy (última carga registrada es del 5/ago) -- 0 legítimo, no es bloqueo técnico.",
+        "GA4 COL cerró con 2 usuarios (1 nuevo) y 2 sesiones, sin compras."
       ],
-      "parcial": true,
-      "nota_verificacion": "Corte de mañana (10:30am ECU) del 14/ago/2026. Kommo: funnel_ec/col recalculado con metodología de leads creados en ventana móvil de 30 días (validado contra el total de 175 del 13/ago; hoy 165 -- consistente). Contífico: 0 documentos emitidos aún hoy. PrestaShop EC y COL: 0 pedidos pagados hoy (última venta EC registrada fue el 11/ago, última COL el 3/ago -- tiendas con actividad baja, no error técnico). Inventario recalculado completo hoy: 866 productos activos BE, stock consultado al 100%. Meta Ads: sin spend desde el 3/ago (11 días), confirmado contra Windsor -- posible pausa de campañas, no error de conector. GA4: datos muy parciales por ser temprano en el día. Colombia (Matriz Google Sheets): última fila cargada es del 5/ago -- limitante de proceso del equipo COL, no técnica. Pendiente: corte de cierre (6pm) actualizará esta misma fila con contifico_metodo_cobro, ventas_consolidadas_ec/col y funnel_kommo del día completo.",
+      "parcial": false,
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Inventario no se recalcula en este corte (solo en el de la mañana).",
       "ventas_consolidadas_ec": {
         "fuente": "contifico",
         "tienda": 0,
@@ -13696,8 +13696,7 @@
         "evento": 0,
         "total_usd": 0,
         "excluido_no_be_usd": 0,
-        "moneda": "USD",
-        "nota": "No recalculado en el corte de mañana -- pendiente del corte de cierre (6pm)."
+        "moneda": "USD"
       },
       "ventas_consolidadas_col": {
         "fuente": "matriz_google_sheets",
@@ -13712,7 +13711,9 @@
         "n_registros": 0,
         "nota": "Sin filas nuevas en el Sheet para el 14/ago -- última fila cargada es del 5/ago/2026 (limitante de carga manual del equipo COL)."
       },
-      "contifico_metodo_cobro": {}
+      "contifico_metodo_cobro": {
+        "CAJA": 25
+      }
     }
   ],
   "periodic": [
