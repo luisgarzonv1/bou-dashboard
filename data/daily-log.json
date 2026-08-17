@@ -13831,8 +13831,8 @@
      "monto_pvp": 298.26
     },
     "BE Bou": {
-     "cantidad": 722,
-     "monto_pvp": 3234.78
+     "cantidad": 102,
+     "monto_pvp": 3000
     },
     "Nicolás y los Fumadores": {
      "cantidad": 45,
@@ -13969,8 +13969,8 @@
    },
    "inventario_por_bodega": {
     "Bodega EMPRESAS EN CONSIGNACIÓN": {
-     "cantidad": 37627,
-     "monto_pvp": 11720.81
+     "cantidad": 37007,
+     "monto_pvp": 11486.03
     },
     "EVENTOS BOU": {
      "cantidad": 125,
@@ -13998,8 +13998,8 @@
     }
    },
    "inventario_total": {
-    "cantidad": 38079,
-    "monto_pvp": 22726.18
+    "cantidad": 37459,
+    "monto_pvp": 22491.4
    },
    "inventario_matriz": {
     "NOVESS": {
@@ -14040,8 +14040,8 @@
       "monto_pvp": 282.61
      },
      "Bodega EMPRESAS EN CONSIGNACIÓN": {
-      "cantidad": 630,
-      "monto_pvp": 626.09
+      "cantidad": 10,
+      "monto_pvp": 391.31
      },
      "Bodega España": {
       "cantidad": 13,
