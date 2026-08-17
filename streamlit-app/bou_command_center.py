@@ -448,20 +448,43 @@ with tab_ec:
     inv_day = next((d for d in days_all if d.get("inventario_total", {}).get("cantidad")), None)
     if inv_day:
         st.caption(f"Último dato: {inv_day['date']} (corte de mañana — no refleja ventas de la tarde de ese día)")
-        art_raw = inv_day.get("inventario_por_artista") or {}
+        matriz = inv_day.get("inventario_matriz") or {}
+        if matriz:
+            bodegas_set = set()
+            for _art_bodegas in matriz.values():
+                bodegas_set.update(_art_bodegas.keys())
+            bodegas_list = sorted(bodegas_set)
+            bodegas_sel = st.multiselect(
+                "Filtrar por bodega", bodegas_list, default=bodegas_list,
+                key="ec_inv_bodega_filter",
+                help="Por defecto se suman todas las bodegas vendibles. Deselecciona para ver el inventario solo en ciertas bodegas.",
+            )
+            bodegas_sel_set = set(bodegas_sel) if bodegas_sel else set(bodegas_list)
+            art_raw = {}
+            for _artista, _bodegas in matriz.items():
+                _cant = sum(v.get("cantidad", 0) for k, v in _bodegas.items() if k in bodegas_sel_set)
+                _monto = sum(v.get("monto_pvp", 0) for k, v in _bodegas.items() if k in bodegas_sel_set)
+                if _cant > 0:
+                    art_raw[_artista] = {"cantidad": _cant, "monto_pvp": _monto}
+        else:
+            art_raw = inv_day.get("inventario_por_artista") or {}
+            st.caption("Este corte todavía no trae `inventario_matriz` — mostrando el total agregado, sin filtro de bodega disponible.")
         # Excluir categorías de BOU Logistica (proyecto aparte, mismo catálogo Contífico)
         art = {k: v for k, v in art_raw.items() if k not in BOU_LOGISTICA_CATEGORIAS}
         excluidos_n = len(art_raw) - len(art)
-        adf = pd.DataFrame([{"artista": k, "monto": v["monto_pvp"], "cantidad": v["cantidad"]} for k, v in art.items()]).sort_values("monto")
-        fig = go.Figure(go.Bar(x=adf["monto"], y=adf["artista"], orientation="h", marker_color=CYAN,
-                                customdata=adf["cantidad"], hovertemplate="%{y}<br>$%{x:,.2f} PVP<br>%{customdata} uds<extra></extra>"))
-        st.plotly_chart(plotly_dark_layout(fig, height=max(360, 20 * len(adf))), use_container_width=True)
+        if art:
+            adf = pd.DataFrame([{"artista": k, "monto": v["monto_pvp"], "cantidad": v["cantidad"]} for k, v in art.items()]).sort_values("monto")
+            fig = go.Figure(go.Bar(x=adf["monto"], y=adf["artista"], orientation="h", marker_color=CYAN,
+                customdata=adf["cantidad"], hovertemplate="%{y}<br>$%{x:,.2f} PVP<br>%{customdata} uds<extra></extra>"))
+            st.plotly_chart(plotly_dark_layout(fig, height=max(360, 20 * len(adf))), use_container_width=True)
+        else:
+            st.markdown('<div class="bcc-note-box">sin inventario en las bodegas seleccionadas</div>', unsafe_allow_html=True)
         if excluidos_n:
             st.caption(f"Se excluyeron {excluidos_n} categorías de BOU Logistica (proyecto aparte, comparten catálogo en Contífico).")
         # inventario_alertas_pvp es una lista de textos ya redactados por la tarea programada;
         # se descartan las líneas que hablan de categorías de BOU Logistica (no son artistas BE)
         alertas = [a for a in (inv_day.get("inventario_alertas_pvp") or [])
-                   if not any(a.startswith(cat) for cat in BOU_LOGISTICA_CATEGORIAS)]
+            if not any(a.startswith(cat) for cat in BOU_LOGISTICA_CATEGORIAS)]
         if alertas:
             st.markdown(
                 '<div class="bcc-warn-box">⚠️ PVP sin cargar en Contífico (afecta el valor mostrado, no la cantidad):<br>'
