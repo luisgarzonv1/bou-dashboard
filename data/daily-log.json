@@ -14412,66 +14412,18 @@
     }
    },
    "inventario_alertas_pvp": [
-    {
-     "artista": "NOVESS",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 4
-    },
-    {
-     "artista": "Nasa",
-     "problema": "PVP plano sospechoso ($1) en todos los productos con stock",
-     "n_productos": 20
-    },
-    {
-     "artista": "Alex Eugenio",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 1
-    },
-    {
-     "artista": "ECOM GLOBAL",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 2
-    },
-    {
-     "artista": "GRUPOESHOP",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 5
-    },
-    {
-     "artista": "FSA NATURAL",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 18
-    },
-    {
-     "artista": "GREEN LINE",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 5
-    },
-    {
-     "artista": "LSJ SAS",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 16
-    },
-    {
-     "artista": "Mindco",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 2
-    },
-    {
-     "artista": "Obrero Del Ritmo",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 6
-    },
-    {
-     "artista": "SADE BUSINESS PERU S.A.C.",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 3
-    },
-    {
-     "artista": "SANATE FILTROS S A",
-     "problema": "PVP en 0 en todos los productos con stock",
-     "n_productos": 1
-    }
+    "NOVESS",
+    "Nasa",
+    "Alex Eugenio",
+    "ECOM GLOBAL",
+    "GRUPOESHOP",
+    "FSA NATURAL",
+    "GREEN LINE",
+    "LSJ SAS",
+    "Mindco",
+    "Obrero Del Ritmo",
+    "SADE BUSINESS PERU S.A.C.",
+    "SANATE FILTROS S A"
    ],
    "recomendaciones_ec": [
     "Kommo EC: 0 leads nuevos y 0 mensajes en el corte de las 10:30am — normal para esta hora, se espera actividad más alta en el corte de cierre de las 6pm.",
