@@ -1043,6 +1043,393 @@
         "Kommo funnel: se uso el snapshot del 11/ago (0 dias de antiguedad) por ser mas reciente que el disponible previamente (7/ago, ya con 4 dias).",
         "Colombia: leads_nuevos_kommo_api=0 no se interpreta como ausencia real de leads nuevos, dado que hubo actividad comercial (compras, mensajeria) en la semana — ver hallazgo tecnico."
       ]
+    },
+    {
+      "week_id": "2026-W33",
+      "week_start": "2026-08-10",
+      "week_end": "2026-08-16",
+      "week_start_prev": "2026-08-03",
+      "week_end_prev": "2026-08-09",
+      "generated_at": "2026-08-18",
+      "generated_note": "Semana completa (lunes 10/ago a domingo 16/ago), comparada contra la semana previa completa (3-9 ago). El agregado diario (data/daily-log.json) no tiene entradas para el 15 y 16 de agosto (fin de semana) - trafico GA4 y Meta Ads se tomaron directo de Windsor.ai (fuente primaria, igual que en 2026-W32); Kommo mensajeria, PrestaShop y Contifico se agregaron desde daily-log.json cubriendo solo 5 de los 7 dias disponibles (10-14 ago), por lo que estos tres rubros estan subestimados para la semana actual.",
+      "headline": "Colombia se desploma con Meta Ads en cero (<em>-100%</em> de gasto) mientras Ecuador triplica sus compras",
+      "headline_html": "Semana del <em>10</em> al 16 de agosto.",
+      "subtitle": "Reporte ejecutivo Ecuador + Colombia + Meta Ads, semana completa (10-16 ago) comparada contra la semana previa completa (3-9 ago).",
+      "resumen_lead": "Meta Ads paso de un gasto minimo ($15.90) a cero total esta semana: la unica campana activa del mes (Colombia) permanece pausada desde el 9 de agosto. El impacto es directo: Colombia pierde 66% de sus usuarios (183 a 62), 61% de sus sesiones y cae a 0 compras (vs 3 y $117.28 la semana previa). Ecuador, en cambio, mejora en organico puro: 4 compras vs 1 (+300%) y $52.16 en ingresos vs $13.04. El pipeline diario (daily-log.json) tiene un vacio de 2 dias (15-16 ago) que obligo a tomar trafico GA4 y Meta Ads directo de Windsor.ai.",
+      "resumen_insights": [
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "Meta Ads en cero: la campana de Colombia sigue pausada",
+          "body": "0 impresiones, 0 clics y 0 compras via pago esta semana (vs $15.90 y 1 compra la semana previa). El unico ad set activo del mes (\"publico segmentado - Copia\") no ha corrido desde el 9 de agosto."
+        },
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "Colombia colapsa: -66% usuarios y 0 compras",
+          "body": "Usuarios GA4 caen de 183 a <strong>62</strong>, sesiones de 229 a 90. <strong>0 compras</strong> registradas (vs 3 y $117.28 la semana previa) - coincide exactamente con el apagado de Meta Ads en el pais."
+        },
+        {
+          "tag": "opportunity",
+          "tagLabel": "Oportunidad",
+          "title": "Ecuador triplica compras sin gastar en Ads",
+          "body": "4 compras via GA4 (vs 1) y <strong>$52.16</strong> en ingresos (vs $13.04), +8% en sesiones - todo organico, sin inversion paga. Vale la pena identificar que impulso esta mejora para replicarla."
+        }
+      ],
+      "ecuador": {
+        "trafico": {
+          "ga4_usuarios": 141,
+          "ga4_sesiones": 183,
+          "ga4_ingresos_usd": 52.16,
+          "ga4_compras": 4,
+          "prev_ga4_usuarios": 140,
+          "prev_ga4_sesiones": 170,
+          "prev_ga4_ingresos_usd": 13.04,
+          "prev_ga4_compras": 1
+        },
+        "ventas": {
+          "prestashop_pedidos": 0,
+          "prestashop_total_usd": 0,
+          "prev_prestashop_pedidos": 1,
+          "prev_prestashop_total_usd": 20
+        },
+        "mensajeria": {
+          "entrantes": 74,
+          "salientes": 71,
+          "prev_entrantes": 79,
+          "prev_salientes": 28
+        },
+        "funnel_kommo": {
+          "total": 145,
+          "window_days": 30,
+          "leads_nuevos_kommo_api": 12,
+          "etapas": {
+            "leads Tibios (interaccion)": 34,
+            "Reacciones y Comentarios": 68,
+            "Leads perdidos": 10,
+            "Servicios Adicionales": 7,
+            "Leads ganados": 9,
+            "R.Comentarios Revisados": 7,
+            "SPAM": 1,
+            "Colaboraciones": 3,
+            "Por entregar": 1,
+            "ATENCION AGENTE": 1,
+            "leads frios (no responde)": 4
+          }
+        },
+        "alerta": {
+          "label": "Mejora organica",
+          "text": "Compras (4 vs 1) e ingresos ($52.16 vs $13.04) se triplican esta semana sin inversion paga adicional en Ecuador."
+        },
+        "ga4_eventos": [
+          {
+            "event_name": "page_view",
+            "event_count": 596
+          },
+          {
+            "event_name": "user_engagement",
+            "event_count": 539
+          },
+          {
+            "event_name": "session_start",
+            "event_count": 183
+          },
+          {
+            "event_name": "scroll",
+            "event_count": 181
+          },
+          {
+            "event_name": "view_item_list",
+            "event_count": 170
+          },
+          {
+            "event_name": "view_item",
+            "event_count": 156
+          },
+          {
+            "event_name": "first_visit",
+            "event_count": 121
+          },
+          {
+            "event_name": "form_start",
+            "event_count": 72
+          }
+        ],
+        "ga4_eventos_nota": "page_view: vistas de pagina totales. user_engagement: sesiones con interaccion activa. session_start: sesiones iniciadas. scroll: usuarios que desplazaron la pagina. view_item_list: vistas de listados/categorias de producto. view_item: vistas de ficha de producto individual. first_visit: primeras visitas de usuarios nuevos. form_start: formularios iniciados (checkout o contacto).",
+        "ga4_eventos_clave": [
+          {
+            "event_name": "begin_checkout",
+            "event_count": 25
+          },
+          {
+            "event_name": "add_to_cart",
+            "event_count": 10
+          },
+          {
+            "event_name": "purchase",
+            "event_count": 4
+          },
+          {
+            "event_name": "sign_up",
+            "event_count": 1
+          }
+        ],
+        "ga4_eventos_clave_nota": "begin_checkout: inicio de proceso de pago. add_to_cart: producto agregado al carrito. purchase: compra completada. sign_up: registro de nueva cuenta.",
+        "ga4_canales": [
+          {
+            "channel": "Direct",
+            "sessions": 58
+          },
+          {
+            "channel": "Organic Social",
+            "sessions": 57
+          },
+          {
+            "channel": "Organic Search",
+            "sessions": 56
+          },
+          {
+            "channel": "Referral",
+            "sessions": 10
+          },
+          {
+            "channel": "Organic Shopping",
+            "sessions": 1
+          },
+          {
+            "channel": "Organic Video",
+            "sessions": 1
+          }
+        ],
+        "ga4_articulos": [
+          {
+            "item_name": "CD Lolabum El Cielo 10 Anos",
+            "items_purchased": 4,
+            "item_revenue": 60
+          }
+        ]
+      },
+      "colombia": {
+        "trafico": {
+          "ga4_usuarios": 62,
+          "ga4_sesiones": 90,
+          "ga4_ingresos_usd": 0,
+          "ga4_compras": 0,
+          "prev_ga4_usuarios": 183,
+          "prev_ga4_sesiones": 229,
+          "prev_ga4_ingresos_usd": 117.28,
+          "prev_ga4_compras": 3
+        },
+        "ventas": {
+          "prestashop_pedidos": 0,
+          "prestashop_total_cop": 0,
+          "prev_prestashop_pedidos": 1,
+          "prev_prestashop_total_cop": 212000
+        },
+        "mensajeria": {
+          "entrantes": 18,
+          "salientes": 30,
+          "prev_entrantes": 13,
+          "prev_salientes": 7
+        },
+        "funnel_kommo": {
+          "total": 10,
+          "window_days": 30,
+          "leads_nuevos_kommo_api": 0,
+          "etapas": {
+            "Por entregar": 3,
+            "Logrado con exito": 3,
+            "leads Tibios (interaccion)": 1,
+            "CAMBIOS Y DEVOLUCIONES": 2,
+            "leads frios (no responde)": 1
+          }
+        },
+        "alerta": {
+          "label": "Meta Ads apagado",
+          "text": "El colapso de trafico (-66% usuarios) y ventas (0 compras vs 3) coincide con el corte total de gasto en Meta Ads Colombia, de $15.90 a $0."
+        },
+        "ga4_eventos": [
+          {
+            "event_name": "page_view",
+            "event_count": 265
+          },
+          {
+            "event_name": "user_engagement",
+            "event_count": 229
+          },
+          {
+            "event_name": "scroll",
+            "event_count": 97
+          },
+          {
+            "event_name": "view_item_list",
+            "event_count": 96
+          },
+          {
+            "event_name": "view_item",
+            "event_count": 92
+          },
+          {
+            "event_name": "session_start",
+            "event_count": 79
+          },
+          {
+            "event_name": "first_visit",
+            "event_count": 35
+          },
+          {
+            "event_name": "form_start",
+            "event_count": 32
+          }
+        ],
+        "ga4_eventos_nota": "page_view: vistas de pagina totales. user_engagement: sesiones con interaccion activa. scroll: usuarios que desplazaron la pagina. view_item_list: vistas de listados/categorias de producto. view_item: vistas de ficha de producto individual. session_start: sesiones iniciadas. first_visit: primeras visitas de usuarios nuevos. form_start: formularios iniciados (checkout o contacto).",
+        "ga4_eventos_clave": [
+          {
+            "event_name": "add_to_cart",
+            "event_count": 14
+          },
+          {
+            "event_name": "begin_checkout",
+            "event_count": 6
+          },
+          {
+            "event_name": "sign_up",
+            "event_count": 1
+          }
+        ],
+        "ga4_eventos_clave_nota": "add_to_cart: producto agregado al carrito. begin_checkout: inicio de proceso de pago (sin compras completadas esta semana). sign_up: registro de nueva cuenta.",
+        "ga4_canales": [
+          {
+            "channel": "Organic Search",
+            "sessions": 41
+          },
+          {
+            "channel": "Direct",
+            "sessions": 31
+          },
+          {
+            "channel": "Organic Social",
+            "sessions": 17
+          },
+          {
+            "channel": "Paid Social",
+            "sessions": 1
+          }
+        ],
+        "ga4_articulos": [],
+        "ga4_articulos_nota": "Sin articulos porque no hubo compras completadas esta semana en Colombia (0 ecommerce_purchases) - a diferencia de semanas previas, esta vez el $0 es real y no el bug de tracking reportado anteriormente (no hay compra para verificar si el bug sigue presente)."
+      },
+      "ads": {
+        "meta_spend_usd": 0,
+        "meta_compras": 0,
+        "meta_ingresos_usd": 0,
+        "meta_roas": null,
+        "meta_cpa_usd": null,
+        "meta_impresiones": 0,
+        "meta_alcance": 0,
+        "meta_clics": 0,
+        "meta_link_clics": 0,
+        "meta_ctr": 0,
+        "meta_frecuencia": 0,
+        "prev_meta_spend_usd": 15.9,
+        "prev_meta_compras": 1,
+        "prev_meta_ingresos_usd": 26.07,
+        "prev_meta_roas": 1.64,
+        "prev_meta_impresiones": 13476,
+        "prev_meta_alcance": 10859,
+        "prev_meta_clics": 155,
+        "eficiencia": {
+          "ctr": 0,
+          "cpm": null,
+          "cpc": null,
+          "freq_max": 0,
+          "freq_max_adset": null,
+          "cpa": null,
+          "note": "Cero actividad esta semana: 0 ad sets activos, 0 impresiones y 0 clics. La campana \"la piel colombia nuevo\" (unico ad set con gasto en las ultimas semanas) sigue pausada desde el 9 de agosto."
+        },
+        "ad_sets": [],
+        "nota": "Meta Ads no registro actividad esta semana (0 ad sets activos, confirmado con Windsor.ai para el rango 10-16 ago y con date_preset last_7dT). El gasto cayo de $15.90 a $0 (-100%)."
+      },
+      "hallazgos_tecnicos": [
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "daily-log.json sin datos para 15 y 16 de agosto",
+          "body": "El pipeline diario no genero entradas para el sabado 15 y domingo 16 de agosto (salta de 14 a 17 de agosto). Kommo mensajeria, PrestaShop y Contifico de esta semana estan calculados sobre 5 de 7 dias (10-14 ago) y por tanto subestimados.",
+          "action": "Revisar el scheduler del job diario para confirmar que corre tambien los fines de semana."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "A verificar",
+          "title": "item_revenue=$0 en Colombia no se pudo probar esta semana",
+          "body": "Colombia tuvo 0 compras reales esta semana (ecommerce_purchases=0), por lo que no fue posible confirmar si el bug de item_revenue=$0 reportado en semanas anteriores (con compras si registradas) ya esta resuelto.",
+          "action": "Revisar el reporte de articulos la proxima semana que Colombia tenga al menos una compra."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "A verificar",
+          "title": "leads_nuevos_kommo_api aproximado por el gap de fin de semana",
+          "body": "El conteo de leads nuevos EC (12) y COL (0) se tomo de la suma de kommo_leads_ec/col en daily-log.json, cubriendo solo 5 de los 7 dias de la semana por el mismo gap del 15-16 de agosto.",
+          "action": "Recalcular cuando el gap del pipeline diario este resuelto."
+        }
+      ],
+      "hallazgos_ventas": [
+        {
+          "tag": "critical",
+          "tagLabel": "Critico",
+          "title": "Colombia colapsa al ritmo del apagado de Meta Ads",
+          "body": "Usuarios GA4 caen 66% (183 a 62), sesiones 61% (229 a 90) y las compras pasan de 3 ($117.28) a 0. La caida coincide exactamente con el corte de gasto en Meta Ads Colombia, de $15.90 a $0.",
+          "action": "Decidir si se reactiva la campana \"la piel colombia nuevo\" o si el pais opera solo con trafico organico por ahora."
+        },
+        {
+          "tag": "opportunity",
+          "tagLabel": "Oportunidad",
+          "title": "Ecuador triplica compras sin gastar en Ads",
+          "body": "4 compras via GA4 (vs 1) y $52.16 en ingresos (vs $13.04), +8% en sesiones - todo con Meta Ads en $0. Vale identificar el canal o contenido que impulso la mejora para replicarlo, incluso en Colombia.",
+          "action": "Revisar ga4_canales de Ecuador (Direct y Organic Social lideran) para identificar la fuente del impulso."
+        },
+        {
+          "tag": "watch",
+          "tagLabel": "A verificar",
+          "title": "Mensajeria sube fuerte en ambos paises",
+          "body": "Mensajes salientes EC +154% (28 a 71) y COL +329% (7 a 30), con entrantes estables. El equipo esta respondiendo mucho mas, aunque no se tradujo (aun) en mas pedidos en Colombia.",
+          "action": "Confirmar si el aumento de salientes es por campanas de reactivacion manual o por el CRM."
+        }
+      ],
+      "acciones": [
+        {
+          "title": "Reactivar o dar de baja formalmente la campana Meta Ads Colombia",
+          "body": "\"la piel colombia nuevo\" esta pausada desde el 9/ago y coincide con el colapso de trafico y ventas en COL.",
+          "owner": "Marketing / Alexis",
+          "timing": "Esta semana"
+        },
+        {
+          "title": "Revisar el job diario para el gap de fin de semana",
+          "body": "data/daily-log.json no tiene entradas para 15 y 16 de agosto; subestima mensajeria, PrestaShop y Contifico de la semana.",
+          "owner": "Tecnologia / Luis",
+          "timing": "Esta semana"
+        },
+        {
+          "title": "Investigar el impulso organico de Ecuador",
+          "body": "4 compras vs 1 sin gasto en ads - identificar el canal o contenido para replicarlo, incluso en Colombia.",
+          "owner": "Marketing",
+          "timing": "Proxima semana"
+        },
+        {
+          "title": "Confirmar si el bug de item_revenue=$0 en Colombia esta resuelto",
+          "body": "No se pudo probar esta semana por falta de compras en Colombia.",
+          "owner": "Tecnologia",
+          "timing": "Seguimiento continuo"
+        }
+      ],
+      "notas_verificacion": [
+        "Trafico GA4 (usuarios, sesiones, ingresos, compras) y Meta Ads se obtuvieron directo de Windsor.ai (no de daily-log.json) para evitar la subestimacion conocida del agregado diario.",
+        "daily-log.json no tiene entradas para 15 y 16 de agosto de 2026 (fin de semana) - Kommo mensajeria, PrestaShop y Contifico de la semana actual cubren solo 5 de 7 dias (10-14 ago).",
+        "Snapshot de Kommo funnel (ventana movil 30 dias) tomado del 17 de agosto (1 dia de antiguedad), reutilizado sin recalcular por estar dentro del limite de 2 dias.",
+        "leads_nuevos_kommo_api aproximado con la suma de kommo_leads_ec/col de daily-log.json sobre los 5 dias disponibles.",
+        "Meta Ads: 0 ad sets activos confirmado con Windsor.ai (connector facebook) tanto para el rango 10-16 ago como con date_preset last_7dT.",
+        "Colombia tuvo 0 compras reales esta semana; no se pudo verificar si el bug de item_revenue=$0 (reportado semanas anteriores) sigue presente."
+      ]
     }
   ]
 }
