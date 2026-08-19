@@ -19132,54 +19132,52 @@
     },
     {
       "kommo_leads_ec": 0,
-      "kommo_leads_col": 0,
-      "kommo_msj_entrantes_ec": 0,
-      "kommo_msj_salientes_ec": 0,
-      "kommo_msj_entrantes_col": 0,
-      "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_ec_s": null,
-      "kommo_lapso_medio_col_s": null,
+      "kommo_leads_col": 1,
+      "kommo_msj_entrantes_ec": 2,
+      "kommo_msj_salientes_ec": 3,
+      "kommo_msj_entrantes_col": 5,
+      "kommo_msj_salientes_col": 2,
+      "kommo_lapso_medio_ec_s": 11757,
+      "kommo_lapso_medio_col_s": 987,
       "kommo_funnel_ec": {
-        "total": 381,
+        "total": 154,
         "byStatus": {
-          "Reacciones y Comentarios": 153,
-          "Leads perdidos": 66,
-          "leads Tibios (interacción)": 40,
-          "Colaboraciones": 31,
-          "R.Comentarios Revisados": 29,
-          "Falta stock": 3,
-          "Servicios Adicionales": 13,
-          "Leads ganados": 25,
+          "leads Tibios (interacción)": 33,
+          "Reacciones y Comentarios": 78,
+          "Leads perdidos": 10,
+          "Servicios Adicionales": 7,
+          "Leads ganados": 9,
+          "R.Comentarios Revisados": 7,
           "SPAM": 1,
-          "CAMBIOS Y DEVOLUCIONES": 1,
-          "Sorteos y concursos": 2,
+          "Colaboraciones": 3,
           "Por entregar": 1,
           "ATENCION AGENTE": 1,
-          "leads frios (no responde)": 15
+          "leads frios (no responde)": 4
         },
         "window_days": 30
       },
       "kommo_funnel_col": {
-        "total": 63,
+        "total": 13,
         "byStatus": {
-          "Logrado con éxito": 19,
-          "Ventas Perdidos": 21,
-          "Por entregar": 4,
-          "leads Tibios (interacción)": 7,
-          "leads frios (no responde)": 6,
-          "CAMBIOS Y DEVOLUCIONES": 6
+          "Por entregar": 2,
+          "Logrado con éxito": 4,
+          "leads Tibios (interacción)": 2,
+          "CAMBIOS Y DEVOLUCIONES": 4,
+          "leads frios (no responde)": 1
         },
         "window_days": 30
       },
       "funnel_kommo": {
         "ec": {},
-        "col": {}
+        "col": {
+          "leads Tibios (interacción)": 1
+        }
       },
       "mensajeria_be": {
-        "entrantes": 0,
-        "salientes": 0,
+        "entrantes": 7,
+        "salientes": 5,
         "lapso_promedio_s": null,
-        "lapso_mediana_s": null
+        "lapso_mediana_s": 6372
       },
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
@@ -19773,20 +19771,33 @@
       "prestashop_total_ec_usd": 0,
       "prestashop_pedidos_col": 1,
       "prestashop_total_col_cop": 62250,
-      "ga4_usuarios_ec": 0,
-      "ga4_usuarios_nuevos_ec": 0,
-      "ga4_sesiones_ec": 0,
+      "ga4_usuarios_ec": 5,
+      "ga4_usuarios_nuevos_ec": 2,
+      "ga4_sesiones_ec": 5,
       "ga4_ingresos_ec_usd": 0,
       "ga4_compras_ec": 0,
-      "ga4_usuarios_col": 1,
-      "ga4_usuarios_nuevos_col": 1,
-      "ga4_sesiones_col": 1,
-      "ga4_ingresos_col_usd": 0,
-      "ga4_compras_col": 0,
+      "ga4_usuarios_col": 8,
+      "ga4_usuarios_nuevos_col": 5,
+      "ga4_sesiones_col": 10,
+      "ga4_ingresos_col_usd": 10.7844,
+      "ga4_compras_col": 1,
       "ga4_canales": {
-        "ec": {},
+        "ec": {
+          "Direct": {
+            "sessions": 4,
+            "active_users": 4
+          },
+          "Referral": {
+            "sessions": 1,
+            "active_users": 1
+          }
+        },
         "col": {
           "Direct": {
+            "sessions": 9,
+            "active_users": 7
+          },
+          "Paid Social": {
             "sessions": 1,
             "active_users": 1
           }
@@ -19794,11 +19805,25 @@
       },
       "ga4_eventos_clave": {
         "ec": {},
-        "col": {}
+        "col": {
+          "view_item": 9,
+          "form_submit": 4,
+          "add_payment_info": 2,
+          "add_shipping_info": 2,
+          "begin_checkout": 2,
+          "add_to_cart": 1,
+          "purchase": 1
+        }
       },
       "ga4_articulos": {
         "ec": [],
-        "col": []
+        "col": [
+          {
+            "item_name": "Gorra Girasol",
+            "cantidad": 1,
+            "revenue": 0
+          }
+        ]
       },
       "meta_spend_usd": 0,
       "meta_impresiones": 0,
@@ -19822,18 +19847,19 @@
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP",
         "n_registros": 0,
-        "nota": "Sin filas nuevas en el Sheet para el 19/ago/2026 -- carga manual pendiente del equipo Colombia; última fila real cargada es del 17/ago/2026."
+        "nota": "Sin filas nuevas en el Sheet para el 19/ago/2026 (re-verificado en el corte de cierre 6pm) -- carga manual pendiente del equipo Colombia; última fila real cargada es del 17/ago/2026."
       },
       "date": "2026-08-19",
-      "parcial": true,
-      "nota_verificacion": "Corte de mañana 10:30am. Actividad muy baja en la ventana capturada: Kommo EC/COL sin leads nuevos ni eventos de status en pipelines BE; mensajería del día fue 100% de Embudo de Gestión (Logística), 0 mensajes BE. Contífico sin documentos facturados. PrestaShop: 0 pedidos EC, 1 pedido pagado COL ($62,250 COP, estado 'Transacción completada'). Meta Ads sigue sin spend/impresiones (16 días consecutivos desde 03/ago/2026) -- seguir marcando como pendiente de confirmación. GA4: tráfico mínimo (0 sesiones EC, 1 sesión COL, canal Direct). Inventario recalculado completo (865 productos elegibles, 900 en catálogo). Estos números son PARCIALES y se actualizan en el corte de cierre de las 6pm.",
+      "parcial": false,
+      "nota_verificacion": "Corte de cierre 6pm -- números finales del día, actualiza el corte parcial de las 10:30am. Inventario no se recalcula en este corte (solo en el de la mañana). Kommo: 0 leads EC / 1 lead COL (Tibio), mensajería BE 7 entrantes / 5 salientes (mañana: 0/0), lapso mediana 6372s. Contífico: 0 documentos BE en todo el día (sin cambio vs mañana). PrestaShop: 0 pedidos EC, 1 pedido COL pagado $62,250 COP (sin cambio vs mañana, mismo pedido de la mañana -- current_state 38). Matriz Ventas Colombia: 0 filas nuevas, sigue pendiente carga manual del equipo (última real: 17/ago). Meta Ads: 0 spend/impresiones -- 17 días consecutivos sin actividad. GA4: EC 5 usuarios/5 sesiones/0 compras, COL 8 usuarios/10 sesiones/1 compra ($10.78 USD, item: Gorra Girasol).",
       "recomendaciones_ec": [
-        "Ecuador arrancó el día sin actividad registrada: 0 leads Kommo, 0 documentos Contífico, 0 pedidos PrestaShop, 0 sesiones GA4 hasta el corte de las 10:30am -- normal si es temprano, pero vale monitorear que no sea una falla de tracking.",
-        "Meta Ads EC sigue sin spend por 16 días consecutivos -- confirmar con el equipo de pauta si la cuenta está pausada intencionalmente o hay un problema de conexión con Windsor.ai."
+        "Ecuador cerró el día sin actividad comercial: 0 leads Kommo, 0 documentos Contífico, 0 pedidos PrestaShop -- se mantiene igual que en el corte de la mañana. GA4 registró 5 sesiones pero 0 compras. Revisar con el equipo si hay una causa de fondo (tracking, catálogo, pauta apagada).",
+        "Meta Ads EC sigue sin spend por 17 días consecutivos -- escalar con el equipo de pauta si la cuenta sigue pausada intencionalmente o hay un problema de conexión con Windsor.ai."
       ],
       "recomendaciones_col": [
-        "Colombia registró 1 pedido pagado en PrestaShop ($62,250 COP, Transacción completada) pero el Sheet de Matriz de Ventas aún no tiene filas cargadas para hoy -- la última carga manual es del 17/ago, val la pena recordarle al equipo de Colombia actualizarlo.",
-        "Tráfico GA4 COL mínimo (1 sesión, canal Direct) -- sin señales de campañas activas."
+        "Colombia cerró con 1 pedido pagado en PrestaShop ($62,250 COP) y 1 lead nuevo en Kommo (etapa 'Tibio') -- mismo pedido que se vio en la mañana, sin pedidos adicionales durante el día.",
+        "GA4 COL tuvo actividad real: 10 sesiones, 8 usuarios, 1 compra confirmada ($10.78 USD, Gorra Girasol) y varios eventos de funnel (2 begin_checkout, 2 add_payment_info) -- señal de intención de compra que vale la pena seguir.",
+        "La Matriz de Ventas Colombia sigue sin filas cargadas para hoy (última carga real: 17/ago) -- recordar al equipo de Colombia actualizar el Sheet antes del cierre de mañana."
       ],
       "ventas_consolidadas_ec": {
         "fuente": "contifico",
@@ -19846,7 +19872,7 @@
         "moneda": "USD"
       },
       "prestashop_pedidos_ec_todos_estados": 0,
-      "prestashop_pedidos_col_todos_estados": 1,
+      "prestashop_pedidos_col_todos_estados": 2,
       "inventario_productos": [
         {
           "codigo": "ANDINOINCA",
