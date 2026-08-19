@@ -421,9 +421,11 @@ document.querySelectorAll('.tab').forEach(btn=>{
   </div>
 </section>
 <section id="bou-extra3" style="max-width:1100px;margin:32px auto;padding:0 20px;font-family:'Courier New',monospace;color:#eee;">
-  <h2 style="font-size:14px;color:#999;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #2a2a2a;padding-bottom:8px;">Inventario vendible por artista (Bou Entertainment)</h2>
-  <div id="bouInvFiltro" style="margin-bottom:12px;"></div>
-  <div id="bouInvArtista"></div>
+<h2 style="font-size:14px;color:#999;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #2a2a2a;padding-bottom:8px;">Inventario vendible por artista (Bou Entertainment)</h2>
+<div id="bouInvFiltro" style="margin-bottom:8px;"></div>
+<div id="bouInvFiltroArtista" style="margin-bottom:12px;"></div>
+<div id="bouInvArtista"></div>
+<div id="bouInvProductos" style="margin-top:20px;"></div>
 </section>
 
 
@@ -522,90 +524,154 @@ document.querySelectorAll('.tab').forEach(btn=>{
       document.getElementById('bouAdsetsHoy').innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
     }
     {
-      let lastInv = null, lastInvDate = null;
-      for (let i = days.length - 1; i >= 0; i--) {
-        if (days[i].inventario_total && days[i].inventario_total.cantidad) { lastInv = days[i]; lastInvDate = days[i].date; break; }
-      }
-      const elInv = document.getElementById('bouInvArtista');
-      const elFiltro = document.getElementById('bouInvFiltro');
-      if (lastInv && elInv && lastInv.inventario_matriz) {
-        const matriz = lastInv.inventario_matriz;
-        const bodegasSet = new Set();
-        Object.keys(matriz).forEach(art => Object.keys(matriz[art]).forEach(b => bodegasSet.add(b)));
-        const bodegas = Array.from(bodegasSet).sort();
-        if (!window.__bouInvSel) window.__bouInvSel = new Set(bodegas);
-        const sel = window.__bouInvSel;
+let lastInv = null, lastInvDate = null;
+for (let i = days.length - 1; i >= 0; i--) {
+if (days[i].inventario_total && days[i].inventario_total.cantidad) { lastInv = days[i]; lastInvDate = days[i].date; break; }
+}
+const elInv = document.getElementById('bouInvArtista');
+const elFiltro = document.getElementById('bouInvFiltro');
+const elFiltroArt = document.getElementById('bouInvFiltroArtista');
+const elProductos = document.getElementById('bouInvProductos');
+const IVA_RATE = 0.15;
+if (lastInv && elInv && lastInv.inventario_matriz) {
+const matriz = lastInv.inventario_matriz;
+const bodegasSet = new Set();
+Object.keys(matriz).forEach(art => Object.keys(matriz[art]).forEach(b => bodegasSet.add(b)));
+const bodegas = Array.from(bodegasSet).sort();
+const artistas = Object.keys(matriz).sort();
+if (!window.__bouInvSel) window.__bouInvSel = new Set(bodegas);
+if (!window.__bouInvArtSel) window.__bouInvArtSel = new Set(artistas);
+const sel = window.__bouInvSel;
+const artSel = window.__bouInvArtSel;
 
-        function computeRows() {
-          const rows = [];
-          let totalCantidad = 0, totalMonto = 0;
-          Object.keys(matriz).forEach(art => {
-            let cantidad = 0, monto = 0;
-            Object.keys(matriz[art]).forEach(b => {
-              if (!sel.has(b)) return;
-              cantidad += matriz[art][b].cantidad;
-              monto += matriz[art][b].monto_pvp;
-            });
-            if (cantidad > 0) { rows.push({nombre: art, cantidad: cantidad, monto: monto}); totalCantidad += cantidad; totalMonto += monto; }
-          });
-          rows.sort((a,b) => b.monto - a.monto);
-          return {rows: rows, totalCantidad: totalCantidad, totalMonto: totalMonto};
-        }
+function computeRows() {
+const rows = [];
+let totalCantidad = 0, totalMonto = 0;
+Object.keys(matriz).forEach(art => {
+if (!artSel.has(art)) return;
+let cantidad = 0, monto = 0;
+Object.keys(matriz[art]).forEach(b => {
+if (!sel.has(b)) return;
+cantidad += matriz[art][b].cantidad;
+monto += matriz[art][b].monto_pvp;
+});
+if (cantidad > 0) { rows.push({nombre: art, cantidad: cantidad, monto: monto}); totalCantidad += cantidad; totalMonto += monto; }
+});
+rows.sort((a,b) => b.monto - a.monto);
+return {rows: rows, totalCantidad: totalCantidad, totalMonto: totalMonto};
+}
 
-        function renderArtista() {
-          const data = computeRows();
-          const rows = data.rows;
-          const maxMonto = rows.length ? rows[0].monto : 1;
-          let outHtml = '';
-          outHtml += '<div style="display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap;">';
-          outHtml += '<div style="border:1px solid #2a2a2a;border-radius:6px;padding:10px 16px;"><div style="font-size:10px;color:#666;text-transform:uppercase;">Unidades vendibles</div><div style="font-size:20px;color:#fff;">' + data.totalCantidad.toLocaleString('es-EC') + '</div></div>';
-          outHtml += '<div style="border:1px solid #2a2a2a;border-radius:6px;padding:10px 16px;"><div style="font-size:10px;color:#666;text-transform:uppercase;">Valor PVP total</div><div style="font-size:20px;color:#fff;">$' + data.totalMonto.toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2}) + '</div></div>';
-          outHtml += '</div>';
-          outHtml += '<div style="font-size:10px;color:#666;margin-bottom:10px;">' + lastInvDate + ' · stock vendible según bodegas seleccionadas (excluye Productos con daños, Caducados y Bodega COL EMPRESAS EN CONSIGNACIÓN)</div>';
-          rows.forEach(r => {
-            const pct = maxMonto ? Math.max(2, Math.round((r.monto / maxMonto) * 100)) : 2;
-            outHtml += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">';
-            outHtml += '<div style="width:140px;font-size:11px;color:#ccc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + r.nombre + '</div>';
-            outHtml += '<div style="flex:1;background:#1a1a1a;border-radius:3px;overflow:hidden;height:16px;"><div style="width:' + pct + '%;background:#3a6ea5;height:100%;"></div></div>';
-            outHtml += '<div style="width:150px;text-align:right;font-size:11px;color:#999;">' + r.cantidad.toLocaleString('es-EC') + ' uds · $' + r.monto.toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2}) + '</div>';
-            outHtml += '</div>';
-          });
-          if (lastInv.inventario_alertas_pvp && lastInv.inventario_alertas_pvp.length) {
-            outHtml += '<div style="margin-top:10px;border:1px solid #5a2a2a;border-radius:4px;padding:8px 12px;font-size:10px;color:#e08080;">PVP sin cargar en Contífico (valor real no disponible): ' + lastInv.inventario_alertas_pvp.join(' · ') + '</div>';
-          }
-          elInv.innerHTML = outHtml;
-        }
+function renderArtista() {
+const data = computeRows();
+const rows = data.rows;
+const maxMonto = rows.length ? rows[0].monto : 1;
+const montoConIva = data.totalMonto * (1 + IVA_RATE);
+let outHtml = '';
+outHtml += '<div style="display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap;">';
+outHtml += '<div style="border:1px solid #2a2a2a;border-radius:6px;padding:10px 16px;"><div style="font-size:10px;color:#666;text-transform:uppercase;">Unidades vendibles</div><div style="font-size:20px;color:#fff;">' + data.totalCantidad.toLocaleString('es-EC') + '</div></div>';
+outHtml += '<div style="border:1px solid #2a2a2a;border-radius:6px;padding:10px 16px;"><div style="font-size:10px;color:#666;text-transform:uppercase;">Valor PVP total (sin IVA)</div><div style="font-size:20px;color:#fff;">$' + data.totalMonto.toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2}) + '</div></div>';
+outHtml += '<div style="border:1px solid #2a2a2a;border-radius:6px;padding:10px 16px;"><div style="font-size:10px;color:#666;text-transform:uppercase;">Valor con IVA (15%)</div><div style="font-size:20px;color:#fff;">$' + montoConIva.toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2}) + '</div></div>';
+outHtml += '</div>';
+outHtml += '<div style="font-size:10px;color:#666;margin-bottom:10px;">' + lastInvDate + ' · stock vendible según bodegas y artistas seleccionados (excluye Productos con daños, Caducados y Bodega COL EMPRESAS EN CONSIGNACIÓN)</div>';
+rows.forEach(r => {
+const pct = maxMonto ? Math.max(2, Math.round((r.monto / maxMonto) * 100)) : 2;
+outHtml += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">';
+outHtml += '<div style="width:140px;font-size:11px;color:#ccc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + r.nombre + '</div>';
+outHtml += '<div style="flex:1;background:#1a1a1a;border-radius:3px;overflow:hidden;height:16px;"><div style="width:' + pct + '%;background:#3a6ea5;height:100%;"></div></div>';
+outHtml += '<div style="width:150px;text-align:right;font-size:11px;color:#999;">' + r.cantidad.toLocaleString('es-EC') + ' uds · $' + r.monto.toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2}) + '</div>';
+outHtml += '</div>';
+});
+if (lastInv.inventario_alertas_pvp && lastInv.inventario_alertas_pvp.length) {
+outHtml += '<div style="margin-top:10px;border:1px solid #5a2a2a;border-radius:4px;padding:8px 12px;font-size:10px;color:#e08080;">PVP sin cargar en Contífico (valor real no disponible): ' + lastInv.inventario_alertas_pvp.join(' · ') + '</div>';
+}
+elInv.innerHTML = outHtml;
+}
 
-        function renderFiltro() {
-          const allSelected = sel.size === bodegas.length;
-          let fHtml = '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:11px;color:#ccc;padding:8px 10px;border:1px solid #2a2a2a;border-radius:6px;">';
-          fHtml += '<label style="cursor:pointer;display:flex;align-items:center;gap:4px;font-weight:bold;"><input type="checkbox" data-bodega-all="1" ' + (allSelected ? 'checked' : '') + '/> Todas</label>';
-          bodegas.forEach(b => {
-            fHtml += '<label style="cursor:pointer;display:flex;align-items:center;gap:4px;"><input type="checkbox" data-bodega="' + b.replace(/"/g,'&quot;') + '" ' + (sel.has(b) ? 'checked' : '') + '/> ' + b + '</label>';
-          });
-          fHtml += '</div>';
-          elFiltro.innerHTML = fHtml;
-          elFiltro.querySelectorAll('input[data-bodega-all]').forEach(cb => {
-            cb.addEventListener('change', function() {
-              if (this.checked) { bodegas.forEach(b => sel.add(b)); } else { sel.clear(); }
-              renderFiltro(); renderArtista();
-            });
-          });
-          elFiltro.querySelectorAll('input[data-bodega]').forEach(cb => {
-            cb.addEventListener('change', function() {
-              const b = this.getAttribute('data-bodega');
-              if (this.checked) sel.add(b); else sel.delete(b);
-              renderFiltro(); renderArtista();
-            });
-          });
-        }
+function renderFiltro() {
+const allSelected = sel.size === bodegas.length;
+let fHtml = '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:11px;color:#ccc;padding:8px 10px;border:1px solid #2a2a2a;border-radius:6px;">';
+fHtml += '<span style="color:#666;">Bodega:</span>';
+fHtml += '<label style="cursor:pointer;display:flex;align-items:center;gap:4px;font-weight:bold;"><input type="checkbox" data-bodega-all="1" ' + (allSelected ? 'checked' : '') + '/> Todas</label>';
+bodegas.forEach(b => {
+fHtml += '<label style="cursor:pointer;display:flex;align-items:center;gap:4px;"><input type="checkbox" data-bodega="' + b.replace(/"/g,'&quot;') + '" ' + (sel.has(b) ? 'checked' : '') + '/> ' + b + '</label>';
+});
+fHtml += '</div>';
+elFiltro.innerHTML = fHtml;
+elFiltro.querySelectorAll('input[data-bodega-all]').forEach(cb => {
+cb.addEventListener('change', function() {
+if (this.checked) { bodegas.forEach(b => sel.add(b)); } else { sel.clear(); }
+renderFiltro(); renderArtista(); renderProductos();
+});
+});
+elFiltro.querySelectorAll('input[data-bodega]').forEach(cb => {
+cb.addEventListener('change', function() {
+const b = this.getAttribute('data-bodega');
+if (this.checked) sel.add(b); else sel.delete(b);
+renderFiltro(); renderArtista(); renderProductos();
+});
+});
+}
 
-        renderFiltro();
-        renderArtista();
-      } else if (elInv) {
-        elInv.innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
-      }
-    }
+function renderFiltroArtista() {
+if (!elFiltroArt) return;
+const allSelected = artSel.size === artistas.length;
+let fHtml = '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:11px;color:#ccc;padding:8px 10px;border:1px solid #2a2a2a;border-radius:6px;max-height:110px;overflow-y:auto;">';
+fHtml += '<span style="color:#666;">Artista:</span>';
+fHtml += '<label style="cursor:pointer;display:flex;align-items:center;gap:4px;font-weight:bold;"><input type="checkbox" data-artista-all="1" ' + (allSelected ? 'checked' : '') + '/> Todos</label>';
+artistas.forEach(a => {
+fHtml += '<label style="cursor:pointer;display:flex;align-items:center;gap:4px;"><input type="checkbox" data-artista="' + a.replace(/"/g,'&quot;') + '" ' + (artSel.has(a) ? 'checked' : '') + '/> ' + a + '</label>';
+});
+fHtml += '</div>';
+elFiltroArt.innerHTML = fHtml;
+elFiltroArt.querySelectorAll('input[data-artista-all]').forEach(cb => {
+cb.addEventListener('change', function() {
+if (this.checked) { artistas.forEach(a => artSel.add(a)); } else { artSel.clear(); }
+renderFiltroArtista(); renderArtista(); renderProductos();
+});
+});
+elFiltroArt.querySelectorAll('input[data-artista]').forEach(cb => {
+cb.addEventListener('change', function() {
+const a = this.getAttribute('data-artista');
+if (this.checked) artSel.add(a); else artSel.delete(a);
+renderFiltroArtista(); renderArtista(); renderProductos();
+});
+});
+}
+
+function renderProductos() {
+if (!elProductos) return;
+const productos = lastInv.inventario_productos;
+if (!productos || !productos.length) {
+elProductos.innerHTML = '<div style="color:#666;font-size:11px;">Detalle de productos no disponible para este día (dato agregado desde el 18/ago/2026).</div>';
+return;
+}
+const byProducto = {};
+productos.forEach(p => {
+if (!artSel.has(p.artista) || !sel.has(p.bodega)) return;
+const key = p.codigo;
+if (!byProducto[key]) byProducto[key] = {codigo: p.codigo, nombre: p.nombre, artista: p.artista, cantidad: 0};
+byProducto[key].cantidad += p.cantidad;
+});
+const rows = Object.values(byProducto).filter(r => r.cantidad > 0).sort((a,b) => b.cantidad - a.cantidad);
+let outHtml = '<div style="font-size:11px;color:#999;margin-bottom:8px;">Productos (' + rows.length + ') según filtros seleccionados</div>';
+outHtml += '<div style="max-height:360px;overflow-y:auto;border:1px solid #2a2a2a;border-radius:6px;">';
+outHtml += '<table style="width:100%;border-collapse:collapse;font-size:11px;">';
+outHtml += '<thead><tr style="position:sticky;top:0;background:#151515;"><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">SKU</th><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Producto</th><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Artista</th><th style="text-align:right;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Cantidad</th></tr></thead><tbody>';
+rows.forEach(r => {
+outHtml += '<tr><td style="padding:5px 10px;color:#999;border-bottom:1px solid #1a1a1a;">' + r.codigo + '</td><td style="padding:5px 10px;color:#ccc;border-bottom:1px solid #1a1a1a;">' + r.nombre + '</td><td style="padding:5px 10px;color:#999;border-bottom:1px solid #1a1a1a;">' + r.artista + '</td><td style="padding:5px 10px;text-align:right;color:#ccc;border-bottom:1px solid #1a1a1a;">' + r.cantidad.toLocaleString('es-EC') + '</td></tr>';
+});
+outHtml += '</tbody></table></div>';
+elProductos.innerHTML = outHtml;
+}
+
+renderFiltro();
+renderFiltroArtista();
+renderArtista();
+renderProductos();
+} else if (elInv) {
+elInv.innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</div>';
+}
+}
     renderFunnel('funnelEc', lastEc, EC_PIPELINE_ORDER, EC_NON_SALES_STAGES);
     renderFunnel('funnelCol', lastCol, COL_PIPELINE_ORDER, []);
   });
