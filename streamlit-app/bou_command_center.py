@@ -468,19 +468,58 @@ with tab_ec:
                     art_raw[_artista] = {"cantidad": _cant, "monto_pvp": _monto}
         else:
             art_raw = inv_day.get("inventario_por_artista") or {}
+            bodegas_sel_set = None
             st.caption("Este corte todavía no trae `inventario_matriz` — mostrando el total agregado, sin filtro de bodega disponible.")
         # Excluir categorías de BOU Logistica (proyecto aparte, mismo catálogo Contífico)
-        art = {k: v for k, v in art_raw.items() if k not in BOU_LOGISTICA_CATEGORIAS}
-        excluidos_n = len(art_raw) - len(art)
+        art_all = {k: v for k, v in art_raw.items() if k not in BOU_LOGISTICA_CATEGORIAS}
+        excluidos_n = len(art_raw) - len(art_all)
+        artistas_list = sorted(art_all.keys())
+        artistas_sel = st.multiselect(
+            "Filtrar por artista", artistas_list, default=artistas_list,
+            key="ec_inv_artista_filter",
+            help="Por defecto se suman todos los artistas. Deselecciona para ver el inventario solo de ciertos artistas.",
+        )
+        artistas_sel_set = set(artistas_sel) if artistas_sel else set(artistas_list)
+        art = {k: v for k, v in art_all.items() if k in artistas_sel_set}
+        total_cant_sel = sum(v["cantidad"] for v in art.values())
+        total_monto_sel = sum(v["monto_pvp"] for v in art.values())
+        IVA_RATE = 0.15
+        c1, c2, c3 = st.columns(3)
+        with c1:
+            kpi_card("Unidades vendibles", f"{total_cant_sel:,.0f}", icon="📦")
+        with c2:
+            kpi_card("Valor PVP (sin IVA)", f"${total_monto_sel:,.2f}", icon="💰")
+        with c3:
+            kpi_card("Valor con IVA (15%)", f"${total_monto_sel * (1 + IVA_RATE):,.2f}", icon="🧾")
         if art:
             adf = pd.DataFrame([{"artista": k, "monto": v["monto_pvp"], "cantidad": v["cantidad"]} for k, v in art.items()]).sort_values("monto")
             fig = go.Figure(go.Bar(x=adf["monto"], y=adf["artista"], orientation="h", marker_color=CYAN,
                 customdata=adf["cantidad"], hovertemplate="%{y}<br>$%{x:,.2f} PVP<br>%{customdata} uds<extra></extra>"))
             st.plotly_chart(plotly_dark_layout(fig, height=max(360, 20 * len(adf))), use_container_width=True)
         else:
-            st.markdown('<div class="bcc-note-box">sin inventario en las bodegas seleccionadas</div>', unsafe_allow_html=True)
+            st.markdown('<div class="bcc-note-box">sin inventario en los filtros seleccionados</div>', unsafe_allow_html=True)
         if excluidos_n:
             st.caption(f"Se excluyeron {excluidos_n} categorías de BOU Logistica (proyecto aparte, comparten catálogo en Contífico).")
+        productos = inv_day.get("inventario_productos") or []
+        if productos:
+            _prod_rows = {}
+            for _p in productos:
+                if _p.get("artista") not in artistas_sel_set:
+                    continue
+                if bodegas_sel_set and _p.get("bodega") not in bodegas_sel_set:
+                    continue
+                _key = _p.get("codigo")
+                if _key not in _prod_rows:
+                    _prod_rows[_key] = {"SKU": _p.get("codigo"), "Producto": _p.get("nombre"), "Artista": _p.get("artista"), "Cantidad": 0}
+                _prod_rows[_key]["Cantidad"] += _p.get("cantidad", 0)
+            _prod_list = sorted(_prod_rows.values(), key=lambda r: -r["Cantidad"])
+            if _prod_list:
+                st.caption(f"Productos ({len(_prod_list)}) según filtros seleccionados")
+                st.dataframe(pd.DataFrame(_prod_list), use_container_width=True, height=360, hide_index=True)
+            else:
+                st.markdown('<div class="bcc-note-box">sin productos en los filtros seleccionados</div>', unsafe_allow_html=True)
+        else:
+            st.markdown('<div class="bcc-note-box">Detalle de productos no disponible para este día (dato agregado desde el 18/ago/2026).</div>', unsafe_allow_html=True)
         # inventario_alertas_pvp es una lista de textos ya redactados por la tarea programada;
         # se descartan las líneas que hablan de categorías de BOU Logistica (no son artistas BE)
         alertas = [a for a in (inv_day.get("inventario_alertas_pvp") or [])
