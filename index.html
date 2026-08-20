@@ -424,6 +424,7 @@ document.querySelectorAll('.tab').forEach(btn=>{
 <h2 style="font-size:14px;color:#999;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #2a2a2a;padding-bottom:8px;">Inventario vendible por artista (Bou Entertainment)</h2>
 <div id="bouInvFiltro" style="margin-bottom:8px;"></div>
 <div id="bouInvFiltroArtista" style="margin-bottom:12px;"></div>
+<div id="bouInvFiltroMarca" style="margin-bottom:12px;"></div>
 <div id="bouInvArtista"></div>
 <div id="bouInvProductos" style="margin-top:20px;"></div>
 </section>
@@ -531,6 +532,7 @@ if (days[i].inventario_total && days[i].inventario_total.cantidad) { lastInv = d
 const elInv = document.getElementById('bouInvArtista');
 const elFiltro = document.getElementById('bouInvFiltro');
 const elFiltroArt = document.getElementById('bouInvFiltroArtista');
+const elFiltroMarca = document.getElementById('bouInvFiltroMarca');
 const elProductos = document.getElementById('bouInvProductos');
 const IVA_RATE = 0.15;
 if (lastInv && elInv && lastInv.inventario_matriz) {
@@ -542,14 +544,35 @@ const bodegasSet = new Set();
 Object.keys(matriz).forEach(art => Object.keys(matriz[art]).forEach(b => bodegasSet.add(b)));
 const bodegas = Array.from(bodegasSet).sort();
 const artistas = Object.keys(matriz).sort();
+const productosRaw = lastInv.inventario_productos || [];
+const hasProductos = productosRaw.length > 0;
+const marcas = Array.from(new Set(productosRaw.filter(p => !LOGISTICA_CATEGORIES.includes(p.artista)).map(p => p.marca || '(sin marca)'))).sort();
 if (!window.__bouInvSel) window.__bouInvSel = new Set(bodegas);
 if (!window.__bouInvArtSel) window.__bouInvArtSel = new Set(artistas);
+if (!window.__bouInvMarcaSel) window.__bouInvMarcaSel = new Set(marcas);
 const sel = window.__bouInvSel;
 const artSel = window.__bouInvArtSel;
+const marcaSel = window.__bouInvMarcaSel;
 
 function computeRows() {
 const rows = [];
 let totalCantidad = 0, totalMonto = 0;
+if (hasProductos) {
+const acc = {};
+productosRaw.forEach(p => {
+if (LOGISTICA_CATEGORIES.includes(p.artista)) return;
+if (!artSel.has(p.artista)) return;
+if (!sel.has(p.bodega)) return;
+const m = p.marca || '(sin marca)';
+if (!marcaSel.has(m)) return;
+if (!acc[p.artista]) acc[p.artista] = {cantidad:0, monto:0};
+acc[p.artista].cantidad += p.cantidad;
+acc[p.artista].monto += p.monto_pvp;
+});
+Object.keys(acc).forEach(art => {
+if (acc[art].cantidad > 0) { rows.push({nombre: art, cantidad: acc[art].cantidad, monto: acc[art].monto}); totalCantidad += acc[art].cantidad; totalMonto += acc[art].monto; }
+});
+} else {
 Object.keys(matriz).forEach(art => {
 if (!artSel.has(art)) return;
 let cantidad = 0, monto = 0;
@@ -560,6 +583,7 @@ monto += matriz[art][b].monto_pvp;
 });
 if (cantidad > 0) { rows.push({nombre: art, cantidad: cantidad, monto: monto}); totalCantidad += cantidad; totalMonto += monto; }
 });
+}
 rows.sort((a,b) => b.monto - a.monto);
 return {rows: rows, totalCantidad: totalCantidad, totalMonto: totalMonto};
 }
@@ -641,6 +665,33 @@ renderFiltroArtista(); renderArtista(); renderProductos();
 });
 }
 
+function renderFiltroMarca() {
+if (!elFiltroMarca) return;
+if (!hasProductos || !marcas.length) { elFiltroMarca.innerHTML = ''; return; }
+const allSelected = marcaSel.size === marcas.length;
+let fHtml = '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:11px;color:#ccc;padding:8px 10px;border:1px solid #2a2a2a;border-radius:6px;">';
+fHtml += '<span style="color:#666;">Marca:</span>';
+fHtml += '<label style="cursor:pointer;display:flex;align-items:center;gap:4px;font-weight:bold;"><input type="checkbox" data-marca-all="1" ' + (allSelected ? 'checked' : '') + '/> Todas</label>';
+marcas.forEach(m => {
+fHtml += '<label style="cursor:pointer;display:flex;align-items:center;gap:4px;"><input type="checkbox" data-marca="' + m.replace(/"/g,'&quot;') + '" ' + (marcaSel.has(m) ? 'checked' : '') + '/> ' + m + '</label>';
+});
+fHtml += '</div>';
+elFiltroMarca.innerHTML = fHtml;
+elFiltroMarca.querySelectorAll('input[data-marca-all]').forEach(cb => {
+cb.addEventListener('change', function() {
+if (this.checked) { marcas.forEach(m => marcaSel.add(m)); } else { marcaSel.clear(); }
+renderFiltroMarca(); renderArtista(); renderProductos();
+});
+});
+elFiltroMarca.querySelectorAll('input[data-marca]').forEach(cb => {
+cb.addEventListener('change', function() {
+const m = this.getAttribute('data-marca');
+if (this.checked) marcaSel.add(m); else marcaSel.delete(m);
+renderFiltroMarca(); renderArtista(); renderProductos();
+});
+});
+}
+
 function renderProductos() {
 if (!elProductos) return;
 const productos = lastInv.inventario_productos;
@@ -651,17 +702,19 @@ return;
 const byProducto = {};
 productos.forEach(p => {
 if (!artSel.has(p.artista) || !sel.has(p.bodega)) return;
+const pm = p.marca || '(sin marca)';
+if (marcas.length && !marcaSel.has(pm)) return;
 const key = p.codigo;
-if (!byProducto[key]) byProducto[key] = {codigo: p.codigo, nombre: p.nombre, artista: p.artista, cantidad: 0};
+if (!byProducto[key]) byProducto[key] = {codigo: p.codigo, nombre: p.nombre, artista: p.artista, marca: pm, cantidad: 0};
 byProducto[key].cantidad += p.cantidad;
 });
 const rows = Object.values(byProducto).filter(r => r.cantidad > 0).sort((a,b) => b.cantidad - a.cantidad);
 let outHtml = '<div style="font-size:11px;color:#999;margin-bottom:8px;">Productos (' + rows.length + ') según filtros seleccionados</div>';
 outHtml += '<div style="max-height:360px;overflow-y:auto;border:1px solid #2a2a2a;border-radius:6px;">';
 outHtml += '<table style="width:100%;border-collapse:collapse;font-size:11px;">';
-outHtml += '<thead><tr style="position:sticky;top:0;background:#151515;"><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">SKU</th><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Producto</th><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Artista</th><th style="text-align:right;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Cantidad</th></tr></thead><tbody>';
+outHtml += '<thead><tr style="position:sticky;top:0;background:#151515;"><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">SKU</th><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Producto</th><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Artista</th><th style="text-align:left;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Marca</th><th style="text-align:right;padding:6px 10px;color:#666;border-bottom:1px solid #2a2a2a;">Cantidad</th></tr></thead><tbody>';
 rows.forEach(r => {
-outHtml += '<tr><td style="padding:5px 10px;color:#999;border-bottom:1px solid #1a1a1a;">' + r.codigo + '</td><td style="padding:5px 10px;color:#ccc;border-bottom:1px solid #1a1a1a;">' + r.nombre + '</td><td style="padding:5px 10px;color:#999;border-bottom:1px solid #1a1a1a;">' + r.artista + '</td><td style="padding:5px 10px;text-align:right;color:#ccc;border-bottom:1px solid #1a1a1a;">' + r.cantidad.toLocaleString('es-EC') + '</td></tr>';
+outHtml += '<tr><td style="padding:5px 10px;color:#999;border-bottom:1px solid #1a1a1a;">' + r.codigo + '</td><td style="padding:5px 10px;color:#ccc;border-bottom:1px solid #1a1a1a;">' + r.nombre + '</td><td style="padding:5px 10px;color:#999;border-bottom:1px solid #1a1a1a;">' + r.artista + '</td><td style="padding:5px 10px;color:#999;border-bottom:1px solid #1a1a1a;">' + r.marca + '</td><td style="padding:5px 10px;text-align:right;color:#ccc;border-bottom:1px solid #1a1a1a;">' + r.cantidad.toLocaleString('es-EC') + '</td></tr>';
 });
 outHtml += '</tbody></table></div>';
 elProductos.innerHTML = outHtml;
@@ -669,6 +722,7 @@ elProductos.innerHTML = outHtml;
 
 renderFiltro();
 renderFiltroArtista();
+renderFiltroMarca();
 renderArtista();
 renderProductos();
 } else if (elInv) {
