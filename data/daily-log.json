@@ -23790,21 +23790,21 @@
     },
     {
       "date": "2026-08-20",
-      "parcial": true,
+      "parcial": false,
       "kommo_leads_ec": 0,
-      "kommo_leads_col": 0,
-      "kommo_msj_entrantes_ec": 9,
-      "kommo_msj_salientes_ec": 7,
-      "kommo_msj_entrantes_col": 1,
-      "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_ec_s": 64,
-      "kommo_lapso_medio_col_s": null,
+      "kommo_leads_col": 2,
+      "kommo_msj_entrantes_ec": 6,
+      "kommo_msj_salientes_ec": 9,
+      "kommo_msj_entrantes_col": 21,
+      "kommo_msj_salientes_col": 11,
+      "kommo_lapso_medio_ec_s": 8076,
+      "kommo_lapso_medio_col_s": 1976,
       "kommo_funnel_ec": {
-        "total": 141,
+        "total": 148,
         "byStatus": {
-          "Reacciones y Comentarios": 69,
+          "Reacciones y Comentarios": 71,
           "Leads perdidos": 10,
-          "leads Tibios (interacción)": 29,
+          "leads Tibios (interacción)": 33,
           "Servicios Adicionales": 7,
           "Leads ganados": 8,
           "R.Comentarios Revisados": 8,
@@ -23812,35 +23812,42 @@
           "Colaboraciones": 3,
           "Por entregar": 1,
           "ATENCION AGENTE": 1,
-          "leads frios (no responde)": 4
+          "leads frios (no responde)": 4,
+          "Cliente Registrado": 1
         },
         "window_days": 30
       },
       "kommo_funnel_col": {
-        "total": 12,
+        "total": 14,
         "byStatus": {
-          "Por entregar": 2,
+          "Por entregar": 3,
           "Logrado con éxito": 4,
-          "leads Tibios (interacción)": 2,
-          "CAMBIOS Y DEVOLUCIONES": 3,
-          "leads frios (no responde)": 1
+          "leads Tibios (interacción)": 1,
+          "CAMBIOS Y DEVOLUCIONES": 4,
+          "leads frios (no responde)": 1,
+          "Contacto inicial": 1
         },
         "window_days": 30
       },
       "funnel_kommo": {
         "ec": {},
-        "col": {}
+        "col": {
+          "CAMBIOS Y DEVOLUCIONES": 1,
+          "Contacto inicial": 1
+        }
       },
       "mensajeria_be": {
-        "entrantes": 10,
-        "salientes": 7,
-        "lapso_promedio_s": 64,
-        "lapso_mediana_s": 57
+        "entrantes": 27,
+        "salientes": 20,
+        "lapso_promedio_s": 3428,
+        "lapso_mediana_s": 2319
       },
-      "contifico_documentos": 0,
-      "contifico_total_usd": 0,
+      "contifico_documentos": 8,
+      "contifico_total_usd": 499.75,
       "contifico_fuente_caida": false,
-      "contifico_metodo_cobro": {},
+      "contifico_metodo_cobro": {
+        "TRA": 38.8
+      },
       "inventario_por_artista": {
         "NOVESS": {
           "cantidad": 3662,
@@ -28344,18 +28351,40 @@
       "prestashop_total_col_cop": 0,
       "prestashop_pedidos_ec_todos_estados": 0,
       "prestashop_pedidos_col_todos_estados": 0,
-      "ga4_usuarios_ec": 2,
+      "ga4_usuarios_ec": 5,
       "ga4_usuarios_nuevos_ec": 2,
-      "ga4_sesiones_ec": 2,
+      "ga4_sesiones_ec": 5,
       "ga4_ingresos_ec_usd": 0,
       "ga4_compras_ec": 0,
-      "ga4_usuarios_col": 0,
-      "ga4_usuarios_nuevos_col": 0,
-      "ga4_sesiones_col": 0,
+      "ga4_usuarios_col": 4,
+      "ga4_usuarios_nuevos_col": 2,
+      "ga4_sesiones_col": 4,
       "ga4_ingresos_col_usd": 0,
       "ga4_compras_col": 0,
       "ga4_canales": {
         "ec": {
+          "Direct": {
+            "sessions": 2,
+            "active_users": 2
+          },
+          "Organic Social": {
+            "sessions": 2,
+            "active_users": 2
+          },
+          "Organic Search": {
+            "sessions": 1,
+            "active_users": 0
+          },
+          "Unassigned": {
+            "sessions": 1,
+            "active_users": 1
+          }
+        },
+        "col": {
+          "Organic Search": {
+            "sessions": 2,
+            "active_users": 2
+          },
           "Direct": {
             "sessions": 1,
             "active_users": 1
@@ -28364,8 +28393,7 @@
             "sessions": 1,
             "active_users": 1
           }
-        },
-        "col": {}
+        }
       },
       "ga4_eventos_clave": {
         "ec": {},
@@ -28384,7 +28412,7 @@
       "meta_compras": 0,
       "meta_ingresos_usd": 0,
       "meta_roas": 0,
-      "meta_cpa": null,
+      "meta_cpa": 0,
       "ads_ad_sets": [],
       "ventas_consolidadas_ec": {
         "fuente": "contifico",
@@ -28406,18 +28434,17 @@
         "total_cop": 0,
         "pendiente_no_cobrado_cop": 0,
         "moneda": "COP",
-        "n_registros": 0,
-        "nota": "Sin filas nuevas en el Sheet para el 20/ago/2026 -- carga manual pendiente del equipo Colombia; última fila real cargada es del 17/ago/2026."
+        "n_registros": 0
       },
       "recomendaciones_ec": [
-        "Ecuador sin actividad comercial en el corte de la mañana: 0 leads Kommo, 0 documentos Contífico, 0 pedidos PrestaShop. GA4 registró 2 sesiones y 0 compras -- normal para las 10:30am, revisar en el corte de cierre (6pm) si repunta.",
-        "Meta Ads EC sigue sin reportar spend/impresiones (caído desde 03/ago/2026) -- persiste el problema, seguir escalando con el equipo de pauta/Windsor.ai."
+        "Cierre EC: 0 leads Kommo, 0 documentos Contífico BE, 0 pedidos PrestaShop, GA4 con 5 sesiones/5 usuarios y 0 compras -- día flojo en canal EC, revisar con marketing si hubo pauta activa.",
+        "Meta Ads sigue sin reportar datos desde el 03/ago/2026 (17 días de gap) -- persiste el problema con Windsor.ai/conexión de la cuenta 877286016115641, requiere revisión técnica urgente."
       ],
       "recomendaciones_col": [
-        "Colombia sin actividad comercial en el corte de la mañana: 0 leads Kommo, 0 pedidos PrestaShop, 0 documentos Contífico. Revisar en el cierre de las 6pm.",
-        "La Matriz de Ventas Colombia no tiene filas cargadas desde el 17/ago/2026 -- es una limitante de carga manual del equipo COL, no un fallo técnico."
+        "Cierre COL: 2 leads Kommo (Contacto inicial, Cambios y Devoluciones), 0 pedidos PrestaShop, GA4 con 4 sesiones/4 usuarios y 0 compras.",
+        "La Matriz de Ventas Colombia no tiene filas cargadas para hoy (20/ago/2026) -- última fecha con datos es 19/ago/2026. Es carga manual del equipo, no bloqueo técnico; confirmar con Colombia si se cargará más tarde."
       ],
-      "nota_verificacion": "Corte de MAÑANA (10:30am) -- números PARCIALES, se actualizan en el corte de cierre (6pm). Kommo: 0 leads EC / 0 leads COL, mensajería BE 9 entrantes/7 salientes EC + 1 entrante/0 salientes COL. Contífico: 0 documentos BE (aún no se factura a esta hora). PrestaShop: 0 pedidos EC / 0 pedidos COL (últimos pedidos reales: EC 14/ago, COL 19/ago). Inventario recalculado hoy: 36,069 uds vendibles / $22,308.98 PVP (sin IVA), 36 artistas, excluidos CAJAPIELAZUL y STICGEBOU por código. Meta Ads sigue sin spend desde 03/ago/2026 (17+ días). Matriz Colombia sin filas nuevas (última carga real: 17/ago/2026)."
+      "nota_verificacion": "Corte de cierre 6pm — números finales del día, actualiza el corte parcial de las 10:30am. Inventario no se recalcula en este corte (solo en el de la mañana). Contífico: 8 documentos BE ($499.75), sin NCT asociadas hoy. Meta Ads sin datos desde 03/ago/2026 (gap conocido, persiste)."
     }
   ],
   "periodic": [
