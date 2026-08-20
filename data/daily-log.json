@@ -23787,6 +23787,4637 @@
           "monto_pvp": 10.43
         }
       ]
+    },
+    {
+      "date": "2026-08-20",
+      "parcial": true,
+      "kommo_leads_ec": 0,
+      "kommo_leads_col": 0,
+      "kommo_msj_entrantes_ec": 9,
+      "kommo_msj_salientes_ec": 7,
+      "kommo_msj_entrantes_col": 1,
+      "kommo_msj_salientes_col": 0,
+      "kommo_lapso_medio_ec_s": 64,
+      "kommo_lapso_medio_col_s": null,
+      "kommo_funnel_ec": {
+        "total": 141,
+        "byStatus": {
+          "Reacciones y Comentarios": 69,
+          "Leads perdidos": 10,
+          "leads Tibios (interacción)": 29,
+          "Servicios Adicionales": 7,
+          "Leads ganados": 8,
+          "R.Comentarios Revisados": 8,
+          "SPAM": 1,
+          "Colaboraciones": 3,
+          "Por entregar": 1,
+          "ATENCION AGENTE": 1,
+          "leads frios (no responde)": 4
+        },
+        "window_days": 30
+      },
+      "kommo_funnel_col": {
+        "total": 12,
+        "byStatus": {
+          "Por entregar": 2,
+          "Logrado con éxito": 4,
+          "leads Tibios (interacción)": 2,
+          "CAMBIOS Y DEVOLUCIONES": 3,
+          "leads frios (no responde)": 1
+        },
+        "window_days": 30
+      },
+      "funnel_kommo": {
+        "ec": {},
+        "col": {}
+      },
+      "mensajeria_be": {
+        "entrantes": 10,
+        "salientes": 7,
+        "lapso_promedio_s": 64,
+        "lapso_mediana_s": 57
+      },
+      "contifico_documentos": 0,
+      "contifico_total_usd": 0,
+      "contifico_fuente_caida": false,
+      "contifico_metodo_cobro": {},
+      "inventario_por_artista": {
+        "NOVESS": {
+          "cantidad": 3662,
+          "monto_pvp": 0
+        },
+        "Machaka": {
+          "cantidad": 15,
+          "monto_pvp": 298.26
+        },
+        "BE Bou": {
+          "cantidad": 97,
+          "monto_pvp": 2904.32
+        },
+        "Nicolás y los Fumadores": {
+          "cantidad": 45,
+          "monto_pvp": 488.27
+        },
+        "Verde70": {
+          "cantidad": 54,
+          "monto_pvp": 1193
+        },
+        "Ácido Pantera": {
+          "cantidad": 1,
+          "monto_pvp": 46.09
+        },
+        "Crudo Means Raw": {
+          "cantidad": 17,
+          "monto_pvp": 866.1
+        },
+        "Don Medardo": {
+          "cantidad": 59,
+          "monto_pvp": 1420.04
+        },
+        "Aterciopelados": {
+          "cantidad": 8,
+          "monto_pvp": 130.44
+        },
+        "FIEBRE": {
+          "cantidad": 10,
+          "monto_pvp": 252.18
+        },
+        "BE Guanaco": {
+          "cantidad": 202,
+          "monto_pvp": 3860.2
+        },
+        "SED": {
+          "cantidad": 69,
+          "monto_pvp": 1416.59
+        },
+        "JATUN MAMA": {
+          "cantidad": 46,
+          "monto_pvp": 1120.02
+        },
+        "DE lA TORRE": {
+          "cantidad": 24,
+          "monto_pvp": 584.36
+        },
+        "BE Miel": {
+          "cantidad": 15,
+          "monto_pvp": 343.48
+        },
+        "Margarita Siempre Viva": {
+          "cantidad": 2,
+          "monto_pvp": 92.18
+        },
+        "Nasa": {
+          "cantidad": 20,
+          "monto_pvp": 20
+        },
+        "Alex Eugenio": {
+          "cantidad": 18,
+          "monto_pvp": 0
+        },
+        "Lolabum": {
+          "cantidad": 218,
+          "monto_pvp": 1720.42
+        },
+        "BE Dieztro": {
+          "cantidad": 3,
+          "monto_pvp": 208.7
+        },
+        "ECOM GLOBAL": {
+          "cantidad": 8545,
+          "monto_pvp": 0
+        },
+        "GRUPOESHOP": {
+          "cantidad": 311,
+          "monto_pvp": 0
+        },
+        "FSA NATURAL": {
+          "cantidad": 304,
+          "monto_pvp": 0
+        },
+        "Warax": {
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        "GREEN LINE": {
+          "cantidad": 20493,
+          "monto_pvp": 0
+        },
+        "LSJ SAS": {
+          "cantidad": 41,
+          "monto_pvp": 0
+        },
+        "Máquina Camaleón": {
+          "cantidad": 10,
+          "monto_pvp": 234.77
+        },
+        "Máximo Escaleras": {
+          "cantidad": 166,
+          "monto_pvp": 3608.81
+        },
+        "MELINA": {
+          "cantidad": 6,
+          "monto_pvp": 122.62
+        },
+        "Mindco": {
+          "cantidad": 147,
+          "monto_pvp": 0
+        },
+        "Obrero Del Ritmo": {
+          "cantidad": 6,
+          "monto_pvp": 0
+        },
+        "SADE BUSINESS PERU S.A.C.": {
+          "cantidad": 1350,
+          "monto_pvp": 0
+        },
+        "SANATE FILTROS S A": {
+          "cantidad": 42,
+          "monto_pvp": 0
+        },
+        "Santa Muerte": {
+          "cantidad": 19,
+          "monto_pvp": 528.47
+        },
+        "StartupGrind": {
+          "cantidad": 15,
+          "monto_pvp": 326.1
+        },
+        "SWING ORIGINAL MONKS": {
+          "cantidad": 28,
+          "monto_pvp": 497.47
+        }
+      },
+      "inventario_por_bodega": {
+        "Bodega EMPRESAS EN CONSIGNACIÓN": {
+          "cantidad": 35623,
+          "monto_pvp": 11366.98
+        },
+        "EVENTOS BOU": {
+          "cantidad": 125,
+          "monto_pvp": 3361.61
+        },
+        "Bodega España": {
+          "cantidad": 93,
+          "monto_pvp": 2425.67
+        },
+        "SHOWROOM": {
+          "cantidad": 131,
+          "monto_pvp": 3242.12
+        },
+        "Bodega Prestamos": {
+          "cantidad": 44,
+          "monto_pvp": 752.12
+        },
+        "Bodega BOU ENTERTAINMENT CONSIGNACIÓN": {
+          "cantidad": 2,
+          "monto_pvp": 51.74
+        },
+        "CHULLA VIDA": {
+          "cantidad": 51,
+          "monto_pvp": 1108.74
+        }
+      },
+      "inventario_total": {
+        "cantidad": 36069,
+        "monto_pvp": 22308.98
+      },
+      "inventario_matriz": {
+        "NOVESS": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 3662,
+            "monto_pvp": 0
+          }
+        },
+        "Machaka": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 2,
+            "monto_pvp": 33.04
+          },
+          "EVENTOS BOU": {
+            "cantidad": 10,
+            "monto_pvp": 231.31
+          },
+          "Bodega España": {
+            "cantidad": 3,
+            "monto_pvp": 33.91
+          }
+        },
+        "BE Bou": {
+          "EVENTOS BOU": {
+            "cantidad": 50,
+            "monto_pvp": 1343.46
+          },
+          "Bodega Prestamos": {
+            "cantidad": 10,
+            "monto_pvp": 282.61
+          },
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 12,
+            "monto_pvp": 391.3
+          },
+          "SHOWROOM": {
+            "cantidad": 12,
+            "monto_pvp": 430.43
+          },
+          "Bodega España": {
+            "cantidad": 13,
+            "monto_pvp": 456.52
+          }
+        },
+        "Nicolás y los Fumadores": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 32,
+            "monto_pvp": 337.4
+          },
+          "SHOWROOM": {
+            "cantidad": 13,
+            "monto_pvp": 150.87
+          }
+        },
+        "Verde70": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 26,
+            "monto_pvp": 408.7
+          },
+          "SHOWROOM": {
+            "cantidad": 6,
+            "monto_pvp": 130.44
+          },
+          "EVENTOS BOU": {
+            "cantidad": 13,
+            "monto_pvp": 386.94
+          },
+          "Bodega España": {
+            "cantidad": 8,
+            "monto_pvp": 227.8
+          },
+          "Bodega Prestamos": {
+            "cantidad": 1,
+            "monto_pvp": 39.12
+          }
+        },
+        "Ácido Pantera": {
+          "SHOWROOM": {
+            "cantidad": 1,
+            "monto_pvp": 46.09
+          }
+        },
+        "Crudo Means Raw": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 12,
+            "monto_pvp": 586.09
+          },
+          "SHOWROOM": {
+            "cantidad": 4,
+            "monto_pvp": 217.4
+          },
+          "Bodega Prestamos": {
+            "cantidad": 1,
+            "monto_pvp": 62.61
+          }
+        },
+        "Don Medardo": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 29,
+            "monto_pvp": 676.53
+          },
+          "SHOWROOM": {
+            "cantidad": 16,
+            "monto_pvp": 442.63
+          },
+          "Bodega España": {
+            "cantidad": 14,
+            "monto_pvp": 300.88
+          }
+        },
+        "Aterciopelados": {
+          "SHOWROOM": {
+            "cantidad": 5,
+            "monto_pvp": 65.22
+          },
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 3,
+            "monto_pvp": 65.22
+          }
+        },
+        "FIEBRE": {
+          "SHOWROOM": {
+            "cantidad": 3,
+            "monto_pvp": 76.53
+          },
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 7,
+            "monto_pvp": 175.65
+          }
+        },
+        "BE Guanaco": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 162,
+            "monto_pvp": 2486.89
+          },
+          "SHOWROOM": {
+            "cantidad": 8,
+            "monto_pvp": 260.85
+          },
+          "Bodega España": {
+            "cantidad": 6,
+            "monto_pvp": 182.61
+          },
+          "EVENTOS BOU": {
+            "cantidad": 22,
+            "monto_pvp": 799.87
+          },
+          "Bodega BOU ENTERTAINMENT CONSIGNACIÓN": {
+            "cantidad": 2,
+            "monto_pvp": 51.74
+          },
+          "Bodega Prestamos": {
+            "cantidad": 2,
+            "monto_pvp": 78.24
+          }
+        },
+        "SED": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 17,
+            "monto_pvp": 369.58
+          },
+          "SHOWROOM": {
+            "cantidad": 12,
+            "monto_pvp": 260.88
+          },
+          "EVENTOS BOU": {
+            "cantidad": 29,
+            "monto_pvp": 578.29
+          },
+          "Bodega España": {
+            "cantidad": 11,
+            "monto_pvp": 207.84
+          }
+        },
+        "JATUN MAMA": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 39,
+            "monto_pvp": 949.57
+          },
+          "SHOWROOM": {
+            "cantidad": 7,
+            "monto_pvp": 170.45
+          }
+        },
+        "DE lA TORRE": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 17,
+            "monto_pvp": 413.92
+          },
+          "SHOWROOM": {
+            "cantidad": 7,
+            "monto_pvp": 170.44
+          }
+        },
+        "BE Miel": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 6,
+            "monto_pvp": 130.44
+          },
+          "Bodega Prestamos": {
+            "cantidad": 8,
+            "monto_pvp": 191.3
+          },
+          "SHOWROOM": {
+            "cantidad": 1,
+            "monto_pvp": 21.74
+          }
+        },
+        "Margarita Siempre Viva": {
+          "SHOWROOM": {
+            "cantidad": 2,
+            "monto_pvp": 92.18
+          }
+        },
+        "Nasa": {
+          "Bodega Prestamos": {
+            "cantidad": 20,
+            "monto_pvp": 20
+          }
+        },
+        "Alex Eugenio": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 18,
+            "monto_pvp": 0
+          }
+        },
+        "Lolabum": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 213,
+            "monto_pvp": 1626.95
+          },
+          "SHOWROOM": {
+            "cantidad": 4,
+            "monto_pvp": 54.35
+          },
+          "Bodega Prestamos": {
+            "cantidad": 1,
+            "monto_pvp": 39.12
+          }
+        },
+        "BE Dieztro": {
+          "Bodega España": {
+            "cantidad": 3,
+            "monto_pvp": 208.7
+          }
+        },
+        "ECOM GLOBAL": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 8545,
+            "monto_pvp": 0
+          }
+        },
+        "GRUPOESHOP": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 311,
+            "monto_pvp": 0
+          }
+        },
+        "FSA NATURAL": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 304,
+            "monto_pvp": 0
+          }
+        },
+        "Warax": {
+          "Bodega España": {
+            "cantidad": 1,
+            "monto_pvp": 26.09
+          }
+        },
+        "GREEN LINE": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 20493,
+            "monto_pvp": 0
+          }
+        },
+        "LSJ SAS": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 41,
+            "monto_pvp": 0
+          }
+        },
+        "Máquina Camaleón": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 6,
+            "monto_pvp": 130.43
+          },
+          "SHOWROOM": {
+            "cantidad": 1,
+            "monto_pvp": 21.74
+          },
+          "EVENTOS BOU": {
+            "cantidad": 1,
+            "monto_pvp": 21.74
+          },
+          "Bodega España": {
+            "cantidad": 1,
+            "monto_pvp": 21.74
+          },
+          "Bodega Prestamos": {
+            "cantidad": 1,
+            "monto_pvp": 39.12
+          }
+        },
+        "Máximo Escaleras": {
+          "CHULLA VIDA": {
+            "cantidad": 51,
+            "monto_pvp": 1108.74
+          },
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 82,
+            "monto_pvp": 1782.65
+          },
+          "SHOWROOM": {
+            "cantidad": 7,
+            "monto_pvp": 152.18
+          },
+          "Bodega España": {
+            "cantidad": 26,
+            "monto_pvp": 565.24
+          }
+        },
+        "MELINA": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 4,
+            "monto_pvp": 70.44
+          },
+          "SHOWROOM": {
+            "cantidad": 2,
+            "monto_pvp": 52.18
+          }
+        },
+        "Mindco": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 147,
+            "monto_pvp": 0
+          }
+        },
+        "Obrero Del Ritmo": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 6,
+            "monto_pvp": 0
+          }
+        },
+        "SADE BUSINESS PERU S.A.C.": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 1350,
+            "monto_pvp": 0
+          }
+        },
+        "SANATE FILTROS S A": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 42,
+            "monto_pvp": 0
+          }
+        },
+        "Santa Muerte": {
+          "SHOWROOM": {
+            "cantidad": 9,
+            "monto_pvp": 226.3
+          },
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 10,
+            "monto_pvp": 302.17
+          }
+        },
+        "StartupGrind": {
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 10,
+            "monto_pvp": 217.4
+          },
+          "SHOWROOM": {
+            "cantidad": 5,
+            "monto_pvp": 108.7
+          }
+        },
+        "SWING ORIGINAL MONKS": {
+          "Bodega España": {
+            "cantidad": 7,
+            "monto_pvp": 194.34
+          },
+          "Bodega EMPRESAS EN CONSIGNACIÓN": {
+            "cantidad": 15,
+            "monto_pvp": 212.61
+          },
+          "SHOWROOM": {
+            "cantidad": 6,
+            "monto_pvp": 90.52
+          }
+        }
+      },
+      "inventario_productos": [
+        {
+          "codigo": "ANDINOINCA",
+          "nombre": "Incas Protect",
+          "artista": "NOVESS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 101,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "ANDINOLUVITEX",
+          "nombre": "Lutevid (EC)",
+          "artista": "NOVESS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 223,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "ANDINOSUSTAROX",
+          "nombre": "Sustarox (EC)",
+          "artista": "NOVESS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3266,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "ANDINOXYS",
+          "nombre": "Oxys (EC)",
+          "artista": "NOVESS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 72,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "BANDANAMACHAKAN",
+          "nombre": "Bandana Negra Machaka",
+          "artista": "Machaka",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 11.3
+        },
+        {
+          "codigo": "BANDANAMACHAKAN",
+          "nombre": "Bandana Negra Machaka",
+          "artista": "Machaka",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 11.3
+        },
+        {
+          "codigo": "BANDANAMACHAKAN",
+          "nombre": "Bandana Negra Machaka",
+          "artista": "Machaka",
+          "bodega": "Bodega España",
+          "cantidad": 3,
+          "monto_pvp": 33.91
+        },
+        {
+          "codigo": "BANDCHOCOBOU",
+          "nombre": "BANDANA CAFE BOU",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 12,
+          "monto_pvp": 187.83
+        },
+        {
+          "codigo": "BANDNRAZBOU",
+          "nombre": "BANDANA JAGUAR BOU NARANJA",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 8,
+          "monto_pvp": 125.22
+        },
+        {
+          "codigo": "BANDNYLFNNN",
+          "nombre": "bandana negra",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "BANDNYLFNNN",
+          "nombre": "bandana negra",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 11.3
+        },
+        {
+          "codigo": "BOUGORRANLB",
+          "nombre": "BOU Gorra Logo Negra",
+          "artista": "BE Bou",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 5,
+          "monto_pvp": 86.96
+        },
+        {
+          "codigo": "BOUROMPEMADE",
+          "nombre": "Bou Rompecabezas_madera_souvenir",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "CAMACIPPIELM",
+          "nombre": "Camiseta La Piel Ácido Pantera Talla M",
+          "artista": "Ácido Pantera",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 46.09
+        },
+        {
+          "codigo": "CAMCRUDPIELL",
+          "nombre": "Camiseta La Piel Crudo Talla L",
+          "artista": "Crudo Means Raw",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 46.09
+        },
+        {
+          "codigo": "CAMCRUDPIELL",
+          "nombre": "Camiseta La Piel Crudo Talla L",
+          "artista": "Crudo Means Raw",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 46.09
+        },
+        {
+          "codigo": "CAMCRUDPIELM",
+          "nombre": "Camiseta La Piel Crudo Talla M",
+          "artista": "Crudo Means Raw",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4,
+          "monto_pvp": 184.35
+        },
+        {
+          "codigo": "CAMCRUDPIELM",
+          "nombre": "Camiseta La Piel Crudo Talla M",
+          "artista": "Crudo Means Raw",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 46.09
+        },
+        {
+          "codigo": "CAMCRUDPIELS",
+          "nombre": "Camiseta La Piel Crudo Talla S",
+          "artista": "Crudo Means Raw",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 138.26
+        },
+        {
+          "codigo": "CAMCRUDPIELXL",
+          "nombre": "Camiseta La Piel Crudo Talla XL",
+          "artista": "Crudo Means Raw",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 92.17
+        },
+        {
+          "codigo": "CAMDONMEDL",
+          "nombre": "Camiseta Don Medardo L",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 113.04
+        },
+        {
+          "codigo": "CAMDONMEDL",
+          "nombre": "Camiseta Don Medardo L",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMDONMEDL",
+          "nombre": "Camiseta Don Medardo L",
+          "artista": "Don Medardo",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMDONMEDM",
+          "nombre": "Camiseta Don Medardo M",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 113.04
+        },
+        {
+          "codigo": "CAMDONMEDM",
+          "nombre": "Camiseta Don Medardo M",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 45.22
+        },
+        {
+          "codigo": "CAMDONMEDS",
+          "nombre": "Camiseta Don Medardo S",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 45.22
+        },
+        {
+          "codigo": "CAMDONMEDXL",
+          "nombre": "Camiseta Don Medardo XL",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMDONMEDXL",
+          "nombre": "Camiseta Don Medardo XL",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMDONMEDXL",
+          "nombre": "Camiseta Don Medardo XL",
+          "artista": "Don Medardo",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMECMDPIEL10M",
+          "nombre": "Camiseta EC Mundialista La Piel 10 M",
+          "artista": "BE Bou",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 78.26
+        },
+        {
+          "codigo": "CAMECMDPIEL10M",
+          "nombre": "Camiseta EC Mundialista La Piel 10 M",
+          "artista": "BE Bou",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL10M",
+          "nombre": "Camiseta EC Mundialista La Piel 10 M",
+          "artista": "BE Bou",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL10M",
+          "nombre": "Camiseta EC Mundialista La Piel 10 M",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 78.26
+        },
+        {
+          "codigo": "CAMECMDPIEL10M",
+          "nombre": "Camiseta EC Mundialista La Piel 10 M",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 78.26
+        },
+        {
+          "codigo": "CAMECMDPIEL10S",
+          "nombre": "Camiseta EC Mundialista La Piel 10 S",
+          "artista": "BE Bou",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL10S",
+          "nombre": "Camiseta EC Mundialista La Piel 10 S",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL10XL",
+          "nombre": "Camiseta EC Mundialista La Piel 10 XL",
+          "artista": "BE Bou",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 117.39
+        },
+        {
+          "codigo": "CAMECMDPIEL10XL",
+          "nombre": "Camiseta EC Mundialista La Piel 10 XL",
+          "artista": "BE Bou",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL10XL",
+          "nombre": "Camiseta EC Mundialista La Piel 10 XL",
+          "artista": "BE Bou",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL10XL",
+          "nombre": "Camiseta EC Mundialista La Piel 10 XL",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 78.26
+        },
+        {
+          "codigo": "CAMECMDPIEL10XL",
+          "nombre": "Camiseta EC Mundialista La Piel 10 XL",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL9M",
+          "nombre": "Camiseta EC Mundialista La Piel 9 M",
+          "artista": "BE Bou",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL9M",
+          "nombre": "Camiseta EC Mundialista La Piel 9 M",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL9S",
+          "nombre": "Camiseta EC Mundialista La Piel 9 S",
+          "artista": "BE Bou",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 78.26
+        },
+        {
+          "codigo": "CAMECMDPIEL9S",
+          "nombre": "Camiseta EC Mundialista La Piel 9 S",
+          "artista": "BE Bou",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL9S",
+          "nombre": "Camiseta EC Mundialista La Piel 9 S",
+          "artista": "BE Bou",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 3,
+          "monto_pvp": 117.39
+        },
+        {
+          "codigo": "CAMECMDPIEL9S",
+          "nombre": "Camiseta EC Mundialista La Piel 9 S",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL9S",
+          "nombre": "Camiseta EC Mundialista La Piel 9 S",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL9XL",
+          "nombre": "Camiseta EC Mundialista La Piel 9 XL",
+          "artista": "BE Bou",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMECMDPIEL9XL",
+          "nombre": "Camiseta EC Mundialista La Piel 9 XL",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CAMHOMATERCIOL",
+          "nombre": "Camiseta Aterciopelados Negro Genes Rebeldes Hombre L",
+          "artista": "Aterciopelados",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMIATERAPC",
+          "nombre": "Camiseta Aterciopelados Anuncio Piel Colombia",
+          "artista": "Aterciopelados",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "CAMIFIEBREBML",
+          "nombre": "Camisetas Fiebre Blanca M/L",
+          "artista": "FIEBRE",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "CAMIFIEBREBSM",
+          "nombre": "Camisetas Fiebre Blanca S/M",
+          "artista": "FIEBRE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 78.26
+        },
+        {
+          "codigo": "CAMIFIEBREBSM",
+          "nombre": "Camisetas Fiebre Blanca S/M",
+          "artista": "FIEBRE",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "CAMIGUACGUSA24L",
+          "nombre": "Camiseta Crew L Gira 2024 USA",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "CAMISED1L",
+          "nombre": "CAMISETA SED NEGRA 1  L",
+          "artista": "SED",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 108.7
+        },
+        {
+          "codigo": "CAMISED1L",
+          "nombre": "CAMISETA SED NEGRA 1  L",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED1L",
+          "nombre": "CAMISETA SED NEGRA 1  L",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CAMISED1M",
+          "nombre": "CAMISETA SED NEGRA 1  M",
+          "artista": "SED",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "CAMISED1M",
+          "nombre": "CAMISETA SED NEGRA 1  M",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CAMISED1M",
+          "nombre": "CAMISETA SED NEGRA 1  M",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CAMISED1M",
+          "nombre": "CAMISETA SED NEGRA 1  M",
+          "artista": "SED",
+          "bodega": "Bodega España",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "CAMISED1S",
+          "nombre": "CAMISETA SED NEGRA 1   S",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CAMISED1S",
+          "nombre": "CAMISETA SED NEGRA 1   S",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CAMISED1XL",
+          "nombre": "CAMISETA SED NEGRA 1  XL",
+          "artista": "SED",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4,
+          "monto_pvp": 86.96
+        },
+        {
+          "codigo": "CAMISED1XL",
+          "nombre": "CAMISETA SED NEGRA 1  XL",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED1XL",
+          "nombre": "CAMISETA SED NEGRA 1  XL",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED2L",
+          "nombre": "CAMISETA SED MIEL 2 L",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED2L",
+          "nombre": "CAMISETA SED MIEL 2 L",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "CAMISED2L",
+          "nombre": "CAMISETA SED MIEL 2 L",
+          "artista": "SED",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED2M",
+          "nombre": "CAMISETA SED MIEL 2 M",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 7,
+          "monto_pvp": 152.18
+        },
+        {
+          "codigo": "CAMISED2S",
+          "nombre": "CAMISETA SED MIEL 2 S",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED2S",
+          "nombre": "CAMISETA SED MIEL 2 S",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CAMISED2XL",
+          "nombre": "CAMISETA SED MIEL 2 XL",
+          "artista": "SED",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED2XL",
+          "nombre": "CAMISETA SED MIEL 2 XL",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED2XL",
+          "nombre": "CAMISETA SED MIEL 2 XL",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED2XL",
+          "nombre": "CAMISETA SED MIEL 2 XL",
+          "artista": "SED",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED3L",
+          "nombre": "CAMISETA SED BLANCA 3 L",
+          "artista": "SED",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED3L",
+          "nombre": "CAMISETA SED BLANCA 3 L",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED3L",
+          "nombre": "CAMISETA SED BLANCA 3 L",
+          "artista": "SED",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED3M",
+          "nombre": "CAMISETA SED BLANCA 3 M",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CAMISED3M",
+          "nombre": "CAMISETA SED BLANCA 3 M",
+          "artista": "SED",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CAMISED3S",
+          "nombre": "CAMISETA SED BLANCA 3 S",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMISED3S",
+          "nombre": "CAMISETA SED BLANCA 3 S",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CAMISED3XL",
+          "nombre": "CAMISETA SED BLANCA 3 XL",
+          "artista": "SED",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "CAMISED3XL",
+          "nombre": "CAMISETA SED BLANCA 3 XL",
+          "artista": "SED",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMJATFAJABL",
+          "nombre": "Camiseta Jatun Mama Faja Talla L",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 6,
+          "monto_pvp": 146.09
+        },
+        {
+          "codigo": "CAMJATFAJABM",
+          "nombre": "Camiseta Jatun Mama Faja Talla M",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 73.04
+        },
+        {
+          "codigo": "CAMJATFAJABS",
+          "nombre": "Camiseta Jatun Mama Faja Talla S",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 48.7
+        },
+        {
+          "codigo": "CAMJATFAJABS",
+          "nombre": "Camiseta Jatun Mama Faja Talla S",
+          "artista": "JATUN MAMA",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 24.35
+        },
+        {
+          "codigo": "CAMJATFAJABXL",
+          "nombre": "Camiseta Jatun Mama Faja Talla XL",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 73.04
+        },
+        {
+          "codigo": "CAMJATFAJABXL",
+          "nombre": "Camiseta Jatun Mama Faja Talla XL",
+          "artista": "JATUN MAMA",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 24.35
+        },
+        {
+          "codigo": "CAMJATLOGONEL",
+          "nombre": "Camiseta Jatun Mama Logo Talla L",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 6,
+          "monto_pvp": 146.09
+        },
+        {
+          "codigo": "CAMJATLOGONEM",
+          "nombre": "Camiseta Jatun Mama Logo Talla M",
+          "artista": "JATUN MAMA",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 24.35
+        },
+        {
+          "codigo": "CAMJATLOGONES",
+          "nombre": "Camiseta Jatun Mama Logo Talla S",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 24.35
+        },
+        {
+          "codigo": "CAMJATLOGONES",
+          "nombre": "Camiseta Jatun Mama Logo Talla S",
+          "artista": "JATUN MAMA",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 24.35
+        },
+        {
+          "codigo": "CAMJATLOGONEXL",
+          "nombre": "Camiseta Jatun Mama Logo Talla XL",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 73.04
+        },
+        {
+          "codigo": "CAMJATLOGONEXL",
+          "nombre": "Camiseta Jatun Mama Logo Talla XL",
+          "artista": "JATUN MAMA",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 24.35
+        },
+        {
+          "codigo": "CAMJATUKUBL",
+          "nombre": "Camiseta Jatun Mama Uku Talla L",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 121.74
+        },
+        {
+          "codigo": "CAMJATUKUBL",
+          "nombre": "Camiseta Jatun Mama Uku Talla L",
+          "artista": "JATUN MAMA",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 24.35
+        },
+        {
+          "codigo": "CAMJATUKUBM",
+          "nombre": "Camiseta Jatun Mama Uku Talla M",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 121.74
+        },
+        {
+          "codigo": "CAMJATUKUBS",
+          "nombre": "Camiseta Jatun Mama Uku Talla S",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 48.7
+        },
+        {
+          "codigo": "CAMJATUKUBS",
+          "nombre": "Camiseta Jatun Mama Uku Talla S",
+          "artista": "JATUN MAMA",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 24.35
+        },
+        {
+          "codigo": "CAMJATUKUBXL",
+          "nombre": "Camiseta Jatun Mama Uku Talla XL",
+          "artista": "JATUN MAMA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 73.04
+        },
+        {
+          "codigo": "CAMLATORRENAL",
+          "nombre": "CAMISETA LA TORRE NACAR L",
+          "artista": "DE lA TORRE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 48.7
+        },
+        {
+          "codigo": "CAMLATORRENAL",
+          "nombre": "CAMISETA LA TORRE NACAR L",
+          "artista": "DE lA TORRE",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 48.7
+        },
+        {
+          "codigo": "CAMLATORRENAM",
+          "nombre": "CAMISETA LA TORRE NACAR M",
+          "artista": "DE lA TORRE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 10,
+          "monto_pvp": 243.48
+        },
+        {
+          "codigo": "CAMLATORRENAM",
+          "nombre": "CAMISETA LA TORRE NACAR M",
+          "artista": "DE lA TORRE",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 48.7
+        },
+        {
+          "codigo": "CAMLATORRENAS",
+          "nombre": "CAMISETA LA TORRE NACAR S",
+          "artista": "DE lA TORRE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 121.74
+        },
+        {
+          "codigo": "CAMLATORRENAS",
+          "nombre": "CAMISETA LA TORRE NACAR S",
+          "artista": "DE lA TORRE",
+          "bodega": "SHOWROOM",
+          "cantidad": 3,
+          "monto_pvp": 73.04
+        },
+        {
+          "codigo": "CAMMEDGENL",
+          "nombre": "Camiseta Generaciones L",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDGENL",
+          "nombre": "Camiseta Generaciones L",
+          "artista": "Don Medardo",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 45.22
+        },
+        {
+          "codigo": "CAMMEDGENM",
+          "nombre": "Camiseta Generaciones M",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDGENS",
+          "nombre": "Camiseta Generaciones S",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDGENXL",
+          "nombre": "Camiseta Generaciones XL",
+          "artista": "Don Medardo",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 45.22
+        },
+        {
+          "codigo": "CAMMEDJUVL",
+          "nombre": "Camiseta Juventud L",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDJUVL",
+          "nombre": "Camiseta Juventud L",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDJUVM",
+          "nombre": "Camiseta Juventud M",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDJUVXL",
+          "nombre": "Camiseta Juventud XL",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDQUITOL",
+          "nombre": "Camiseta Don Medardo Quito Talla L",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDQUITOL",
+          "nombre": "Camiseta Don Medardo Quito Talla L",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDQUITOL",
+          "nombre": "Camiseta Don Medardo Quito Talla L",
+          "artista": "Don Medardo",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDQUITOM",
+          "nombre": "Camiseta Don Medardo Quito Talla M",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 7,
+          "monto_pvp": 158.26
+        },
+        {
+          "codigo": "CAMMEDQUITOM",
+          "nombre": "Camiseta Don Medardo Quito Talla M",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDQUITOS",
+          "nombre": "Camiseta Don Medardo Quito Talla S",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDQUITOS",
+          "nombre": "Camiseta Don Medardo Quito Talla S",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDQUITOXL",
+          "nombre": "Camiseta Don Medardo Quito Talla XL",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 45.22
+        },
+        {
+          "codigo": "CAMMEDQUITOXL",
+          "nombre": "Camiseta Don Medardo Quito Talla XL",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMEDQUITOXL",
+          "nombre": "Camiseta Don Medardo Quito Talla XL",
+          "artista": "Don Medardo",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 22.61
+        },
+        {
+          "codigo": "CAMMIEL25NEL",
+          "nombre": "Camiseta Miel 2025 Negra Talla L",
+          "artista": "BE Miel",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMMSVPIELL",
+          "nombre": "Camiseta La Piel Margarita Talla L",
+          "artista": "Margarita Siempre Viva",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 46.09
+        },
+        {
+          "codigo": "CAMMSVPIELM",
+          "nombre": "Camiseta La Piel Margarita Talla M",
+          "artista": "Margarita Siempre Viva",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 46.09
+        },
+        {
+          "codigo": "CAMMUJATERCIOL",
+          "nombre": "Camiseta Aterciopelados Negro Genes Rebeldes Mujer L",
+          "artista": "Aterciopelados",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "CAMMUJATERCIOL",
+          "nombre": "Camiseta Aterciopelados Negro Genes Rebeldes Mujer L",
+          "artista": "Aterciopelados",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMMUJATERCIOXL",
+          "nombre": "Camiseta Aterciopelados Negro Genes Rebeldes Mujer XL",
+          "artista": "Aterciopelados",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMNASAFPVCAM",
+          "nombre": "Camiseta camel flor de pie violin",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASAFPVNM",
+          "nombre": "Camiseta negra flor de pie violin",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASAFSVCAM",
+          "nombre": "Camiseta camel flor sentada violonchelo",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASAFSVNM",
+          "nombre": "Camiseta negra flor sentada violonchelo",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASAGBEM",
+          "nombre": "Camiseta girasol me robaste el aliento M",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASAGBM",
+          "nombre": "Camiseta girasol me robaste el aliento blanco M",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASAGNM",
+          "nombre": "Camiseta girasol me robaste el aliento negro M",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASALBEM",
+          "nombre": "Camiseta diente de leon el peor crucero tierra/beige M",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASALBM",
+          "nombre": "Camiseta diente de leon el peor crucero Blanco M",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASALNM",
+          "nombre": "Camiseta diente de leon el peor crucero negro M",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASATSCAM",
+          "nombre": "Camiseta camel tulipan saxo",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMNASATSNM",
+          "nombre": "Camiseta negra tulipan saxo",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "CAMV70FULGRL",
+          "nombre": "Camiseta Fulgor Gris Talla L",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 6,
+          "monto_pvp": 130.43
+        },
+        {
+          "codigo": "CAMV70FULGRL",
+          "nombre": "Camiseta Fulgor Gris Talla L",
+          "artista": "Verde70",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMV70FULGRM",
+          "nombre": "Camiseta Fulgor Gris Talla M",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMV70FULGRM",
+          "nombre": "Camiseta Fulgor Gris Talla M",
+          "artista": "Verde70",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMV70FULGRS",
+          "nombre": "Camiseta Fulgor Gris Talla S",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CAMV70FULGRXL",
+          "nombre": "Camiseta Fulgor Gris Talla XL",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "CDAEAURORA",
+          "nombre": "CD Aurora Alex Eugenio",
+          "artista": "Alex Eugenio",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 18,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "CDLOLAEC10",
+          "nombre": "CD Lolabum ElCielo10",
+          "artista": "Lolabum",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 104,
+          "monto_pvp": 1356.52
+        },
+        {
+          "codigo": "CDLOLAEC10",
+          "nombre": "CD Lolabum ElCielo10",
+          "artista": "Lolabum",
+          "bodega": "SHOWROOM",
+          "cantidad": 3,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CDNYLFCPH",
+          "nombre": "CD Como Pez en el Hielo",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "CDNYLFCPH",
+          "nombre": "CD Como Pez en el Hielo",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "SHOWROOM",
+          "cantidad": 3,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CDNYLFDLMDL",
+          "nombre": "CD Dios y La Mata de Lulo",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 30
+        },
+        {
+          "codigo": "CDNYLFNN",
+          "nombre": "CD Noche Negra",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 8,
+          "monto_pvp": 104.35
+        },
+        {
+          "codigo": "CDNYLFNN",
+          "nombre": "CD Noche Negra",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "CHACRUDPIELM",
+          "nombre": "Chaqueta La Piel Crudo Talla M",
+          "artista": "Crudo Means Raw",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 62.61
+        },
+        {
+          "codigo": "CHACRUDPIELS",
+          "nombre": "Chaqueta La Piel Crudo Talla S",
+          "artista": "Crudo Means Raw",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 125.22
+        },
+        {
+          "codigo": "CHACRUDPIELS",
+          "nombre": "Chaqueta La Piel Crudo Talla S",
+          "artista": "Crudo Means Raw",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 62.61
+        },
+        {
+          "codigo": "CHACRUDPIELS",
+          "nombre": "Chaqueta La Piel Crudo Talla S",
+          "artista": "Crudo Means Raw",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 62.61
+        },
+        {
+          "codigo": "CHOMEDNEM",
+          "nombre": "Chompa Rompevientos Don Medardo Talla M",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CHOMEDNES",
+          "nombre": "Chompa Rompevientos Don Medardo Talla S",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CHOMEDNEXS",
+          "nombre": "Chompa Rompevientos Don Medardo Talla XS",
+          "artista": "Don Medardo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CHOMEDNEXS",
+          "nombre": "Chompa Rompevientos Don Medardo Talla XS",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 86.96
+        },
+        {
+          "codigo": "CHOMPBOMBERL",
+          "nombre": "CHOMPA BOMBER VERDE70 L",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 3,
+          "monto_pvp": 117.39
+        },
+        {
+          "codigo": "CHOMPBOMBERM",
+          "nombre": "CHOMPA BOMBER VERDE70 M",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 39.13
+        },
+        {
+          "codigo": "CROPFIEBREBSM",
+          "nombre": "CropTop Fiebre Blanco S/M",
+          "artista": "FIEBRE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4,
+          "monto_pvp": 97.39
+        },
+        {
+          "codigo": "CROPFIEBREBSM",
+          "nombre": "CropTop Fiebre Blanco S/M",
+          "artista": "FIEBRE",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 24.35
+        },
+        {
+          "codigo": "CROPMACHACKABL",
+          "nombre": "CROPTOP BUZO BEIGE 593 MACHAKA L",
+          "artista": "Machaka",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "CROPMACHACKABL",
+          "nombre": "CROPTOP BUZO BEIGE 593 MACHAKA L",
+          "artista": "Machaka",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "CROPMACHACKABM",
+          "nombre": "CROPTOP BUZO BEIGE 593 MACHAKA M",
+          "artista": "Machaka",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "CROPMEDMANABIL",
+          "nombre": "Croptop Manabí Talla L",
+          "artista": "Don Medardo",
+          "bodega": "Bodega España",
+          "cantidad": 3,
+          "monto_pvp": 60
+        },
+        {
+          "codigo": "CROPMEDMANABIM",
+          "nombre": "Croptop Manabí Talla M",
+          "artista": "Don Medardo",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 20
+        },
+        {
+          "codigo": "CROPMEDMANABIM",
+          "nombre": "Croptop Manabí Talla M",
+          "artista": "Don Medardo",
+          "bodega": "Bodega España",
+          "cantidad": 3,
+          "monto_pvp": 60
+        },
+        {
+          "codigo": "DZTROXBOUCHANAS",
+          "nombre": "Chaqueta Dieztro_X_BOU Negra S",
+          "artista": "BE Dieztro",
+          "bodega": "Bodega España",
+          "cantidad": 3,
+          "monto_pvp": 208.7
+        },
+        {
+          "codigo": "ECOMHCGELHONDROCART30G",
+          "nombre": "Hondromax",
+          "artista": "ECOM GLOBAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4079,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "ECOMHCGELINTRACART30G",
+          "nombre": "Intenskin",
+          "artista": "ECOM GLOBAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4466,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "ESHANILFENGSHUI",
+          "nombre": "Anillo feng shui",
+          "artista": "GRUPOESHOP",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 108,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "ESHARTRIT60CAP",
+          "nombre": "Artri Tross 450Mg 60Cap",
+          "artista": "GRUPOESHOP",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 59,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "ESHPULSFENGSHUI",
+          "nombre": "Pulsera feng shui",
+          "artista": "GRUPOESHOP",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 75,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "ESHSTEMCEPLFRAS500G",
+          "nombre": "Steem Cellz Pluss 500g",
+          "artista": "GRUPOESHOP",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 35,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "EXPRIMIDORESHOP",
+          "nombre": "Exprimidor (Fruit Press)",
+          "artista": "GRUPOESHOP",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 34,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURAARGININO",
+          "nombre": "L-Arginine",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 6,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURABEE",
+          "nombre": "Bee Life",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 55,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURAENERGY",
+          "nombre": "Energy",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 10,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURAGANODERMA",
+          "nombre": "GanoDerma",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 9,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURAINFOR",
+          "nombre": "INMUNE FORTAL",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 16,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURALARGININA",
+          "nombre": "HALL L- ARGININA",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 6,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURALASHAWANDA",
+          "nombre": "ASHAWANDA",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURALCBD",
+          "nombre": "CBD",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURALMAGNESIOCITRATE",
+          "nombre": "HALL MAGNESIO CITRATE",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 15,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURALPAPAYA",
+          "nombre": "HALL- PAPAYA Enzimas",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 15,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURALSHILAJIT",
+          "nombre": "HALL SHILAJIT",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 7,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURALSUGAR",
+          "nombre": "HALL- SUGAR",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 15,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURALTESTOHEAT",
+          "nombre": "TESTOHEAT",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 13,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURANEXXPOWER",
+          "nombre": "NexxPower",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 43,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURANEXXVIGOR",
+          "nombre": "NexxVigor",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 11,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURANEXXVIGORU",
+          "nombre": "NexxVigor Ultra",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 9,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURAPROST",
+          "nombre": "Good Prost",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "FSANATURAPROST30",
+          "nombre": "Good Prost 30 Cap",
+          "artista": "FSA NATURAL",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 62,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "GORRBOUNEG",
+          "nombre": "Gorra_BOU_Negra",
+          "artista": "BE Bou",
+          "bodega": "SHOWROOM",
+          "cantidad": 3,
+          "monto_pvp": 78.26
+        },
+        {
+          "codigo": "GORRBOURAIZBE",
+          "nombre": "Gorra BOU_Raiz Beige",
+          "artista": "BE Bou",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "GORRBOURAIZRO",
+          "nombre": "Gorra BOU_Raiz Roja",
+          "artista": "BE Bou",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "GORRLLANAROS",
+          "nombre": "Gorra Llana_Standar Rosada",
+          "artista": "BE Bou",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "GORRLLANAVI",
+          "nombre": "Gorra Llana_Standar Vino",
+          "artista": "BE Bou",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "GORRPEPEAZ",
+          "nombre": "Gorra Pesos_pesados Azul",
+          "artista": "BE Guanaco",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "GORRPEPEAZE",
+          "nombre": "Gorra Pesos_pesados Azul edición especial",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "GORRRAIZNE",
+          "nombre": "Gorra Raiz Negra",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "GORRRAIZNE",
+          "nombre": "Gorra Raiz Negra",
+          "artista": "BE Guanaco",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "GORRRAIZNE",
+          "nombre": "Gorra Raiz Negra",
+          "artista": "BE Guanaco",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "GORRRAIZNE",
+          "nombre": "Gorra Raiz Negra",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "GUAAMNBUZAMN1NGM",
+          "nombre": "Buzo Amnesia M Negro",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega BOU ENTERTAINMENT CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 30
+        },
+        {
+          "codigo": "GUACAMFLORYBLS",
+          "nombre": "Camiseta Flor_y_puñal Blanca S",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "GUACAMFLORYBLS",
+          "nombre": "Camiseta Flor_y_puñal Blanca S",
+          "artista": "BE Guanaco",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "GUACAMFLORYBLS",
+          "nombre": "Camiseta Flor_y_puñal Blanca S",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "GUACAMFLORYBLXL",
+          "nombre": "Camiseta Flor_y_puñal Blanca XL",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "GUACAMFLORYNES",
+          "nombre": "Camiseta Flor_y_puñal Negra S",
+          "artista": "BE Guanaco",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "GUAHOOFLORYNEM",
+          "nombre": "Hoodie Flor_y_puñal Negra M",
+          "artista": "BE Guanaco",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 30.43
+        },
+        {
+          "codigo": "GUAHOOFLORYNEM",
+          "nombre": "Hoodie Flor_y_puñal Negra M",
+          "artista": "BE Guanaco",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 30.43
+        },
+        {
+          "codigo": "GUAHOOFLORYNEM",
+          "nombre": "Hoodie Flor_y_puñal Negra M",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega España",
+          "cantidad": 3,
+          "monto_pvp": 91.3
+        },
+        {
+          "codigo": "GUAHOOFLORYNES",
+          "nombre": "Hoodie Flor_y_puñal Negra S",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 30.43
+        },
+        {
+          "codigo": "GUAHOOFLORYNES",
+          "nombre": "Hoodie Flor_y_puñal Negra S",
+          "artista": "BE Guanaco",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 30.43
+        },
+        {
+          "codigo": "GUALALLCAMIESPNGXL",
+          "nombre": "Camiseta La Llamada Negro XL",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega BOU ENTERTAINMENT CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "GUAMDGORRAWEBVEONEGRO",
+          "nombre": "Gorras Webveo  Negra",
+          "artista": "Warax",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELL",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca L",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4,
+          "monto_pvp": 156.49
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELL",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca L",
+          "artista": "BE Guanaco",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELL",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca L",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELL",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca L",
+          "artista": "BE Guanaco",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 78.24
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELM",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca M",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4,
+          "monto_pvp": 156.49
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELM",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca M",
+          "artista": "BE Guanaco",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELM",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca M",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELM",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca M",
+          "artista": "BE Guanaco",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 6,
+          "monto_pvp": 234.73
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELS",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca S",
+          "artista": "BE Guanaco",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 78.24
+        },
+        {
+          "codigo": "GUANACOCAMLAPIELXL",
+          "nombre": "Camiseta GUANACO_LA_PIEL Blanca XL",
+          "artista": "BE Guanaco",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 78.24
+        },
+        {
+          "codigo": "GUAVINILOCAJA",
+          "nombre": "Caja para Vinilo 34x34x4",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 93,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "GUAVINILOFP",
+          "nombre": "Disco de vinilo Guanaco Flor y Puñal 12 pulgadas color naranja",
+          "artista": "BE Guanaco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 53,
+          "monto_pvp": 2073.91
+        },
+        {
+          "codigo": "GUAVINILOFP",
+          "nombre": "Disco de vinilo Guanaco Flor y Puñal 12 pulgadas color naranja",
+          "artista": "BE Guanaco",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 78.26
+        },
+        {
+          "codigo": "GUAVINILOFP",
+          "nombre": "Disco de vinilo Guanaco Flor y Puñal 12 pulgadas color naranja",
+          "artista": "BE Guanaco",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 5,
+          "monto_pvp": 195.65
+        },
+        {
+          "codigo": "GUAYAMACHAKABL",
+          "nombre": "GUAYABERA BEIGE 593 MACHAKA L",
+          "artista": "Machaka",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 3,
+          "monto_pvp": 83.48
+        },
+        {
+          "codigo": "GUAYAMACHAKABXL",
+          "nombre": "GUAYABERA BEIGE 593 MACHAKA XL",
+          "artista": "Machaka",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 27.83
+        },
+        {
+          "codigo": "HCHCMTECART50ML",
+          "nombre": "Motion energy",
+          "artista": "GREEN LINE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4748,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "HCHCSIMCART30ML",
+          "nombre": "Simpla 360",
+          "artista": "GREEN LINE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1282,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "HCHCVENISCART50ML",
+          "nombre": "Veniselle",
+          "artista": "GREEN LINE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 13,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "HCSUPMAGISBR100G",
+          "nombre": "Magicoa",
+          "artista": "GREEN LINE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 359,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "HCSUPMATCHSBR100G",
+          "nombre": "Matcha Slim",
+          "artista": "GREEN LINE",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 14091,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "HOODNASABES",
+          "nombre": "Hoodies  sudadera colaboracion CLOUD X NASA tierra/beige S",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "HOODNASANM",
+          "nombre": "Hoodies  sudadera colaboracion CLOUD X NASA negro M",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "HOONASAFPVNM",
+          "nombre": "Hoodie negro flor de pie violin",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "HOONASAFSVNM",
+          "nombre": "Hoodie negro flor sentada violonchelo",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "HOONASATSNM",
+          "nombre": "Hoodie negro tulipan saxo",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "LOLABUMCAMLAPIELL",
+          "nombre": "Camiseta LOLABUM_LA_PIEL Verde L",
+          "artista": "Lolabum",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "LOLABUMPOSTAL",
+          "nombre": "Postal Lolabum Varios",
+          "artista": "Lolabum",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 103,
+          "monto_pvp": 179.13
+        },
+        {
+          "codigo": "LOLATOTETYVE",
+          "nombre": "Tote bag Tu y Yo Lolabum Verde",
+          "artista": "Lolabum",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 6,
+          "monto_pvp": 91.3
+        },
+        {
+          "codigo": "LOLATOTETYVE",
+          "nombre": "Tote bag Tu y Yo Lolabum Verde",
+          "artista": "Lolabum",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 15.22
+        },
+        {
+          "codigo": "LSJMDROPABOMPILS",
+          "nombre": "Bomper Piloto S",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPACAMFM",
+          "nombre": "Camuflado M",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPACAMFS",
+          "nombre": "Camuflado S",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPACAMFXL",
+          "nombre": "Camuflado XL",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPACAMFXXL",
+          "nombre": "Camuflado XXL",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPACPNGTLS",
+          "nombre": "Capota negra S",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPACPNGTLXL",
+          "nombre": "Capota negra XL",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPACPNGTLXXL",
+          "nombre": "Capota negra XXL",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPAL250NGM",
+          "nombre": "L250 NEGRA TALLA M",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPAL250NGXL",
+          "nombre": "L250 NEGRA TALLA XL",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPAMIELTLM",
+          "nombre": "AD22 MIEL TALLA M",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPAMIELTLXL",
+          "nombre": "AD22 MIEL TALLA XL",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPAMIELTLXXL",
+          "nombre": "AD22 MIEL TALLA XXL",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPANGTLL",
+          "nombre": "Negro total L",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPANGTLS",
+          "nombre": "Negro total S",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "LSJMDROPANGTLXXL",
+          "nombre": "Negro total XXL",
+          "artista": "LSJ SAS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "MAQCAMLEONGORRAN",
+          "nombre": "Gorra Máquina Camaleón Negra",
+          "artista": "Máquina Camaleón",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 6,
+          "monto_pvp": 130.43
+        },
+        {
+          "codigo": "MAQCAMLEONGORRAN",
+          "nombre": "Gorra Máquina Camaleón Negra",
+          "artista": "Máquina Camaleón",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAQCAMLEONGORRAN",
+          "nombre": "Gorra Máquina Camaleón Negra",
+          "artista": "Máquina Camaleón",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAQCAMLEONGORRAN",
+          "nombre": "Gorra Máquina Camaleón Negra",
+          "artista": "Máquina Camaleón",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAQUINACCAMLAPIELM",
+          "nombre": "Camiseta MAQUINAC_LA_PIEL Blanca M",
+          "artista": "Máquina Camaleón",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "MAXIMOCAMAA24",
+          "nombre": "Camiseta Amigos_del_Alma Blanca 24",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMAA28",
+          "nombre": "Camiseta Amigos_del_Alma Blanca 28",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMAA32",
+          "nombre": "Camiseta Amigos_del_Alma Blanca 32",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMAAL",
+          "nombre": "Camiseta Amigos_del_Alma Blanca L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMAAM",
+          "nombre": "Camiseta Amigos_del_Alma Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMAF24",
+          "nombre": "Camiseta Auto_Fantastico Negra 24",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMAF24",
+          "nombre": "Camiseta Auto_Fantastico Negra 24",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMAF28",
+          "nombre": "Camiseta Auto_Fantastico Negra 28",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMAF28",
+          "nombre": "Camiseta Auto_Fantastico Negra 28",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMAF32",
+          "nombre": "Camiseta Auto_Fantastico Negra 32",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "MAXIMOCAMAF32",
+          "nombre": "Camiseta Auto_Fantastico Negra 32",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMAFL",
+          "nombre": "Camiseta Auto_Fantastico Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 17,
+          "monto_pvp": 369.57
+        },
+        {
+          "codigo": "MAXIMOCAMAFL",
+          "nombre": "Camiseta Auto_Fantastico Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMAFM",
+          "nombre": "Camiseta Auto_Fantastico Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 9,
+          "monto_pvp": 195.65
+        },
+        {
+          "codigo": "MAXIMOCAMAFM",
+          "nombre": "Camiseta Auto_Fantastico Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMAFM",
+          "nombre": "Camiseta Auto_Fantastico Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMAFM",
+          "nombre": "Camiseta Auto_Fantastico Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMAFS",
+          "nombre": "Camiseta Auto_Fantastico Negra S",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 7,
+          "monto_pvp": 152.17
+        },
+        {
+          "codigo": "MAXIMOCAMAFS",
+          "nombre": "Camiseta Auto_Fantastico Negra S",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMAFXL",
+          "nombre": "Camiseta Auto_Fantastico Negra XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "MAXIMOCAMAFXL",
+          "nombre": "Camiseta Auto_Fantastico Negra XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMAFXL",
+          "nombre": "Camiseta Auto_Fantastico Negra XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMAFXS",
+          "nombre": "Camiseta Auto_Fantastico Negra XS",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "MAXIMOCAMAFXS",
+          "nombre": "Camiseta Auto_Fantastico Negra XS",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMCHBL",
+          "nombre": "Camiseta Chulla_Vida Blanca L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMCHBM",
+          "nombre": "Camiseta Chulla_Vida Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMCHBS",
+          "nombre": "Camiseta Chulla_Vida Blanca S",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMCHBS",
+          "nombre": "Camiseta Chulla_Vida Blanca S",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMCHBXL",
+          "nombre": "Camiseta Chulla_Vida Blanca XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMCHBXL",
+          "nombre": "Camiseta Chulla_Vida Blanca XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMCHNL",
+          "nombre": "Camiseta Chulla_Vida Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMCHNL",
+          "nombre": "Camiseta Chulla_Vida Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMCHNL",
+          "nombre": "Camiseta Chulla_Vida Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMCHNM",
+          "nombre": "Camiseta Chulla_Vida Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMCHNM",
+          "nombre": "Camiseta Chulla_Vida Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMCHNM",
+          "nombre": "Camiseta Chulla_Vida Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMCHNXL",
+          "nombre": "Camiseta Chulla_Vida Negra XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMBL",
+          "nombre": "Camiseta Principe_a_mi_modo Blanca L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 108.7
+        },
+        {
+          "codigo": "MAXIMOCAMPMBL",
+          "nombre": "Camiseta Principe_a_mi_modo Blanca L",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMPMBM",
+          "nombre": "Camiseta Principe_a_mi_modo Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 108.7
+        },
+        {
+          "codigo": "MAXIMOCAMPMBM",
+          "nombre": "Camiseta Principe_a_mi_modo Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMBS",
+          "nombre": "Camiseta Principe_a_mi_modo Blanca S",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMPMBXL",
+          "nombre": "Camiseta Principe_a_mi_modo Blanca XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMBXL",
+          "nombre": "Camiseta Principe_a_mi_modo Blanca XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMNL",
+          "nombre": "Camiseta Principe_a_mi_modo Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMNL",
+          "nombre": "Camiseta Principe_a_mi_modo Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMNL",
+          "nombre": "Camiseta Principe_a_mi_modo Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMNM",
+          "nombre": "Camiseta Principe_a_mi_modo Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMNM",
+          "nombre": "Camiseta Principe_a_mi_modo Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMNM",
+          "nombre": "Camiseta Principe_a_mi_modo Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "MAXIMOCAMPMNM",
+          "nombre": "Camiseta Principe_a_mi_modo Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMPMNXL",
+          "nombre": "Camiseta Principe_a_mi_modo Negra XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMPMNXL",
+          "nombre": "Camiseta Principe_a_mi_modo Negra XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMSMBL",
+          "nombre": "Camiseta Super_Mandarina Blanca L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMSMBL",
+          "nombre": "Camiseta Super_Mandarina Blanca L",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMSMBL",
+          "nombre": "Camiseta Super_Mandarina Blanca L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMSMBM",
+          "nombre": "Camiseta Super_Mandarina Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 4,
+          "monto_pvp": 86.96
+        },
+        {
+          "codigo": "MAXIMOCAMSMBM",
+          "nombre": "Camiseta Super_Mandarina Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMSMBM",
+          "nombre": "Camiseta Super_Mandarina Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMSMBS",
+          "nombre": "Camiseta Super_Mandarina Blanca S",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMSMBXL",
+          "nombre": "Camiseta Super_Mandarina Blanca XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMSMBXL",
+          "nombre": "Camiseta Super_Mandarina Blanca XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMSMBXL",
+          "nombre": "Camiseta Super_Mandarina Blanca XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMSMNL",
+          "nombre": "Camiseta Super_Mandarina Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMSMNL",
+          "nombre": "Camiseta Super_Mandarina Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMSMNL",
+          "nombre": "Camiseta Super_Mandarina Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMSMNM",
+          "nombre": "Camiseta Super_Mandarina Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "MAXIMOCAMSMNM",
+          "nombre": "Camiseta Super_Mandarina Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMSMNM",
+          "nombre": "Camiseta Super_Mandarina Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMSMNXL",
+          "nombre": "Camiseta Super_Mandarina Negra XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMVSBL",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Blanca L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMVSBL",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Blanca L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMVSBM",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "MAXIMOCAMVSBM",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMVSBM",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Blanca M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMVSBS",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Blanca S",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMVSBXL",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Blanca XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMVSNL",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMVSNL",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Negra L",
+          "artista": "Máximo Escaleras",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMVSNM",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "MAXIMOCAMVSNM",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MAXIMOCAMVSNM",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Negra M",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMVSNXL",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Negra XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "CHULLA VIDA",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MAXIMOCAMVSNXL",
+          "nombre": "Camiseta Quiero_Volver_a_ser_Soltero Negra XL",
+          "artista": "Máximo Escaleras",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MELICAMBNL",
+          "nombre": "Camiseta Melina Blanca Logo Negra L",
+          "artista": "MELINA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 29.57
+        },
+        {
+          "codigo": "MELICAMBNM",
+          "nombre": "Camiseta Melina Blanca Logo Negra M",
+          "artista": "MELINA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 14.78
+        },
+        {
+          "codigo": "MELICAMBNS",
+          "nombre": "Camiseta Melina Blanca Logo Negra S",
+          "artista": "MELINA",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "MELICAMBNS",
+          "nombre": "Camiseta Melina Blanca Logo Negra S",
+          "artista": "MELINA",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "MELIHOODIENM",
+          "nombre": "Hoodie Melina Negra M",
+          "artista": "MELINA",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "MIELCAMICLASSBLXL",
+          "nombre": "Camiseta MIEL_X_BOU_Classic_Line Blanca XL",
+          "artista": "BE Miel",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MIELCAMIMIELBLL",
+          "nombre": "Camiseta Miel_Estampada Blanca L",
+          "artista": "BE Miel",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MIELCAMLAPIELL",
+          "nombre": "Camiseta MIEL_LA_PIEL Dorada L",
+          "artista": "BE Miel",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "MIELESPLTCAMILTRJL",
+          "nombre": "Camiseta MIEL_LatinTouch Rojo L",
+          "artista": "BE Miel",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MIELESPLTCAMILTRJL",
+          "nombre": "Camiseta MIEL_LatinTouch Rojo L",
+          "artista": "BE Miel",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MIELESPLTCAMILTRJM",
+          "nombre": "Camiseta MIEL_LatinTouch Rojo M",
+          "artista": "BE Miel",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MIELESPLTCAMILTRJS",
+          "nombre": "Camiseta MIEL_LatinTouch Rojo S",
+          "artista": "BE Miel",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MIELESPLTCAMILTRJXL",
+          "nombre": "Camiseta MIEL_LatinTouch Rojo XL",
+          "artista": "BE Miel",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MIELESPLTCRTOPLTRJL",
+          "nombre": "CropTop MIEL_LatinTouch Rojo L",
+          "artista": "BE Miel",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "MIELESPLTCRTOPLTRJL",
+          "nombre": "CropTop MIEL_LatinTouch Rojo L",
+          "artista": "BE Miel",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MIELESPLTCRTOPLTRJXL",
+          "nombre": "CropTop MIEL_LatinTouch Rojo XL",
+          "artista": "BE Miel",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "MINDKINDMINDTINE",
+          "nombre": "Mindcotine kid",
+          "artista": "Mindco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 19,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "MINDRLFESPKID",
+          "nombre": "Mindco Relief ESP",
+          "artista": "Mindco",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 128,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "MINICDNICOLASYLF",
+          "nombre": "Mini Cd Nicolás y los Fumadores",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 13.04
+        },
+        {
+          "codigo": "MINICDNICOLASYLF",
+          "nombre": "Mini Cd Nicolás y los Fumadores",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 4.35
+        },
+        {
+          "codigo": "OBRERODRA",
+          "nombre": "Collar Redondo Amarillo-Turquesa Patron_Rombos",
+          "artista": "Obrero Del Ritmo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "OBRERODRB",
+          "nombre": "Collar SemiRedondo Arcoiris Patron_Horizontal",
+          "artista": "Obrero Del Ritmo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "OBRERODRH",
+          "nombre": "Collar Redondo Café-Blanco Patron_Vertical",
+          "artista": "Obrero Del Ritmo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "OBRERODRI",
+          "nombre": "Collar Redondo Arcoiris Patron Vertical",
+          "artista": "Obrero Del Ritmo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "OBRERODRJ",
+          "nombre": "Collar Redondo Arcoiris Patron_Diagonal",
+          "artista": "Obrero Del Ritmo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "OBRERODRM",
+          "nombre": "Collar Redondo Celeste-Turquesa-Blanco Patron_Horizontal",
+          "artista": "Obrero Del Ritmo",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "PANTALONRAIZAJ34",
+          "nombre": "PANTALON RAIZ AZUL JASPEADO 34",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "PANTJHONWHEKEDISPL",
+          "nombre": "PANTALON JHON WHEK EDICIÓN ESPECIAL BOU L",
+          "artista": "BE Bou",
+          "bodega": "SHOWROOM",
+          "cantidad": 3,
+          "monto_pvp": 156.52
+        },
+        {
+          "codigo": "PRINTNNNYLF",
+          "nombre": "Print Noche Negra Nicolás y los Fumadores",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 12,
+          "monto_pvp": 104.35
+        },
+        {
+          "codigo": "PRINTNNNYLF",
+          "nombre": "Print Noche Negra Nicolás y los Fumadores",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "SHOWROOM",
+          "cantidad": 3,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMJAGUARNAL",
+          "nombre": "Camiseta Raiz_Jaguar Nacar L",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZCAMJAGUARNAM",
+          "nombre": "Camiseta Raiz_Jaguar Nacar M",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZCAMJAGUARNAXL",
+          "nombre": "Camiseta Raiz_Jaguar Nacar XL",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMJAGUARVIL",
+          "nombre": "Camiseta Raiz_Jaguar Vino L",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMJAGUARVIL",
+          "nombre": "Camiseta Raiz_Jaguar Vino L",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMJAGUARVIM",
+          "nombre": "Camiseta Raiz_Jaguar Vino M",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZCAMJAGUARVIS",
+          "nombre": "Camiseta Raiz_Jaguar Vino S",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMJAGUARVIXL",
+          "nombre": "Camiseta Raiz_Jaguar Vino XL",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMMONTANASNAL",
+          "nombre": "Camiseta Raiz_Montañas Nacar L",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 3,
+          "monto_pvp": 78.26
+        },
+        {
+          "codigo": "RAIZCAMMONTANASNAM",
+          "nombre": "Camiseta Raiz_Montañas Nacar M",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMMONTANASNAXL",
+          "nombre": "Camiseta Raiz_Montañas Nacar XL",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMMONTANASNAXL",
+          "nombre": "Camiseta Raiz_Montañas Nacar XL",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMMONTANASNEL",
+          "nombre": "Camiseta Raiz_Montañas Negra L",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZCAMMONTANASNEL",
+          "nombre": "Camiseta Raiz_Montañas Negra L",
+          "artista": "BE Bou",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZCAMMONTANASNES",
+          "nombre": "Camiseta Raiz_Montañas Negra S",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZCAMMONTANASNEXL",
+          "nombre": "Camiseta Raiz_Montañas Negra XL",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "RAIZHOODIEMONTANASCEL",
+          "nombre": "Hoodie Raiz_Montañas Celeste L",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZHOODIEMONTANASCEM",
+          "nombre": "Hoodie Raiz_Montañas Celeste M",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZHOODIEMONTANASCEXL",
+          "nombre": "Hoodie Raiz_Montañas Celeste XL",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZHOODIEMONTANASNEL",
+          "nombre": "Hoodie Raiz_Montañas Negra L",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZHOODIEWORLDNEL",
+          "nombre": "Hoodie Raiz_Middle_World Negra L",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZHOODIEWORLDVIL",
+          "nombre": "Hoodie Raiz_Middle_World Vino L",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "RAIZHOODIEWORLDVIM",
+          "nombre": "Hoodie Raiz_Middle_World Vino M",
+          "artista": "BE Bou",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 52.17
+        },
+        {
+          "codigo": "SADENORM",
+          "nombre": "EC D Norm",
+          "artista": "SADE BUSINESS PERU S.A.C.",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 286,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "SADERELIFIX",
+          "nombre": "EC Relifix",
+          "artista": "SADE BUSINESS PERU S.A.C.",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 697,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "SADEVITACAPS",
+          "nombre": "EC Vitacaps DS",
+          "artista": "SADE BUSINESS PERU S.A.C.",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 367,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "SANAHCFILTDUCHA",
+          "nombre": "Filtro de ducha",
+          "artista": "SANATE FILTROS S A",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 42,
+          "monto_pvp": 0
+        },
+        {
+          "codigo": "SANTACAMLDMMGRL",
+          "nombre": "Camiseta Letras_de_mi_muerte Gris L",
+          "artista": "Santa Muerte",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "SANTACAMMMFGRXL",
+          "nombre": "Camiseta Meta_more_fuzz Gris XL",
+          "artista": "Santa Muerte",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "SANTACAMNCSMBLM",
+          "nombre": "Camiseta Nothing_can_stop_me Blanca M",
+          "artista": "Santa Muerte",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "SANTACAMNL",
+          "nombre": "Camiseta Santa_Muerte_Negra_Logo_Blanco Negra L",
+          "artista": "Santa Muerte",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "SANTACAMNXL",
+          "nombre": "Camiseta Santa_Muerte_Negra_Logo_Blanco Negra XL",
+          "artista": "Santa Muerte",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 75
+        },
+        {
+          "codigo": "SANTACAMSOMBLM",
+          "nombre": "Camiseta Suerte_o_muerte Blanca M",
+          "artista": "Santa Muerte",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "SANTADSCM",
+          "nombre": "Vinilo(LongPlay) Santa_Muerte_METAMORFUS",
+          "artista": "Santa Muerte",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 175
+        },
+        {
+          "codigo": "SANTADSCM",
+          "nombre": "Vinilo(LongPlay) Santa_Muerte_METAMORFUS",
+          "artista": "Santa Muerte",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 35
+        },
+        {
+          "codigo": "SANTAGORRLETNE",
+          "nombre": "Gorra Santa_Muerte_Letras Negra",
+          "artista": "Santa Muerte",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 17.39
+        },
+        {
+          "codigo": "SANTAGORRLOGNE",
+          "nombre": "Gorra Santa_Muerte_Logo Negra",
+          "artista": "Santa Muerte",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 17.39
+        },
+        {
+          "codigo": "SANTAHDBXL",
+          "nombre": "Hoodie Santa_Muerte_Negro_Logo_Blanco Negra XL",
+          "artista": "Santa Muerte",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 30.43
+        },
+        {
+          "codigo": "SANTAHDDXL",
+          "nombre": "Hoodie Santa_Muerte_Negro_Logo_Dorado Negra XL",
+          "artista": "Santa Muerte",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 34.78
+        },
+        {
+          "codigo": "SANTAHDDXXL",
+          "nombre": "Hoodie Santa_Muerte_Negro_Logo_Dorado Negra XXL",
+          "artista": "Santa Muerte",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 34.78
+        },
+        {
+          "codigo": "SEDBANDANA",
+          "nombre": "Bandana Saca El Diablo Azul Amarilla",
+          "artista": "SED",
+          "bodega": "Bodega España",
+          "cantidad": 3,
+          "monto_pvp": 33.92
+        },
+        {
+          "codigo": "SEDBANDANN",
+          "nombre": "Bandana Saca El Diablo Negra Blanca",
+          "artista": "SED",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 5,
+          "monto_pvp": 56.53
+        },
+        {
+          "codigo": "STARTUPCAMIDBAL",
+          "nombre": "Camiseta Dream_believe_achieve Negra L",
+          "artista": "StartupGrind",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 65.22
+        },
+        {
+          "codigo": "STARTUPCAMIDBAS",
+          "nombre": "Camiseta Dream_believe_achieve Negra S",
+          "artista": "StartupGrind",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "STARTUPCAMIDBAXL",
+          "nombre": "Camiseta Dream_believe_achieve Negra XL",
+          "artista": "StartupGrind",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "STARTUPCAMITBL",
+          "nombre": "Camiseta Think_big_start_small Blanca L",
+          "artista": "StartupGrind",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "STARTUPCAMITBL",
+          "nombre": "Camiseta Think_big_start_small Blanca L",
+          "artista": "StartupGrind",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "STARTUPCAMITOBL",
+          "nombre": "Camiseta Think_outside_the_box Negra L",
+          "artista": "StartupGrind",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "STARTUPCAMITOBL",
+          "nombre": "Camiseta Think_outside_the_box Negra L",
+          "artista": "StartupGrind",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "STARTUPCAMITOBS",
+          "nombre": "Camiseta Think_outside_the_box Negra S",
+          "artista": "StartupGrind",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "STARTUPCAMITTPL",
+          "nombre": "Camiseta Trust_the_process Negra L",
+          "artista": "StartupGrind",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "STARTUPCAMITTPS",
+          "nombre": "Camiseta Trust_the_process Negra S",
+          "artista": "StartupGrind",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "STARTUPCAMIWHPL",
+          "nombre": "Camiseta Work_hard_play_hard Negra L",
+          "artista": "StartupGrind",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "STARTUPCAMIWHPXL",
+          "nombre": "Camiseta Work_hard_play_hard Negra XL",
+          "artista": "StartupGrind",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "SWINGGORRANV",
+          "nombre": "Gorra Swing Original Monks Negro Logo Verde",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 30
+        },
+        {
+          "codigo": "SWINGGORRARB",
+          "nombre": "Gorra Swing Original Monks Rojo Logo Blanco",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 60
+        },
+        {
+          "codigo": "SWINGGORRARR",
+          "nombre": "Gorra Swing Original Monks Rojo Logo Rojo",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 30
+        },
+        {
+          "codigo": "SWINGGORRARR",
+          "nombre": "Gorra Swing Original Monks Rojo Logo Rojo",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 30
+        },
+        {
+          "codigo": "SWINGHOODIEL",
+          "nombre": "Hoodie Monkeo Flece Negro L",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 30.43
+        },
+        {
+          "codigo": "SWINGHOODIEL",
+          "nombre": "Hoodie Monkeo Flece Negro L",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 30.43
+        },
+        {
+          "codigo": "SWINGHOODIEXL",
+          "nombre": "Hoodie Monkeo Flece Negro XL",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 30.43
+        },
+        {
+          "codigo": "SWINGIMAN",
+          "nombre": "IMÁNES VOLCÁNICO",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 4
+        },
+        {
+          "codigo": "SWINGMONKSS",
+          "nombre": "CAMISETA LOGO MONKS NEGRA S",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "SWINGTOTEBAG",
+          "nombre": "TOTE BAG SWING ORIGINAL MONKS NEGRO",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 14,
+          "monto_pvp": 182.61
+        },
+        {
+          "codigo": "SWINGTOTEBAG",
+          "nombre": "TOTE BAG SWING ORIGINAL MONKS NEGRO",
+          "artista": "SWING ORIGINAL MONKS",
+          "bodega": "SHOWROOM",
+          "cantidad": 2,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "TOTENASAFPVCR",
+          "nombre": "Totel flor de pie violin",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "TOTENASAFSVCR",
+          "nombre": "Tote  flor sentada violonchelo",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "TOTENASATSCR",
+          "nombre": "Tote tulipan saxo",
+          "artista": "Nasa",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 1
+        },
+        {
+          "codigo": "TOTENYLFNTN",
+          "nombre": "Tote bags serigrafia verde",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 27.83
+        },
+        {
+          "codigo": "TOTENYLFNTN",
+          "nombre": "Tote bags serigrafia verde",
+          "artista": "Nicolás y los Fumadores",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 13.91
+        },
+        {
+          "codigo": "V70AUDIFONOS",
+          "nombre": "Verde70 Audifonos",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 3,
+          "monto_pvp": 26.09
+        },
+        {
+          "codigo": "V70CAMHSAPIENSL",
+          "nombre": "Camiseta Homosapiens Nacar Logo Naranja L",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "V70CAMHSAPIENSM",
+          "nombre": "Camiseta Homosapiens Nacar Logo Naranja M",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70CAMHSAPIENSS",
+          "nombre": "Camiseta Homosapiens Nacar Logo Naranja S",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70CAMHSAPIENSXL",
+          "nombre": "Camiseta Homosapiens Nacar Logo Naranja XL",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70CAMLAPIELL",
+          "nombre": "Camiseta V70_LA_PIEL Negra L",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "V70CAMLAPIELL",
+          "nombre": "Camiseta V70_LA_PIEL Negra L",
+          "artista": "Verde70",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "V70CAMLAPIELM",
+          "nombre": "Camiseta V70_LA_PIEL Negra M",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "V70CAMLAPIELXL",
+          "nombre": "Camiseta V70_LA_PIEL Negra XL",
+          "artista": "Verde70",
+          "bodega": "Bodega Prestamos",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "V70CAMLAPIELXL",
+          "nombre": "Camiseta V70_LA_PIEL Negra XL",
+          "artista": "Verde70",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 39.12
+        },
+        {
+          "codigo": "V70CAMPORTADABL",
+          "nombre": "Verde70 Camiseta Portada Blanca L",
+          "artista": "Verde70",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70CAMPORTADABMCR",
+          "nombre": "Verde70 Camiseta Portada CR Blanca M",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70CAMPORTADABXL",
+          "nombre": "Verde70 Camiseta Portada Blanca XL",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70CAMPORTADANXL",
+          "nombre": "Verde70 Camiseta Portada Negra XL",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 2,
+          "monto_pvp": 43.48
+        },
+        {
+          "codigo": "V70CAMROSTROSBL",
+          "nombre": "Verde70 Camiseta Rostros Blanca L",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70CAMROSTROSBXL",
+          "nombre": "Verde70 Camiseta Rostros Blanca XL",
+          "artista": "Verde70",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70CAMROSTROSNL",
+          "nombre": "Verde70 Camiseta Rostros Negra L",
+          "artista": "Verde70",
+          "bodega": "EVENTOS BOU",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70CAMROSTROSNXL",
+          "nombre": "Verde70 Camiseta Rostros Negra XL",
+          "artista": "Verde70",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70GORRALISV70",
+          "nombre": "Verde70 Gorra Listen_v70",
+          "artista": "Verde70",
+          "bodega": "Bodega España",
+          "cantidad": 2,
+          "monto_pvp": 34.78
+        },
+        {
+          "codigo": "V70HOODIECVXL",
+          "nombre": "Verde70 Hoodie Crema_Verde XL",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 1,
+          "monto_pvp": 34.78
+        },
+        {
+          "codigo": "V70HOODIECVXL",
+          "nombre": "Verde70 Hoodie Crema_Verde XL",
+          "artista": "Verde70",
+          "bodega": "Bodega España",
+          "cantidad": 3,
+          "monto_pvp": 104.35
+        },
+        {
+          "codigo": "V70LIBEXI",
+          "nombre": "Verde70 Libro Exitoina",
+          "artista": "Verde70",
+          "bodega": "SHOWROOM",
+          "cantidad": 1,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70POSTALNATHUMANA",
+          "nombre": "V70 Postal Naturaleza_Humana",
+          "artista": "Verde70",
+          "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
+          "cantidad": 5,
+          "monto_pvp": 21.74
+        },
+        {
+          "codigo": "V70TOTEN",
+          "nombre": "Verde70 TOTE BAG N",
+          "artista": "Verde70",
+          "bodega": "Bodega España",
+          "cantidad": 1,
+          "monto_pvp": 10.43
+        }
+      ],
+      "inventario_alertas_pvp": [
+        "NOVESS",
+        "Alex Eugenio",
+        "ECOM GLOBAL",
+        "GRUPOESHOP",
+        "FSA NATURAL",
+        "GREEN LINE",
+        "LSJ SAS",
+        "Mindco",
+        "Obrero Del Ritmo",
+        "SADE BUSINESS PERU S.A.C.",
+        "SANATE FILTROS S A"
+      ],
+      "prestashop_pedidos_ec": 0,
+      "prestashop_total_ec_usd": 0,
+      "prestashop_pedidos_col": 0,
+      "prestashop_total_col_cop": 0,
+      "prestashop_pedidos_ec_todos_estados": 0,
+      "prestashop_pedidos_col_todos_estados": 0,
+      "ga4_usuarios_ec": 2,
+      "ga4_usuarios_nuevos_ec": 2,
+      "ga4_sesiones_ec": 2,
+      "ga4_ingresos_ec_usd": 0,
+      "ga4_compras_ec": 0,
+      "ga4_usuarios_col": 0,
+      "ga4_usuarios_nuevos_col": 0,
+      "ga4_sesiones_col": 0,
+      "ga4_ingresos_col_usd": 0,
+      "ga4_compras_col": 0,
+      "ga4_canales": {
+        "ec": {
+          "Direct": {
+            "sessions": 1,
+            "active_users": 1
+          },
+          "Organic Social": {
+            "sessions": 1,
+            "active_users": 1
+          }
+        },
+        "col": {}
+      },
+      "ga4_eventos_clave": {
+        "ec": {},
+        "col": {}
+      },
+      "ga4_articulos": {
+        "ec": [],
+        "col": []
+      },
+      "meta_spend_usd": 0,
+      "meta_impresiones": 0,
+      "meta_alcance": 0,
+      "meta_clics": 0,
+      "meta_link_clics": 0,
+      "meta_ctr": 0,
+      "meta_compras": 0,
+      "meta_ingresos_usd": 0,
+      "meta_roas": 0,
+      "meta_cpa": null,
+      "ads_ad_sets": [],
+      "ventas_consolidadas_ec": {
+        "fuente": "contifico",
+        "tienda": 0,
+        "web": 0,
+        "en_linea": 0,
+        "evento": 0,
+        "total_usd": 0,
+        "excluido_no_be_usd": 0,
+        "moneda": "USD"
+      },
+      "ventas_consolidadas_col": {
+        "fuente": "matriz_google_sheets",
+        "en_linea": 0,
+        "web": 0,
+        "concierto": 0,
+        "evento": 0,
+        "otros": 0,
+        "total_cop": 0,
+        "pendiente_no_cobrado_cop": 0,
+        "moneda": "COP",
+        "n_registros": 0,
+        "nota": "Sin filas nuevas en el Sheet para el 20/ago/2026 -- carga manual pendiente del equipo Colombia; última fila real cargada es del 17/ago/2026."
+      },
+      "recomendaciones_ec": [
+        "Ecuador sin actividad comercial en el corte de la mañana: 0 leads Kommo, 0 documentos Contífico, 0 pedidos PrestaShop. GA4 registró 2 sesiones y 0 compras -- normal para las 10:30am, revisar en el corte de cierre (6pm) si repunta.",
+        "Meta Ads EC sigue sin reportar spend/impresiones (caído desde 03/ago/2026) -- persiste el problema, seguir escalando con el equipo de pauta/Windsor.ai."
+      ],
+      "recomendaciones_col": [
+        "Colombia sin actividad comercial en el corte de la mañana: 0 leads Kommo, 0 pedidos PrestaShop, 0 documentos Contífico. Revisar en el cierre de las 6pm.",
+        "La Matriz de Ventas Colombia no tiene filas cargadas desde el 17/ago/2026 -- es una limitante de carga manual del equipo COL, no un fallo técnico."
+      ],
+      "nota_verificacion": "Corte de MAÑANA (10:30am) -- números PARCIALES, se actualizan en el corte de cierre (6pm). Kommo: 0 leads EC / 0 leads COL, mensajería BE 9 entrantes/7 salientes EC + 1 entrante/0 salientes COL. Contífico: 0 documentos BE (aún no se factura a esta hora). PrestaShop: 0 pedidos EC / 0 pedidos COL (últimos pedidos reales: EC 14/ago, COL 19/ago). Inventario recalculado hoy: 36,069 uds vendibles / $22,308.98 PVP (sin IVA), 36 artistas, excluidos CAJAPIELAZUL y STICGEBOU por código. Meta Ads sigue sin spend desde 03/ago/2026 (17+ días). Matriz Colombia sin filas nuevas (última carga real: 17/ago/2026)."
     }
   ],
   "periodic": [
