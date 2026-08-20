@@ -480,7 +480,35 @@ with tab_ec:
             help="Por defecto se suman todos los artistas. Deselecciona para ver el inventario solo de ciertos artistas.",
         )
         artistas_sel_set = set(artistas_sel) if artistas_sel else set(artistas_list)
-        art = {k: v for k, v in art_all.items() if k in artistas_sel_set}
+        _productos_all = inv_day.get("inventario_productos") or []
+        _productos_for_marca = [p for p in _productos_all if p.get("artista") not in BOU_LOGISTICA_CATEGORIAS]
+        marcas_list = sorted({(p.get("marca") or "(sin marca)") for p in _productos_for_marca})
+        if marcas_list:
+            marcas_sel = st.multiselect(
+                "Filtrar por marca", marcas_list, default=marcas_list,
+                key="ec_inv_marca_filter",
+                help="BOU = producto hecho por BOU. ARTISTA = lo trae el artista para la venta. INSUMOS = empaque/caja, no debería tener valor real.",
+            )
+            marcas_sel_set = set(marcas_sel) if marcas_sel else set(marcas_list)
+        else:
+            marcas_sel_set = None
+        if _productos_for_marca and marcas_sel_set is not None:
+            _art_marca_acc = {}
+            for _p in _productos_for_marca:
+                if _p.get("artista") not in artistas_sel_set:
+                    continue
+                if bodegas_sel_set and _p.get("bodega") not in bodegas_sel_set:
+                    continue
+                if (_p.get("marca") or "(sin marca)") not in marcas_sel_set:
+                    continue
+                _a = _p.get("artista")
+                if _a not in _art_marca_acc:
+                    _art_marca_acc[_a] = {"cantidad": 0, "monto_pvp": 0}
+                _art_marca_acc[_a]["cantidad"] += _p.get("cantidad", 0)
+                _art_marca_acc[_a]["monto_pvp"] += _p.get("monto_pvp", 0)
+            art = {k: v for k, v in _art_marca_acc.items() if v["cantidad"] > 0}
+        else:
+            art = {k: v for k, v in art_all.items() if k in artistas_sel_set}
         total_cant_sel = sum(v["cantidad"] for v in art.values())
         total_monto_sel = sum(v["monto_pvp"] for v in art.values())
         IVA_RATE = 0.15
@@ -508,9 +536,11 @@ with tab_ec:
                     continue
                 if bodegas_sel_set and _p.get("bodega") not in bodegas_sel_set:
                     continue
+                if marcas_sel_set is not None and (_p.get("marca") or "(sin marca)") not in marcas_sel_set:
+                    continue
                 _key = _p.get("codigo")
                 if _key not in _prod_rows:
-                    _prod_rows[_key] = {"SKU": _p.get("codigo"), "Producto": _p.get("nombre"), "Artista": _p.get("artista"), "Cantidad": 0}
+                    _prod_rows[_key] = {"SKU": _p.get("codigo"), "Producto": _p.get("nombre"), "Artista": _p.get("artista"), "Marca": _p.get("marca") or "(sin marca)", "Cantidad": 0}
                 _prod_rows[_key]["Cantidad"] += _p.get("cantidad", 0)
             _prod_list = sorted(_prod_rows.values(), key=lambda r: -r["Cantidad"])
             if _prod_list:
