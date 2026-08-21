@@ -428,6 +428,40 @@ document.querySelectorAll('.tab').forEach(btn=>{
 <div id="bouInvArtista"></div>
 <div id="bouInvProductos" style="margin-top:20px;"></div>
 </section>
+<section id="bou-extra4" style="max-width:1100px;margin:32px auto;padding:0 20px;font-family:'Courier New',monospace;color:#eee;">
+<h2 style="font-size:14px;color:#999;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #2a2a2a;padding-bottom:8px;">GA4 — Canales y eventos (Ecuador / Colombia)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0 24px;">
+<div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:14px;">
+<div style="color:#999;font-size:11px;letter-spacing:1px;margin-bottom:10px;">CANALES DE TRAFICO — ECUADOR</div>
+<table style="width:100%;font-size:11px;border-collapse:collapse;"><tbody id="bouCanalesEc"></tbody></table>
+</div>
+<div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:14px;">
+<div style="color:#999;font-size:11px;letter-spacing:1px;margin-bottom:10px;">CANALES DE TRAFICO — COLOMBIA</div>
+<table style="width:100%;font-size:11px;border-collapse:collapse;"><tbody id="bouCanalesCol"></tbody></table>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 24px;">
+<div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:14px;">
+<div style="color:#999;font-size:11px;letter-spacing:1px;margin-bottom:10px;">NUMERO DE EVENTOS POR NOMBRE — ECUADOR</div>
+<table style="width:100%;font-size:11px;border-collapse:collapse;"><tbody id="bouEventosEc"></tbody></table>
+</div>
+<div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:14px;">
+<div style="color:#999;font-size:11px;letter-spacing:1px;margin-bottom:10px;">NUMERO DE EVENTOS POR NOMBRE — COLOMBIA</div>
+<table style="width:100%;font-size:11px;border-collapse:collapse;"><tbody id="bouEventosCol"></tbody></table>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 32px;">
+<div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:14px;">
+<div style="color:#999;font-size:11px;letter-spacing:1px;margin-bottom:10px;">EVENTOS CLAVE (CONVERSION) — ECUADOR</div>
+<div id="bouEventosClaveEc"></div>
+</div>
+<div style="background:#151515;border:1px solid #2a2a2a;border-radius:6px;padding:14px;">
+<div style="color:#999;font-size:11px;letter-spacing:1px;margin-bottom:10px;">EVENTOS CLAVE (CONVERSION) — COLOMBIA</div>
+<div id="bouEventosClaveCol"></div>
+</div>
+</div>
+</section>
+
 
 
 <script>
@@ -734,5 +768,69 @@ elInv.innerHTML = '<div style="color:#666;font-size:11px;">Sin dato disponible</
   });
 })();
 </script>
+
+<script>
+(function(){
+function esc(s){ return String(s==null?'':s).replace(/[&<>]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
+function fmtInt(n){ return (n||0).toLocaleString('es-EC'); }
+function renderCanalesRows(bodyId, canales){
+  const el = document.getElementById(bodyId);
+  if (!el) return;
+  const entries = Object.entries(canales||{}).sort(function(a,b){ return (b[1].sessions||0)-(a[1].sessions||0); });
+  if (!entries.length){ el.innerHTML = '<tr><td style="color:#666;padding:4px 0;">Sin dato</td></tr>'; return; }
+  const total = entries.reduce(function(a,e){ return a + (e[1].sessions||0); }, 0);
+  el.innerHTML = entries.map(function(e){
+    const pct = total ? Math.round(e[1].sessions/total*100) : 0;
+    return '<tr><td style="padding:3px 0;color:#ccc;">'+esc(e[0])+'</td><td style="padding:3px 0;text-align:right;color:#eee;">'+fmtInt(e[1].sessions)+'</td><td style="padding:3px 0;text-align:right;color:#888;width:40px;">'+pct+'%</td></tr>';
+  }).join('');
+}
+function renderEventosRows(bodyId, eventos){
+  const el = document.getElementById(bodyId);
+  if (!el) return;
+  const list = (eventos||[]).slice().sort(function(a,b){ return (b.event_count||0)-(a.event_count||0); }).slice(0,10);
+  if (!list.length){ el.innerHTML = '<tr><td style="color:#666;padding:4px 0;">Sin dato</td></tr>'; return; }
+  el.innerHTML = list.map(function(e){
+    return '<tr><td style="padding:3px 0;color:#ccc;">'+esc(e.event_name)+'</td><td style="padding:3px 0;text-align:right;color:#eee;">'+fmtInt(e.event_count)+'</td></tr>';
+  }).join('');
+}
+function renderFunnelClave(divId, ev){
+  const el = document.getElementById(divId);
+  if (!el) return;
+  if (!ev || !Object.keys(ev).length){ el.innerHTML = '<div style="color:#666;font-size:11px;">Sin dato</div>'; return; }
+  const steps = [['View item', ev.view_item], ['Add to cart', ev.add_to_cart], ['Begin checkout', ev.begin_checkout], ['Purchase', ev.purchase]];
+  const max = Math.max.apply(null, steps.map(function(s){ return s[1]||0; }).concat([0]));
+  el.innerHTML = steps.map(function(s){
+    const pct = max>0 ? Math.max(4, Math.round((s[1]||0)/max*100)) : 0;
+    return '<div style="margin-bottom:8px;">'
+      + '<div style="display:flex;justify-content:space-between;font-size:11px;color:#ccc;margin-bottom:2px;"><span>'+s[0]+'</span><span>'+fmtInt(s[1])+'</span></div>'
+      + '<div style="background:#0a0a0a;border-radius:3px;height:8px;overflow:hidden;"><div style="background:#67D4FF;height:8px;width:'+pct+'%;"></div></div>'
+      + '</div>';
+  }).join('');
+}
+fetch('data/daily-log.json', {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(data){
+  const days = data.daily || [];
+  const last = days[days.length-1] || {};
+  const canales = last.ga4_canales || {};
+  renderCanalesRows('bouCanalesEc', canales.ec);
+  renderCanalesRows('bouCanalesCol', canales.col);
+  const eventos = last.ga4_eventos_todos || {};
+  renderEventosRows('bouEventosEc', eventos.ec);
+  renderEventosRows('bouEventosCol', eventos.col);
+  const clave = last.ga4_eventos_clave || {};
+  renderFunnelClave('bouEventosClaveEc', clave.ec);
+  renderFunnelClave('bouEventosClaveCol', clave.col);
+}).catch(function(){
+  ['bouCanalesEc','bouCanalesCol','bouEventosEc','bouEventosCol'].forEach(function(id){
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = '<tr><td style="color:#666;">Error cargando datos</td></tr>';
+  });
+  ['bouEventosClaveEc','bouEventosClaveCol'].forEach(function(id){
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = '<div style="color:#666;font-size:11px;">Error cargando datos</div>';
+  });
+});
+})();
+</script>
+
 </body>
 </html>
