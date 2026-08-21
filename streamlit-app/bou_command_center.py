@@ -477,10 +477,10 @@ with tab_ec:
         st.markdown('<div class="bcc-note-box">sin dato de método de cobro en este rango</div>', unsafe_allow_html=True)
 
     panel_header("Funnel Kommo EC", "ventana móvil 30 días · orden real del pipeline · % sobre etapas de venta")
-fec = last_day.get("kommo_funnel_ec") or {}
-by_status = fec.get("byStatus") or {}
-st.markdown(render_funnel_html(by_status, KOMMO_STAGE_ORDER_EC, EC_NON_SALES_STAGES, GOLD), unsafe_allow_html=True)
-st.write("")
+    fec = last_day.get("kommo_funnel_ec") or {}
+    by_status = fec.get("byStatus") or {}
+    st.markdown(render_funnel_html(by_status, KOMMO_STAGE_ORDER_EC, EC_NON_SALES_STAGES, GOLD), unsafe_allow_html=True)
+    st.write("")
     panel_header("Inventario vendible por artista", "Bou Entertainment · solo corte de mañana")
     inv_day = next((d for d in days_all if d.get("inventario_total", {}).get("cantidad")), None)
     if inv_day:
@@ -680,10 +680,10 @@ with tab_col:
 
     st.write("")
     panel_header("Funnel Kommo COL", "ventana móvil 30 días · orden real del pipeline")
-fcol = last_day.get("kommo_funnel_col") or {}
-by_status = fcol.get("byStatus") or {}
-st.markdown(render_funnel_html(by_status, KOMMO_STAGE_ORDER_COL, COL_NON_SALES_STAGES, LILAC), unsafe_allow_html=True)
-st.write("")
+    fcol = last_day.get("kommo_funnel_col") or {}
+    by_status = fcol.get("byStatus") or {}
+    st.markdown(render_funnel_html(by_status, KOMMO_STAGE_ORDER_COL, COL_NON_SALES_STAGES, LILAC), unsafe_allow_html=True)
+    st.write("")
     panel_header("Detalle: Matriz Sheets Colombia (fuente primaria)", "metodología y estado real de ventas_consolidadas_col")
     st.markdown(
         '<div class="bcc-note-box">✅ <b>Extracción resuelta el 13/ago — ya no está bloqueada.</b> '
@@ -697,7 +697,7 @@ st.write("")
         '<b>Limitante real, no de metodología:</b> el equipo de Colombia carga el Sheet manualmente — si un día '
         'todavía no tiene filas ahí, este campo legítimamente muestra 0 (no significa que el dashboard esté roto). '
         'La última fecha con filas en el Sheet fuente puede ir 1-2 días atrás de hoy.<br><br>'
-        f'<code>{vcol_preview}</code></div>', unsafe_allow_html=True,
+        f'<code>{last_day.get("ventas_consolidadas_col")}</code></div>', unsafe_allow_html=True,
     )# ============================================================
 # MARKETING
 # ============================================================
