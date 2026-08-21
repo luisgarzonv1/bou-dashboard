@@ -536,7 +536,7 @@ const elFiltroMarca = document.getElementById('bouInvFiltroMarca');
 const elProductos = document.getElementById('bouInvProductos');
 const IVA_RATE = 0.15;
 if (lastInv && elInv && lastInv.inventario_matriz) {
-const LOGISTICA_CATEGORIES = ['ECOM GLOBAL','GREEN LINE','LSJ SAS','GRUPOESHOP','FSA NATURAL','Mindco','SADE BUSINESS PERU S.A.C.','SANATE FILTROS S A','NOVESS'];
+const LOGISTICA_CATEGORIES = ['ECOM GLOBAL','GREEN LINE','LSJ SAS','GRUPOESHOP','FSA NATURAL','Mindco','SADE BUSINESS PERU S.A.C.','SANATE FILTROS S A','NOVESS','LOGISPRO','RUTAEX'];
 const matrizRaw = lastInv.inventario_matriz;
 const matriz = {};
 Object.keys(matrizRaw).forEach(k => { if (!LOGISTICA_CATEGORIES.includes(k)) matriz[k] = matrizRaw[k]; });
