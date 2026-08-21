@@ -60,6 +60,51 @@ STATUS_CFG = {
 KOMMO_STAGE_ORDER_EC = ["Incoming leads", "Contacto inicial", "Nueva consulta", "ATENCION AGENTE", "leads frios (no responde)", "leads Tibios (interacción)", "leads Calientes (datos bancarios)", "Por registrar y FACTURAR", "Por entregar", "Cliente Registrado", "CAMBIOS Y DEVOLUCIONES", "Falta stock", "ERROR ENVIAR MENSAJE", "CONFIRMADOS EVENTOS", "BOU SESSION", "Sorteos y concursos", "Servicios Adicionales", "Reacciones y Comentarios", "R.Comentarios Revisados", "Colaboraciones", "SPAM", "Leads ganados", "Leads perdidos"]
 KOMMO_STAGE_ORDER_COL = ["Incoming leads", "Contacto inicial", "Nueva consulta", "ATENCION AGENTE", "leads frios (no responde)", "leads Tibios (interacción)", "leads Calientes (datos bancarios)", "Por registrar ", "Por entregar", "CAMBIOS Y DEVOLUCIONES", "ERROR ENVIAR MENSAJE", "CONFIRMADOS", "Logrado con éxito", "Ventas Perdidos"]
 
+# Etapas que NO son venta (reacciones, comentarios, spam, colaboraciones, etc.) -- se
+# muestran aparte y no cuentan para el % del funnel. Agregado 21/ago/2026 a pedido de
+# Luis para que el % del funnel EC refleje solo leads de venta real, igual que index.html
+# y reporte-semanal.html. Colombia no tiene etapas de este tipo en su pipeline actual.
+EC_NON_SALES_STAGES = ["CONFIRMADOS EVENTOS", "BOU SESSION", "Sorteos y concursos", "Servicios Adicionales", "Reacciones y Comentarios", "R.Comentarios Revisados", "Colaboraciones", "SPAM"]
+COL_NON_SALES_STAGES = []
+
+
+def render_funnel_html(by_status, pipeline_order, non_sales_stages, accent=GOLD):
+    """Funnel vertical (de arriba hacia abajo) igual al de index.html / reporte-semanal.html:
+    % calculado solo sobre las etapas de venta; las etapas que no son venta se listan
+    aparte, sin contar para el %. Agregado 21/ago/2026."""
+    if not by_status:
+        return '<div class="bcc-note-box">Sin dato disponible</div>'
+    non_sales = set(non_sales_stages or [])
+    order_idx = lambda n: pipeline_order.index(n) if n in pipeline_order else 999
+    all_items = sorted(by_status.items(), key=lambda x: order_idx(x[0]))
+    sales_items = [x for x in all_items if x[0] not in non_sales]
+    nonsales_items = [x for x in all_items if x[0] in non_sales]
+    sales_total = sum(v for _, v in sales_items)
+    max_v = max([v for _, v in all_items] or [0])
+
+    def row(name, count, pct, is_nonsales):
+        bar_pct = round(count / max_v * 100) if max_v else 0
+        pct_html = f'<span style="color:{MINT if not is_nonsales else MUTED};font-weight:700;margin-left:6px;">&middot; {pct:.1f}%</span>' if pct is not None else ''
+        border_color = MUTED if is_nonsales else accent
+        opacity = 'opacity:0.65;' if is_nonsales else ''
+        bg = f'background:linear-gradient(90deg, {accent}1a {bar_pct}%, rgba(0,0,0,0.02) {bar_pct}%);'
+        return (
+            f'<div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;'
+            f'padding:10px 14px;margin-bottom:4px;border-radius:4px;border-left:3px solid {border_color};{bg}{opacity}">'
+            f'<div style="font-size:13px;font-weight:500;color:{TEXT};">{name}</div>'
+            f'<div style="font-size:12px;color:{MUTED};font-family:\'JetBrains Mono\',monospace;">'
+            f'<strong style="color:{TEXT};">{count}</strong> leads{pct_html}</div></div>'
+        )
+
+    html = ''
+    if nonsales_items:
+        html += f'<div style="font-size:10px;color:{MUTED};text-transform:uppercase;letter-spacing:0.1em;margin:0 0 6px;">Etapas de venta (% sobre {sales_total} leads de venta)</div>'
+    html += ''.join(row(n, c, (c / sales_total * 100 if sales_total else 0), False) for n, c in sales_items)
+    if nonsales_items:
+        html += f'<div style="font-size:10px;color:{MUTED};text-transform:uppercase;letter-spacing:0.1em;margin:14px 0 6px;">Otras interacciones (no cuentan para % de venta)</div>'
+        html += ''.join(row(n, c, None, True) for n, c in nonsales_items)
+    return html
+
 COBRO_LABELS = {"TC": "Tarjeta de credito", "TRA": "Transferencia", "CH": "Cheque", "EF": "Efectivo", "SIN_DATO": "Sin dato"}
 COBRO_COLORS = {"TC": GOLD, "TRA": MINT, "CH": BLUE, "EF": LILAC, "SIN_DATO": MUTED}
 
@@ -431,20 +476,11 @@ with tab_ec:
     else:
         st.markdown('<div class="bcc-note-box">sin dato de método de cobro en este rango</div>', unsafe_allow_html=True)
 
-    panel_header("Funnel Kommo EC", "ventana móvil 30 días · orden real del pipeline")
-    fec = last_day.get("kommo_funnel_ec") or {}
-    by_status = fec.get("byStatus") or {}
-    if by_status:
-        total_funnel_ec = sum(by_status.values())
-        items_ec = sorted(by_status.items(), key=lambda x: KOMMO_STAGE_ORDER_EC.index(x[0]) if x[0] in KOMMO_STAGE_ORDER_EC else 999)
-        sdf = pd.DataFrame(items_ec, columns=["etapa", "leads"])
-        sdf["pct"] = sdf["leads"].apply(lambda v: f"{(v/total_funnel_ec*100):.0f}%" if total_funnel_ec else "")
-        fig = go.Figure(go.Bar(x=sdf["etapa"], y=sdf["leads"], text=sdf["pct"], textposition="outside", marker_color=BLUE))
-        st.plotly_chart(plotly_dark_layout(fig, height=280), use_container_width=True)
-    else:
-        st.markdown('<div class="bcc-note-box">sin dato de funnel para Ecuador en este corte</div>', unsafe_allow_html=True)
-
-    st.write("")
+    panel_header("Funnel Kommo EC", "ventana móvil 30 días · orden real del pipeline · % sobre etapas de venta")
+fec = last_day.get("kommo_funnel_ec") or {}
+by_status = fec.get("byStatus") or {}
+st.markdown(render_funnel_html(by_status, KOMMO_STAGE_ORDER_EC, EC_NON_SALES_STAGES, GOLD), unsafe_allow_html=True)
+st.write("")
     panel_header("Inventario vendible por artista", "Bou Entertainment · solo corte de mañana")
     inv_day = next((d for d in days_all if d.get("inventario_total", {}).get("cantidad")), None)
     if inv_day:
@@ -600,8 +636,7 @@ with tab_col:
     # Colombia carga el Sheet de forma manual, así que un día sin filas registradas ahí
     # todavía se ve como 0 (no es un bug de lectura). PrestaShop COL sigue como complemento
     # funcional; Kommo aporta contexto de leads.
-    vcol_preview = last_day.get("ventas_consolidadas_col") or {}
-    vcol_total = vcol_preview.get("total_cop")
+    vcol_total = sum(((r.get("ventas_consolidadas_col") or {}).get("total_cop") or 0) for r in rows)
 
     k1, k2, k3, k4 = st.columns(4)
     with k1:
@@ -616,9 +651,12 @@ with tab_col:
     st.markdown(
         '<div class="bcc-note-box">La Matriz de Ventas Colombia (Google Sheets) es la fuente primaria declarada '
         'para Colombia — tiene columna de monto, Delivery cruzado contra PrestaShop e "Id orden Prestashop" para '
-        'cruce exacto. Hoy no se puede usar en el dashboard porque el equipo de Colombia combina celdas en el '
-        'Sheet, lo que rompe la lectura automática (API/exportación solo lee la celda superior-izquierda de un '
-        'rango combinado). Mientras se resuelve, PrestaShop COL es el número que se usa en el día a día. '
+        'cruce exacto. Las celdas combinadas ya no son un problema: se lee el Sheet como export CSV completo '
+        '(no la API de lectura celda por celda), lo que trae las filas reales sin perder datos. Se hizo un backfill '
+        'histórico completo (may/2025 – ago/2026) sobre daily-log.json, y el total mostrado aquí se agrega sobre '
+        'la ventana de fechas seleccionada (no solo el último día). Limitante real, no de metodología: el equipo '
+        'de Colombia carga el Sheet de forma manual, por lo que puede haber rezago de 1–2 días frente a ventas del '
+        'día en curso. '
         f'Equivalente USD de PrestaShop: {fmt_or_missing(col_usd_equiv, "${:,.0f}")} · TRM ref. {trm} (manual).</div>',
         unsafe_allow_html=True,
     )
@@ -642,19 +680,10 @@ with tab_col:
 
     st.write("")
     panel_header("Funnel Kommo COL", "ventana móvil 30 días · orden real del pipeline")
-    fcol = last_day.get("kommo_funnel_col") or {}
-    by_status = fcol.get("byStatus") or {}
-    if by_status:
-        total_funnel_col = sum(by_status.values())
-        items_col = sorted(by_status.items(), key=lambda x: KOMMO_STAGE_ORDER_COL.index(x[0]) if x[0] in KOMMO_STAGE_ORDER_COL else 999)
-        sdf = pd.DataFrame(items_col, columns=["etapa", "leads"])
-        sdf["pct"] = sdf["leads"].apply(lambda v: f"{(v/total_funnel_col*100):.0f}%" if total_funnel_col else "")
-        fig = go.Figure(go.Bar(x=sdf["etapa"], y=sdf["leads"], text=sdf["pct"], textposition="outside", marker_color=LILAC))
-        st.plotly_chart(plotly_dark_layout(fig, height=280), use_container_width=True)
-    else:
-        st.markdown('<div class="bcc-note-box">sin dato de funnel para Colombia en este corte</div>', unsafe_allow_html=True)
-
-    st.write("")
+fcol = last_day.get("kommo_funnel_col") or {}
+by_status = fcol.get("byStatus") or {}
+st.markdown(render_funnel_html(by_status, KOMMO_STAGE_ORDER_COL, COL_NON_SALES_STAGES, LILAC), unsafe_allow_html=True)
+st.write("")
     panel_header("Detalle: Matriz Sheets Colombia (fuente primaria)", "metodología y estado real de ventas_consolidadas_col")
     st.markdown(
         '<div class="bcc-note-box">✅ <b>Extracción resuelta el 13/ago — ya no está bloqueada.</b> '
@@ -711,41 +740,105 @@ with tab_mkt:
     st.plotly_chart(plotly_dark_layout(fig, height=260), use_container_width=True)
 
     st.write("")
-    panel_header("Canales de adquisición (GA4)", "sesiones por canal, EC + COL agregado del periodo")
-    canal_totales = {}
+    panel_header("Canales de tráfico (GA4)", "sesiones por canal · Ecuador y Colombia por separado, agregado del periodo")
+    canal_totales_ec, canal_totales_col = {}, {}
     for r in rows:
         ga4c = r.get("ga4_canales") or {}
-        for pais_canales in (ga4c.values() if isinstance(ga4c, dict) else []):
-            if isinstance(pais_canales, dict):
-                for canal, val in pais_canales.items():
-                    sesiones_val = val.get("sessions", 0) if isinstance(val, dict) else (val or 0)
-                    canal_totales[canal] = canal_totales.get(canal, 0) + (sesiones_val or 0)
-    if canal_totales:
-        cdf = pd.DataFrame(sorted(canal_totales.items(), key=lambda x: -x[1]), columns=["canal", "sesiones"])
-        fig_canal = go.Figure(go.Bar(x=cdf["sesiones"], y=cdf["canal"], orientation="h", marker_color=CYAN))
-        st.plotly_chart(plotly_dark_layout(fig_canal, height=260), use_container_width=True)
-    else:
-        st.markdown('<div class="bcc-note-box">sin dato de canales GA4 en el periodo seleccionado</div>', unsafe_allow_html=True)
+        for canal, val in (ga4c.get("ec") or {}).items():
+            sesiones_val = val.get("sessions", 0) if isinstance(val, dict) else (val or 0)
+            canal_totales_ec[canal] = canal_totales_ec.get(canal, 0) + (sesiones_val or 0)
+        for canal, val in (ga4c.get("col") or {}).items():
+            sesiones_val = val.get("sessions", 0) if isinstance(val, dict) else (val or 0)
+            canal_totales_col[canal] = canal_totales_col.get(canal, 0) + (sesiones_val or 0)
+
+    colec, colcol = st.columns(2)
+    with colec:
+        st.markdown(f'<div style="font-size:11px;color:{MUTED};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Ecuador</div>', unsafe_allow_html=True)
+        if canal_totales_ec:
+            cdf = pd.DataFrame(sorted(canal_totales_ec.items(), key=lambda x: -x[1]), columns=["canal", "sesiones"])
+            fig_canal_ec = go.Figure(go.Bar(x=cdf["sesiones"], y=cdf["canal"], orientation="h", marker_color=CYAN))
+            st.plotly_chart(plotly_dark_layout(fig_canal_ec, height=220), use_container_width=True)
+        else:
+            st.markdown('<div class="bcc-note-box">sin dato de canales GA4 EC en el periodo seleccionado</div>', unsafe_allow_html=True)
+    with colcol:
+        st.markdown(f'<div style="font-size:11px;color:{MUTED};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Colombia</div>', unsafe_allow_html=True)
+        if canal_totales_col:
+            cdf = pd.DataFrame(sorted(canal_totales_col.items(), key=lambda x: -x[1]), columns=["canal", "sesiones"])
+            fig_canal_col = go.Figure(go.Bar(x=cdf["sesiones"], y=cdf["canal"], orientation="h", marker_color=LILAC))
+            st.plotly_chart(plotly_dark_layout(fig_canal_col, height=220), use_container_width=True)
+        else:
+            st.markdown('<div class="bcc-note-box">sin dato de canales GA4 COL en el periodo seleccionado</div>', unsafe_allow_html=True)
 
     st.write("")
-    panel_header("Embudo GA4 (eventos clave)", "view_item → add_to_cart → begin_checkout → purchase, agregado del periodo")
-    view_items = add_cart = add_checkout = purchases = 0
-    has_events = False
+    panel_header("Número de eventos por nombre (GA4)", "top eventos por conteo · Ecuador y Colombia por separado, agregado del periodo")
+    ev_totales_ec, ev_totales_col = {}, {}
     for r in rows:
-        ev = r.get("ga4_eventos_clave") or {}
-        for pais_events in ev.values() if isinstance(ev, dict) else []:
-            if isinstance(pais_events, dict):
-                has_events = True
-                view_items += pais_events.get("view_item", 0) or 0
-                add_cart += pais_events.get("add_to_cart", 0) or 0
-                add_checkout += pais_events.get("begin_checkout", 0) or 0
-                purchases += pais_events.get("purchase", 0) or 0
-    if has_events:
-        fig = go.Figure(go.Funnel(y=["View item", "Add to cart", "Begin checkout", "Purchase"], x=[view_items, add_cart, add_checkout, purchases],
-                                   marker=dict(color=[CYAN, GOLD, BLUE, MINT])))
-        st.plotly_chart(plotly_dark_layout(fig, height=280), use_container_width=True)
-    else:
-        st.markdown('<div class="bcc-note-box">sin dato de eventos GA4 en el periodo seleccionado</div>', unsafe_allow_html=True)
+        evt = r.get("ga4_eventos_todos") or {}
+        for e in (evt.get("ec") or []):
+            n = e.get("event_name"); c = e.get("event_count", 0) or 0
+            if n:
+                ev_totales_ec[n] = ev_totales_ec.get(n, 0) + c
+        for e in (evt.get("col") or []):
+            n = e.get("event_name"); c = e.get("event_count", 0) or 0
+            if n:
+                ev_totales_col[n] = ev_totales_col.get(n, 0) + c
+
+    colec2, colcol2 = st.columns(2)
+    with colec2:
+        st.markdown(f'<div style="font-size:11px;color:{MUTED};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Ecuador</div>', unsafe_allow_html=True)
+        if ev_totales_ec:
+            rows_html = "".join(
+                f'<tr><td style="padding:4px 8px;">{n}</td><td style="padding:4px 8px;text-align:right;font-family:\'JetBrains Mono\',monospace;">{c:,}</td></tr>'
+                for n, c in sorted(ev_totales_ec.items(), key=lambda x: -x[1])[:10]
+            )
+            st.markdown(f'<table style="width:100%;font-size:13px;">{rows_html}</table>', unsafe_allow_html=True)
+        else:
+            st.markdown('<div class="bcc-note-box">sin dato de eventos GA4 EC en el periodo seleccionado</div>', unsafe_allow_html=True)
+    with colcol2:
+        st.markdown(f'<div style="font-size:11px;color:{MUTED};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Colombia</div>', unsafe_allow_html=True)
+        if ev_totales_col:
+            rows_html = "".join(
+                f'<tr><td style="padding:4px 8px;">{n}</td><td style="padding:4px 8px;text-align:right;font-family:\'JetBrains Mono\',monospace;">{c:,}</td></tr>'
+                for n, c in sorted(ev_totales_col.items(), key=lambda x: -x[1])[:10]
+            )
+            st.markdown(f'<table style="width:100%;font-size:13px;">{rows_html}</table>', unsafe_allow_html=True)
+        else:
+            st.markdown('<div class="bcc-note-box">sin dato de eventos GA4 COL en el periodo seleccionado</div>', unsafe_allow_html=True)
+
+    st.write("")
+    panel_header("Eventos clave (conversión) — GA4", "view_item → add_to_cart → begin_checkout → purchase · Ecuador y Colombia por separado, agregado del periodo")
+    def _sum_key_events(country):
+        vi = ac = bc = pu = 0
+        has = False
+        for r in rows:
+            ev = (r.get("ga4_eventos_clave") or {}).get(country) or {}
+            if isinstance(ev, dict) and ev:
+                has = True
+                vi += ev.get("view_item", 0) or 0
+                ac += ev.get("add_to_cart", 0) or 0
+                bc += ev.get("begin_checkout", 0) or 0
+                pu += ev.get("purchase", 0) or 0
+        return vi, ac, bc, pu, has
+
+    colec3, colcol3 = st.columns(2)
+    with colec3:
+        st.markdown(f'<div style="font-size:11px;color:{MUTED};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Ecuador</div>', unsafe_allow_html=True)
+        vi, ac, bc, pu, has = _sum_key_events("ec")
+        if has:
+            fig = go.Figure(go.Funnel(y=["View item", "Add to cart", "Begin checkout", "Purchase"], x=[vi, ac, bc, pu],
+                                       marker=dict(color=[CYAN, GOLD, BLUE, MINT])))
+            st.plotly_chart(plotly_dark_layout(fig, height=260), use_container_width=True)
+        else:
+            st.markdown('<div class="bcc-note-box">sin dato de eventos clave GA4 EC en el periodo seleccionado</div>', unsafe_allow_html=True)
+    with colcol3:
+        st.markdown(f'<div style="font-size:11px;color:{MUTED};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Colombia</div>', unsafe_allow_html=True)
+        vi, ac, bc, pu, has = _sum_key_events("col")
+        if has:
+            fig = go.Figure(go.Funnel(y=["View item", "Add to cart", "Begin checkout", "Purchase"], x=[vi, ac, bc, pu],
+                                       marker=dict(color=[CYAN, GOLD, BLUE, MINT])))
+            st.plotly_chart(plotly_dark_layout(fig, height=260), use_container_width=True)
+        else:
+            st.markdown('<div class="bcc-note-box">sin dato de eventos clave GA4 COL en el periodo seleccionado</div>', unsafe_allow_html=True)
 
     st.write("")
     panel_header("Ad sets — frecuencia (fatiga)", "frequency > 5 = posible fatiga de audiencia (linea roja) · último valor observado en el periodo")
