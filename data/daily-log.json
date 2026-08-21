@@ -33763,8 +33763,18 @@
         }
       },
       "ga4_eventos_clave": {
-        "ec": {},
-        "col": {}
+        "ec": {
+          "view_item": 2,
+          "add_to_cart": 0,
+          "begin_checkout": 0,
+          "purchase": 0
+        },
+        "col": {
+          "view_item": 1,
+          "add_to_cart": 0,
+          "begin_checkout": 0,
+          "purchase": 0
+        }
       },
       "ga4_articulos": {
         "ec": [],
@@ -33829,6 +33839,56 @@
           "cantidad": 93,
           "monto_pvp": 0
         }
+      },
+      "ga4_eventos_todos": {
+        "ec": [
+          {
+            "event_name": "page_view",
+            "event_count": 8
+          },
+          {
+            "event_name": "user_engagement",
+            "event_count": 7
+          },
+          {
+            "event_name": "scroll",
+            "event_count": 6
+          },
+          {
+            "event_name": "view_item_list",
+            "event_count": 4
+          },
+          {
+            "event_name": "first_visit",
+            "event_count": 2
+          },
+          {
+            "event_name": "session_start",
+            "event_count": 2
+          },
+          {
+            "event_name": "view_item",
+            "event_count": 2
+          }
+        ],
+        "col": [
+          {
+            "event_name": "page_view",
+            "event_count": 1
+          },
+          {
+            "event_name": "scroll",
+            "event_count": 1
+          },
+          {
+            "event_name": "session_start",
+            "event_count": 1
+          },
+          {
+            "event_name": "view_item",
+            "event_count": 1
+          }
+        ]
       }
     }
   ],
