@@ -30,6 +30,7 @@ DAILY_LOG_URL = "https://raw.githubusercontent.com/luisgarzonv1/bou-dashboard/ma
 BOU_LOGISTICA_CATEGORIAS = {
     "NOVESS", "ECOM GLOBAL", "GRUPOESHOP", "FSA NATURAL", "GREEN LINE",
     "LSJ SAS", "Mindco", "SADE BUSINESS PERU S.A.C.", "SANATE FILTROS S A",
+    "LOGISPRO", "RUTAEX",
 }
 
 # ---------- Paleta (bou-command-center-v2.jsx, adaptada a fondo claro a pedido de Luis) ----------
@@ -481,7 +482,7 @@ with tab_ec:
         )
         artistas_sel_set = set(artistas_sel) if artistas_sel else set(artistas_list)
         _productos_all = inv_day.get("inventario_productos") or []
-        _productos_for_marca = [p for p in _productos_all if p.get("artista") not in BOU_LOGISTICA_CATEGORIAS]
+        _productos_for_marca = [p for p in _productos_all if p.get("artista") not in BOU_LOGISTICA_CATEGORIAS and (p.get("marca") or "(sin marca)") != "INSUMOS"]
         marcas_list = sorted({(p.get("marca") or "(sin marca)") for p in _productos_for_marca})
         if marcas_list:
             marcas_sel = st.multiselect(
