@@ -29499,7 +29499,8 @@
           "artista": "NOVESS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 101,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "ANDINOLUVITEX",
@@ -29507,7 +29508,8 @@
           "artista": "NOVESS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 223,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "ANDINOSUSTAROX",
@@ -29515,7 +29517,8 @@
           "artista": "NOVESS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3002,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "ANDINOXYS",
@@ -29523,7 +29526,8 @@
           "artista": "NOVESS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 44,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "BANDANAMACHAKAN",
@@ -29531,7 +29535,8 @@
           "artista": "Machaka",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 11.3
+          "monto_pvp": 11.3,
+          "marca": "BOU"
         },
         {
           "codigo": "BANDANAMACHAKAN",
@@ -29539,7 +29544,8 @@
           "artista": "Machaka",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 11.3
+          "monto_pvp": 11.3,
+          "marca": "BOU"
         },
         {
           "codigo": "BANDANAMACHAKAN",
@@ -29547,7 +29553,8 @@
           "artista": "Machaka",
           "bodega": "Bodega España",
           "cantidad": 3,
-          "monto_pvp": 33.91
+          "monto_pvp": 33.91,
+          "marca": "BOU"
         },
         {
           "codigo": "BANDCHOCOBOU",
@@ -29555,7 +29562,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 12,
-          "monto_pvp": 187.83
+          "monto_pvp": 187.83,
+          "marca": "BOU"
         },
         {
           "codigo": "BANDNRAZBOU",
@@ -29563,7 +29571,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 8,
-          "monto_pvp": 125.22
+          "monto_pvp": 125.22,
+          "marca": "BOU"
         },
         {
           "codigo": "BANDNYLFNNN",
@@ -29571,7 +29580,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "BOU"
         },
         {
           "codigo": "BANDNYLFNNN",
@@ -29579,7 +29589,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 11.3
+          "monto_pvp": 11.3,
+          "marca": "BOU"
         },
         {
           "codigo": "BOUGORRANLB",
@@ -29587,7 +29598,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega Prestamos",
           "cantidad": 5,
-          "monto_pvp": 86.96
+          "monto_pvp": 86.96,
+          "marca": "BOU"
         },
         {
           "codigo": "BOUROMPEMADE",
@@ -29595,7 +29607,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMACIPPIELM",
@@ -29603,7 +29616,8 @@
           "artista": "Ácido Pantera",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 46.09
+          "monto_pvp": 46.09,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMCRUDPIELL",
@@ -29611,7 +29625,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 46.09
+          "monto_pvp": 46.09,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMCRUDPIELL",
@@ -29619,7 +29634,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 46.09
+          "monto_pvp": 46.09,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMCRUDPIELM",
@@ -29627,7 +29643,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4,
-          "monto_pvp": 184.35
+          "monto_pvp": 184.35,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMCRUDPIELM",
@@ -29635,7 +29652,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 46.09
+          "monto_pvp": 46.09,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMCRUDPIELS",
@@ -29643,7 +29661,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 138.26
+          "monto_pvp": 138.26,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMCRUDPIELXL",
@@ -29651,7 +29670,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 92.17
+          "monto_pvp": 92.17,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMDONMEDL",
@@ -29659,7 +29679,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 113.04
+          "monto_pvp": 113.04,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMDONMEDL",
@@ -29667,7 +29688,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMDONMEDL",
@@ -29675,7 +29697,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMDONMEDM",
@@ -29683,7 +29706,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 113.04
+          "monto_pvp": 113.04,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMDONMEDM",
@@ -29691,7 +29715,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 2,
-          "monto_pvp": 45.22
+          "monto_pvp": 45.22,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMDONMEDS",
@@ -29699,7 +29724,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 45.22
+          "monto_pvp": 45.22,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMDONMEDXL",
@@ -29707,7 +29733,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMDONMEDXL",
@@ -29715,7 +29742,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMDONMEDXL",
@@ -29723,7 +29751,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMECMDPIEL10M",
@@ -29731,7 +29760,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 78.26
+          "monto_pvp": 78.26,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10M",
@@ -29739,7 +29769,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10M",
@@ -29747,7 +29778,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 78.26
+          "monto_pvp": 78.26,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10M",
@@ -29755,7 +29787,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 78.26
+          "monto_pvp": 78.26,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10S",
@@ -29763,7 +29796,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10S",
@@ -29771,7 +29805,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10XL",
@@ -29779,7 +29814,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 117.39
+          "monto_pvp": 117.39,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10XL",
@@ -29787,7 +29823,8 @@
           "artista": "BE Bou",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10XL",
@@ -29795,7 +29832,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10XL",
@@ -29803,7 +29841,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 78.26
+          "monto_pvp": 78.26,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL10XL",
@@ -29811,7 +29850,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL9M",
@@ -29819,7 +29859,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL9M",
@@ -29827,7 +29868,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL9S",
@@ -29835,7 +29877,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 78.26
+          "monto_pvp": 78.26,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL9S",
@@ -29843,7 +29886,8 @@
           "artista": "BE Bou",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL9S",
@@ -29851,7 +29895,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega Prestamos",
           "cantidad": 3,
-          "monto_pvp": 117.39
+          "monto_pvp": 117.39,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL9S",
@@ -29859,7 +29904,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL9S",
@@ -29867,7 +29913,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL9XL",
@@ -29875,7 +29922,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMECMDPIEL9XL",
@@ -29883,7 +29931,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMHOMATERCIOL",
@@ -29891,7 +29940,8 @@
           "artista": "Aterciopelados",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMIATERAPC",
@@ -29899,7 +29949,8 @@
           "artista": "Aterciopelados",
           "bodega": "SHOWROOM",
           "cantidad": 2,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMIFIEBREBML",
@@ -29907,7 +29958,8 @@
           "artista": "FIEBRE",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMIFIEBREBSM",
@@ -29915,7 +29967,8 @@
           "artista": "FIEBRE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 78.26
+          "monto_pvp": 78.26,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMIGUACGUSA24L",
@@ -29923,7 +29976,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1L",
@@ -29931,7 +29985,8 @@
           "artista": "SED",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 108.7
+          "monto_pvp": 108.7,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1L",
@@ -29939,7 +29994,8 @@
           "artista": "SED",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1L",
@@ -29947,7 +30003,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1M",
@@ -29955,7 +30012,8 @@
           "artista": "SED",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1M",
@@ -29963,7 +30021,8 @@
           "artista": "SED",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1M",
@@ -29971,7 +30030,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1M",
@@ -29979,7 +30039,8 @@
           "artista": "SED",
           "bodega": "Bodega España",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1S",
@@ -29987,7 +30048,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1XL",
@@ -29995,7 +30057,8 @@
           "artista": "SED",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4,
-          "monto_pvp": 86.96
+          "monto_pvp": 86.96,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1XL",
@@ -30003,7 +30066,8 @@
           "artista": "SED",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED1XL",
@@ -30011,7 +30075,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED2L",
@@ -30019,7 +30084,8 @@
           "artista": "SED",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED2L",
@@ -30027,7 +30093,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED2L",
@@ -30035,7 +30102,8 @@
           "artista": "SED",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED2M",
@@ -30043,7 +30111,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 7,
-          "monto_pvp": 152.18
+          "monto_pvp": 152.18,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED2S",
@@ -30051,7 +30120,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED2XL",
@@ -30059,7 +30129,8 @@
           "artista": "SED",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED2XL",
@@ -30067,7 +30138,8 @@
           "artista": "SED",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED2XL",
@@ -30075,7 +30147,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED2XL",
@@ -30083,7 +30156,8 @@
           "artista": "SED",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED3L",
@@ -30091,7 +30165,8 @@
           "artista": "SED",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED3L",
@@ -30099,7 +30174,8 @@
           "artista": "SED",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED3L",
@@ -30107,7 +30183,8 @@
           "artista": "SED",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED3M",
@@ -30115,7 +30192,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED3M",
@@ -30123,7 +30201,8 @@
           "artista": "SED",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED3S",
@@ -30131,7 +30210,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED3XL",
@@ -30139,7 +30219,8 @@
           "artista": "SED",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMISED3XL",
@@ -30147,7 +30228,8 @@
           "artista": "SED",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATFAJABL",
@@ -30155,7 +30237,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 6,
-          "monto_pvp": 146.09
+          "monto_pvp": 146.09,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATFAJABM",
@@ -30163,7 +30246,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 73.04
+          "monto_pvp": 73.04,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATFAJABS",
@@ -30171,7 +30255,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 48.7
+          "monto_pvp": 48.7,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATFAJABS",
@@ -30179,7 +30264,8 @@
           "artista": "JATUN MAMA",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 24.35
+          "monto_pvp": 24.35,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATFAJABXL",
@@ -30187,7 +30273,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 73.04
+          "monto_pvp": 73.04,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATFAJABXL",
@@ -30195,7 +30282,8 @@
           "artista": "JATUN MAMA",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 24.35
+          "monto_pvp": 24.35,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATLOGONEL",
@@ -30203,7 +30291,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 6,
-          "monto_pvp": 146.09
+          "monto_pvp": 146.09,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATLOGONES",
@@ -30211,7 +30300,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 24.35
+          "monto_pvp": 24.35,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATLOGONEXL",
@@ -30219,7 +30309,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 73.04
+          "monto_pvp": 73.04,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATLOGONEXL",
@@ -30227,7 +30318,8 @@
           "artista": "JATUN MAMA",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 24.35
+          "monto_pvp": 24.35,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATUKUBL",
@@ -30235,7 +30327,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 121.74
+          "monto_pvp": 121.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATUKUBL",
@@ -30243,7 +30336,8 @@
           "artista": "JATUN MAMA",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 24.35
+          "monto_pvp": 24.35,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATUKUBM",
@@ -30251,7 +30345,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 121.74
+          "monto_pvp": 121.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATUKUBS",
@@ -30259,7 +30354,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 48.7
+          "monto_pvp": 48.7,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATUKUBS",
@@ -30267,7 +30363,8 @@
           "artista": "JATUN MAMA",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 24.35
+          "monto_pvp": 24.35,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMJATUKUBXL",
@@ -30275,7 +30372,8 @@
           "artista": "JATUN MAMA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 73.04
+          "monto_pvp": 73.04,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMLATORRENAL",
@@ -30283,7 +30381,8 @@
           "artista": "DE lA TORRE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 48.7
+          "monto_pvp": 48.7,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMLATORRENAL",
@@ -30291,7 +30390,8 @@
           "artista": "DE lA TORRE",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 24.35
+          "monto_pvp": 24.35,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMLATORRENAM",
@@ -30299,7 +30399,8 @@
           "artista": "DE lA TORRE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 10,
-          "monto_pvp": 243.48
+          "monto_pvp": 243.48,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMLATORRENAM",
@@ -30307,7 +30408,8 @@
           "artista": "DE lA TORRE",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 24.35
+          "monto_pvp": 24.35,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMLATORRENAS",
@@ -30315,7 +30417,8 @@
           "artista": "DE lA TORRE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 121.74
+          "monto_pvp": 121.74,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMLATORRENAS",
@@ -30323,7 +30426,8 @@
           "artista": "DE lA TORRE",
           "bodega": "SHOWROOM",
           "cantidad": 2,
-          "monto_pvp": 48.7
+          "monto_pvp": 48.7,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDGENL",
@@ -30331,7 +30435,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDGENL",
@@ -30339,7 +30444,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 45.22
+          "monto_pvp": 45.22,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDGENM",
@@ -30347,7 +30453,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDGENS",
@@ -30355,7 +30462,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDGENXL",
@@ -30363,7 +30471,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 45.22
+          "monto_pvp": 45.22,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDJUVL",
@@ -30371,7 +30480,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDJUVL",
@@ -30379,7 +30489,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDJUVM",
@@ -30387,7 +30498,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDJUVXL",
@@ -30395,7 +30507,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDQUITOL",
@@ -30403,7 +30516,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDQUITOL",
@@ -30411,7 +30525,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDQUITOL",
@@ -30419,7 +30534,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDQUITOM",
@@ -30427,7 +30543,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 7,
-          "monto_pvp": 158.26
+          "monto_pvp": 158.26,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDQUITOM",
@@ -30435,7 +30552,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDQUITOS",
@@ -30443,7 +30561,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDQUITOXL",
@@ -30451,7 +30570,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 45.22
+          "monto_pvp": 45.22,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDQUITOXL",
@@ -30459,7 +30579,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMEDQUITOXL",
@@ -30467,7 +30588,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 22.61
+          "monto_pvp": 22.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMIEL25NEL",
@@ -30475,7 +30597,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMMSVPIELL",
@@ -30483,7 +30606,8 @@
           "artista": "Margarita Siempre Viva",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 46.09
+          "monto_pvp": 46.09,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMMSVPIELM",
@@ -30491,7 +30615,8 @@
           "artista": "Margarita Siempre Viva",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 46.09
+          "monto_pvp": 46.09,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMMUJATERCIOL",
@@ -30499,7 +30624,8 @@
           "artista": "Aterciopelados",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMUJATERCIOL",
@@ -30507,7 +30633,8 @@
           "artista": "Aterciopelados",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMMUJATERCIOXL",
@@ -30515,7 +30642,8 @@
           "artista": "Aterciopelados",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASAFPVCAM",
@@ -30523,7 +30651,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASAFPVNM",
@@ -30531,7 +30660,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASAFSVCAM",
@@ -30539,7 +30669,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASAFSVNM",
@@ -30547,7 +30678,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASAGBEM",
@@ -30555,7 +30687,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASAGBM",
@@ -30563,7 +30696,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASAGNM",
@@ -30571,7 +30705,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASALBEM",
@@ -30579,7 +30714,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASALBM",
@@ -30587,7 +30723,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASALNM",
@@ -30595,7 +30732,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASATSCAM",
@@ -30603,7 +30741,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMNASATSNM",
@@ -30611,7 +30750,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CAMV70FULGRL",
@@ -30619,7 +30759,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 6,
-          "monto_pvp": 130.43
+          "monto_pvp": 130.43,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMV70FULGRL",
@@ -30627,7 +30768,8 @@
           "artista": "Verde70",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMV70FULGRM",
@@ -30635,7 +30777,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMV70FULGRM",
@@ -30643,7 +30786,8 @@
           "artista": "Verde70",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMV70FULGRS",
@@ -30651,7 +30795,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CAMV70FULGRXL",
@@ -30659,7 +30804,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "CDAEAURORA",
@@ -30667,7 +30813,8 @@
           "artista": "Alex Eugenio",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 18,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CDLOLAEC10",
@@ -30675,7 +30822,8 @@
           "artista": "Lolabum",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 104,
-          "monto_pvp": 1356.52
+          "monto_pvp": 1356.52,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CDLOLAEC10",
@@ -30683,7 +30831,8 @@
           "artista": "Lolabum",
           "bodega": "SHOWROOM",
           "cantidad": 3,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CDNYLFCPH",
@@ -30691,7 +30840,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CDNYLFCPH",
@@ -30699,7 +30849,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "SHOWROOM",
           "cantidad": 2,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CDNYLFDLMDL",
@@ -30707,7 +30858,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "SHOWROOM",
           "cantidad": 2,
-          "monto_pvp": 30
+          "monto_pvp": 30,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CDNYLFNN",
@@ -30715,7 +30867,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 8,
-          "monto_pvp": 104.35
+          "monto_pvp": 104.35,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CDNYLFNN",
@@ -30723,7 +30876,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "SHOWROOM",
           "cantidad": 2,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CHACRUDPIELM",
@@ -30731,7 +30885,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 62.61
+          "monto_pvp": 62.61,
+          "marca": "BOU"
         },
         {
           "codigo": "CHACRUDPIELS",
@@ -30739,7 +30894,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 125.22
+          "monto_pvp": 125.22,
+          "marca": "BOU"
         },
         {
           "codigo": "CHACRUDPIELS",
@@ -30747,7 +30903,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 62.61
+          "monto_pvp": 62.61,
+          "marca": "BOU"
         },
         {
           "codigo": "CHACRUDPIELS",
@@ -30755,7 +30912,8 @@
           "artista": "Crudo Means Raw",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 62.61
+          "monto_pvp": 62.61,
+          "marca": "BOU"
         },
         {
           "codigo": "CHOMEDNES",
@@ -30763,7 +30921,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CHOMEDNEXS",
@@ -30771,7 +30930,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CHOMEDNEXS",
@@ -30779,7 +30939,8 @@
           "artista": "Don Medardo",
           "bodega": "SHOWROOM",
           "cantidad": 2,
-          "monto_pvp": 86.96
+          "monto_pvp": 86.96,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CHOMPBOMBERL",
@@ -30787,7 +30948,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 3,
-          "monto_pvp": 117.39
+          "monto_pvp": 117.39,
+          "marca": "BOU"
         },
         {
           "codigo": "CHOMPBOMBERM",
@@ -30795,7 +30957,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 39.13
+          "monto_pvp": 39.13,
+          "marca": "BOU"
         },
         {
           "codigo": "CROPFIEBREBSM",
@@ -30803,7 +30966,8 @@
           "artista": "FIEBRE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4,
-          "monto_pvp": 97.39
+          "monto_pvp": 97.39,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CROPFIEBREBSM",
@@ -30811,7 +30975,8 @@
           "artista": "FIEBRE",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 24.35
+          "monto_pvp": 24.35,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CROPMACHACKABL",
@@ -30819,7 +30984,8 @@
           "artista": "Machaka",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "CROPMACHACKABL",
@@ -30827,7 +30993,8 @@
           "artista": "Machaka",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "CROPMACHACKABM",
@@ -30835,7 +31002,8 @@
           "artista": "Machaka",
           "bodega": "EVENTOS BOU",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "CROPMEDMANABIL",
@@ -30843,7 +31011,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega España",
           "cantidad": 3,
-          "monto_pvp": 60
+          "monto_pvp": 60,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "CROPMEDMANABIM",
@@ -30851,7 +31020,8 @@
           "artista": "Don Medardo",
           "bodega": "Bodega España",
           "cantidad": 3,
-          "monto_pvp": 60
+          "monto_pvp": 60,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "DZTROXBOUCHANAS",
@@ -30859,7 +31029,8 @@
           "artista": "BE Dieztro",
           "bodega": "Bodega España",
           "cantidad": 3,
-          "monto_pvp": 208.7
+          "monto_pvp": 208.7,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "ECOMHCGELHONDROCART30G",
@@ -30867,7 +31038,8 @@
           "artista": "ECOM GLOBAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4079,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "ECOMHCGELINTRACART30G",
@@ -30875,7 +31047,8 @@
           "artista": "ECOM GLOBAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4466,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "ESHANILFENGSHUI",
@@ -30883,7 +31056,8 @@
           "artista": "GRUPOESHOP",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 108,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "ESHARTRIT60CAP",
@@ -30891,7 +31065,8 @@
           "artista": "GRUPOESHOP",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 59,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "ESHPULSFENGSHUI",
@@ -30899,7 +31074,8 @@
           "artista": "GRUPOESHOP",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 75,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "ESHSTEMCEPLFRAS500G",
@@ -30907,7 +31083,8 @@
           "artista": "GRUPOESHOP",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 35,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "EXPRIMIDORESHOP",
@@ -30915,7 +31092,8 @@
           "artista": "GRUPOESHOP",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 34,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURAARGININO",
@@ -30923,7 +31101,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURABEE",
@@ -30931,7 +31110,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 55,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURAENERGY",
@@ -30939,7 +31119,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 10,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURAGANODERMA",
@@ -30947,7 +31128,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 9,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURAINFOR",
@@ -30955,7 +31137,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 16,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURALARGININA",
@@ -30963,7 +31146,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 6,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURALASHAWANDA",
@@ -30971,7 +31155,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURALCBD",
@@ -30979,7 +31164,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURALMAGNESIOCITRATE",
@@ -30987,7 +31173,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 15,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURALPAPAYA",
@@ -30995,7 +31182,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 15,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURALSHILAJIT",
@@ -31003,7 +31191,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 6,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURALSUGAR",
@@ -31011,7 +31200,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 15,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURALTESTOHEAT",
@@ -31019,7 +31209,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 13,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURANEXXPOWER",
@@ -31027,7 +31218,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 43,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURANEXXVIGOR",
@@ -31035,7 +31227,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 11,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURANEXXVIGORU",
@@ -31043,7 +31236,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 9,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURAPROST",
@@ -31051,7 +31245,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "FSANATURAPROST30",
@@ -31059,7 +31254,8 @@
           "artista": "FSA NATURAL",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 59,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "GORRBOUNEG",
@@ -31067,7 +31263,8 @@
           "artista": "BE Bou",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "GORRBOURAIZBE",
@@ -31075,7 +31272,8 @@
           "artista": "BE Bou",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "GORRLLANAROS",
@@ -31083,7 +31281,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "GORRLLANAVI",
@@ -31091,7 +31290,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "GORRPEPEAZ",
@@ -31099,7 +31299,8 @@
           "artista": "BE Guanaco",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "GORRPEPEAZE",
@@ -31107,7 +31308,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "GORRRAIZNE",
@@ -31115,7 +31317,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "GORRRAIZNE",
@@ -31123,7 +31326,8 @@
           "artista": "BE Guanaco",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "GORRRAIZNE",
@@ -31131,7 +31335,8 @@
           "artista": "BE Guanaco",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "GORRRAIZNE",
@@ -31139,7 +31344,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "GUAAMNBUZAMN1NGM",
@@ -31147,7 +31353,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega BOU ENTERTAINMENT CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 30
+          "monto_pvp": 30,
+          "marca": "BOU"
         },
         {
           "codigo": "GUACAMFLORYBLS",
@@ -31155,7 +31362,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "GUACAMFLORYBLS",
@@ -31163,7 +31371,8 @@
           "artista": "BE Guanaco",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "GUACAMFLORYBLS",
@@ -31171,7 +31380,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "GUACAMFLORYBLXL",
@@ -31179,7 +31389,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "GUACAMFLORYNES",
@@ -31187,7 +31398,8 @@
           "artista": "BE Guanaco",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAHOOFLORYNEM",
@@ -31195,7 +31407,8 @@
           "artista": "BE Guanaco",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 30.43
+          "monto_pvp": 30.43,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAHOOFLORYNEM",
@@ -31203,7 +31416,8 @@
           "artista": "BE Guanaco",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 30.43
+          "monto_pvp": 30.43,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAHOOFLORYNEM",
@@ -31211,7 +31425,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega España",
           "cantidad": 3,
-          "monto_pvp": 91.3
+          "monto_pvp": 91.3,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAHOOFLORYNES",
@@ -31219,7 +31434,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 30.43
+          "monto_pvp": 30.43,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAHOOFLORYNES",
@@ -31227,7 +31443,8 @@
           "artista": "BE Guanaco",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 30.43
+          "monto_pvp": 30.43,
+          "marca": "BOU"
         },
         {
           "codigo": "GUALALLCAMIESPNGXL",
@@ -31235,7 +31452,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega BOU ENTERTAINMENT CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAMDGORRAWEBVEONEGRO",
@@ -31243,7 +31461,8 @@
           "artista": "Warax",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "GUANACOCAMLAPIELL",
@@ -31251,7 +31470,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4,
-          "monto_pvp": 156.49
+          "monto_pvp": 156.49,
+          "marca": "BOU"
         },
         {
           "codigo": "GUANACOCAMLAPIELL",
@@ -31259,7 +31479,8 @@
           "artista": "BE Guanaco",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "GUANACOCAMLAPIELL",
@@ -31267,7 +31488,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "GUANACOCAMLAPIELL",
@@ -31275,7 +31497,8 @@
           "artista": "BE Guanaco",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 78.24
+          "monto_pvp": 78.24,
+          "marca": "BOU"
         },
         {
           "codigo": "GUANACOCAMLAPIELM",
@@ -31283,7 +31506,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4,
-          "monto_pvp": 156.49
+          "monto_pvp": 156.49,
+          "marca": "BOU"
         },
         {
           "codigo": "GUANACOCAMLAPIELM",
@@ -31291,7 +31515,8 @@
           "artista": "BE Guanaco",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "GUANACOCAMLAPIELM",
@@ -31299,7 +31524,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "GUANACOCAMLAPIELM",
@@ -31307,7 +31533,8 @@
           "artista": "BE Guanaco",
           "bodega": "EVENTOS BOU",
           "cantidad": 6,
-          "monto_pvp": 234.73
+          "monto_pvp": 234.73,
+          "marca": "BOU"
         },
         {
           "codigo": "GUANACOCAMLAPIELS",
@@ -31315,7 +31542,8 @@
           "artista": "BE Guanaco",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 78.24
+          "monto_pvp": 78.24,
+          "marca": "BOU"
         },
         {
           "codigo": "GUANACOCAMLAPIELXL",
@@ -31323,7 +31551,8 @@
           "artista": "BE Guanaco",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 78.24
+          "monto_pvp": 78.24,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAVINILOCAJA",
@@ -31331,7 +31560,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 93,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "INSUMOS"
         },
         {
           "codigo": "GUAVINILOFP",
@@ -31339,7 +31569,8 @@
           "artista": "BE Guanaco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 53,
-          "monto_pvp": 2073.91
+          "monto_pvp": 2073.91,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAVINILOFP",
@@ -31347,7 +31578,8 @@
           "artista": "BE Guanaco",
           "bodega": "SHOWROOM",
           "cantidad": 2,
-          "monto_pvp": 78.26
+          "monto_pvp": 78.26,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAVINILOFP",
@@ -31355,7 +31587,8 @@
           "artista": "BE Guanaco",
           "bodega": "EVENTOS BOU",
           "cantidad": 5,
-          "monto_pvp": 195.65
+          "monto_pvp": 195.65,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAYAMACHAKABL",
@@ -31363,7 +31596,8 @@
           "artista": "Machaka",
           "bodega": "EVENTOS BOU",
           "cantidad": 3,
-          "monto_pvp": 83.48
+          "monto_pvp": 83.48,
+          "marca": "BOU"
         },
         {
           "codigo": "GUAYAMACHAKABXL",
@@ -31371,7 +31605,8 @@
           "artista": "Machaka",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 27.83
+          "monto_pvp": 27.83,
+          "marca": "BOU"
         },
         {
           "codigo": "HCHCMTECART50ML",
@@ -31379,7 +31614,8 @@
           "artista": "GREEN LINE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4735,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "HCHCSIMCART30ML",
@@ -31387,7 +31623,8 @@
           "artista": "GREEN LINE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1282,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "HCHCVENISCART50ML",
@@ -31395,7 +31632,8 @@
           "artista": "GREEN LINE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 13,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "HCSUPMAGISBR100G",
@@ -31403,7 +31641,8 @@
           "artista": "GREEN LINE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 351,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "HCSUPMATCHSBR100G",
@@ -31411,7 +31650,8 @@
           "artista": "GREEN LINE",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 14091,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "HOODNASABES",
@@ -31419,7 +31659,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "HOODNASANM",
@@ -31427,7 +31668,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "HOONASAFPVNM",
@@ -31435,7 +31677,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "HOONASAFSVNM",
@@ -31443,7 +31686,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "HOONASATSNM",
@@ -31451,7 +31695,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "LOGISDIA",
@@ -31459,7 +31704,8 @@
           "artista": "LOGISPRO",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3024,
-          "monto_pvp": 30.24
+          "monto_pvp": 30.24,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LOLABUMCAMLAPIELL",
@@ -31467,7 +31713,8 @@
           "artista": "Lolabum",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "LOLABUMPOSTAL",
@@ -31475,7 +31722,8 @@
           "artista": "Lolabum",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 103,
-          "monto_pvp": 179.13
+          "monto_pvp": 179.13,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "LOLATOTETYVE",
@@ -31483,7 +31731,8 @@
           "artista": "Lolabum",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 6,
-          "monto_pvp": 91.3
+          "monto_pvp": 91.3,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "LOLATOTETYVE",
@@ -31491,7 +31740,8 @@
           "artista": "Lolabum",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 15.22
+          "monto_pvp": 15.22,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "LSJMDROPABOMPILS",
@@ -31499,7 +31749,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPACAMFM",
@@ -31507,7 +31758,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPACAMFS",
@@ -31515,7 +31767,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPACAMFXL",
@@ -31523,7 +31776,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPACAMFXXL",
@@ -31531,7 +31785,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPACPNGTLS",
@@ -31539,7 +31794,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPACPNGTLXL",
@@ -31547,7 +31803,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPACPNGTLXXL",
@@ -31555,7 +31812,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPAL250NGM",
@@ -31563,7 +31821,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPAL250NGXL",
@@ -31571,7 +31830,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPAMIELTLM",
@@ -31579,7 +31839,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPAMIELTLXL",
@@ -31587,7 +31848,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPAMIELTLXXL",
@@ -31595,7 +31857,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPANGTLL",
@@ -31603,7 +31866,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPANGTLS",
@@ -31611,7 +31875,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "LSJMDROPANGTLXXL",
@@ -31619,7 +31884,8 @@
           "artista": "LSJ SAS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "MAQCAMLEONGORRAN",
@@ -31627,7 +31893,8 @@
           "artista": "Máquina Camaleón",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 6,
-          "monto_pvp": 130.43
+          "monto_pvp": 130.43,
+          "marca": "BOU"
         },
         {
           "codigo": "MAQCAMLEONGORRAN",
@@ -31635,7 +31902,8 @@
           "artista": "Máquina Camaleón",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAQCAMLEONGORRAN",
@@ -31643,7 +31911,8 @@
           "artista": "Máquina Camaleón",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAQUINACCAMLAPIELM",
@@ -31651,7 +31920,8 @@
           "artista": "Máquina Camaleón",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAA24",
@@ -31659,7 +31929,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAA28",
@@ -31667,7 +31938,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAA32",
@@ -31675,7 +31947,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAAL",
@@ -31683,7 +31956,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAAM",
@@ -31691,7 +31965,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAF24",
@@ -31699,7 +31974,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAF24",
@@ -31707,7 +31983,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAF28",
@@ -31715,7 +31992,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAF28",
@@ -31723,7 +32001,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAF32",
@@ -31731,7 +32010,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAF32",
@@ -31739,7 +32019,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFL",
@@ -31747,7 +32028,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 17,
-          "monto_pvp": 369.57
+          "monto_pvp": 369.57,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFL",
@@ -31755,7 +32037,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFM",
@@ -31763,7 +32046,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 9,
-          "monto_pvp": 195.65
+          "monto_pvp": 195.65,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFM",
@@ -31771,7 +32055,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFM",
@@ -31779,7 +32064,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFM",
@@ -31787,7 +32073,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFS",
@@ -31795,7 +32082,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 7,
-          "monto_pvp": 152.17
+          "monto_pvp": 152.17,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFS",
@@ -31803,7 +32091,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFXL",
@@ -31811,7 +32100,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFXL",
@@ -31819,7 +32109,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFXL",
@@ -31827,7 +32118,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFXS",
@@ -31835,7 +32127,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMAFXS",
@@ -31843,7 +32136,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHBL",
@@ -31851,7 +32145,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHBM",
@@ -31859,7 +32154,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHBS",
@@ -31867,7 +32163,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHBS",
@@ -31875,7 +32172,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHBXL",
@@ -31883,7 +32181,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHBXL",
@@ -31891,7 +32190,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHNL",
@@ -31899,7 +32199,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHNL",
@@ -31907,7 +32208,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHNL",
@@ -31915,7 +32217,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHNM",
@@ -31923,7 +32226,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHNM",
@@ -31931,7 +32235,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHNM",
@@ -31939,7 +32244,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMCHNXL",
@@ -31947,7 +32253,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMBL",
@@ -31955,7 +32262,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 108.7
+          "monto_pvp": 108.7,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMBL",
@@ -31963,7 +32271,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMBM",
@@ -31971,7 +32280,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 108.7
+          "monto_pvp": 108.7,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMBM",
@@ -31979,7 +32289,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMBS",
@@ -31987,7 +32298,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMBXL",
@@ -31995,7 +32307,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMBXL",
@@ -32003,7 +32316,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMNL",
@@ -32011,7 +32325,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMNL",
@@ -32019,7 +32334,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMNL",
@@ -32027,7 +32343,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMNM",
@@ -32035,7 +32352,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMNM",
@@ -32043,7 +32361,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMNM",
@@ -32051,7 +32370,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMNM",
@@ -32059,7 +32379,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMNXL",
@@ -32067,7 +32388,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMPMNXL",
@@ -32075,7 +32397,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBL",
@@ -32083,7 +32406,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBL",
@@ -32091,7 +32415,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBL",
@@ -32099,7 +32424,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBM",
@@ -32107,7 +32433,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 4,
-          "monto_pvp": 86.96
+          "monto_pvp": 86.96,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBM",
@@ -32115,7 +32442,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBM",
@@ -32123,7 +32451,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBS",
@@ -32131,7 +32460,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBXL",
@@ -32139,7 +32469,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBXL",
@@ -32147,7 +32478,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMBXL",
@@ -32155,7 +32487,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMNL",
@@ -32163,7 +32496,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMNL",
@@ -32171,7 +32505,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMNL",
@@ -32179,7 +32514,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMNM",
@@ -32187,7 +32523,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMNM",
@@ -32195,7 +32532,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMNM",
@@ -32203,7 +32541,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMSMNXL",
@@ -32211,7 +32550,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSBL",
@@ -32219,7 +32559,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSBL",
@@ -32227,7 +32568,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSBM",
@@ -32235,7 +32577,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSBM",
@@ -32243,7 +32586,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSBM",
@@ -32251,7 +32595,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSBS",
@@ -32259,7 +32604,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSBXL",
@@ -32267,7 +32613,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSNL",
@@ -32275,7 +32622,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSNL",
@@ -32283,7 +32631,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSNM",
@@ -32291,7 +32640,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSNM",
@@ -32299,7 +32649,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSNM",
@@ -32307,7 +32658,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSNXL",
@@ -32315,7 +32667,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "CHULLA VIDA",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MAXIMOCAMVSNXL",
@@ -32323,7 +32676,8 @@
           "artista": "Máximo Escaleras",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MELICAMBNL",
@@ -32331,7 +32685,8 @@
           "artista": "MELINA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 29.57
+          "monto_pvp": 29.57,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "MELICAMBNM",
@@ -32339,7 +32694,8 @@
           "artista": "MELINA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 14.78
+          "monto_pvp": 14.78,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "MELICAMBNS",
@@ -32347,7 +32703,8 @@
           "artista": "MELINA",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "MELICAMBNS",
@@ -32355,7 +32712,8 @@
           "artista": "MELINA",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "MELIHOODIENM",
@@ -32363,7 +32721,8 @@
           "artista": "MELINA",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "MIELCAMICLASSBLXL",
@@ -32371,7 +32730,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELCAMIMIELBLL",
@@ -32379,7 +32739,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELCAMLAPIELL",
@@ -32387,7 +32748,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELESPLTCAMILTRJL",
@@ -32395,7 +32757,8 @@
           "artista": "BE Miel",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELESPLTCAMILTRJL",
@@ -32403,7 +32766,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELESPLTCAMILTRJM",
@@ -32411,7 +32775,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega Prestamos",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELESPLTCAMILTRJS",
@@ -32419,7 +32784,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELESPLTCAMILTRJXL",
@@ -32427,7 +32793,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELESPLTCRTOPLTRJL",
@@ -32435,7 +32802,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELESPLTCRTOPLTRJL",
@@ -32443,7 +32811,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MIELESPLTCRTOPLTRJXL",
@@ -32451,7 +32820,8 @@
           "artista": "BE Miel",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "MINDKINDMINDTINE",
@@ -32459,7 +32829,8 @@
           "artista": "Mindco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 19,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "MINDRLFESPKID",
@@ -32467,7 +32838,8 @@
           "artista": "Mindco",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 128,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "MINICDNICOLASYLF",
@@ -32475,7 +32847,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 13.04
+          "monto_pvp": 13.04,
+          "marca": "BOU"
         },
         {
           "codigo": "MINICDNICOLASYLF",
@@ -32483,7 +32856,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 4.35
+          "monto_pvp": 4.35,
+          "marca": "BOU"
         },
         {
           "codigo": "OBRERODRA",
@@ -32491,7 +32865,8 @@
           "artista": "Obrero Del Ritmo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "OBRERODRB",
@@ -32499,7 +32874,8 @@
           "artista": "Obrero Del Ritmo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "OBRERODRH",
@@ -32507,7 +32883,8 @@
           "artista": "Obrero Del Ritmo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "OBRERODRI",
@@ -32515,7 +32892,8 @@
           "artista": "Obrero Del Ritmo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "OBRERODRJ",
@@ -32523,7 +32901,8 @@
           "artista": "Obrero Del Ritmo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "OBRERODRM",
@@ -32531,7 +32910,8 @@
           "artista": "Obrero Del Ritmo",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "BOU"
         },
         {
           "codigo": "PANTALONRAIZAJ34",
@@ -32539,7 +32919,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "PANTJHONWHEKEDISPL",
@@ -32547,7 +32928,8 @@
           "artista": "BE Bou",
           "bodega": "SHOWROOM",
           "cantidad": 3,
-          "monto_pvp": 156.52
+          "monto_pvp": 156.52,
+          "marca": "BOU"
         },
         {
           "codigo": "PRINTNNNYLF",
@@ -32555,7 +32937,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 12,
-          "monto_pvp": 104.35
+          "monto_pvp": 104.35,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "PRINTNNNYLF",
@@ -32563,7 +32946,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "SHOWROOM",
           "cantidad": 3,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "RAIZCAMJAGUARNAL",
@@ -32571,7 +32955,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMJAGUARNAM",
@@ -32579,7 +32964,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMJAGUARNAXL",
@@ -32587,7 +32973,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMJAGUARVIL",
@@ -32595,7 +32982,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMJAGUARVIL",
@@ -32603,7 +32991,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMJAGUARVIM",
@@ -32611,7 +33000,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMJAGUARVIS",
@@ -32619,7 +33009,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMJAGUARVIXL",
@@ -32627,7 +33018,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMMONTANASNAL",
@@ -32635,7 +33027,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 3,
-          "monto_pvp": 78.26
+          "monto_pvp": 78.26,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMMONTANASNAM",
@@ -32643,7 +33036,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMMONTANASNAXL",
@@ -32651,7 +33045,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMMONTANASNAXL",
@@ -32659,7 +33054,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMMONTANASNEL",
@@ -32667,7 +33063,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMMONTANASNEL",
@@ -32675,7 +33072,8 @@
           "artista": "BE Bou",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMMONTANASNES",
@@ -32683,7 +33081,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZCAMMONTANASNEXL",
@@ -32691,7 +33090,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZHOODIEMONTANASCEL",
@@ -32699,7 +33099,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZHOODIEMONTANASCEM",
@@ -32707,7 +33108,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZHOODIEMONTANASCEXL",
@@ -32715,7 +33117,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZHOODIEMONTANASNEL",
@@ -32723,7 +33126,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZHOODIEWORLDNEL",
@@ -32731,7 +33135,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZHOODIEWORLDVIL",
@@ -32739,7 +33144,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "RAIZHOODIEWORLDVIM",
@@ -32747,7 +33153,8 @@
           "artista": "BE Bou",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 52.17
+          "monto_pvp": 52.17,
+          "marca": "BOU"
         },
         {
           "codigo": "SADENORM",
@@ -32755,7 +33162,8 @@
           "artista": "SADE BUSINESS PERU S.A.C.",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 286,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "SADERELIFIX",
@@ -32763,7 +33171,8 @@
           "artista": "SADE BUSINESS PERU S.A.C.",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 697,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "SADEVITACAPS",
@@ -32771,7 +33180,8 @@
           "artista": "SADE BUSINESS PERU S.A.C.",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 367,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "SANAHCFILTDUCHA",
@@ -32779,7 +33189,8 @@
           "artista": "SANATE FILTROS S A",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 42,
-          "monto_pvp": 0
+          "monto_pvp": 0,
+          "marca": "(sin marca)"
         },
         {
           "codigo": "SANTACAMLDMMGRL",
@@ -32787,7 +33198,8 @@
           "artista": "Santa Muerte",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTACAMMMFGRXL",
@@ -32795,7 +33207,8 @@
           "artista": "Santa Muerte",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTACAMNCSMBLM",
@@ -32803,7 +33216,8 @@
           "artista": "Santa Muerte",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTACAMNL",
@@ -32811,7 +33225,8 @@
           "artista": "Santa Muerte",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTACAMNXL",
@@ -32819,7 +33234,8 @@
           "artista": "Santa Muerte",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 75
+          "monto_pvp": 75,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTADSCM",
@@ -32827,7 +33243,8 @@
           "artista": "Santa Muerte",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 175
+          "monto_pvp": 175,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTADSCM",
@@ -32835,7 +33252,8 @@
           "artista": "Santa Muerte",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 35
+          "monto_pvp": 35,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTAGORRLETNE",
@@ -32843,7 +33261,8 @@
           "artista": "Santa Muerte",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 17.39
+          "monto_pvp": 17.39,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTAGORRLOGNE",
@@ -32851,7 +33270,8 @@
           "artista": "Santa Muerte",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 17.39
+          "monto_pvp": 17.39,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTAHDBXL",
@@ -32859,7 +33279,8 @@
           "artista": "Santa Muerte",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 30.43
+          "monto_pvp": 30.43,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTAHDDXL",
@@ -32867,7 +33288,8 @@
           "artista": "Santa Muerte",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 34.78
+          "monto_pvp": 34.78,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SANTAHDDXXL",
@@ -32875,7 +33297,8 @@
           "artista": "Santa Muerte",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 34.78
+          "monto_pvp": 34.78,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SEDBANDANA",
@@ -32883,7 +33306,8 @@
           "artista": "SED",
           "bodega": "Bodega España",
           "cantidad": 3,
-          "monto_pvp": 33.91
+          "monto_pvp": 33.91,
+          "marca": "BOU"
         },
         {
           "codigo": "SEDBANDANN",
@@ -32891,7 +33315,8 @@
           "artista": "SED",
           "bodega": "EVENTOS BOU",
           "cantidad": 5,
-          "monto_pvp": 56.52
+          "monto_pvp": 56.52,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMIDBAL",
@@ -32899,7 +33324,8 @@
           "artista": "StartupGrind",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 65.22
+          "monto_pvp": 65.22,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMIDBAS",
@@ -32907,7 +33333,8 @@
           "artista": "StartupGrind",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMIDBAXL",
@@ -32915,7 +33342,8 @@
           "artista": "StartupGrind",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMITBL",
@@ -32923,7 +33351,8 @@
           "artista": "StartupGrind",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMITBL",
@@ -32931,7 +33360,8 @@
           "artista": "StartupGrind",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMITOBL",
@@ -32939,7 +33369,8 @@
           "artista": "StartupGrind",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMITOBL",
@@ -32947,7 +33378,8 @@
           "artista": "StartupGrind",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMITOBS",
@@ -32955,7 +33387,8 @@
           "artista": "StartupGrind",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMITTPL",
@@ -32963,7 +33396,8 @@
           "artista": "StartupGrind",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMITTPS",
@@ -32971,7 +33405,8 @@
           "artista": "StartupGrind",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMIWHPL",
@@ -32979,7 +33414,8 @@
           "artista": "StartupGrind",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "STARTUPCAMIWHPXL",
@@ -32987,7 +33423,8 @@
           "artista": "StartupGrind",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "SWINGTOTEBAG",
@@ -32995,7 +33432,8 @@
           "artista": "SWING ORIGINAL MONKS",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 14,
-          "monto_pvp": 182.61
+          "monto_pvp": 182.61,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "SWINGTOTEBAG",
@@ -33003,7 +33441,8 @@
           "artista": "SWING ORIGINAL MONKS",
           "bodega": "SHOWROOM",
           "cantidad": 2,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "TOTENASAFPVCR",
@@ -33011,7 +33450,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "TOTENASAFSVCR",
@@ -33019,7 +33459,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "TOTENASATSCR",
@@ -33027,7 +33468,8 @@
           "artista": "Nasa",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 1
+          "monto_pvp": 1,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "TOTENYLFNTN",
@@ -33035,7 +33477,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 27.83
+          "monto_pvp": 27.83,
+          "marca": "BOU"
         },
         {
           "codigo": "TOTENYLFNTN",
@@ -33043,7 +33486,8 @@
           "artista": "Nicolás y los Fumadores",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 13.91
+          "monto_pvp": 13.91,
+          "marca": "BOU"
         },
         {
           "codigo": "V70AUDIFONOS",
@@ -33051,7 +33495,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 3,
-          "monto_pvp": 26.09
+          "monto_pvp": 26.09,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "V70CAMHSAPIENSL",
@@ -33059,7 +33504,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMHSAPIENSM",
@@ -33067,7 +33513,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMHSAPIENSS",
@@ -33075,7 +33522,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMHSAPIENSXL",
@@ -33083,7 +33531,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMLAPIELL",
@@ -33091,7 +33540,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMLAPIELL",
@@ -33099,7 +33549,8 @@
           "artista": "Verde70",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMLAPIELM",
@@ -33107,7 +33558,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMLAPIELXL",
@@ -33115,7 +33567,8 @@
           "artista": "Verde70",
           "bodega": "Bodega Prestamos",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMLAPIELXL",
@@ -33123,7 +33576,8 @@
           "artista": "Verde70",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 39.12
+          "monto_pvp": 39.12,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMPORTADABMCR",
@@ -33131,7 +33585,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMPORTADABXL",
@@ -33139,7 +33594,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMPORTADANXL",
@@ -33147,7 +33603,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 2,
-          "monto_pvp": 43.48
+          "monto_pvp": 43.48,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMROSTROSBL",
@@ -33155,7 +33612,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMROSTROSBXL",
@@ -33163,7 +33621,8 @@
           "artista": "Verde70",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMROSTROSNL",
@@ -33171,7 +33630,8 @@
           "artista": "Verde70",
           "bodega": "EVENTOS BOU",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70CAMROSTROSNXL",
@@ -33179,7 +33639,8 @@
           "artista": "Verde70",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70GORRALISV70",
@@ -33187,7 +33648,8 @@
           "artista": "Verde70",
           "bodega": "Bodega España",
           "cantidad": 2,
-          "monto_pvp": 34.78
+          "monto_pvp": 34.78,
+          "marca": "BOU"
         },
         {
           "codigo": "V70HOODIECVXL",
@@ -33195,7 +33657,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 1,
-          "monto_pvp": 34.78
+          "monto_pvp": 34.78,
+          "marca": "BOU"
         },
         {
           "codigo": "V70HOODIECVXL",
@@ -33203,7 +33666,8 @@
           "artista": "Verde70",
           "bodega": "Bodega España",
           "cantidad": 3,
-          "monto_pvp": 104.35
+          "monto_pvp": 104.35,
+          "marca": "BOU"
         },
         {
           "codigo": "V70LIBEXI",
@@ -33211,7 +33675,8 @@
           "artista": "Verde70",
           "bodega": "SHOWROOM",
           "cantidad": 1,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "ARTISTA"
         },
         {
           "codigo": "V70POSTALNATHUMANA",
@@ -33219,7 +33684,8 @@
           "artista": "Verde70",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 5,
-          "monto_pvp": 21.74
+          "monto_pvp": 21.74,
+          "marca": "BOU"
         },
         {
           "codigo": "V70TOTEN",
@@ -33227,7 +33693,8 @@
           "artista": "Verde70",
           "bodega": "Bodega España",
           "cantidad": 1,
-          "monto_pvp": 10.43
+          "monto_pvp": 10.43,
+          "marca": "BOU"
         },
         {
           "codigo": "VINILONASAF",
@@ -33235,7 +33702,8 @@
           "artista": "Nasa",
           "bodega": "Bodega EMPRESAS EN CONSIGNACIÓN",
           "cantidad": 11,
-          "monto_pvp": 430.43
+          "monto_pvp": 430.43,
+          "marca": "BOU"
         },
         {
           "codigo": "VINILONASAF",
@@ -33243,7 +33711,8 @@
           "artista": "Nasa",
           "bodega": "EVENTOS BOU",
           "cantidad": 6,
-          "monto_pvp": 234.78
+          "monto_pvp": 234.78,
+          "marca": "BOU"
         }
       ],
       "inventario_alertas_pvp": [
