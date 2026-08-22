@@ -22,7 +22,7 @@ import plotly.graph_objects as go
 import streamlit as st
 from datetime import date, timedelta
 
-DAILY_LOG_URL = "https://raw.githubusercontent.com/luisgarzonv1/bou-dashboard/main/data/daily-log.json"
+DAILY_LOG_URL = "https://raw.githubusercontent.com/luisgarzonv1/bou-dashboard-data/main/data/daily-log.json"
 GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
 
 # Categorías de BOU Logistica (proyecto aparte, ver Productos de BOU Logistica.xlsx) que
