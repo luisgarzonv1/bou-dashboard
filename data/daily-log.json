@@ -28857,15 +28857,15 @@
     },
     {
       "date": "2026-08-21",
-      "parcial": true,
+      "parcial": false,
       "kommo_leads_ec": 0,
       "kommo_leads_col": 0,
-      "kommo_msj_entrantes_ec": 1,
-      "kommo_msj_salientes_ec": 0,
-      "kommo_msj_entrantes_col": 1,
-      "kommo_msj_salientes_col": 0,
-      "kommo_lapso_medio_ec_s": null,
-      "kommo_lapso_medio_col_s": null,
+      "kommo_msj_entrantes_ec": 7,
+      "kommo_msj_salientes_ec": 6,
+      "kommo_msj_entrantes_col": 24,
+      "kommo_msj_salientes_col": 16,
+      "kommo_lapso_medio_ec_s": 52,
+      "kommo_lapso_medio_col_s": 331.0,
       "kommo_funnel_ec": {
         "total": 130,
         "byStatus": {
@@ -28898,15 +28898,13 @@
       },
       "funnel_kommo": {
         "ec": {},
-        "col": {
-          "Por entregar": 1
-        }
+        "col": {}
       },
       "mensajeria_be": {
-        "entrantes": 2,
-        "salientes": 0,
-        "lapso_promedio_s": null,
-        "lapso_mediana_s": null
+        "entrantes": 31,
+        "salientes": 22,
+        "lapso_promedio_s": 929.1764705882352,
+        "lapso_mediana_s": 64
       },
       "contifico_documentos": 0,
       "contifico_total_usd": 0,
@@ -33733,29 +33731,45 @@
       "prestashop_pedidos_col": 0,
       "prestashop_total_col_cop": 0,
       "prestashop_pedidos_ec_todos_estados": 0,
-      "prestashop_pedidos_col_todos_estados": 0,
-      "ga4_usuarios_ec": 2,
-      "ga4_usuarios_nuevos_ec": 2,
-      "ga4_sesiones_ec": 2,
+      "prestashop_pedidos_col_todos_estados": 2,
+      "ga4_usuarios_ec": 12,
+      "ga4_usuarios_nuevos_ec": 9,
+      "ga4_sesiones_ec": 14,
       "ga4_ingresos_ec_usd": 0,
       "ga4_compras_ec": 0,
-      "ga4_usuarios_col": 0,
+      "ga4_usuarios_col": 3,
       "ga4_usuarios_nuevos_col": 0,
-      "ga4_sesiones_col": 1,
+      "ga4_sesiones_col": 6,
       "ga4_ingresos_col_usd": 0,
       "ga4_compras_col": 0,
       "ga4_canales": {
         "ec": {
           "Direct": {
-            "sessions": 1,
-            "active_users": 1
+            "sessions": 6,
+            "active_users": 5
           },
           "Organic Search": {
-            "sessions": 1,
+            "sessions": 3,
+            "active_users": 3
+          },
+          "Organic Social": {
+            "sessions": 3,
+            "active_users": 3
+          },
+          "Referral": {
+            "sessions": 2,
             "active_users": 1
           }
         },
         "col": {
+          "Organic Search": {
+            "sessions": 3,
+            "active_users": 2
+          },
+          "Direct": {
+            "sessions": 2,
+            "active_users": 1
+          },
           "Organic Social": {
             "sessions": 1,
             "active_users": 0
@@ -33764,16 +33778,26 @@
       },
       "ga4_eventos_clave": {
         "ec": {
-          "view_item": 2,
+          "generate_lead": 0,
           "add_to_cart": 0,
           "begin_checkout": 0,
-          "purchase": 0
+          "add_payment_info": 0,
+          "add_shipping_info": 0,
+          "purchase": 0,
+          "sign_up": 0,
+          "form_submit": 3,
+          "view_item": 2
         },
         "col": {
-          "view_item": 1,
-          "add_to_cart": 0,
-          "begin_checkout": 0,
-          "purchase": 0
+          "generate_lead": 0,
+          "add_to_cart": 2,
+          "begin_checkout": 3,
+          "add_payment_info": 6,
+          "add_shipping_info": 2,
+          "purchase": 0,
+          "sign_up": 1,
+          "form_submit": 7,
+          "view_item": 4
         }
       },
       "ga4_articulos": {
@@ -33814,14 +33838,14 @@
         "n_registros": 0
       },
       "recomendaciones_ec": [
-        "Corte de mañana EC: 0 leads Kommo, 0 documentos Contífico BE, 0 pedidos PrestaShop, GA4 con 2 sesiones/2 usuarios y 0 compras -- normal para las 10:30am, esperar el corte de cierre de 6pm.",
+        "Corte de cierre EC: 0 leads Kommo nuevos hoy (igual que en la mañana), mensajería activa (7 entrantes/6 salientes, mediana de respuesta 52s), 0 documentos Contífico BE y 0 pedidos PrestaShop pagados. GA4 mejoró vs la mañana: pasó de 2 a 14 sesiones y de 2 a 12 usuarios activos (9 nuevos), pero cerró el día en 0 compras.",
         "Meta Ads sigue sin reportar datos desde el 03/ago/2026 (18 días de gap) -- persiste el problema con Windsor.ai/conexión de la cuenta 877286016115641, requiere revisión técnica urgente."
       ],
       "recomendaciones_col": [
-        "Corte de mañana COL: 0 leads Kommo nuevos hoy, 0 pedidos PrestaShop, GA4 con 1 sesión/0 usuarios nuevos y 0 compras -- normal para las 10:30am.",
-        "La Matriz de Ventas Colombia no tiene filas cargadas para hoy (21/ago/2026) -- última fecha con datos es 19/ago/2026. Es carga manual del equipo, no bloqueo técnico."
+        "Corte de cierre COL: 0 leads Kommo nuevos hoy, pero mensajería activa (24 entrantes/16 salientes, mediana de respuesta ~5.5min). PrestaShop registró 2 pedidos nuevos hoy (todos los estados, ids 1218 y 1219, ambos en estado 39 -- no pagado con la metodología oficial, 0 pedidos pagados hoy). GA4 mejoró vs la mañana: de 1 a 6 sesiones y de 0 a 3 usuarios activos, con avance de funnel real (2 add_to_cart, 3 begin_checkout, 6 add_payment_info, 2 add_shipping_info) pero sin compra completada -- posible fricción en el último paso del checkout, vale la pena revisar esos 2-3 carritos abandonados.",
+        "La Matriz de Ventas Colombia sigue sin filas cargadas para hoy (21/ago/2026) -- última fecha con datos es 19/ago/2026. Es carga manual del equipo, no bloqueo técnico."
       ],
-      "nota_verificacion": "Corte de mañana (10:30am) — números PARCIALES, se actualizan con el corte de cierre de las 6pm. Sin huecos de backfill (última fila publicada: 20/ago/2026). Contífico: 0 documentos BE hasta el momento. PrestaShop: 0 order_histories hoy hasta el momento (metodología por fecha de pago confirmado). Meta Ads sin datos desde 03/ago/2026 (gap conocido, persiste, 18 días).",
+      "nota_verificacion": "Corte de cierre 6pm -- números finales del día, actualiza el corte parcial de las 10:30am. Inventario no se recalcula en este corte (solo en el de la mañana). PrestaShop contado por fecha de pago confirmado (order_histories), no por fecha de creación. Nota técnica: el acceso a GitHub para este corte requirió evitar el proxy interno de la sesión (que exige autorización de repo aparte) y conectar directo con el token de la tarea; Kommo, Contífico y PrestaShop respondieron sin problema a través del proxy con el token propio de cada API.",
       "inventario_por_marca": {
         "(sin marca)": {
           "cantidad": 37601,
@@ -33844,27 +33868,43 @@
         "ec": [
           {
             "event_name": "page_view",
-            "event_count": 8
+            "event_count": 26
           },
           {
             "event_name": "user_engagement",
-            "event_count": 7
-          },
-          {
-            "event_name": "scroll",
-            "event_count": 6
-          },
-          {
-            "event_name": "view_item_list",
-            "event_count": 4
-          },
-          {
-            "event_name": "first_visit",
-            "event_count": 2
+            "event_count": 16
           },
           {
             "event_name": "session_start",
-            "event_count": 2
+            "event_count": 14
+          },
+          {
+            "event_name": "view_item_list",
+            "event_count": 12
+          },
+          {
+            "event_name": "first_visit",
+            "event_count": 9
+          },
+          {
+            "event_name": "scroll",
+            "event_count": 9
+          },
+          {
+            "event_name": "form_start",
+            "event_count": 3
+          },
+          {
+            "event_name": "form_submit",
+            "event_count": 3
+          },
+          {
+            "event_name": "search",
+            "event_count": 3
+          },
+          {
+            "event_name": "view_search_results",
+            "event_count": 3
           },
           {
             "event_name": "view_item",
@@ -33874,18 +33914,58 @@
         "col": [
           {
             "event_name": "page_view",
-            "event_count": 1
+            "event_count": 24
+          },
+          {
+            "event_name": "user_engagement",
+            "event_count": 12
+          },
+          {
+            "event_name": "form_start",
+            "event_count": 10
+          },
+          {
+            "event_name": "form_submit",
+            "event_count": 7
+          },
+          {
+            "event_name": "add_payment_info",
+            "event_count": 6
           },
           {
             "event_name": "scroll",
-            "event_count": 1
+            "event_count": 6
           },
           {
             "event_name": "session_start",
-            "event_count": 1
+            "event_count": 4
           },
           {
             "event_name": "view_item",
+            "event_count": 4
+          },
+          {
+            "event_name": "begin_checkout",
+            "event_count": 3
+          },
+          {
+            "event_name": "add_shipping_info",
+            "event_count": 2
+          },
+          {
+            "event_name": "add_to_cart",
+            "event_count": 2
+          },
+          {
+            "event_name": "view_item_list",
+            "event_count": 2
+          },
+          {
+            "event_name": "sign_up",
+            "event_count": 1
+          },
+          {
+            "event_name": "view_cart",
             "event_count": 1
           }
         ]
