@@ -23,6 +23,7 @@ import streamlit as st
 from datetime import date, timedelta
 
 DAILY_LOG_URL = "https://raw.githubusercontent.com/luisgarzonv1/bou-dashboard/main/data/daily-log.json"
+GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
 
 # Categorías de BOU Logistica (proyecto aparte, ver Productos de BOU Logistica.xlsx) que
 # Contífico mezcla dentro de inventario_por_artista porque comparten el mismo catálogo.
@@ -150,7 +151,8 @@ html, body, [class*="css"] {{ font-family: 'Inter', ui-sans-serif, system-ui; }}
 # ---------- Datos ----------
 @st.cache_data(ttl=300)
 def load_data():
-    r = requests.get(DAILY_LOG_URL, timeout=20)
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
+    r = requests.get(DAILY_LOG_URL, headers=headers, timeout=20)
     r.raise_for_status()
     return r.json()
 
